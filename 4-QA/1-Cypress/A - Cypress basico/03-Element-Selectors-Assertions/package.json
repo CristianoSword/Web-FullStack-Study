@@ -1,0 +1,13 @@
+{
+  "name": "cypress-element-selectors-assertions-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "python -m http.server 4103 --directory app",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.0"
+  }
+}
