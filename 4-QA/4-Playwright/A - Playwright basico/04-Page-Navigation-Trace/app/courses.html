@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navigation Trace - Etapa 2</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 32px 20px;
+        font-family: "Segoe UI", sans-serif;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+
+      .grid {
+        max-width: 860px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+      }
+
+      button {
+        border: 0;
+        border-radius: 12px;
+        padding: 10px 14px;
+        background: #1d4ed8;
+        color: #ffffff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body data-page="courses">
+    <main>
+      <h1>Selecionar curso</h1>
+      <p id="selected-track"></p>
+      <section class="grid">
+        <article class="card">
+          <h2>Filas com RabbitMQ</h2>
+          <p>Estratégias de fila, retry e observabilidade.</p>
+          <button type="button" data-course="Filas com RabbitMQ">Adicionar ao resumo</button>
+        </article>
+        <article class="card">
+          <h2>APIs com FastAPI</h2>
+          <p>Rotas assíncronas e contratos com Pydantic.</p>
+          <button type="button" data-course="APIs com FastAPI">Adicionar ao resumo</button>
+        </article>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
