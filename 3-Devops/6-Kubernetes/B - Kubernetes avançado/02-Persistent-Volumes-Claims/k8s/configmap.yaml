@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: notes-api-config
+  namespace: study-storage
+data:
+  DATA_DIRECTORY: /data
+  APP_MODE: stateful

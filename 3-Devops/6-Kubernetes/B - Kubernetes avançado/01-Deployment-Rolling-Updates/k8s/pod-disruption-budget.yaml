@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: catalog-api-pdb
+  namespace: study-rolling
+spec:
+  minAvailable: 3
+  selector:
+    matchLabels:
+      app: catalog-api

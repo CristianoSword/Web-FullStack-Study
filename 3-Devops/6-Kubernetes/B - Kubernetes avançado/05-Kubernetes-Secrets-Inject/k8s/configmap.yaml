@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payments-api-config
+  namespace: study-secrets
+data:
+  PAYMENT_PROVIDER: acme-pay
+  PAYMENT_TIMEOUT_MS: "1500"

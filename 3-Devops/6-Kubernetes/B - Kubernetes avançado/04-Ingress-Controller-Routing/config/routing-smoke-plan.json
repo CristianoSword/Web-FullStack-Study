@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "resolve ingress address",
+    "curl root with host header",
+    "curl /api/orders with host header",
+    "review ingress describe"
+  ]
+}

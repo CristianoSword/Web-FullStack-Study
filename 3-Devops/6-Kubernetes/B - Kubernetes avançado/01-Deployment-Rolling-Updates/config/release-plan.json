@@ -1,0 +1,32 @@
+{
+  "application": "catalog-api",
+  "namespace": "study-rolling",
+  "currentVersion": "ghcr.io/studies/catalog-api:v1",
+  "targetVersion": "ghcr.io/studies/catalog-api:v2",
+  "stages": [
+    {
+      "name": "preflight",
+      "checks": [
+        "lint manifests",
+        "verify configmap values",
+        "confirm image digest"
+      ]
+    },
+    {
+      "name": "rollout",
+      "checks": [
+        "kubectl rollout status",
+        "watch ready replicas",
+        "inspect events"
+      ]
+    },
+    {
+      "name": "post-check",
+      "checks": [
+        "hit /readyz",
+        "hit /catalog",
+        "review rollout history"
+      ]
+    }
+  ]
+}

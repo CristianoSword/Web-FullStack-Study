@@ -1,0 +1,6 @@
+{
+  "schedule": "0 */6 * * *",
+  "sourcePath": "/data/notes.json",
+  "targetPath": "/backup/notes.json",
+  "retentionCopies": 5
+}

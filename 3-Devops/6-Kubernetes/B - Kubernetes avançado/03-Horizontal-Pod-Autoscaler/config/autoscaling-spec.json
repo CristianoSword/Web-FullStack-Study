@@ -1,0 +1,15 @@
+{
+  "namespace": "study-hpa",
+  "deploymentName": "metrics-api",
+  "minReplicas": 2,
+  "maxReplicas": 6,
+  "targetCPUUtilizationPercentage": 65,
+  "scaleUp": {
+    "stabilizationWindowSeconds": 0,
+    "podsPerMinute": 2
+  },
+  "scaleDown": {
+    "stabilizationWindowSeconds": 120,
+    "percentPerMinute": 50
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "namespace": "study-storage",
+  "appName": "notes-api",
+  "persistentVolume": {
+    "name": "notes-pv",
+    "capacity": "2Gi",
+    "accessModes": ["ReadWriteOnce"],
+    "storageClassName": "manual"
+  },
+  "persistentVolumeClaim": {
+    "name": "notes-pvc",
+    "requestedStorage": "2Gi"
+  },
+  "mountPath": "/data",
+  "replicas": 1
+}

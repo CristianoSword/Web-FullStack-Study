@@ -1,0 +1,12 @@
+{
+  "name": "k8s-persistent-volumes-claims-lab",
+  "version": "1.0.0",
+  "description": "Advanced Kubernetes persistent storage study lab.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/test.js",
+    "validate": "node scripts/validate-project.mjs"
+  }
+}

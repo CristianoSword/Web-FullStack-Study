@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: notes-api
+  namespace: study-storage
+spec:
+  serviceName: notes-api-headless
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes-api
+  template:
+    metadata:
+      labels:
+        app: notes-api
+    spec:
+      containers:
+        - name: notes-api
+          image: ghcr.io/studies/notes-api:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: notes-api-config
+          env:
+            - name: PORT
+              value: "8080"
+          volumeMounts:
+            - name: notes-storage
+              mountPath: /data
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+      volumes:
+        - name: notes-storage
+          persistentVolumeClaim:
+            claimName: notes-pvc

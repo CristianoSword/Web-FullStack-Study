@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: metrics-api-config
+  namespace: study-hpa
+data:
+  APP_MODE: autoscaling

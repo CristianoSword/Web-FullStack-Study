@@ -1,0 +1,20 @@
+{
+  "namespace": "study-ingress",
+  "host": "study.local",
+  "ingressClassName": "nginx",
+  "tlsSecretName": "study-local-tls",
+  "routes": [
+    {
+      "path": "/",
+      "pathType": "Prefix",
+      "service": "web-portal",
+      "port": 80
+    },
+    {
+      "path": "/api",
+      "pathType": "Prefix",
+      "service": "orders-api",
+      "port": 80
+    }
+  ]
+}

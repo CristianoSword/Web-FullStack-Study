@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: notes-api-headless
+  namespace: study-storage
+spec:
+  clusterIP: None
+  selector:
+    app: notes-api
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080

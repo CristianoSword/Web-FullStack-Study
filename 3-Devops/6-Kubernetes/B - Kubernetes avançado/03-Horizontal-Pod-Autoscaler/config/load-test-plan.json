@@ -1,0 +1,10 @@
+{
+  "concurrency": 8,
+  "requests": 400,
+  "requestPath": "/work?ms=120",
+  "expectedBehavior": [
+    "cpu rises above target",
+    "hpa adds replicas",
+    "replicas scale down after stabilization window"
+  ]
+}

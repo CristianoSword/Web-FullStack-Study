@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: catalog-api-config
+  namespace: study-rolling
+data:
+  APP_ENV: production
+  APP_NAME: catalog-api
+  FEATURE_ROLLOUT_CHANNEL: stable

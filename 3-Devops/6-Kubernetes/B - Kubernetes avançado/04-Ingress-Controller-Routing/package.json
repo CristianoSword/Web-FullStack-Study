@@ -1,0 +1,12 @@
+{
+  "name": "k8s-ingress-controller-routing-lab",
+  "version": "1.0.0",
+  "description": "Advanced Kubernetes ingress routing study lab.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/test.js",
+    "validate": "node scripts/validate-project.mjs"
+  }
+}
