@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "GET /api/health",
+    "GET /api/products",
+    "GET /api/products?slug=:slug",
+    "POST /api/orders"
+  ]
+}

@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #fbf6ec, #d7ebff);
+  color: #1b2f3a;
+}
+
+.shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 20px 72px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.card,
+.banner {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(27, 47, 58, 0.12);
+}

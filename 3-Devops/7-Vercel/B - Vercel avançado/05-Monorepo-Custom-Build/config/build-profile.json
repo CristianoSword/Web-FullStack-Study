@@ -1,0 +1,6 @@
+{
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:web",
+  "ignoreCommand": "node scripts/should-build.mjs",
+  "outputDirectory": "apps/web/dist"
+}

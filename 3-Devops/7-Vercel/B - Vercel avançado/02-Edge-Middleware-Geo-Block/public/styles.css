@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: "Gill Sans", sans-serif;
+  background: linear-gradient(135deg, #fff3d6, #dceefb);
+  color: #17324a;
+}
+
+.shell {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 56px 20px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+}

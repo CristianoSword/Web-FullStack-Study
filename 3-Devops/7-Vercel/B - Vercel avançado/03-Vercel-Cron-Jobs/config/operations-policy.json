@@ -1,0 +1,5 @@
+{
+  "requiresAuthorization": true,
+  "secretHeader": "Authorization: Bearer <CRON_SECRET>",
+  "retentionDaysDefault": 14
+}

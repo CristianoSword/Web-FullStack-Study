@@ -1,0 +1,5 @@
+{
+  "matcher": "/((?!assets|blocked.html|favicon.ico).*)",
+  "decisionHeader": "x-geo-decision",
+  "blockedPage": "/blocked.html"
+}

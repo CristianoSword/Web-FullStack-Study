@@ -1,0 +1,7 @@
+{
+  "events": [
+    "home_view",
+    "metric_card_click",
+    "performance_banner_view"
+  ]
+}

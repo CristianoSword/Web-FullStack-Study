@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "crons": [
+    {
+      "path": "/api/cron/daily-report",
+      "schedule": "0 5 * * *"
+    },
+    {
+      "path": "/api/cron/cleanup-previews",
+      "schedule": "0 3 * * 1"
+    }
+  ],
+  "functions": {
+    "api/cron/*.js": {
+      "runtime": "nodejs20.x",
+      "maxDuration": 10
+    }
+  }
+}

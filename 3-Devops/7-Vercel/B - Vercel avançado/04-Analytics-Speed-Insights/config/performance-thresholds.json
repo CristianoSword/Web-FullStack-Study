@@ -1,0 +1,16 @@
+{
+  "thresholds": [
+    {
+      "metric": "LCP",
+      "target": "< 2.5s"
+    },
+    {
+      "metric": "CLS",
+      "target": "< 0.10"
+    },
+    {
+      "metric": "INP",
+      "target": "< 200ms"
+    }
+  ]
+}

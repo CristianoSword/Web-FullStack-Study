@@ -1,0 +1,12 @@
+{
+  "name": "@study/web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo build web"
+  },
+  "dependencies": {
+    "@study/ui": "1.0.0"
+  }
+}

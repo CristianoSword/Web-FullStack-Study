@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    {
+      "path": "/api/cron/daily-report",
+      "schedule": "0 5 * * *"
+    },
+    {
+      "path": "/api/cron/cleanup-previews",
+      "schedule": "0 3 * * 1"
+    }
+  ]
+}

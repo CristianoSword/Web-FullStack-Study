@@ -1,0 +1,4 @@
+{
+  "allowedCountries": ["BR", "US", "CA"],
+  "blockedCountries": ["KP", "IR"]
+}

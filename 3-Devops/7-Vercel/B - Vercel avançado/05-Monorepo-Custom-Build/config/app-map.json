@@ -1,0 +1,14 @@
+{
+  "apps": [
+    {
+      "name": "web",
+      "path": "apps/web",
+      "output": "apps/web/dist"
+    },
+    {
+      "name": "admin",
+      "path": "apps/admin",
+      "output": "apps/admin/dist"
+    }
+  ]
+}
