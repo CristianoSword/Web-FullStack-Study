@@ -1,0 +1,20 @@
+name: Study Release Note Action
+description: Generates a normalized deployment summary for workflows
+
+inputs:
+  title:
+    description: Human readable release title
+    required: true
+  environment:
+    description: Target environment name
+    required: true
+
+outputs:
+  summary:
+    description: Rendered human readable summary
+  slug:
+    description: Kebab-case identifier for the release title
+
+runs:
+  using: node20
+  main: src/index.js

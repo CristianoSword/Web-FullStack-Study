@@ -1,0 +1,11 @@
+{
+  "workflowName": "Release Tag Automation",
+  "baseVersion": "2.4.3",
+  "defaultBranch": "main",
+  "tagPrefix": "v",
+  "allowedBumps": [
+    "patch",
+    "minor",
+    "major"
+  ]
+}

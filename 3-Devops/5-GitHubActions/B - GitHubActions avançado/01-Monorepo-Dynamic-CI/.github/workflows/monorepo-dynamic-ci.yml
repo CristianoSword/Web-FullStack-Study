@@ -1,0 +1,60 @@
+name: Monorepo Dynamic CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.detect.outputs.matrix }}
+      has_changes: ${{ steps.detect.outputs.has_changes }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Detect changed scopes
+        id: detect
+        run: node scripts/detect-scopes.mjs
+
+  run-affected-packages:
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.has_changes == 'true' }}
+    strategy:
+      matrix: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run package pipeline
+        run: ${{ matrix.command }}
+
+      - name: Publish matrix summary
+        shell: bash
+        run: |
+          {
+            echo "## Affected Package"
+            echo ""
+            echo "- Scope: ${{ matrix.scope }}"
+            echo "- Path: ${{ matrix.path }}"
+            echo "- Command: ${{ matrix.command }}"
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,12 @@
+{
+  "text": "Deployment Failure",
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*Deployment Failure*"
+      }
+    }
+  ]
+}

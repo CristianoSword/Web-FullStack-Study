@@ -1,0 +1,17 @@
+[
+  {
+    "scope": "frontend",
+    "path": "apps/frontend/",
+    "command": "npm run test --workspace frontend"
+  },
+  {
+    "scope": "api",
+    "path": "apps/api/",
+    "command": "npm run test --workspace api"
+  },
+  {
+    "scope": "shared",
+    "path": "packages/shared/",
+    "command": "npm run test --workspace @study/shared"
+  }
+]

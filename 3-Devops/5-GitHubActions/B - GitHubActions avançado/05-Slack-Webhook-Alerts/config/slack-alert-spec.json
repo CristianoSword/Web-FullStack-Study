@@ -1,0 +1,8 @@
+{
+  "workflowName": "Slack Webhook Alerts",
+  "severity": "high",
+  "channelLabel": "#platform-alerts",
+  "webhookSecret": "SLACK_WEBHOOK_URL",
+  "title": "Deployment Failure",
+  "environment": "production"
+}

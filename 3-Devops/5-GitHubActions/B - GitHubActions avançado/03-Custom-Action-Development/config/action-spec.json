@@ -1,0 +1,19 @@
+{
+  "name": "study-release-note",
+  "displayName": "Study Release Note Action",
+  "main": "src/index.js",
+  "inputs": [
+    {
+      "name": "title",
+      "required": true
+    },
+    {
+      "name": "environment",
+      "required": true
+    }
+  ],
+  "outputs": [
+    "summary",
+    "slug"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "study-release-note-action",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "@actions/core": "^1.11.1"
+  }
+}

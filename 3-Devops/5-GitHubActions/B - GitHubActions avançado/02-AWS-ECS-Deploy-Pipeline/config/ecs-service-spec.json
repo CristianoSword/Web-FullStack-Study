@@ -1,0 +1,10 @@
+{
+  "cluster": "study-platform-cluster",
+  "service": "study-api-service",
+  "taskFamily": "study-api-task",
+  "containerName": "study-api",
+  "containerPort": 8080,
+  "desiredCount": 2,
+  "launchType": "FARGATE",
+  "deploymentCircuitBreaker": true
+}

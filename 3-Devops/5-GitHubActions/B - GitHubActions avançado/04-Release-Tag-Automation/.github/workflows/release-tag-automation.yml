@@ -1,0 +1,86 @@
+name: Release Tag Automation
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: Version bump type
+        required: true
+        default: patch
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+jobs:
+  prepare-release:
+    runs-on: ubuntu-latest
+    outputs:
+      next_version: ${{ steps.version.outputs.next_version }}
+      tag_name: ${{ steps.version.outputs.tag_name }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Compute next version
+        id: version
+        env:
+          BUMP: ${{ github.event.inputs.bump }}
+        run: node scripts/compute-next-version.mjs
+
+      - name: Render release notes
+        run: node scripts/render-changelog.mjs
+
+      - name: Upload release notes artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes
+          path: changelog/release-notes.md
+
+  publish-release:
+    runs-on: ubuntu-latest
+    needs: prepare-release
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download release notes artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: release-notes
+          path: changelog
+
+      - name: Create Git tag
+        run: |
+          git tag ${{ needs.prepare-release.outputs.tag_name }}
+          git push origin ${{ needs.prepare-release.outputs.tag_name }}
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.prepare-release.outputs.tag_name }}
+          name: Release ${{ needs.prepare-release.outputs.tag_name }}
+          body_path: changelog/release-notes.md
+          draft: true
+
+      - name: Publish release summary
+        shell: bash
+        run: |
+          {
+            echo "## Release Draft"
+            echo ""
+            echo "- Version: ${{ needs.prepare-release.outputs.next_version }}"
+            echo "- Tag: ${{ needs.prepare-release.outputs.tag_name }}"
+            echo "- Bump: ${{ github.event.inputs.bump }}"
+          } >> "$GITHUB_STEP_SUMMARY"

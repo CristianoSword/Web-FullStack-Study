@@ -1,0 +1,9 @@
+{
+  "workflow": "deploy-platform",
+  "job": "deploy-production",
+  "status": "failure",
+  "repository": "CristianoSword/Web-FullStack-Study",
+  "runUrl": "https://github.com/CristianoSword/Web-FullStack-Study/actions/runs/123456",
+  "commit": "abc123def456",
+  "environment": "production"
+}

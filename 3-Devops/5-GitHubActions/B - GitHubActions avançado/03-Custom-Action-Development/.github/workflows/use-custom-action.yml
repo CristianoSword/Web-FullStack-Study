@@ -1,0 +1,31 @@
+name: Use Custom Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  release-note:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run local custom action
+        id: release_note
+        uses: ./action
+        with:
+          title: Deploy Production
+          environment: production
+
+      - name: Publish action summary
+        shell: bash
+        run: |
+          {
+            echo "## Custom Action Output"
+            echo ""
+            echo "- Summary: ${{ steps.release_note.outputs.summary }}"
+            echo "- Slug: ${{ steps.release_note.outputs.slug }}"
+          } >> "$GITHUB_STEP_SUMMARY"

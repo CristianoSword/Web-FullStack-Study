@@ -1,0 +1,17 @@
+[
+  {
+    "sha": "a1b2c3d",
+    "type": "feat",
+    "message": "feat(api): add release endpoint"
+  },
+  {
+    "sha": "d4e5f6g",
+    "type": "fix",
+    "message": "fix(ci): correct docker cache key"
+  },
+  {
+    "sha": "h7i8j9k",
+    "type": "docs",
+    "message": "docs(readme): update deployment guide"
+  }
+]

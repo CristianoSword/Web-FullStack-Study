@@ -1,0 +1,6 @@
+{
+  "branch": "main",
+  "sha": "abc123def456",
+  "imageTagStrategy": "sha-short",
+  "dockerfile": "Dockerfile"
+}

@@ -1,0 +1,50 @@
+name: Slack Webhook Alerts
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Simulate deployment
+        run: |
+          echo "Starting deployment"
+          exit 1
+
+  notify-slack:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ failure() }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Render Slack payload
+        run: node scripts/render-slack-payload.mjs
+
+      - name: Send Slack webhook alert
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H "Content-type: application/json" \
+            --data @payloads/slack-alert.json \
+            "$SLACK_WEBHOOK_URL"
+
+      - name: Publish alert summary
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          {
+            echo "## Slack Alert"
+            echo ""
+            echo "- Triggered by: build failure"
+            echo "- Secret: SLACK_WEBHOOK_URL"
+            echo "- Payload file: payloads/slack-alert.json"
+          } >> "$GITHUB_STEP_SUMMARY"
