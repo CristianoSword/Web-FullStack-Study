@@ -1,0 +1,12 @@
+{
+  "name": "selenium-parallel-test-grid-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "python -m http.server 4302 --directory app",
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.22.0"
+  }
+}
