@@ -1,0 +1,13 @@
+{
+  "name": "cypress-verify-redirects-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "python -m http.server 4105 --directory app",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.0"
+  }
+}
