@@ -1,0 +1,1 @@
+globalThis.qaTarget = 80;
