@@ -1,0 +1,14 @@
+{
+  "name": "study-doks",
+  "region": "nyc3",
+  "version": "1.30.1-do.0",
+  "vpcUuid": "vpc-study-uuid",
+  "haControlPlane": true,
+  "nodePool": {
+    "name": "web-pool",
+    "size": "s-2vcpu-4gb",
+    "autoScale": true,
+    "minNodes": 2,
+    "maxNodes": 4
+  }
+}

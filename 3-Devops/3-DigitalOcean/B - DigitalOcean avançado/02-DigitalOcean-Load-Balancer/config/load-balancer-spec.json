@@ -1,0 +1,13 @@
+{
+  "name": "study-edge-lb",
+  "region": "nyc3",
+  "sizeUnit": 1,
+  "dropletTag": "study-web",
+  "stickySessions": {
+    "type": "cookies",
+    "cookieName": "lb_session",
+    "cookieTtlSeconds": 300
+  },
+  "redirectHttpToHttps": true,
+  "enableProxyProtocol": false
+}

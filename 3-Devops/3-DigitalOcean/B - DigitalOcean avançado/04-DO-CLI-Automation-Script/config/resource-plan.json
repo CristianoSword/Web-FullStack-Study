@@ -1,0 +1,19 @@
+{
+  "projectName": "study-project",
+  "region": "nyc3",
+  "vpcName": "study-vpc",
+  "droplets": [
+    {
+      "name": "study-web-01",
+      "size": "s-1vcpu-2gb",
+      "image": "ubuntu-24-04-x64"
+    },
+    {
+      "name": "study-web-02",
+      "size": "s-1vcpu-2gb",
+      "image": "ubuntu-24-04-x64"
+    }
+  ],
+  "firewallName": "study-edge-fw",
+  "loadBalancerName": "study-edge-lb"
+}

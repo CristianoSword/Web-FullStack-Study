@@ -1,0 +1,18 @@
+[
+  {
+    "name": "ensure-vpc",
+    "command": "doctl vpcs list"
+  },
+  {
+    "name": "create-droplets",
+    "command": "doctl compute droplet create study-web-01 study-web-02"
+  },
+  {
+    "name": "attach-firewall",
+    "command": "doctl compute firewall create --name study-edge-fw --tag-names study-web"
+  },
+  {
+    "name": "create-load-balancer",
+    "command": "doctl compute load-balancer create --name study-edge-lb --region nyc3 --tag-name study-web"
+  }
+]

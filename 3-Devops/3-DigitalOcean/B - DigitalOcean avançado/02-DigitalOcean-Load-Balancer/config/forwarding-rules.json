@@ -1,0 +1,16 @@
+[
+  {
+    "entryProtocol": "http",
+    "entryPort": 80,
+    "targetProtocol": "http",
+    "targetPort": 8080,
+    "certificateId": null
+  },
+  {
+    "entryProtocol": "https",
+    "entryPort": 443,
+    "targetProtocol": "http",
+    "targetPort": 8080,
+    "certificateId": "cert-study-123"
+  }
+]

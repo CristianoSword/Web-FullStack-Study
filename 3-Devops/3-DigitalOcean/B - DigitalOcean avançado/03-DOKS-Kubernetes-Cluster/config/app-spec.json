@@ -1,0 +1,9 @@
+{
+  "namespace": "study",
+  "deploymentName": "study-api",
+  "replicas": 2,
+  "containerImage": "registry.digitalocean.com/study-registry/study-api:latest",
+  "containerPort": 8080,
+  "servicePort": 80,
+  "ingressHost": "study-k8s.example.com"
+}

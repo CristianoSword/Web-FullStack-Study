@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: study-api
+  namespace: study
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: study-api
+  template:
+    metadata:
+      labels:
+        app: study-api
+    spec:
+      containers:
+        - name: study-api
+          image: registry.digitalocean.com/study-registry/study-api:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: study-api-config
+            - secretRef:
+                name: study-api-secret
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi

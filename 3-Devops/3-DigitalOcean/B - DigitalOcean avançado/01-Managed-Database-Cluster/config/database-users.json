@@ -1,0 +1,16 @@
+[
+  {
+    "name": "studyadmin",
+    "role": "primary-app-user",
+    "databases": [
+      "studyapp"
+    ]
+  },
+  {
+    "name": "readonly_dashboard",
+    "role": "reporting-user",
+    "databases": [
+      "studyapp"
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "study-postgres-cluster",
+  "engine": "pg",
+  "version": "16",
+  "region": "nyc3",
+  "size": "db-s-2vcpu-4gb",
+  "nodeCount": 2,
+  "privateNetworkUuid": "vpc-study-uuid",
+  "maintenanceWindow": {
+    "day": "sunday",
+    "hour": "03:00"
+  },
+  "standbyRegion": "sfo3"
+}

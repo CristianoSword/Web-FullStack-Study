@@ -1,0 +1,14 @@
+[
+  {
+    "name": "lint-and-test",
+    "runner": "ubuntu-latest"
+  },
+  {
+    "name": "build-artifact",
+    "runner": "ubuntu-latest"
+  },
+  {
+    "name": "deploy-droplet",
+    "runner": "ubuntu-latest"
+  }
+]
