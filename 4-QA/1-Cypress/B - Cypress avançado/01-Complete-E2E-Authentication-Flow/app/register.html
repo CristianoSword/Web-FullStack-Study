@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+  </head>
+  <body>
+    <form id="register-form">
+      <input data-cy="register-name" placeholder="Name" />
+      <input data-cy="register-email" placeholder="Email" />
+      <input data-cy="register-password" placeholder="Password" type="password" />
+      <button data-cy="register-submit" type="submit">Create account</button>
+    </form>
+    <p data-cy="register-message"></p>
+    <script>
+      document.getElementById("register-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const user = {
+          name: document.querySelector("[data-cy=register-name]").value,
+          email: document.querySelector("[data-cy=register-email]").value,
+          password: document.querySelector("[data-cy=register-password]").value
+        };
+        localStorage.setItem("study-user", JSON.stringify(user));
+        document.querySelector("[data-cy=register-message]").textContent = "Account created";
+        window.location.href = "/login.html";
+      });
+    </script>
+  </body>
+  </html>
