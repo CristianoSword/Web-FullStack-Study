@@ -1,6 +1,7 @@
 package study.java.reactive.service;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import study.java.reactive.model.DeadLetterEvent;
 
@@ -13,6 +14,6 @@ public class DeadLetterStore {
   }
 
   public List<DeadLetterEvent> snapshot() {
-    return deadLetters;
+    return new ArrayList<DeadLetterEvent>(deadLetters);
   }
 }

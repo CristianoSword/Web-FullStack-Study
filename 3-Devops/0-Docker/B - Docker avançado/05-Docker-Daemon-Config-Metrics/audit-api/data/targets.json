@@ -1,0 +1,19 @@
+{
+  "targets": [
+    {
+      "name": "cadvisor",
+      "url": "http://cadvisor:8080/metrics",
+      "kind": "metrics"
+    },
+    {
+      "name": "audit-api",
+      "url": "http://audit-api:3080/health",
+      "kind": "audit"
+    },
+    {
+      "name": "loki",
+      "url": "http://loki:3100/ready",
+      "kind": "logs"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "rootFilesystem": "read-only",
+  "tmpfs": ["/tmp"],
+  "writablePaths": ["/tmp"],
+  "blockedExpectation": [
+    "/app",
+    "/etc",
+    "/root"
+  ]
+}

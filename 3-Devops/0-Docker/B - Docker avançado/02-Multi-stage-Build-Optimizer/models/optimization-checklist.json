@@ -1,0 +1,15 @@
+{
+  "cacheFirst": [
+    "copy go.mod before source files",
+    "reuse dependency layer across rebuilds"
+  ],
+  "binaryTuning": [
+    "CGO_ENABLED=0",
+    "trimpath",
+    "ldflags -s -w"
+  ],
+  "runtimeHardening": [
+    "final stage contains only executable",
+    "no package manager in runtime image"
+  ]
+}

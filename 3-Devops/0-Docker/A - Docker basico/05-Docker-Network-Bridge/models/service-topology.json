@@ -1,0 +1,15 @@
+{
+  "services": [
+    {
+      "name": "catalog-service",
+      "role": "internal data provider",
+      "containerPort": 3031
+    },
+    {
+      "name": "gateway-service",
+      "role": "public edge that proxies catalog data",
+      "containerPort": 3030
+    }
+  ],
+  "network": "inventory_bridge"
+}

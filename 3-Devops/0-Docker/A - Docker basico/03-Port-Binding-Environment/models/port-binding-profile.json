@@ -1,0 +1,16 @@
+{
+  "containerPort": 3010,
+  "bindings": [
+    {
+      "label": "default",
+      "hostPort": 3010,
+      "containerPort": 3010
+    },
+    {
+      "label": "alternate",
+      "hostPort": 4010,
+      "containerPort": 3010
+    }
+  ],
+  "goal": "Practice publishing the same container port through different host ports."
+}

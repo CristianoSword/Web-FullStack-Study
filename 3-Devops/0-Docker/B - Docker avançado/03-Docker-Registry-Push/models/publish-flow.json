@@ -1,0 +1,10 @@
+{
+  "steps": [
+    "start local registry",
+    "build local image",
+    "tag image for localhost:5001/study/inventory-release-api:v1.0.0",
+    "push version tag",
+    "tag and push latest",
+    "pull and inspect remote copy"
+  ]
+}

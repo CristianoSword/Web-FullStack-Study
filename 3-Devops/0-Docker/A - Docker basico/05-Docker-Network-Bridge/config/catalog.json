@@ -1,0 +1,21 @@
+{
+  "serviceName": "catalog-service",
+  "defaultPort": 3031,
+  "products": [
+    {
+      "sku": "MON-101",
+      "name": "Monitor Arm",
+      "stock": 7
+    },
+    {
+      "sku": "KEY-102",
+      "name": "Mechanical Keyboard",
+      "stock": 11
+    },
+    {
+      "sku": "MIC-103",
+      "name": "USB Microphone",
+      "stock": 4
+    }
+  ]
+}

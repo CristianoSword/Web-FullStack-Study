@@ -1,0 +1,33 @@
+services:
+  catalog-service:
+    build:
+      context: .
+      dockerfile: catalog/Dockerfile
+    container_name: docker-bridge-catalog
+    environment:
+      APP_PORT: "3031"
+      APP_HOST: 0.0.0.0
+    ports:
+      - "3031:3031"
+    networks:
+      - inventory_bridge
+
+  gateway-service:
+    build:
+      context: .
+      dockerfile: gateway/Dockerfile
+    container_name: docker-bridge-gateway
+    environment:
+      APP_PORT: "3030"
+      APP_HOST: 0.0.0.0
+      CATALOG_BASE_URL: http://catalog-service:3031
+    ports:
+      - "3030:3030"
+    depends_on:
+      - catalog-service
+    networks:
+      - inventory_bridge
+
+networks:
+  inventory_bridge:
+    driver: bridge

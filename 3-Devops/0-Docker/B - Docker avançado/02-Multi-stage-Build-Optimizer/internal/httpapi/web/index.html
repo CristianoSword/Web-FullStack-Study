@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-stage Build Optimizer</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: #e2e8f0;
+      }
+      main {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 48px 20px;
+      }
+      h1 {
+        margin-bottom: 12px;
+      }
+      .card {
+        background: rgba(15, 23, 42, 0.78);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 18px;
+        padding: 20px;
+        margin-top: 18px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      code {
+        color: #facc15;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Docker advanced lab</p>
+      <h1>{{ .AppName }}</h1>
+      <div class="card">
+        <p>This app exists to demonstrate why multi-stage builds matter.</p>
+        <p>The final image ships only a single statically compiled Go executable.</p>
+      </div>
+      <div class="card">
+        <h2>Stages</h2>
+        <ul>
+          {{ range .Stages }}
+          <li><code>{{ . }}</code></li>
+          {{ end }}
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

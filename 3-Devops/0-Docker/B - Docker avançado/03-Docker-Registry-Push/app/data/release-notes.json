@@ -1,0 +1,9 @@
+{
+  "version": "v1.0.0",
+  "channel": "stable",
+  "features": [
+    "local registry push flow",
+    "version and latest tags",
+    "release metadata endpoint"
+  ]
+}

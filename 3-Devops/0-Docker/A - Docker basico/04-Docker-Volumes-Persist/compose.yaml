@@ -1,0 +1,17 @@
+services:
+  inventory-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-volumes-persist-lab
+    environment:
+      APP_PORT: "3020"
+      DATA_DIR: /data
+      DB_PATH: /data/inventory.db
+    ports:
+      - "3020:3020"
+    volumes:
+      - inventory_data:/data
+
+volumes:
+  inventory_data:

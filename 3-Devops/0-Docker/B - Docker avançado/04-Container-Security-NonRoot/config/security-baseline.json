@@ -1,0 +1,11 @@
+{
+  "runtimeUser": "appuser",
+  "uid": 10001,
+  "gid": 10001,
+  "policies": [
+    "read-only root filesystem",
+    "tmpfs for transient writes",
+    "drop all linux capabilities",
+    "prevent privilege escalation"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "required": ["products"],
+  "properties": {
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["sku", "name", "stock"]
+      }
+    }
+  }
+}

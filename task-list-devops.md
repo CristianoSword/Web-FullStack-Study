@@ -27,87 +27,87 @@ Lista de projetos pendentes de estudo para a categoria **Devops**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Port-Binding-Environment
+#### [x] 03-Port-Binding-Environment
 - **O que é:** Container rodando com redirecionamento de portas e variáveis de ambiente.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Docker-Volumes-Persist
+#### [x] 04-Docker-Volumes-Persist
 - **O que é:** Uso de volumes montados para persistência de dados de bancos locais.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Docker-Network-Bridge
+#### [x] 05-Docker-Network-Bridge
 - **O que é:** Comunicação entre dois containers distintos utilizando rede do tipo Bridge.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ### ⚙️ Projetos Avançados
 
-#### [ ] 01-Docker-Compose-Stack
+#### [x] 01-Docker-Compose-Stack
 - **O que é:** Orquestração local de stack de API, banco Postgres e cache Redis.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Multi-stage-Build-Optimizer
+#### [x] 02-Multi-stage-Build-Optimizer
 - **O que é:** Dockerfile otimizado com múltiplos estágios reduzindo tamanho da imagem.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Docker-Registry-Push
+#### [x] 03-Docker-Registry-Push
 - **O que é:** Configuração de registro privado e subida de imagem customizada.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Container-Security-NonRoot
+#### [x] 04-Container-Security-NonRoot
 - **O que é:** Ajustes de segurança rodando imagens com usuários não-root.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Docker-Daemon-Config-Metrics
+#### [x] 05-Docker-Daemon-Config-Metrics
 - **O que é:** Monitoramento de recursos, logs e métricas do daemon Docker.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 3-Devops/1-Heroku
 

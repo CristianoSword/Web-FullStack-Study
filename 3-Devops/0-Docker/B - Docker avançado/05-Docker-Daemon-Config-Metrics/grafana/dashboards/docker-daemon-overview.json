@@ -1,0 +1,25 @@
+{
+  "title": "Docker Daemon Overview",
+  "panels": [
+    {
+      "title": "Container CPU Usage",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(rate(container_cpu_usage_seconds_total[5m])) by (container_label_com_docker_compose_service)"
+        }
+      ]
+    },
+    {
+      "title": "Container Memory Working Set",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum(container_memory_working_set_bytes) by (container_label_com_docker_compose_service)"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 39,
+  "version": 1
+}

@@ -1,0 +1,20 @@
+{
+  "stages": [
+    {
+      "name": "deps",
+      "goal": "prepare cached module dependencies"
+    },
+    {
+      "name": "test",
+      "goal": "run go test before producing runtime artifact"
+    },
+    {
+      "name": "builder",
+      "goal": "compile static linux binary"
+    },
+    {
+      "name": "runtime",
+      "goal": "ship only the final executable"
+    }
+  ]
+}

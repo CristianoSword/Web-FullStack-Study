@@ -1,0 +1,53 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: docker-compose-stack-api
+    environment:
+      APP_HOST: 0.0.0.0
+      APP_PORT: "3040"
+      POSTGRES_DSN: postgresql://study:study@postgres:5432/study_stack
+      REDIS_URL: redis://redis:6379/0
+      CACHE_TTL_SECONDS: "45"
+    ports:
+      - "3040:3040"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - compose_stack
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: docker-compose-stack-postgres
+    environment:
+      POSTGRES_DB: study_stack
+      POSTGRES_USER: study
+      POSTGRES_PASSWORD: study
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "5432:5432"
+    networks:
+      - compose_stack
+
+  redis:
+    image: redis:7-alpine
+    container_name: docker-compose-stack-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - compose_stack
+
+networks:
+  compose_stack:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:

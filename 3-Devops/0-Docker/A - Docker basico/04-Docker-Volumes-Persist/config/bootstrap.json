@@ -1,0 +1,6 @@
+{
+  "serviceName": "docker-volumes-persist-lab",
+  "defaultPort": 3020,
+  "defaultLocation": "receiving-bay",
+  "databaseFile": "inventory.db"
+}

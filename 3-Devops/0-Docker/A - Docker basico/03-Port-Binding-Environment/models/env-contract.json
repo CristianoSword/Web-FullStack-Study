@@ -1,0 +1,19 @@
+{
+  "required": [
+    "PORT",
+    "HOST",
+    "APP_NAME"
+  ],
+  "optional": [
+    "APP_MODE",
+    "MESSAGE",
+    "FEATURE_FLAG"
+  ],
+  "sampleOverrides": {
+    "PORT": "3010",
+    "APP_NAME": "port-binding-environment-lab",
+    "APP_MODE": "production",
+    "MESSAGE": "Container started with overridden env",
+    "FEATURE_FLAG": "false"
+  }
+}

@@ -1,13 +1,28 @@
 package study.java.reactive;
 
+import java.util.List;
+import study.java.reactive.model.OrderCommand;
+import study.java.reactive.model.PipelineReport;
+import study.java.reactive.service.ReactiveFulfillmentPipeline;
+
 public class Main {
+
   public static void main(String[] args) {
-    EventPayload payload = new EventPayload("reactive");
-    if (!new EventValidator().isValid(payload)) {
-      throw new IllegalArgumentException("invalid event");
+    ReactiveScenarioConsole console = new ReactiveScenarioConsole();
+    List<OrderCommand> commands = console.demoCommands();
+
+    if (args.length > 0 && "--success-only".equals(args[0])) {
+      commands = commands.subList(0, 2);
     }
 
-    PipelineResult result = new ReactivePipeline().process(payload).join();
-    System.out.println(result.value());
+    PipelineReport report = new ReactiveFulfillmentPipeline()
+        .processBatch(commands)
+        .block();
+
+    if (report == null) {
+      throw new IllegalStateException("pipeline did not produce a report");
+    }
+
+    console.printReport(report);
   }
 }

@@ -1,0 +1,10 @@
+{
+  "prometheusTargets": [
+    "cadvisor:8080",
+    "audit-api:3080"
+  ],
+  "grafanaDatasources": [
+    "Prometheus",
+    "Loki"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "serviceName": "port-binding-environment-lab",
+  "defaultPort": 3010,
+  "runtime": "node:22-alpine"
+}

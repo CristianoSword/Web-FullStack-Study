@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PortBindingRuntime",
+  "type": "object",
+  "required": ["imageName", "containerName", "defaultHostPort", "alternateHostPort", "containerPort"],
+  "properties": {
+    "imageName": {
+      "type": "string"
+    },
+    "containerName": {
+      "type": "string"
+    },
+    "defaultHostPort": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "alternateHostPort": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "containerPort": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "dockerfilePath": {
+      "type": "string"
+    },
+    "buildContext": {
+      "type": "string"
+    }
+  }
+}

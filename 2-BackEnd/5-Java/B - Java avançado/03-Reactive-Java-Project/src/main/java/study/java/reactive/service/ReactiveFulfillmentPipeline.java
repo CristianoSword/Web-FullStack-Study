@@ -18,7 +18,6 @@ public class ReactiveFulfillmentPipeline {
   private final InventoryGateway inventoryGateway;
   private final PricingGateway pricingGateway;
   private final DeadLetterStore deadLetterStore;
-  private final Sinks.Many<OrderCommand> inboundOrders;
 
   public ReactiveFulfillmentPipeline() {
     this(new EventValidator(), new InventoryGateway(), new PricingGateway(), new DeadLetterStore());
@@ -33,11 +32,11 @@ public class ReactiveFulfillmentPipeline {
     this.inventoryGateway = inventoryGateway;
     this.pricingGateway = pricingGateway;
     this.deadLetterStore = deadLetterStore;
-    this.inboundOrders = Sinks.many().unicast().onBackpressureBuffer();
   }
 
   public Mono<PipelineReport> processBatch(List<OrderCommand> commands) {
     List<EnrichedOrder> processed = new ArrayList<EnrichedOrder>();
+    Sinks.Many<OrderCommand> inboundOrders = Sinks.many().unicast().onBackpressureBuffer();
 
     Flux<EnrichedOrder> pipeline = inboundOrders.asFlux()
         .flatMap(this::validateAndEnrich)

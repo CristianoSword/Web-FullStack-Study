@@ -1,0 +1,6 @@
+{
+  "repository": "localhost:5001/study/inventory-release-api",
+  "localTag": "inventory-release-api:local",
+  "publishTags": ["v1.0.0", "latest"],
+  "runtime": "python:3.12-alpine"
+}

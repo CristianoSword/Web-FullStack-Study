@@ -1,0 +1,9 @@
+{
+  "imageName": "port-binding-environment-lab:local",
+  "containerName": "port-binding-environment-lab",
+  "defaultHostPort": 3010,
+  "alternateHostPort": 4010,
+  "containerPort": 3010,
+  "dockerfilePath": "Dockerfile",
+  "buildContext": "."
+}

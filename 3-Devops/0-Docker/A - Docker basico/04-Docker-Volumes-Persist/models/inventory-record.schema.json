@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": ["sku", "name", "quantity", "location"],
+  "properties": {
+    "sku": {
+      "type": "string",
+      "minLength": 3
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "location": {
+      "type": "string",
+      "minLength": 2
+    }
+  }
+}

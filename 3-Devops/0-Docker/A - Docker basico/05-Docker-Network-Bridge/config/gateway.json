@@ -1,0 +1,5 @@
+{
+  "serviceName": "gateway-service",
+  "defaultPort": 3030,
+  "catalogTarget": "http://catalog-service:3031"
+}

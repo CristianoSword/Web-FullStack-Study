@@ -1,0 +1,9 @@
+{
+  "driver": "bridge",
+  "dnsName": "catalog-service",
+  "publishedPorts": [
+    "3030:3030",
+    "3031:3031"
+  ],
+  "goal": "Allow one container to reach another by service name on an isolated Docker bridge network."
+}

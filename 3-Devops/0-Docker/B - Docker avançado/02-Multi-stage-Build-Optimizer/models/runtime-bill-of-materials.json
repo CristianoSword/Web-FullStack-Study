@@ -1,0 +1,12 @@
+{
+  "runtimeImage": "scratch",
+  "artifacts": [
+    "/multi-stage-server"
+  ],
+  "excludedFromRuntime": [
+    "go compiler",
+    "source tree",
+    "module cache",
+    "test files"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "database": "study_stack",
+  "table": "products",
+  "columns": [
+    "id SERIAL PRIMARY KEY",
+    "sku VARCHAR(50) UNIQUE NOT NULL",
+    "name VARCHAR(120) NOT NULL",
+    "price NUMERIC(10,2) NOT NULL"
+  ]
+}

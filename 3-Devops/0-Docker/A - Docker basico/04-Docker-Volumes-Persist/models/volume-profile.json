@@ -1,0 +1,18 @@
+{
+  "containerDataDir": "/data",
+  "databasePath": "/data/inventory.db",
+  "strategies": [
+    {
+      "name": "named-volume",
+      "source": "inventory_data",
+      "target": "/data",
+      "purpose": "default persistent storage in Docker Compose"
+    },
+    {
+      "name": "bind-mount",
+      "source": "./runtime-data",
+      "target": "/data",
+      "purpose": "inspect persisted sqlite file from the host filesystem"
+    }
+  ]
+}

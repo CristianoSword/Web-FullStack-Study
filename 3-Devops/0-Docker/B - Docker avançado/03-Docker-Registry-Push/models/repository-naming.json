@@ -1,0 +1,6 @@
+{
+  "registryHost": "localhost:5001",
+  "namespace": "study",
+  "imageName": "inventory-release-api",
+  "fullRepository": "localhost:5001/study/inventory-release-api"
+}

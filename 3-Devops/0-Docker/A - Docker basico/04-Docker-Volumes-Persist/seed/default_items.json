@@ -1,0 +1,20 @@
+[
+  {
+    "sku": "CAB-001",
+    "name": "USB-C Cable",
+    "quantity": 20,
+    "location": "rack-a1"
+  },
+  {
+    "sku": "HUB-002",
+    "name": "USB Hub",
+    "quantity": 8,
+    "location": "rack-b3"
+  },
+  {
+    "sku": "SSD-003",
+    "name": "External SSD",
+    "quantity": 5,
+    "location": "vault-2"
+  }
+]

@@ -1,0 +1,23 @@
+services:
+  secure-audit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-security-nonroot-audit
+    environment:
+      APP_HOST: 0.0.0.0
+      APP_PORT: "3070"
+      APP_NAME: secure-nonroot-audit
+      APP_USER: appuser
+      APP_UID: "10001"
+      APP_GID: "10001"
+      WRITABLE_PATHS: /tmp
+    ports:
+      - "3070:3070"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

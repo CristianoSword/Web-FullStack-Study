@@ -1,0 +1,6 @@
+.git/
+.gitignore
+bin/
+coverage.out
+Dockerfile*
+README.md

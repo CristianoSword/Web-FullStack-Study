@@ -1,0 +1,7 @@
+{
+  "shipper": "promtail",
+  "storage": "loki",
+  "sources": [
+    "/var/lib/docker/containers/*/*-json.log"
+  ]
+}

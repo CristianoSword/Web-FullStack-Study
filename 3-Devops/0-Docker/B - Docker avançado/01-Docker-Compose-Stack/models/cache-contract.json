@@ -1,0 +1,6 @@
+{
+  "backend": "redis",
+  "key": "products:list",
+  "ttlSeconds": 45,
+  "invalidateOnWrite": true
+}

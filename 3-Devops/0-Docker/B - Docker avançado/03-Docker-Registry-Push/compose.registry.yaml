@@ -1,0 +1,15 @@
+services:
+  local-registry:
+    image: registry:2
+    container_name: docker-study-local-registry
+    ports:
+      - "5001:5000"
+    environment:
+      REGISTRY_HTTP_ADDR: 0.0.0.0:5000
+      REGISTRY_STORAGE_DELETE_ENABLED: "true"
+    volumes:
+      - ./config/registry/config.yml:/etc/docker/registry/config.yml:ro
+      - registry_data:/var/lib/registry
+
+volumes:
+  registry_data:

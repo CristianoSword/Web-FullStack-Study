@@ -1,0 +1,5 @@
+{
+  "capDrop": ["ALL"],
+  "securityOpt": ["no-new-privileges:true"],
+  "goal": "reduce default kernel capabilities for the application container"
+}
