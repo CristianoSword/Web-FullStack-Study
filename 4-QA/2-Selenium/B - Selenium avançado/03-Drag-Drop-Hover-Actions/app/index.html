@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Actions Lab</title>
+    <style>
+      #dropzone { width: 220px; height: 140px; border: 2px dashed #333; margin-top: 20px; padding: 10px; }
+      #drag-item { width: 100px; padding: 8px; background: #cfe2ff; cursor: grab; }
+      #menu-content { display: none; }
+      .hovered #menu-content { display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="menu">
+      <button id="menu-button">Hover me</button>
+      <div id="menu-content">Hover content visible</div>
+    </div>
+    <div id="drag-item" draggable="true">Lesson Card</div>
+    <div id="dropzone">Drop zone</div>
+    <script>
+      const menu = document.getElementById("menu");
+      menu.addEventListener("mouseenter", () => menu.classList.add("hovered"));
+      menu.addEventListener("mouseleave", () => menu.classList.remove("hovered"));
+
+      const dragItem = document.getElementById("drag-item");
+      const dropzone = document.getElementById("dropzone");
+
+      dragItem.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text/plain", "Lesson Card");
+      });
+
+      dropzone.addEventListener("dragover", (event) => event.preventDefault());
+      dropzone.addEventListener("drop", (event) => {
+        event.preventDefault();
+        dropzone.textContent = `Dropped: ${event.dataTransfer.getData("text/plain")}`;
+      });
+    </script>
+  </body>
+  </html>
