@@ -1,0 +1,11 @@
+{
+  "name": "vitest-component-testing-happy-dom",
+  "private": true,
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "happy-dom": "^15.11.7",
+    "vitest": "^2.1.2"
+  }
+}
