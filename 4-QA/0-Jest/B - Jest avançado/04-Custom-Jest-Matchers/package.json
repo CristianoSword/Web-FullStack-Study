@@ -1,0 +1,11 @@
+{
+  "name": "jest-custom-matchers-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --config jest.config.cjs"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
