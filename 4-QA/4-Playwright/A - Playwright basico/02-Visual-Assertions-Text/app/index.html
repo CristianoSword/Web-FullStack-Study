@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright Visual Assertions</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(135deg, #0f172a, #1d4ed8);
+        color: #e2e8f0;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .panel {
+        width: min(460px, calc(100vw - 32px));
+        background: rgba(15, 23, 42, 0.9);
+        border-radius: 20px;
+        padding: 28px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      }
+
+      label,
+      p,
+      small {
+        display: block;
+      }
+
+      input {
+        width: 100%;
+        margin-top: 8px;
+        margin-bottom: 14px;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid #334155;
+        box-sizing: border-box;
+      }
+
+      .inline {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .inline input {
+        width: auto;
+        margin: 0;
+      }
+
+      button {
+        width: 100%;
+        border: 0;
+        border-radius: 12px;
+        padding: 12px;
+        background: #38bdf8;
+        color: #0f172a;
+        font-weight: 700;
+        cursor: pointer;
+        margin-top: 12px;
+      }
+
+      [role="alert"] {
+        min-height: 24px;
+        color: #fca5a5;
+      }
+
+      .success {
+        color: #86efac;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="panel">
+      <h1>Acessar painel de estudos</h1>
+      <p>Preencha os dados para continuar a revisão de conteúdos.</p>
+      <small>Use o mesmo email cadastrado na trilha.</small>
+
+      <form id="login-form" novalidate>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="aluno@study.dev" />
+
+        <label for="password">Senha</label>
+        <input id="password" name="password" type="password" placeholder="Digite sua senha" />
+
+        <label class="inline" for="remember">
+          <input id="remember" name="remember" type="checkbox" />
+          <span>Salvar sessão neste dispositivo</span>
+        </label>
+
+        <div id="feedback" role="alert" aria-live="assertive"></div>
+        <button type="submit">Entrar</button>
+      </form>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
