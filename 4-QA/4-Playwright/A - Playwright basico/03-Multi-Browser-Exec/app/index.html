@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright Multi Browser</title>
+    <style>
+      body {
+        margin: 0;
+        background: #fffaf0;
+        color: #3f2d20;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      .browser-badge,
+      .module {
+        background: #ffffff;
+        border: 1px solid #f4d9b7;
+        border-radius: 18px;
+        padding: 16px;
+      }
+
+      .browser-badge {
+        display: inline-block;
+        margin-bottom: 18px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Execução multi-browser para o portal de estudos</h1>
+      <p id="browser-copy" class="browser-badge">Projeto atual: desconhecido</p>
+      <section class="grid" id="modules"></section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
