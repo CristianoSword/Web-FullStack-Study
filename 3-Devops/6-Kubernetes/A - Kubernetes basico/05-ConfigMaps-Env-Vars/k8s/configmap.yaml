@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-web-settings
+  namespace: study-config
+data:
+  APP_NAME: config-web
+  APP_ENV: local
+  LOG_LEVEL: debug
+  WELCOME_MESSAGE: hello-from-configmap

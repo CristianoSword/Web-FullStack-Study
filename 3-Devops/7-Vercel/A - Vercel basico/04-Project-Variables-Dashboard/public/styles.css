@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #fff4d6, #d9f0ff 70%);
+  color: #1f2d3d;
+}
+
+.shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 20px 72px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(31, 45, 61, 0.12);
+}

@@ -1,0 +1,7 @@
+{
+  "cachePath": "~/.npm",
+  "cacheKeyPrefix": "npm-cache",
+  "artifactName": "build-report",
+  "artifactPath": "dist/build-report.json",
+  "nodeVersion": "20"
+}

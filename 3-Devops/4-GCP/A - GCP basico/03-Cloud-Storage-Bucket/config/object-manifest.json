@@ -1,0 +1,17 @@
+[
+  {
+    "path": "public/banner.svg",
+    "contentType": "image/svg+xml",
+    "cacheControl": "public, max-age=86400"
+  },
+  {
+    "path": "private/reports/usage-2026-07.json",
+    "contentType": "application/json",
+    "cacheControl": "private, max-age=60"
+  },
+  {
+    "path": "logs/access-2026-07-01.log",
+    "contentType": "text/plain",
+    "cacheControl": "private, max-age=300"
+  }
+]

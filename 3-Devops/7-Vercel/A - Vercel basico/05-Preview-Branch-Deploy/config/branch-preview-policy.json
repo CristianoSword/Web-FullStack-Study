@@ -1,0 +1,8 @@
+{
+  "productionBranch": "main",
+  "previewBranches": [
+    "feature/*",
+    "bugfix/*",
+    "chore/*"
+  ]
+}

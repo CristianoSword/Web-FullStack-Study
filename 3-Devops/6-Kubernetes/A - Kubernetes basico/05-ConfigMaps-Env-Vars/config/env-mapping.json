@@ -1,0 +1,14 @@
+[
+  {
+    "envName": "APP_NAME",
+    "sourceKey": "APP_NAME"
+  },
+  {
+    "envName": "APP_ENV",
+    "sourceKey": "APP_ENV"
+  },
+  {
+    "envName": "WELCOME_MESSAGE",
+    "sourceKey": "WELCOME_MESSAGE"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "NODE_ENV": "staging",
+  "API_BASE_URL": "https://staging-api.example.com",
+  "FEATURE_FLAG": "true",
+  "LOG_LEVEL": "debug"
+}

@@ -1,0 +1,9 @@
+{
+  "globalHeaders": [
+    "X-Frame-Options: DENY",
+    "Referrer-Policy: strict-origin-when-cross-origin"
+  ],
+  "assetHeaders": [
+    "Cache-Control: public, max-age=31536000, immutable"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "workflowName": "Environment Variables Study",
+  "jobEnvironment": "development",
+  "variables": [
+    {
+      "name": "APP_ENV",
+      "scope": "job",
+      "exampleValue": "development"
+    },
+    {
+      "name": "API_BASE_URL",
+      "scope": "job",
+      "exampleValue": "https://api.study.local"
+    },
+    {
+      "name": "DEPLOY_NOTE",
+      "scope": "step",
+      "exampleValue": "preview-check"
+    }
+  ],
+  "secretName": "DEMO_TOKEN"
+}

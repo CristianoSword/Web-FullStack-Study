@@ -1,0 +1,47 @@
+name: Environment Variables Study
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+env:
+  APP_ENV: development
+  API_BASE_URL: https://api.study.local
+
+jobs:
+  inspect-env:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Print environment snapshot
+        id: env_snapshot
+        env:
+          DEPLOY_NOTE: preview-check
+          DEMO_TOKEN: ${{ secrets.DEMO_TOKEN }}
+        shell: bash
+        run: |
+          node scripts/print-environment.mjs
+          echo "api_url=${API_BASE_URL}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish environment summary
+        shell: bash
+        run: |
+          {
+            echo "## Environment Variables"
+            echo ""
+            echo "- APP_ENV: ${APP_ENV}"
+            echo "- API_BASE_URL: ${{ steps.env_snapshot.outputs.api_url }}"
+            echo "- Secret configured: ${{ secrets.DEMO_TOKEN != '' }}"
+          } >> "$GITHUB_STEP_SUMMARY"

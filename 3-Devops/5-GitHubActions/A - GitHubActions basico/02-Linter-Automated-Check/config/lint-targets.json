@@ -1,0 +1,10 @@
+{
+  "extensions": [".js"],
+  "include": [
+    "src/**/*.js",
+    "scripts/**/*.mjs",
+    "eslint.config.js"
+  ],
+  "severity": "error",
+  "nodeVersions": ["18", "20"]
+}

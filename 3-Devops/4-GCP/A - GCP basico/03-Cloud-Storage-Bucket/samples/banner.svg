@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <rect width="400" height="120" fill="#0f172a"/>
+  <circle cx="62" cy="60" r="24" fill="#34d399"/>
+  <text x="104" y="70" fill="#ffffff" font-size="28" font-family="Arial, sans-serif">study-assets-dev</text>
+</svg>

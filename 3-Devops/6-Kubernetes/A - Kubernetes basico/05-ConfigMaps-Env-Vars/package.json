@@ -1,0 +1,13 @@
+{
+  "name": "05-configmaps-env-vars-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "plan": "node src/main.js plan",
+    "configmap": "node src/main.js configmap",
+    "smoke": "node src/main.js smoke",
+    "test": "node src/test.js",
+    "check": "node scripts/validate-project.mjs"
+  }
+}

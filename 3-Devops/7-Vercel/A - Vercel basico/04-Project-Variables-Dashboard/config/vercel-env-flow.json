@@ -1,0 +1,9 @@
+{
+  "steps": [
+    "vercel env add NEXT_PUBLIC_APP_NAME",
+    "vercel env add NEXT_PUBLIC_STAGE",
+    "vercel env add API_BASE_URL",
+    "vercel env add INTERNAL_API_TOKEN",
+    "vercel env pull .env.local"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "loggedOut": {
+    "cliInstalled": true,
+    "authState": "login-required",
+    "nextStep": "Run heroku login and confirm the browser prompt."
+  },
+  "loggedIn": {
+    "cliInstalled": true,
+    "authState": "logged-in",
+    "verificationCommand": "heroku auth:whoami"
+  }
+}

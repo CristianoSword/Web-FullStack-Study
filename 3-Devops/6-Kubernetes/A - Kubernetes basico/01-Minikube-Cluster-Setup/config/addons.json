@@ -1,0 +1,14 @@
+[
+  {
+    "name": "ingress",
+    "purpose": "Expor servicos HTTP no cluster local."
+  },
+  {
+    "name": "metrics-server",
+    "purpose": "Permitir leitura de metricas e estudo de autoscaling."
+  },
+  {
+    "name": "dashboard",
+    "purpose": "Inspecionar recursos do cluster visualmente."
+  }
+]

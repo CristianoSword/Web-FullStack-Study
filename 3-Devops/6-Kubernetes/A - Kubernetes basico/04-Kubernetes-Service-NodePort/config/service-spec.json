@@ -1,0 +1,10 @@
+{
+  "namespace": "study-nodeport",
+  "appName": "nodeport-web",
+  "deploymentName": "nodeport-web-deployment",
+  "serviceName": "nodeport-web-service",
+  "image": "nginx:1.27-alpine",
+  "containerPort": 80,
+  "servicePort": 80,
+  "nodePort": 30082
+}

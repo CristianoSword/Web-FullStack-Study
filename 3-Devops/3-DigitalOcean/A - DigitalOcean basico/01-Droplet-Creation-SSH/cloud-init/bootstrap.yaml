@@ -1,0 +1,21 @@
+#cloud-config
+package_update: true
+packages:
+  - nginx
+  - fail2ban
+  - ufw
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <html>
+        <body>
+          <h1>study-web-01 ready</h1>
+          <p>Provisioned by cloud-init.</p>
+        </body>
+      </html>
+runcmd:
+  - systemctl enable nginx
+  - systemctl restart nginx
+  - ufw allow OpenSSH
+  - ufw allow 'Nginx Full'
+  - ufw --force enable

@@ -1,0 +1,6 @@
+[
+  "gcloud auth list",
+  "gcloud config list",
+  "gcloud projects describe study-platform-dev",
+  "gcloud compute zones list --filter=name=us-central1-a"
+]

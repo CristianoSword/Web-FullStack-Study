@@ -1,0 +1,17 @@
+[
+  {
+    "key": "APP_ENV",
+    "value": "production",
+    "scope": "RUN_TIME"
+  },
+  {
+    "key": "LOG_LEVEL",
+    "value": "info",
+    "scope": "RUN_TIME"
+  },
+  {
+    "key": "FEATURE_FLAG_SIGNUPS",
+    "value": "true",
+    "scope": "RUN_TIME"
+  }
+]

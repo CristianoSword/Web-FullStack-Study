@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  background: linear-gradient(180deg, #f7f4ea, #dfe7fd);
+  color: #1f2933;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 56px 20px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.74rem;
+}
+
+a {
+  color: #16425b;
+}

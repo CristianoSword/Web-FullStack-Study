@@ -1,0 +1,13 @@
+{
+  "name": "03-kubectl-commands-cheat-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "plan": "node src/main.js plan",
+    "cheat": "node src/main.js cheat",
+    "smoke": "node src/main.js smoke",
+    "test": "node src/test.js",
+    "check": "node scripts/validate-project.mjs"
+  }
+}

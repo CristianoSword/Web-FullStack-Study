@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/",
+    "/catalog",
+    "/progress"
+  ],
+  "fallback": "/index.html"
+}

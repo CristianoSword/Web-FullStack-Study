@@ -1,0 +1,7 @@
+{
+  "name": "study-laptop",
+  "fingerprint": "3b:44:55:66:77:88:99:aa:bb:cc:dd:ee:ff:00:11:22",
+  "publicKeyPath": "~/.ssh/study_ed25519.pub",
+  "privateKeyPath": "~/.ssh/study_ed25519",
+  "loginUser": "root"
+}

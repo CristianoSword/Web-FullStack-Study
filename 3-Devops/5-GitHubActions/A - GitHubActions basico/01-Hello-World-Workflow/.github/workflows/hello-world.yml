@@ -1,0 +1,53 @@
+name: Hello World Study Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      note:
+        description: Optional note to include in the greeting
+        required: false
+        default: manual-run
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Prepare workflow context
+        shell: bash
+        run: |
+          echo "ACTOR=${GITHUB_ACTOR}" >> "$GITHUB_ENV"
+          echo "EVENT_NAME=${GITHUB_EVENT_NAME}" >> "$GITHUB_ENV"
+          echo "REF_NAME=${GITHUB_REF_NAME}" >> "$GITHUB_ENV"
+          echo "NOTE=${{ github.event.inputs.note || 'auto-trigger' }}" >> "$GITHUB_ENV"
+
+      - name: Render greeting
+        run: node scripts/render-greeting.mjs
+
+      - name: Publish summary
+        shell: bash
+        run: |
+          {
+            echo "## Hello World Workflow"
+            echo ""
+            echo "- Actor: ${ACTOR}"
+            echo "- Event: ${EVENT_NAME}"
+            echo "- Ref: ${REF_NAME}"
+            echo "- Note: ${NOTE}"
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,12 @@
+{
+  "name": "03-github-actions-environment-variables-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "plan": "node src/main.js plan",
+    "summary": "node src/main.js summary",
+    "test": "node src/test.js",
+    "check": "node scripts/validate-workflow.mjs"
+  }
+}

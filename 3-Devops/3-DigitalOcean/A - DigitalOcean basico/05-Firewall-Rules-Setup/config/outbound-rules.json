@@ -1,0 +1,46 @@
+[
+  {
+    "protocol": "tcp",
+    "ports": "53",
+    "destinations": {
+      "addresses": [
+        "0.0.0.0/0",
+        "::/0"
+      ]
+    },
+    "description": "DNS over TCP"
+  },
+  {
+    "protocol": "udp",
+    "ports": "53",
+    "destinations": {
+      "addresses": [
+        "0.0.0.0/0",
+        "::/0"
+      ]
+    },
+    "description": "DNS over UDP"
+  },
+  {
+    "protocol": "tcp",
+    "ports": "80",
+    "destinations": {
+      "addresses": [
+        "0.0.0.0/0",
+        "::/0"
+      ]
+    },
+    "description": "OS updates and package downloads"
+  },
+  {
+    "protocol": "tcp",
+    "ports": "443",
+    "destinations": {
+      "addresses": [
+        "0.0.0.0/0",
+        "::/0"
+      ]
+    },
+    "description": "TLS egress"
+  }
+]

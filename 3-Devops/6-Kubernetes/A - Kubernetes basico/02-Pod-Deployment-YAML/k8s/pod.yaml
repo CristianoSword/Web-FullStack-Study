@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: study-nginx-pod
+  namespace: study-yaml
+  labels:
+    app: study-nginx
+    tier: web
+    managed-by: kubectl
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.27-alpine
+      ports:
+        - containerPort: 80
+      resources:
+        requests:
+          cpu: 50m
+          memory: 64Mi
+        limits:
+          cpu: 150m
+          memory: 128Mi

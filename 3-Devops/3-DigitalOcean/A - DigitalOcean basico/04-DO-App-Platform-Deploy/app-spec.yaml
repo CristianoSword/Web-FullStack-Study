@@ -1,0 +1,33 @@
+name: study-web-app
+region: nyc
+services:
+  - name: web
+    github:
+      repo: CristianoSword/Web-FullStack-Study
+      branch: main
+      deploy_on_push: true
+    source_dir: 3-Devops/3-DigitalOcean/A - DigitalOcean basico/04-DO-App-Platform-Deploy/app
+    environment_slug: node-js
+    instance_size_slug: basic-xxs
+    instance_count: 1
+    http_port: 8080
+    run_command: node server.js
+    build_command: npm install
+    routes:
+      - path: /
+    health_check:
+      http_path: /health
+      initial_delay_seconds: 10
+      period_seconds: 30
+    envs:
+      - key: APP_ENV
+        value: production
+      - key: PUBLIC_URL
+        value: ${APP_URL}
+ingress:
+  rules:
+    - component:
+        name: web
+      match:
+        path:
+          prefix: /

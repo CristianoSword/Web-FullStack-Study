@@ -1,0 +1,12 @@
+{
+  "projectId": "study-platform-dev",
+  "projectName": "Study Platform Dev",
+  "folderId": "123456789012",
+  "labels": {
+    "environment": "dev",
+    "owner": "study-team",
+    "cost_center": "training"
+  },
+  "defaultRegion": "us-central1",
+  "defaultZone": "us-central1-a"
+}

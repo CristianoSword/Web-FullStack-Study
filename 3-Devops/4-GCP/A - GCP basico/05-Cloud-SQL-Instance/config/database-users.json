@@ -1,0 +1,12 @@
+[
+  {
+    "name": "studyadmin",
+    "host": "%",
+    "role": "application-user"
+  },
+  {
+    "name": "readonly_dashboard",
+    "host": "%",
+    "role": "reporting-user"
+  }
+]

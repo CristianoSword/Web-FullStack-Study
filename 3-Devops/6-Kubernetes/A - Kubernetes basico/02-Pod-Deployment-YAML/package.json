@@ -1,0 +1,13 @@
+{
+  "name": "02-pod-deployment-yaml-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "plan": "node src/main.js plan",
+    "manifests": "node src/main.js manifests",
+    "smoke": "node src/main.js smoke",
+    "test": "node src/test.js",
+    "check": "node scripts/validate-project.mjs"
+  }
+}

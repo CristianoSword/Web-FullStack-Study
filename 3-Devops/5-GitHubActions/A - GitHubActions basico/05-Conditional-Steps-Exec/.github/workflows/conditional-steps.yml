@@ -1,0 +1,52 @@
+name: Conditional Steps Exec
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+    inputs:
+      run_tests:
+        description: Run validation tests
+        required: true
+        default: "true"
+      deploy_preview:
+        description: Deploy preview after validation
+        required: true
+        default: "false"
+
+jobs:
+  conditional-flow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Evaluate validation
+        id: validation
+        run: node scripts/evaluate-conditions.mjs
+
+      - name: Run tests
+        if: ${{ github.event.inputs.run_tests != 'false' }}
+        run: echo "Running tests because run_tests is enabled."
+
+      - name: Deploy preview
+        if: ${{ steps.validation.outputs.is_valid == 'true' && github.event.inputs.deploy_preview == 'true' }}
+        run: echo "Deploying preview because validation passed."
+
+      - name: Notify failure
+        if: ${{ failure() }}
+        run: echo "At least one step failed."
+
+      - name: Publish conditional summary
+        if: ${{ always() }}
+        shell: bash
+        run: |
+          {
+            echo "## Conditional Steps"
+            echo ""
+            echo "- Validation output: ${{ steps.validation.outputs.is_valid }}"
+            echo "- run_tests: ${{ github.event.inputs.run_tests || 'true' }}"
+            echo "- deploy_preview: ${{ github.event.inputs.deploy_preview || 'false' }}"
+          } >> "$GITHUB_STEP_SUMMARY"

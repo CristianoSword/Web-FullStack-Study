@@ -1,0 +1,15 @@
+[Unit]
+Description=Study Node app behind Nginx
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/study-app
+Environment=PORT=3001
+ExecStart=/usr/bin/node /opt/study-app/server.js
+Restart=always
+RestartSec=5
+User=www-data
+
+[Install]
+WantedBy=multi-user.target

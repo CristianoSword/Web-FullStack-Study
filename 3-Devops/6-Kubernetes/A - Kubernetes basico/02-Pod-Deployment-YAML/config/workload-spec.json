@@ -1,0 +1,9 @@
+{
+  "appName": "study-nginx",
+  "namespace": "study-yaml",
+  "image": "nginx:1.27-alpine",
+  "replicas": 2,
+  "containerPort": 80,
+  "servicePort": 80,
+  "nodePort": 30081
+}

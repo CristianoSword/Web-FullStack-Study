@@ -1,0 +1,5 @@
+{
+  "credentialSource": "application-default",
+  "quotaProject": "study-platform-dev",
+  "serviceAccount": "study-automation@study-platform-dev.iam.gserviceaccount.com"
+}

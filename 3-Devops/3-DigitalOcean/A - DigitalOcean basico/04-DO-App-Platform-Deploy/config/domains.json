@@ -1,0 +1,10 @@
+[
+  {
+    "hostname": "study-app.ondigitalocean.app",
+    "type": "default"
+  },
+  {
+    "hostname": "app.study.example.com",
+    "type": "custom"
+  }
+]

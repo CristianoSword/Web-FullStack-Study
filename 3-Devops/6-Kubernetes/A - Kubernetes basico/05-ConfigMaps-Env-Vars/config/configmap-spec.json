@@ -1,0 +1,14 @@
+{
+  "namespace": "study-config",
+  "appName": "config-web",
+  "configMapName": "config-web-settings",
+  "serviceName": "config-web-service",
+  "deploymentName": "config-web-deployment",
+  "image": "nginx:1.27-alpine",
+  "data": {
+    "APP_NAME": "config-web",
+    "APP_ENV": "local",
+    "LOG_LEVEL": "debug",
+    "WELCOME_MESSAGE": "hello-from-configmap"
+  }
+}

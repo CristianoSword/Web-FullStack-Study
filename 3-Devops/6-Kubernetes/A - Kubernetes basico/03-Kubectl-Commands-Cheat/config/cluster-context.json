@@ -1,0 +1,7 @@
+{
+  "namespace": "study-cheat",
+  "appName": "cheat-web",
+  "deploymentName": "cheat-web-deployment",
+  "serviceName": "cheat-web-service",
+  "labelSelector": "app=cheat-web"
+}

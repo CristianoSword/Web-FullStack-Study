@@ -1,0 +1,24 @@
+{
+  "variables": [
+    {
+      "name": "NEXT_PUBLIC_APP_NAME",
+      "scope": "public",
+      "environments": ["development", "preview", "production"]
+    },
+    {
+      "name": "NEXT_PUBLIC_STAGE",
+      "scope": "public",
+      "environments": ["development", "preview", "production"]
+    },
+    {
+      "name": "API_BASE_URL",
+      "scope": "server",
+      "environments": ["preview", "production"]
+    },
+    {
+      "name": "INTERNAL_API_TOKEN",
+      "scope": "secret",
+      "environments": ["preview", "production"]
+    }
+  ]
+}

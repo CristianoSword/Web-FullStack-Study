@@ -1,0 +1,6 @@
+[
+  "2026-07-01T13:15:20.100000+00:00 app[web.1]: request_id=2e11 status=200 latency_ms=34 message=homepage rendered",
+  "2026-07-01T13:15:20.250000+00:00 heroku[router]: at=info method=GET path=/ host=study-log-stream-app.herokuapp.com fwd=10.0.0.1 dyno=web.1 connect=1ms service=34ms status=200 bytes=512 protocol=https",
+  "2026-07-01T13:15:23.050000+00:00 app[worker.1]: job=sync-catalog state=started queue=default",
+  "2026-07-01T13:15:30.050000+00:00 app[worker.1]: job=sync-catalog state=finished duration_ms=7000"
+]

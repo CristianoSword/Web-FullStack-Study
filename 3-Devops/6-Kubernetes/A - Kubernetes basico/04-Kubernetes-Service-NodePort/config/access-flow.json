@@ -1,0 +1,6 @@
+{
+  "entrypoint": "NodePort",
+  "localCheck": "minikube service nodeport-web-service -n study-nodeport --url",
+  "expectedHttpStatus": 200,
+  "browserPath": "/"
+}

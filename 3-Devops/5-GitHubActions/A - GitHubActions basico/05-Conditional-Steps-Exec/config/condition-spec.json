@@ -1,0 +1,9 @@
+{
+  "workflowName": "Conditional Steps Exec",
+  "inputs": [
+    "run_tests",
+    "deploy_preview"
+  ],
+  "defaultBranch": "main",
+  "validationOutput": "is_valid"
+}

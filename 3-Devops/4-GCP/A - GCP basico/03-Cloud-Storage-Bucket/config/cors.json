@@ -1,0 +1,18 @@
+[
+  {
+    "origin": [
+      "https://study.example.com",
+      "http://localhost:3000"
+    ],
+    "method": [
+      "GET",
+      "HEAD",
+      "PUT"
+    ],
+    "responseHeader": [
+      "Content-Type",
+      "Cache-Control"
+    ],
+    "maxAgeSeconds": 3600
+  }
+]

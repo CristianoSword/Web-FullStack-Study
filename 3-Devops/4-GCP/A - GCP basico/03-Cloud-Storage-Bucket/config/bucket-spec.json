@@ -1,0 +1,9 @@
+{
+  "bucketName": "study-assets-dev",
+  "projectId": "study-platform-dev",
+  "location": "us-central1",
+  "storageClass": "STANDARD",
+  "uniformBucketLevelAccess": true,
+  "publicAccessPrevention": "inherited",
+  "versioning": true
+}

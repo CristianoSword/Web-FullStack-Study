@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: study-web-config
+  namespace: study-local
+data:
+  APP_NAME: minikube-study-web
+  APP_ENV: local

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heroku Simple Webapp Deploy</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        color: #e2e8f0;
+      }
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 48px 20px;
+      }
+      .card {
+        background: rgba(15, 23, 42, 0.82);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        border-radius: 18px;
+        padding: 20px;
+        margin-top: 18px;
+      }
+      code {
+        color: #facc15;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Heroku basic deployment lab</p>
+      <h1>__APP_NAME__</h1>
+      <div class="card">
+        <p>Environment: <code>__APP_ENV__</code></p>
+        <p>Published port: <code>__PORT__</code></p>
+      </div>
+      <div class="card">
+        <p>This static landing page is served by a Node HTTP server ready for a Heroku web dyno.</p>
+      </div>
+    </main>
+  </body>
+</html>

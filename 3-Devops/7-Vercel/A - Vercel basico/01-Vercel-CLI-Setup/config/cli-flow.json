@@ -1,0 +1,9 @@
+{
+  "steps": [
+    "vercel login",
+    "vercel link",
+    "vercel env pull .env.local",
+    "vercel dev"
+  ],
+  "localUrl": "http://localhost:3000/api/health"
+}

@@ -1,0 +1,9 @@
+{
+  "rules": [
+    {
+      "source": "/blog",
+      "destination": "/guides",
+      "permanent": true
+    }
+  ]
+}

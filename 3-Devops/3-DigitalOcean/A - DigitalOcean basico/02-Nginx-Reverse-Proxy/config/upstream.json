@@ -1,0 +1,12 @@
+{
+  "name": "study_app",
+  "targets": [
+    {
+      "host": "127.0.0.1",
+      "port": 3001,
+      "weight": 1
+    }
+  ],
+  "proxyReadTimeoutSeconds": 30,
+  "proxyConnectTimeoutSeconds": 5
+}

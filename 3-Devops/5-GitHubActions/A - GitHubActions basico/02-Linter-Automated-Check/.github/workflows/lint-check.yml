@@ -1,0 +1,43 @@
+name: Linter Automated Check
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Publish lint summary
+        shell: bash
+        run: |
+          {
+            echo "## Lint Results"
+            echo ""
+            echo "- Node version: ${{ matrix.node-version }}"
+            echo "- Command: npm run lint"
+            echo "- Targets: src/**/*.js, scripts/**/*.mjs, eslint.config.js"
+          } >> "$GITHUB_STEP_SUMMARY"

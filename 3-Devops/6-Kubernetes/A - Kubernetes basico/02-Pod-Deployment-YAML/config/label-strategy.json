@@ -1,0 +1,8 @@
+{
+  "app": "study-nginx",
+  "tier": "web",
+  "managedBy": "kubectl",
+  "selector": {
+    "app": "study-nginx"
+  }
+}

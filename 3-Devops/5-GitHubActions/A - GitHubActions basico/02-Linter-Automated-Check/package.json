@@ -1,0 +1,16 @@
+{
+  "name": "02-linter-automated-check-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "plan": "node src/main.js plan",
+    "report": "node src/main.js report",
+    "test": "node src/test.js",
+    "check": "node scripts/validate-workflow.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.0"
+  }
+}

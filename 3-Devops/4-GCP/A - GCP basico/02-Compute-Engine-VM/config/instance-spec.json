@@ -1,0 +1,13 @@
+{
+  "name": "study-web-01",
+  "machineType": "e2-medium",
+  "zone": "us-central1-a",
+  "imageFamily": "ubuntu-2404-lts-amd64",
+  "imageProject": "ubuntu-os-cloud",
+  "bootDiskGb": 20,
+  "networkTags": [
+    "study-web",
+    "http-server"
+  ],
+  "serviceAccount": "study-automation@study-platform-dev.iam.gserviceaccount.com"
+}

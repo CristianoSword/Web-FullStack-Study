@@ -1,0 +1,10 @@
+{
+  "tagNames": [
+    "study-web"
+  ],
+  "dropletNames": [
+    "study-web-01",
+    "study-web-02"
+  ],
+  "environment": "staging"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "study-web-allow-http",
+  "network": "default",
+  "direction": "INGRESS",
+  "priority": 1000,
+  "targetTags": [
+    "study-web"
+  ],
+  "allowed": [
+    {
+      "IPProtocol": "tcp",
+      "ports": [
+        "80",
+        "443"
+      ]
+    }
+  ],
+  "sourceRanges": [
+    "0.0.0.0/0"
+  ]
+}

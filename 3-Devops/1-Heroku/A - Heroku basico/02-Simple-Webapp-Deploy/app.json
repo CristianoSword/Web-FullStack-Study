@@ -1,0 +1,16 @@
+{
+  "name": "heroku-simple-webapp-deploy",
+  "description": "A minimal Heroku-ready Node web app for deployment practice.",
+  "repository": "https://example.invalid/heroku-simple-webapp-deploy",
+  "keywords": ["node", "heroku", "webapp"],
+  "env": {
+    "APP_NAME": {
+      "description": "Application name displayed by the landing page.",
+      "value": "heroku-simple-webapp-deploy"
+    },
+    "APP_ENV": {
+      "description": "Environment label shown in the status payload.",
+      "value": "production"
+    }
+  }
+}

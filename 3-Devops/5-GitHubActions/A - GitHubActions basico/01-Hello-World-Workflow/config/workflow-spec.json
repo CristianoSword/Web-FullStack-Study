@@ -1,0 +1,10 @@
+{
+  "workflowName": "hello-world-study",
+  "displayName": "Hello World Study Workflow",
+  "defaultBranches": [
+    "main",
+    "dev"
+  ],
+  "messageTemplate": "Hello {actor}, workflow triggered by {eventName} on {refName}.",
+  "nodeVersion": "20"
+}

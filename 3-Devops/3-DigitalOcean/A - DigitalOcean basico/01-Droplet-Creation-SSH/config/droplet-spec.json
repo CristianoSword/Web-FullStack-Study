@@ -1,0 +1,14 @@
+{
+  "name": "study-web-01",
+  "region": "nyc3",
+  "size": "s-1vcpu-1gb",
+  "image": "ubuntu-24-04-x64",
+  "ipv6": false,
+  "monitoring": true,
+  "backups": false,
+  "tags": [
+    "study-labs",
+    "droplet",
+    "ssh-bootstrap"
+  ]
+}

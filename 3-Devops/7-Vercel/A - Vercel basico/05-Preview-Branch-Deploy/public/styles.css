@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  background: linear-gradient(160deg, #eef7ff, #fff0db);
+  color: #20303c;
+}
+
+.shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.74rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 14px 34px rgba(32, 48, 60, 0.12);
+}

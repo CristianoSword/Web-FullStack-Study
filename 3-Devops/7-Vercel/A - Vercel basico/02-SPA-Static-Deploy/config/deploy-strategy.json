@@ -1,0 +1,6 @@
+{
+  "outputDirectory": "public",
+  "previewCommand": "vercel dev",
+  "productionCommand": "vercel deploy --prod",
+  "routingMode": "spa-fallback"
+}

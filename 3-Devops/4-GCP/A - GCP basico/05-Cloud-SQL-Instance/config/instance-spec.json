@@ -1,0 +1,11 @@
+{
+  "instanceName": "study-mysql-dev",
+  "databaseVersion": "MYSQL_8_0",
+  "region": "us-central1",
+  "tier": "db-custom-1-3840",
+  "availabilityType": "ZONAL",
+  "storageType": "SSD",
+  "storageGb": 20,
+  "deletionProtection": false,
+  "backupStartTime": "03:00"
+}

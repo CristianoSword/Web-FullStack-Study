@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" role="img" aria-label="Study Logo">
+  <rect width="220" height="80" rx="18" fill="#16425b"/>
+  <circle cx="52" cy="40" r="20" fill="#f7f4ea"/>
+  <text x="88" y="48" font-size="24" fill="#f7f4ea" font-family="Verdana, sans-serif">Study</text>
+</svg>
