@@ -1,0 +1,18 @@
+{
+  "name": "async-code-testing-lab",
+  "version": "1.0.0",
+  "description": "Testes Jest cobrindo código assíncrono: callbacks, Promises, async/await e rejeições.",
+  "private": true,
+  "scripts": {
+    "test": "jest --coverage",
+    "test:verbose": "jest --verbose"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 10000,
+    "collectCoverageFrom": ["src/**/*.js"]
+  }
+}
