@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Custom Commands</title>
+  </head>
+  <body>
+    <h1 data-cy="welcome-message">Guest session</h1>
+    <script>
+      const session = JSON.parse(localStorage.getItem("study-session") || "{}");
+      if (session.name) {
+        document.querySelector("[data-cy=welcome-message]").textContent = `Welcome ${session.name}`;
+      }
+    </script>
+  </body>
+  </html>
