@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Testing Integration</title>
+    <style>
+      body {
+        margin: 0;
+        background: #eff6ff;
+        color: #1e3a8a;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 12px;
+        padding: 10px 14px;
+        background: #2563eb;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      .grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 16px 40px rgba(37, 99, 235, 0.08);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Portal misto de API e UI</h1>
+      <div class="toolbar">
+        <p id="status">Aguardando atualização...</p>
+        <button type="button" id="refresh-button">Atualizar módulos</button>
+      </div>
+      <section id="module-grid" class="grid"></section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
