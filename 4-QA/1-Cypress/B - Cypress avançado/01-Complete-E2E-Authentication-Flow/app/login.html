@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+  </head>
+  <body>
+    <form id="login-form">
+      <input data-cy="login-email" placeholder="Email" />
+      <input data-cy="login-password" placeholder="Password" type="password" />
+      <button data-cy="login-submit" type="submit">Login</button>
+    </form>
+    <p data-cy="login-error"></p>
+    <script>
+      document.getElementById("login-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const savedUser = JSON.parse(localStorage.getItem("study-user") || "{}");
+        const email = document.querySelector("[data-cy=login-email]").value;
+        const password = document.querySelector("[data-cy=login-password]").value;
+        if (savedUser.email === email && savedUser.password === password) {
+          sessionStorage.setItem("study-session", JSON.stringify({ email }));
+          window.location.href = "/dashboard.html";
+          return;
+        }
+
+        document.querySelector("[data-cy=login-error]").textContent = "Invalid credentials";
+      });
+    </script>
+  </body>
+  </html>
