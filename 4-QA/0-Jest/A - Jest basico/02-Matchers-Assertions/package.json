@@ -1,0 +1,24 @@
+{
+  "name": "matchers-assertions-lab",
+  "version": "1.0.0",
+  "description": "Laboratório de matchers e asserções do Jest cobrindo tipos primitivos, arrays, objetos e erros.",
+  "private": true,
+  "scripts": {
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:verbose": "jest --verbose"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": ["src/**/*.js"],
+    "coverageThresholds": {
+      "global": {
+        "lines": 80,
+        "functions": 80
+      }
+    }
+  }
+}
