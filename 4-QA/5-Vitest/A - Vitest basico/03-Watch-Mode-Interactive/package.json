@@ -1,0 +1,13 @@
+{
+  "name": "vitest-watch-mode-interactive",
+  "private": true,
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^2.1.2",
+    "vitest": "^2.1.2"
+  }
+}
