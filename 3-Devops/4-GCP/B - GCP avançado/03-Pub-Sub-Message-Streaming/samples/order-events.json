@@ -1,0 +1,32 @@
+[
+  {
+    "eventId": "evt-1001",
+    "eventType": "order.created",
+    "occurredAt": "2026-07-01T10:00:00.000Z",
+    "order": {
+      "id": "ord-9001",
+      "customerId": "cus-101",
+      "amount": 129.9,
+      "currency": "BRL"
+    },
+    "attributes": {
+      "eventType": "order.created",
+      "channel": "analytics"
+    }
+  },
+  {
+    "eventId": "evt-1002",
+    "eventType": "order.paid",
+    "occurredAt": "2026-07-01T10:05:00.000Z",
+    "order": {
+      "id": "ord-9001",
+      "customerId": "cus-101",
+      "amount": 129.9,
+      "currency": "BRL"
+    },
+    "attributes": {
+      "eventType": "order.paid",
+      "channel": "payments"
+    }
+  }
+]

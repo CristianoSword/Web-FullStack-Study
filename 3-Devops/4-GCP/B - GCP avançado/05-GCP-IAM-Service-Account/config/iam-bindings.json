@@ -1,0 +1,17 @@
+[
+  {
+    "resource": "project",
+    "member": "serviceAccount:app-runtime@study-platform-dev.iam.gserviceaccount.com",
+    "role": "roles/logging.logWriter"
+  },
+  {
+    "resource": "project",
+    "member": "serviceAccount:app-runtime@study-platform-dev.iam.gserviceaccount.com",
+    "role": "roles/monitoring.metricWriter"
+  },
+  {
+    "resource": "bucket",
+    "member": "serviceAccount:app-runtime@study-platform-dev.iam.gserviceaccount.com",
+    "role": "roles/storage.objectViewer"
+  }
+]

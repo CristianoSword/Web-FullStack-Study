@@ -1,0 +1,16 @@
+{
+  "specversion": "1.0",
+  "id": "evt-storage-1001",
+  "source": "//storage.googleapis.com/projects/_/buckets/study-upload-bucket",
+  "type": "google.cloud.storage.object.v1.finalized",
+  "time": "2026-07-01T11:00:00.000Z",
+  "data": {
+    "bucket": "study-upload-bucket",
+    "name": "images/profile-1001.png",
+    "contentType": "image/png",
+    "size": "48291",
+    "generation": "1723456789012345",
+    "metageneration": "1",
+    "timeCreated": "2026-07-01T10:59:58.000Z"
+  }
+}

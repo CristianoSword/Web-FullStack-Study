@@ -1,0 +1,19 @@
+{
+  "pullSubscription": {
+    "name": "order-events-pull",
+    "ackDeadlineSeconds": 30,
+    "filter": "attributes.eventType = \"order.created\" OR attributes.eventType = \"order.paid\"",
+    "maxDeliveryAttempts": 5,
+    "deadLetterTopic": "order-events-dead-letter",
+    "retryPolicy": {
+      "minimumBackoff": "10s",
+      "maximumBackoff": "300s"
+    }
+  },
+  "analyticsSubscription": {
+    "name": "order-events-analytics",
+    "ackDeadlineSeconds": 20,
+    "filter": "attributes.channel = \"analytics\"",
+    "retainAckedMessages": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "gkeNamespace": "study-gke",
+  "kubernetesServiceAccount": "study-api",
+  "googleServiceAccount": "app-runtime@study-platform-dev.iam.gserviceaccount.com",
+  "member": "serviceAccount:study-platform-dev.svc.id.goog[study-gke/study-api]",
+  "role": "roles/iam.workloadIdentityUser"
+}

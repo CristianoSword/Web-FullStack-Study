@@ -1,0 +1,11 @@
+{
+  "bucket": "study-upload-bucket",
+  "eventType": "google.cloud.storage.object.v1.finalized",
+  "retry": true,
+  "eventFilters": [
+    {
+      "attribute": "bucket",
+      "value": "study-upload-bucket"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: study-api-service
+  namespace: study-gke
+spec:
+  selector:
+    app: study-api
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  type: ClusterIP

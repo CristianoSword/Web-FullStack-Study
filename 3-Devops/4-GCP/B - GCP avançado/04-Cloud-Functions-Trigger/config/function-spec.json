@@ -1,0 +1,14 @@
+{
+  "projectId": "study-platform-dev",
+  "region": "us-central1",
+  "functionName": "storage-image-metadata",
+  "runtime": "nodejs20",
+  "entryPoint": "handleStorageUpload",
+  "memory": "512Mi",
+  "timeoutSeconds": 120,
+  "serviceAccount": "cloud-functions-study@study-platform-dev.iam.gserviceaccount.com",
+  "environmentVariables": {
+    "LOG_LEVEL": "info",
+    "TARGET_PREFIX": "images/"
+  }
+}

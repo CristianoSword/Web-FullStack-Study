@@ -1,0 +1,12 @@
+{
+  "serviceName": "study-cloud-run",
+  "projectId": "study-platform-dev",
+  "region": "us-central1",
+  "containerImage": "us-central1-docker.pkg.dev/study-platform-dev/study-registry/study-cloud-run:latest",
+  "cpu": "1",
+  "memory": "512Mi",
+  "concurrency": 40,
+  "minInstances": 0,
+  "maxInstances": 5,
+  "ingress": "all"
+}

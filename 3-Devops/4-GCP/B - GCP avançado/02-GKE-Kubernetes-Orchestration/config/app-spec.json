@@ -1,0 +1,25 @@
+{
+  "namespace": "study-gke",
+  "deploymentName": "study-api",
+  "serviceName": "study-api-service",
+  "ingressName": "study-api-ingress",
+  "hpaName": "study-api-hpa",
+  "configMapName": "study-api-config",
+  "secretName": "study-api-secret",
+  "host": "study-api.example.com",
+  "containerImage": "us-central1-docker.pkg.dev/study-platform-dev/study-registry/study-api:1.0.0",
+  "replicas": 3,
+  "port": 8080,
+  "targetPort": 8080,
+  "minReplicas": 2,
+  "maxReplicas": 6,
+  "targetCpuUtilization": 65,
+  "requests": {
+    "cpu": "250m",
+    "memory": "256Mi"
+  },
+  "limits": {
+    "cpu": "500m",
+    "memory": "512Mi"
+  }
+}

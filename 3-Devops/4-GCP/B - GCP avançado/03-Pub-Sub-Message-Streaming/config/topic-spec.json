@@ -1,0 +1,12 @@
+{
+  "projectId": "study-platform-dev",
+  "topicName": "order-events",
+  "deadLetterTopic": "order-events-dead-letter",
+  "schemaName": "order-event-v1",
+  "schemaType": "JSON",
+  "messageRetentionDuration": "604800s",
+  "labels": {
+    "domain": "orders",
+    "env": "study"
+  }
+}

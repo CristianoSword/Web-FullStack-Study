@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: study-api
+  namespace: study-gke
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: study-api
+  template:
+    metadata:
+      labels:
+        app: study-api
+    spec:
+      serviceAccountName: default
+      containers:
+        - name: study-api
+          image: us-central1-docker.pkg.dev/study-platform-dev/study-registry/study-api:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: study-api-config
+            - secretRef:
+                name: study-api-secret
+          resources:
+            requests:
+              cpu: 250m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 15
