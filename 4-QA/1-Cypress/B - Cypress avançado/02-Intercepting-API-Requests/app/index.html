@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Intercept API Requests</title>
+  </head>
+  <body>
+    <button data-cy="load-button">Load lessons</button>
+    <ul data-cy="lessons"></ul>
+    <script>
+      document.querySelector("[data-cy=load-button]").addEventListener("click", async () => {
+        const response = await fetch("/api/lessons");
+        const payload = await response.json();
+        document.querySelector("[data-cy=lessons]").innerHTML = payload.items
+          .map((item) => `<li>${item.title}</li>`)
+          .join("");
+      });
+    </script>
+  </body>
+  </html>
