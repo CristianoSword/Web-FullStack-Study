@@ -1,0 +1,12 @@
+{
+  "name": "vitest-in-source-testing-build",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8",
+    "vitest": "^2.1.2"
+  }
+}
