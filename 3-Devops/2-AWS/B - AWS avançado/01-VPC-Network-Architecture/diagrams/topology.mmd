@@ -1,0 +1,9 @@
+flowchart LR
+  Internet["Internet"] --> IGW["Internet Gateway"]
+  IGW --> PublicRT["Public Route Table"]
+  PublicRT --> PublicA["Public Subnet A"]
+  PublicRT --> PublicB["Public Subnet B"]
+  PublicA --> NAT["NAT Gateway"]
+  NAT --> PrivateRT["Private Route Table"]
+  PrivateRT --> PrivateA["Private Subnet A"]
+  PrivateRT --> PrivateB["Private Subnet B"]

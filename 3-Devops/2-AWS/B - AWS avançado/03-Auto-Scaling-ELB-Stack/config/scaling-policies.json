@@ -1,0 +1,20 @@
+[
+  {
+    "name": "cpu-target-tracking",
+    "metric": "ASGAverageCPUUtilization",
+    "targetValue": 55,
+    "cooldownSeconds": 120
+  },
+  {
+    "name": "requests-per-target",
+    "metric": "ALBRequestCountPerTarget",
+    "targetValue": 800,
+    "cooldownSeconds": 90
+  },
+  {
+    "name": "scale-in-protection-window",
+    "metric": "RequestDrainTime",
+    "targetValue": 300,
+    "cooldownSeconds": 300
+  }
+]

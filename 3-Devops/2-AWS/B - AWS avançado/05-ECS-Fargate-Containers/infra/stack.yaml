@@ -1,0 +1,119 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Study ECS Fargate service with ECR, ALB and auto scaling.
+
+Parameters:
+  VpcId:
+    Type: String
+    Default: vpc-123example
+  PrivateSubnetA:
+    Type: String
+    Default: subnet-private-a
+  PrivateSubnetB:
+    Type: String
+    Default: subnet-private-b
+  AlbSecurityGroup:
+    Type: String
+    Default: sg-alb-example
+  ServiceSecurityGroup:
+    Type: String
+    Default: sg-fargate-example
+
+Resources:
+  Repository:
+    Type: AWS::ECR::Repository
+    Properties:
+      RepositoryName: study-orders-api
+
+  Cluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: study-fargate-cluster
+
+  LogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: /ecs/study-orders
+      RetentionInDays: 14
+
+  TaskExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ecs-tasks.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+
+  TaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: study-orders-task
+      RequiresCompatibilities:
+        - FARGATE
+      NetworkMode: awsvpc
+      Cpu: '512'
+      Memory: '1024'
+      ExecutionRoleArn: !GetAtt TaskExecutionRole.Arn
+      ContainerDefinitions:
+        - Name: study-orders-api
+          Image: !Sub "${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/study-orders-api:latest"
+          PortMappings:
+            - ContainerPort: 8080
+          Essential: true
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: /ecs/study-orders
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: ecs
+          HealthCheck:
+            Command:
+              - CMD-SHELL
+              - "wget -qO- http://localhost:8080/health || exit 1"
+            Interval: 30
+            Timeout: 5
+            Retries: 3
+
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: study-orders-tg
+      Port: 8080
+      Protocol: HTTP
+      TargetType: ip
+      VpcId: !Ref VpcId
+      HealthCheckPath: /health
+
+  Service:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: !Ref Cluster
+      DesiredCount: 2
+      LaunchType: FARGATE
+      PlatformVersion: 1.4.0
+      ServiceName: study-orders-service
+      TaskDefinition: !Ref TaskDefinition
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          AssignPublicIp: DISABLED
+          SecurityGroups:
+            - !Ref ServiceSecurityGroup
+          Subnets:
+            - !Ref PrivateSubnetA
+            - !Ref PrivateSubnetB
+      LoadBalancers:
+        - ContainerName: study-orders-api
+          ContainerPort: 8080
+          TargetGroupArn: !Ref TargetGroup
+
+Outputs:
+  ClusterName:
+    Value: !Ref Cluster
+  RepositoryUri:
+    Value: !GetAtt Repository.RepositoryUri

@@ -1,0 +1,13 @@
+{
+  "vpcId": "vpc-123example",
+  "publicSubnets": [
+    "subnet-public-a",
+    "subnet-public-b"
+  ],
+  "privateSubnets": [
+    "subnet-private-a",
+    "subnet-private-b"
+  ],
+  "securityGroupId": "sg-fargate-example",
+  "assignPublicIp": false
+}

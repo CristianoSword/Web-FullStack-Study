@@ -1,0 +1,14 @@
+{
+  "version": "2.0",
+  "routeKey": "GET /orders",
+  "rawPath": "/orders",
+  "queryStringParameters": {
+    "status": "PENDING"
+  },
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/orders"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "internetGatewayRoute": {
+    "destination": "0.0.0.0/0",
+    "target": "igw"
+  },
+  "natGatewayRoute": {
+    "destination": "0.0.0.0/0",
+    "target": "nat"
+  }
+}

@@ -1,0 +1,100 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Study ALB plus Auto Scaling stack.
+
+Parameters:
+  AmiId:
+    Type: String
+    Default: ami-1234567890abcdef0
+  InstanceType:
+    Type: String
+    Default: t3.micro
+
+Resources:
+  ApplicationLoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Name: study-public-alb
+      Scheme: internet-facing
+      Type: application
+      SecurityGroups:
+        - sg-alb-example
+      Subnets:
+        - subnet-public-a
+        - subnet-public-b
+
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      Name: study-api-targets
+      Port: 8080
+      Protocol: HTTP
+      HealthCheckPath: /health
+      HealthCheckProtocol: HTTP
+      Matcher:
+        HttpCode: '200'
+      TargetType: instance
+      VpcId: vpc-123example
+
+  HttpsListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref ApplicationLoadBalancer
+      Port: 443
+      Protocol: HTTPS
+      Certificates:
+        - CertificateArn: arn:aws:acm:us-east-1:111111111111:certificate/example
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: !Ref TargetGroup
+
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateName: study-api-launch-template
+      LaunchTemplateData:
+        ImageId: !Ref AmiId
+        InstanceType: !Ref InstanceType
+        SecurityGroupIds:
+          - sg-app-example
+        UserData: IyEvYmluL2Jhc2gKZWNobyAic3RhcnQgYXBwIiA+IC90bXAvYm9vdHN0cmFwLmxvZw==
+
+  AutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    Properties:
+      AutoScalingGroupName: study-api-asg
+      DesiredCapacity: '2'
+      MinSize: '2'
+      MaxSize: '6'
+      VPCZoneIdentifier:
+        - subnet-private-a
+        - subnet-private-b
+      TargetGroupARNs:
+        - !Ref TargetGroup
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+
+  CpuScaleOutPolicy:
+    Type: AWS::AutoScaling::ScalingPolicy
+    Properties:
+      AutoScalingGroupName: !Ref AutoScalingGroup
+      PolicyType: TargetTrackingScaling
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization
+        TargetValue: 55
+
+  RequestScaleOutPolicy:
+    Type: AWS::AutoScaling::ScalingPolicy
+    Properties:
+      AutoScalingGroupName: !Ref AutoScalingGroup
+      PolicyType: TargetTrackingScaling
+      TargetTrackingConfiguration:
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ALBRequestCountPerTarget
+          ResourceLabel: app/study-public-alb/targetgroup/study-api-targets
+        TargetValue: 800
+
+Outputs:
+  LoadBalancerDNS:
+    Value: !GetAtt ApplicationLoadBalancer.DNSName

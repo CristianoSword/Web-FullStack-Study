@@ -1,0 +1,8 @@
+{
+  "cpuTarget": 60,
+  "memoryTarget": 70,
+  "minTasks": 2,
+  "maxTasks": 6,
+  "scaleInCooldownSeconds": 120,
+  "scaleOutCooldownSeconds": 90
+}

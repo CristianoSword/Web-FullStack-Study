@@ -1,0 +1,15 @@
+{
+  "instanceType": "t3.micro",
+  "desiredCapacity": 2,
+  "minSize": 2,
+  "maxSize": 6,
+  "privateSubnets": [
+    "subnet-private-a",
+    "subnet-private-b"
+  ],
+  "publicSubnets": [
+    "subnet-public-a",
+    "subnet-public-b"
+  ],
+  "healthCheckPath": "/health"
+}

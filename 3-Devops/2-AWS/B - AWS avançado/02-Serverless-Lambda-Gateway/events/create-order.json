@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "routeKey": "POST /orders",
+  "rawPath": "/orders",
+  "requestContext": {
+    "http": {
+      "method": "POST",
+      "path": "/orders"
+    }
+  },
+  "body": "{\"customerId\":\"cust-100\",\"currency\":\"BRL\",\"items\":[{\"sku\":\"book-clean-code\",\"quantity\":1,\"price\":79.9},{\"sku\":\"book-ddd\",\"quantity\":2,\"price\":112.5}]}",
+  "isBase64Encoded": false
+}

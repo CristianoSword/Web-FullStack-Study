@@ -1,0 +1,94 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Study serverless stack with Lambda, API Gateway HTTP API and DynamoDB.
+
+Globals:
+  Function:
+    Runtime: nodejs20.x
+    Timeout: 15
+    MemorySize: 256
+    Environment:
+      Variables:
+        AWS_STAGE: !Ref StageName
+        ORDERS_TABLE: !Ref OrdersTable
+
+Parameters:
+  StageName:
+    Type: String
+    Default: dev
+
+Resources:
+  OrdersApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref StageName
+
+  OrdersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: study-orders
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+        - AttributeName: sk
+          AttributeType: S
+        - AttributeName: gsi1pk
+          AttributeType: S
+        - AttributeName: gsi1sk
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+        - AttributeName: sk
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: gsi1-status-createdAt
+          KeySchema:
+            - AttributeName: gsi1pk
+              KeyType: HASH
+            - AttributeName: gsi1sk
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      TimeToLiveSpecification:
+        AttributeName: expiresAt
+        Enabled: true
+
+  CreateOrderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ..
+      Handler: src/lambda/create-order.handler
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref OrdersTable
+      Events:
+        CreateOrder:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref OrdersApi
+            Method: POST
+            Path: /orders
+
+  ListOrdersFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ..
+      Handler: src/lambda/list-orders.handler
+      Policies:
+        - DynamoDBReadPolicy:
+            TableName: !Ref OrdersTable
+      Events:
+        ListOrders:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref OrdersApi
+            Method: GET
+            Path: /orders
+
+Outputs:
+  ApiUrl:
+    Value: !Sub "https://${OrdersApi}.execute-api.${AWS::Region}.amazonaws.com/${StageName}"
+  OrdersTableName:
+    Value: !Ref OrdersTable

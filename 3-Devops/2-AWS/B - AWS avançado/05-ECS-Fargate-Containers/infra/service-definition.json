@@ -1,0 +1,25 @@
+{
+  "serviceName": "study-orders-service",
+  "cluster": "study-fargate-cluster",
+  "launchType": "FARGATE",
+  "desiredCount": 2,
+  "platformVersion": "1.4.0",
+  "deploymentConfiguration": {
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 50
+  },
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": ["subnet-private-a", "subnet-private-b"],
+      "securityGroups": ["sg-fargate-example"],
+      "assignPublicIp": "DISABLED"
+    }
+  },
+  "loadBalancers": [
+    {
+      "targetGroupArn": "<target-group-arn>",
+      "containerName": "study-orders-api",
+      "containerPort": 8080
+    }
+  ]
+}

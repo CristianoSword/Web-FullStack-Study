@@ -1,0 +1,16 @@
+[
+  {
+    "name": "CreateOrder",
+    "method": "POST",
+    "path": "/orders",
+    "handler": "src/lambda/create-order.handler",
+    "auth": "NONE"
+  },
+  {
+    "name": "ListOrders",
+    "method": "GET",
+    "path": "/orders",
+    "handler": "src/lambda/list-orders.handler",
+    "auth": "NONE"
+  }
+]
