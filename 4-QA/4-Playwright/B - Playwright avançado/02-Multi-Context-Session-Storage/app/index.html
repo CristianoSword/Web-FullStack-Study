@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Context Session Storage</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #111827;
+        color: #f9fafb;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .panel {
+        width: min(520px, calc(100vw - 32px));
+        background: #1f2937;
+        border-radius: 20px;
+        padding: 28px;
+      }
+
+      label,
+      select,
+      input {
+        display: block;
+        width: 100%;
+      }
+
+      input,
+      select {
+        margin-top: 8px;
+        margin-bottom: 14px;
+        padding: 12px;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+      }
+
+      button {
+        border: 0;
+        border-radius: 12px;
+        padding: 10px 14px;
+        background: #10b981;
+        color: #052e16;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="panel">
+      <form id="login-form">
+        <h1>Entrar no workspace</h1>
+        <label for="user-name">Nome</label>
+        <input id="user-name" name="userName" type="text" placeholder="Seu nome" />
+
+        <label for="track">Trilha</label>
+        <select id="track" name="track">
+          <option value="BackEnd">BackEnd</option>
+          <option value="QA">QA</option>
+          <option value="DevOps">DevOps</option>
+        </select>
+
+        <button type="submit">Salvar sessão</button>
+      </form>
+
+      <section id="dashboard" class="hidden">
+        <h1 id="welcome"></h1>
+        <p id="selected-track"></p>
+        <button type="button" id="logout">Encerrar sessão</button>
+      </section>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
