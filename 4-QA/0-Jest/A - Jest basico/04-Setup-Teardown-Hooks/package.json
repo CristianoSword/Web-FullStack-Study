@@ -1,0 +1,12 @@
+{
+  "name": "setup-teardown-hooks-lab",
+  "version": "1.0.0",
+  "description": "Laboratório de hooks de ciclo de vida Jest: beforeAll, afterAll, beforeEach, afterEach.",
+  "private": true,
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
