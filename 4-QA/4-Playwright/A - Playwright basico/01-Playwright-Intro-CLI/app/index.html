@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright Intro CLI</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #f6f8fb;
+        color: #17324d;
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 20px 0 24px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 999px;
+        padding: 10px 16px;
+        background: #dfe8f3;
+        color: #17324d;
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      button.active {
+        background: #17324d;
+        color: #ffffff;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 18px;
+      }
+
+      .cards {
+        display: grid;
+        gap: 14px;
+      }
+
+      .card,
+      aside {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 10px 24px rgba(23, 50, 77, 0.08);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .badge {
+        border-radius: 999px;
+        background: #edf4ff;
+        padding: 4px 10px;
+        font-size: 12px;
+      }
+
+      .muted {
+        color: #58738f;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="badge">Playwright CLI + Codegen</span>
+      <h1>Catálogo de trilhas para gravar fluxos com Codegen</h1>
+      <p class="muted">
+        Este app local foi montado para praticar navegação, clique em filtros e
+        captura de seletores com o Playwright.
+      </p>
+
+      <div class="toolbar" aria-label="Filtros de trilhas">
+        <button type="button" data-filter="all" class="active">Todas</button>
+        <button type="button" data-filter="frontend">Frontend</button>
+        <button type="button" data-filter="backend">BackEnd</button>
+        <button type="button" data-filter="qa">QA</button>
+      </div>
+
+      <section class="layout">
+        <div id="catalog" class="cards" aria-live="polite"></div>
+        <aside aria-labelledby="details-title">
+          <h2 id="details-title">Detalhes da trilha</h2>
+          <p id="details-name"><strong>Selecione uma trilha</strong></p>
+          <p id="details-focus" class="muted"></p>
+          <p id="details-lessons"></p>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
