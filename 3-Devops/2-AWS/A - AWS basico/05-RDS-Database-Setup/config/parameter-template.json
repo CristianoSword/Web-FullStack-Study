@@ -1,0 +1,6 @@
+{
+  "backupRetentionPeriodDays": 7,
+  "multiAz": false,
+  "deletionProtection": false,
+  "storageEncrypted": true
+}

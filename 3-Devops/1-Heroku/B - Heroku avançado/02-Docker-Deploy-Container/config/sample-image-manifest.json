@@ -1,0 +1,7 @@
+{
+  "registry": "registry.heroku.com",
+  "appName": "study-container-web",
+  "processType": "web",
+  "imageName": "registry.heroku.com/study-container-web/web",
+  "tag": "v1.0.0"
+}

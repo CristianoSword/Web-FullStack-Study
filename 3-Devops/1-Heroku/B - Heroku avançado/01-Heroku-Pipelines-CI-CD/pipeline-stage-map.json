@@ -1,0 +1,16 @@
+{
+  "stages": [
+    {
+      "name": "review",
+      "goal": "temporary app per pull request"
+    },
+    {
+      "name": "staging",
+      "goal": "integration validation before production"
+    },
+    {
+      "name": "production",
+      "goal": "customer-facing release"
+    }
+  ]
+}

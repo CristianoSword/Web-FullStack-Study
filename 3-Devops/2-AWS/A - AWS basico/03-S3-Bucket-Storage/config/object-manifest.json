@@ -1,0 +1,14 @@
+{
+  "objects": [
+    {
+      "key": "index.html",
+      "contentType": "text/html",
+      "source": "public/index.html"
+    },
+    {
+      "key": "assets/app.css",
+      "contentType": "text/css",
+      "source": "public/assets/app.css"
+    }
+  ]
+}

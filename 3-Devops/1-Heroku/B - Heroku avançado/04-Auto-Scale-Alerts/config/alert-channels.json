@@ -1,0 +1,16 @@
+{
+  "channels": [
+    {
+      "name": "pagerduty",
+      "purpose": "critical incidents"
+    },
+    {
+      "name": "slack-ops",
+      "purpose": "operational visibility"
+    },
+    {
+      "name": "email-oncall",
+      "purpose": "fallback delivery"
+    }
+  ]
+}

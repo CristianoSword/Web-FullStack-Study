@@ -1,0 +1,14 @@
+{
+  "records": [
+    {
+      "type": "CNAME",
+      "host": "app.example.com",
+      "target": "whispering-willow-1234.herokudns.com"
+    },
+    {
+      "type": "ALIAS",
+      "host": "example.com",
+      "target": "example-root.herokudns.com"
+    }
+  ]
+}

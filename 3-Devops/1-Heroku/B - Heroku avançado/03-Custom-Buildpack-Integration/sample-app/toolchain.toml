@@ -1,0 +1,6 @@
+[toolchain]
+name = "wasmtoy"
+version = "1.0.0"
+
+[build]
+entry = "src/index.js"

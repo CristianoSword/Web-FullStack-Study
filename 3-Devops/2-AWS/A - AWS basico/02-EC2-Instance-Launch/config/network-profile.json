@@ -1,0 +1,16 @@
+{
+  "ingress": [
+    {
+      "protocol": "tcp",
+      "port": 22,
+      "cidr": "0.0.0.0/0",
+      "purpose": "ssh access"
+    },
+    {
+      "protocol": "tcp",
+      "port": 80,
+      "cidr": "0.0.0.0/0",
+      "purpose": "http bootstrap check"
+    }
+  ]
+}

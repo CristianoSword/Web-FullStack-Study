@@ -1,0 +1,13 @@
+{
+  "subnetGroup": "study-rds-subnet-group",
+  "securityGroup": "study-rds-sg",
+  "ingress": [
+    {
+      "protocol": "tcp",
+      "port": 3306,
+      "source": "10.0.10.0/24",
+      "purpose": "application subnet access"
+    }
+  ],
+  "publiclyAccessible": false
+}

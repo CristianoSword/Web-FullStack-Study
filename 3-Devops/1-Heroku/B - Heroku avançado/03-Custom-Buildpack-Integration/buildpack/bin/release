@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cat <<'EOF'
+---
+config_vars:
+  WASMTOY_HOME: /app/vendor/wasmtoy
+default_process_types:
+  web: node src/index.js
+EOF

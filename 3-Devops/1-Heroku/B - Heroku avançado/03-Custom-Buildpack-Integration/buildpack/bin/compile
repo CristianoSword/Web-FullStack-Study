@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BUILD_DIR="$1"
+CACHE_DIR="$2"
+ENV_DIR="$3"
+
+mkdir -p "$BUILD_DIR/.profile.d"
+mkdir -p "$BUILD_DIR/vendor/wasmtoy/bin"
+
+cp "$(dirname "$0")/../vendor/wasmtoy" "$BUILD_DIR/vendor/wasmtoy/bin/wasmtoy"
+chmod +x "$BUILD_DIR/vendor/wasmtoy/bin/wasmtoy"
+
+cat > "$BUILD_DIR/.profile.d/wasmtoy.sh" <<'EOF'
+export PATH="$HOME/vendor/wasmtoy/bin:$PATH"
+export WASMTOY_HOME="$HOME/vendor/wasmtoy"
+EOF
+
+echo "Custom buildpack installed wasmtoy toolchain."

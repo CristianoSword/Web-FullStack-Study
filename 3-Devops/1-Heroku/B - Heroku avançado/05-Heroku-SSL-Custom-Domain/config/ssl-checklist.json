@@ -1,0 +1,9 @@
+{
+  "steps": [
+    "Add the custom domain to the Heroku app.",
+    "Create the DNS record pointing to the Heroku DNS target.",
+    "Enable Automated Certificate Management.",
+    "Wait for the certificate to be issued.",
+    "Verify HTTPS redirect and certificate chain."
+  ]
+}

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BUILD_DIR="$1"
+
+if [[ -f "$BUILD_DIR/toolchain.toml" ]]; then
+  echo "wasmtoy-buildpack"
+  exit 0
+fi
+
+exit 1
