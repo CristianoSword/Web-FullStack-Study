@@ -1,0 +1,11 @@
+{
+  "name": "selenium-browser-drivers-setup-lab",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "^4.22.0"
+  }
+}
