@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Actions</title>
+  </head>
+  <body>
+    <form id="signup-form">
+      <input data-cy="name-input" placeholder="Name" />
+      <input data-cy="email-input" placeholder="Email" />
+      <button data-cy="submit-button" type="submit">Submit</button>
+    </form>
+    <p data-cy="result"></p>
+    <script>
+      const form = document.getElementById("signup-form");
+      const result = document.querySelector("[data-cy=result]");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const name = document.querySelector("[data-cy=name-input]").value;
+        const email = document.querySelector("[data-cy=email-input]").value;
+        result.textContent = `Saved ${name} <${email}>`;
+      });
+    </script>
+  </body>
+  </html>
