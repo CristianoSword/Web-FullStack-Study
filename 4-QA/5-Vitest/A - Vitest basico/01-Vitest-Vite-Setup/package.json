@@ -1,0 +1,13 @@
+{
+  "name": "vitest-vite-setup",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8",
+    "vitest": "^2.1.2"
+  }
+}
