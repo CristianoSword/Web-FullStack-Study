@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="scroll.js"></script>
+
+    <title>Scroll ex</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Logo</h1>
+
+        <nav class="navbar">
+            <ul class="navbar__list">
+                <li class="navbar__item">
+                    <button class="navbar__action active" data-scroll-to="services">Serviços</button>
+                </li>
+                <li class="navbar__item">
+                    <button class="navbar__action" data-scroll-to="projects">Projetos</button>
+                </li>
+                <li class="navbar__item">
+                    <button class="navbar__action" data-scroll-to="contact">Contatos</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="spacer"></div>
+
+    <main>
+        <section class="section services" data-scroll="services">Serviços</section>
+        <section class="section projects" data-scroll="projects">Projetos</section>
+        <section class="section contact" data-scroll="contact">Contatos</section>
+    </main>
+
+    <footer class="footer">
+        <p>Feito com ❤️ por Cristiano Sword - 2022</p>
+    </footer>
+
+
+</body>
+</html>
