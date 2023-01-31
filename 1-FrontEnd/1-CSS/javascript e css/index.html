@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Mozilla CSS Getting Started - JavaScript demonstration</title>
+<link rel="stylesheet" type="text/css" href="style5.css" />
+<script type="text/javascript" src="script5.js"></script>
+</head>
+
+<body>
+<h1>JavaScript zoom</h1>
+
+<div onclick="doDemo(this)" id="square"></div>
+
+<button type="button" onclick="doDemo(this);">Click Me</button>
+
+</body>
+
+<style>
+
+/*** JavaScript & CSS demonstration ***/
+#square {
+  width: 20em;
+  height: 20em;
+  border: 2px inset gray;
+  margin-bottom: 1em;
+}
+
+ button {
+  padding: .5em 2em;
+}
+
+</style>
+
+<script>
+
+// js
+function doDemo (button) {
+  var square = document.getElementById("square");
+  square.style.backgroundColor = "#42cafe";
+  button.setAttribute("disabled", "true");
+  setTimeout(clearDemo, 2000, button);
+}
+
+function clearDemo (button) {
+  var square = document.getElementById("square");
+  square.style.backgroundColor = "transparent";
+  button.removeAttribute("disabled");
+}
+
+</script>
+
+</html>
