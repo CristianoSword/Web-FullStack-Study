@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zoom</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    
+</head>
+
+<script>
+$(document).ready(function(){
+    $('.img-responsive').on( "click", function() {
+        $(this).toggleClass('maxSize')
+    });
+});
+</script>
+
+<style>
+    .maxSize {
+        position: fixed;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                cursor: zoom-out; 
+    }
+
+    .img-responsive {
+        /* width: 10%; */
+    }
+
+
+</style>
+
+
+<body>
+    <img class="img-responsive" src="https://aprendacftv.com/wp-content/uploads/2017/07/camera-de-seguranca-com-infravermelho.jpg">
+    
+</body>
+</html>
