@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+/* pagina css template */
+.container {  
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* caixa de texto css template */
+.small-container {
+    max-width: 800px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*img resposiva css template */
+img.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.qua {
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 1000px;
+    height: 50px;
+    width: 50px;
+  
+}
+.diva {
+    display: flex;
+
+    border: 1px solid black;
+    padding: 15px;
+    margin: 15px;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    background: gray ;
+    z-index: +2;
+  }
+
+  .sec {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+
+    flex-direction: row;
+  }
+
+  .navi {
+    display: flex; 
+    /* flex-wrap: wrap; */
+
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(10, 10, 37);
+    color: white;
+    height: 80px;
+    padding: 25px;
+  }
+
+  .pad {
+    padding: 20px;
+  }
+
+  div {
+    flex: 1;
+  }
+
+  article {
+    display: flex;
+        flex-wrap: wrap;
+
+  }
