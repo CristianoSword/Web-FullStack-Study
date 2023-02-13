@@ -16,7 +16,7 @@ showHideBtn.onclick = function() {
   }
 };
 
-// functionality for adding a new comment via the comments form
+// funcao que adiciona um novo comentario via o comments form
 
 const form = document.querySelector('.comment-form');
 const nameField = document.querySelector('#name');
