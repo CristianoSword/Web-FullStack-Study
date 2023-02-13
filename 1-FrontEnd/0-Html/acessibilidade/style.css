@@ -29,7 +29,7 @@ p, input, li, table, label {
 }
 
 font[size="7"] {
-  font-size: 4rem;
+  font-size: 5rem;
   text-align: center;
   color: white;
   text-shadow: 2px 2px 10px black;
@@ -52,7 +52,7 @@ p, li, table {
 /* || header layout */
 
 div[class="nav"], article, footer, .secondary {
-  background-color: green;
+  background-color: #cafe42;
 }
 
 article, footer, .secondary {
@@ -61,6 +61,7 @@ article, footer, .secondary {
 
 article {
   margin-right: 10px;
+  font-size: 1.8rem;;
 }
 
 div[class="nav"] {
@@ -90,6 +91,7 @@ div[class="nav"] a {
   text-transform: uppercase;
   text-decoration: none;
   color: black;
+  
 }
 
 div[class="nav"] .search {
@@ -98,6 +100,8 @@ div[class="nav"] .search {
   align-items: center;
   height: 100%;
   padding: 0 2em;
+
+
 }
 
 .search input {
@@ -115,6 +119,9 @@ div[class="nav"] .search {
   background: #333;
   border: 0;
   color: white;
+  
+  border-radius: 10px 5px;
+
 }
 
 /* || main layout */
@@ -164,8 +171,20 @@ tbody tr:nth-child(odd) {
 img, audio {
   display: block;
   margin: 0 auto;
+
+  border-width: 5px;
+  border-color: whitesmoke;
+  border-style: solid;
+  /* display: inline-block; */
+
+  border-radius: 50px 10px;
+  align-items: center;
 }
 
+a { 
+  font-size: 1.8rem;
+
+}
 audio {
   width: 500px;
 }
