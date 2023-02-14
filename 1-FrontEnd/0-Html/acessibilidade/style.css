@@ -231,6 +231,13 @@ audio {
 .show-hide {
   text-align: center;
   width: 150px;
+    flex: 1;
+    margin-left: 1rem;
+    padding: 1rem;
+    background: #333;
+    border: 0;
+    color: white;
+    border-radius: 10px 5px;
 }
 
 .comment-form input, .comment-form label, .show-hide {
