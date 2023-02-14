@@ -14,9 +14,9 @@ All technologies studied and those on the list to study:
 | HTML       | :heavy_check_mark:	  | PHP            |:x:        | Docker    |:x:        |
 | CSS        | :heavy_check_mark:   | Laravel        |:x:        |           |           |
 | JavaScript |:stopwatch:           | Node           |:stopwatch:|           |           |
-| Angular    |:x:                   | Ruby on Rails  |:stopwatch:|           |           |
+| Jquery     |:stopwatch:           | Ruby on Rails  |:stopwatch:|           |           |
 | React      |:stopwatch:           | C++            |:stopwatch:|           |           |
 | Vue        |:x:                   | BlockChain     |:stopwatch:|           |           |
-|            |                      | SQL            |:x:|       |           |
+| Angular    |:x:                   | SQL            |:x:|       |           |
 |            |                      | Elixir         |:x:|       |           |
 |            |                      | WebAssembly    |:x:        |           |
