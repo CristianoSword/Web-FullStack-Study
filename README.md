@@ -18,5 +18,5 @@ All technologies studied and those on the list to study:
 | React      |:stopwatch:           | C++            |:stopwatch:|           |           |
 | Vue        |:x:                   | BlockChain     |:stopwatch:|           |           |
 | Angular    |:x:                   | SQL            |:x:|       |           |
-|            |                      | Elixir         |:x:|       |           |
+| Bootstrap  |:stopwatch:           | Elixir         |:x:|       |           |
 |            |                      | WebAssembly    |:x:        |           |
