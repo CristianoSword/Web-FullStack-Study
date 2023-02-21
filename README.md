@@ -9,14 +9,14 @@
 
 All technologies studied and those on the list to study:
 
-|🐤 FrontEnd |                      |  ⚙️  BackEnd  |           |🛠️ DevOps  |           |
-| --------   | ----------           |--------------- |-----------|---------  |-----------|
-| HTML       | :heavy_check_mark:	  | PHP            |:x:        | Docker    |:x:        |
-| CSS        | :heavy_check_mark:   | Laravel        |:x:        |           |           |
-| JavaScript |:stopwatch:           | Node           |:stopwatch:|           |           |
-| Jquery     |:stopwatch:           | Ruby on Rails  |:stopwatch:|           |           |
-| React      |:stopwatch:           | C++            |:stopwatch:|           |           |
-| Vue        |:x:                   | BlockChain     |:stopwatch:|           |           |
-| Angular    |:x:                   | SQL            |:x:        |           |           |
-| Bootstrap  |:stopwatch:           | Elixir         |:x:|       |           |           |
-| Less/Scss  |:stopwatch:           | WebAssembly    |:x:        |           |           |
+|🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps |            |🧪 QA    |      |
+| --------   | ----------           |--------------- |-----------|--------   |---------  |----      |----- |
+| HTML       |:heavy_check_mark:	  | PHP            |:stopwatch:| Docker    |:x:        |Jest      |:x:   |
+| CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku    |:x:        |          |      |
+| JavaScript |:stopwatch:           | Node           |:stopwatch:| AWS       |:x:        |          |      |
+| Jquery     |:stopwatch:           | Ruby on Rails  |:stopwatch:|           |           |          |      |
+| React      |:stopwatch:           | C++            |:stopwatch:|           |           |          |      |
+| Vue        |:x:                   | BlockChain     |:stopwatch:|           |           |          |      |
+| Angular    |:x:                   | SQL            |:stopwatch:|           |           |          |      |
+| Bootstrap  |:stopwatch:           | Elixir         |:x:        |           |           |          |      |
+| Less/Scss  |:stopwatch:           | WebAssembly    |:x:        |           |           |          |      |
