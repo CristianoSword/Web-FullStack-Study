@@ -1,11 +1,11 @@
 {
     "manifest_version": 2,
     "version": "0.0.1",
-    "name": "Hello World",
+    "name": "Hello World do Cris",
     "description": "Extensão Hello World - Sword",
     "author": "Cristiano Sword",
     "browser_action": {
-   	 "default_title": "Hello World",
+   	 "default_title": "Hello World do Cris",
    	 "default_popup": "index.html",
    	 "default_icon": "sword.png"
     }
