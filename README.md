@@ -1,6 +1,8 @@
 # Web-FullStack-Study
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+<p>
+❤❤🖤🖤🖤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 20/100% 📚 
+</p>
 
 :orange_book:	 Repo for study of FrontEnd, BackEnd and DevOps.<br>
 :sparkles:  The magic of studying a little every day :sparkles:
