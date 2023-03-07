@@ -16,3 +16,24 @@
 </body>
 </html>
 
+<script>
+    var input = document.querySelector('#input input');
+    var img = document.querySelector('#input img');
+    
+    img.addEventListener('click', function () {
+        input.type = input.type == 'text' ? 'password' : 'text';
+        });
+
+</script>
+
+<style>
+    #input > * {
+        height: 1.3em;
+        float: left;
+    }
+
+    #input img {
+        cursor: pointer;
+    }
+
+</style>
