@@ -5,3 +5,20 @@ div {
     padding: 10px;
     color: black;
 }
+
+.relative {
+    position: relative;
+    background-color: green;
+}
+
+.absolute {
+    position:absolute;
+    background-color: blueviolet;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: yellow;
+}
