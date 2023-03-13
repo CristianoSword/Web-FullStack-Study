@@ -4,10 +4,30 @@
     padding: 15px;
     display: grid;
     gap: 5px;
+    grid-template-areas:
+    "header header header header"
+    "sidebar content content content"
+    "footer footer footer footer";
 }
 
 .container div {
     background-color: #ccc;
     padding: 20px;
     border: 1px solid blue;
+}
+
+#header {
+    grid-area: header;
+}
+
+#sidebar {
+    grid-area: sidebar;
+}
+
+#content {
+    grid-area: content;
+}
+
+#footer {
+    grid-area: footer;
 }
