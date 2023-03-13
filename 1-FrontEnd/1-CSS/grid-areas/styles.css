@@ -1,0 +1,13 @@
+.container {
+    background-color: #333;
+    border: 3px solid red;
+    padding: 15px;
+    display: grid;
+    gap: 5px;
+}
+
+.container div {
+    background-color: #ccc;
+    padding: 20px;
+    border: 1px solid blue;
+}
