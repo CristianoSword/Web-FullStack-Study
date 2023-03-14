@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Validação inline utilizando JavaScript -->
+    <form id="form">
+        <label for="firstname"> Primeiro Nome* </label>
+        <input type="text" name="firstname" id="firstname" />
+        <button id="submit">Enviar</button>
+      
+        <span role="alert" id="nameError" aria-hidden="true">
+          Por favor entre com seu nome
+        </span>
+      </form>
+
+<SCRIPT>
+      const submit = document.getElementById("submit");
+
+      submit.addEventListener("click", validate);
+      
+      function validate(e) {
+        e.preventDefault();
+      
+        const firstNameField = document.getElementById("firstname");
+        let valid = true;
+      
+        if (!firstNameField.value) {
+          const nameError = document.getElementById("nameError");
+          nameError.classList.add("visible");
+          firstNameField.classList.add("invalid");
+          nameError.setAttribute("aria-hidden", false);
+          nameError.setAttribute("aria-invalid", true);
+        }
+        return valid;
+      }
+    </SCRIPT>
+
+<Style>
+      #nameError {
+        display: none;
+        font-size: 0.8em;
+      }
+      
+      #nameError.visible {
+        display: block;
+      }
+      
+      input.invalid {
+        border-color: red;
+      }
+
+</Style>
+
+</body>
+</html>
