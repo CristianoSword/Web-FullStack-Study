@@ -9,10 +9,19 @@
 <body>
     <form>
         <label for="firstname"> First Name: </label>
-        <input type="text" name="firstname" id="firstname" required maxlength="45">
+        <input type="text" name="firstname" id="firstname" required maxlength="45" wrap="hard">
         <label for="lastname"> Last Name: </label>
         <input type="text" name="lastname" id="lastname" required maxlength="45">
         <button>Submit</button>
     </form>
 </body>
 </html>
+
+<!-- css -->
+<style>
+    input {
+      height: 10vh;
+      justify-content: flex-start;
+     
+    }
+</style>
