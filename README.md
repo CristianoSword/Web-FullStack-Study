@@ -21,7 +21,7 @@ All technologies studied and those on the list to study:
 | Vue        |:x:                   | BlockChain     |:stopwatch:|                |           |          |      |
 | Angular    |:stopwatch:           | SQL            |:stopwatch:|                |           |          |      |
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |           |          |      |
-| Less/Scss  |:stopwatch:           | WebAssembly    |:x:        |                |           |          |      |
+| Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |           |          |      |
 | -          |                      |                |           |                |           |          |      |
 
 ### Folders Tree
@@ -30,8 +30,10 @@ All technologies studied and those on the list to study:
 │   ├───0-Html
 │   │   ├───acessibilidade
 │   │   │   └───media
+│   │   ├───html semantico
 │   │   ├───input eye
-│   │   └───New tag html
+│   │   ├───New tag html
+│   │   └───validacao
 │   ├───1-CSS
 │   │   ├───Barra Scroll personalizada
 │   │   ├───css float
@@ -39,7 +41,11 @@ All technologies studied and those on the list to study:
 │   │   ├───css-display-grid
 │   │   ├───div box pad
 │   │   ├───FF7 box UI
+│   │   ├───flexbox geral
+│   │   ├───grid area total control
+│   │   ├───grid-areas
 │   │   ├───grid-css
+│   │   ├───grid-rev
 │   │   ├───javascript e css
 │   │   ├───Media query
 │   │   ├───pixel-art-css
@@ -53,6 +59,7 @@ All technologies studied and those on the list to study:
 │   │   ├───extensao chrome
 │   │   ├───rev js
 │   │   ├───Scroll html js
+│   │   ├───validacao form com js
 │   │   └───videoJS mosaic
 │   ├───3-React
 │   ├───4-Angular
@@ -62,9 +69,10 @@ All technologies studied and those on the list to study:
 │   └───6-Bootstrap
 │       └───sidebar nav
 ├───2-BackEnd
-│   ├───0-C++
-│   ├───1-PHP
-│   ├───2-Ruby on Rails
-│   └───3-Nodejs
-│       └───node hello wolrd
+│   ├───0-C
+│   ├───1-C++
+│   ├───2-PHP
+│   ├───3-Nodejs
+│   │   └───node hello wolrd
+│   └───4-Ruby on Rails
 └───3-Devops
