@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Element Object</h1>
+<h2>Metodo addEventListener()</h2>
+
+<p>Executa a função quando o usuario clicar no butão:</p>
+
+<button id="meuButao">Tente me apertar :V</button>
+
+<p id="exemplo">
+
+<script>
+const element = document.getElementById("meuButao");
+element.addEventListener("click", myFunction);
+
+function myFunction() {
+  document.getElementById("exemplo").innerHTML = "Olá Evento!";
+}
+</script>
+
+</body>
+</html>
