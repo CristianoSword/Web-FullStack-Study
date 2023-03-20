@@ -13,13 +13,13 @@ All technologies studied and those on the list to study:
 
 |🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |            |🧪 QA    |      |
 | --------   | ----------           |--------------- |-----------|--------------- |---------  |----      |----- |
-| HTML       |:heavy_check_mark:	  | PHP            |:stopwatch:| Docker         |:stopwatch:|Jest      |:x:   |
+| HTML       |:heavy_check_mark:	  | PHP            |:stopwatch:| Docker         |:x        :|Jest      |:x:   |
 | CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:x:        |Cypress   |:x:   |
-| JavaScript |:heavy_check_mark:    | Node           |:stopwatch:| AWS            |:x:        |          |      |
+| JavaScript |:heavy_check_mark:    | Node           |:x:        | AWS            |:x:        |          |      |
 | Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:| Digital Ocean  |:x:        |          |      |
 | React      |:stopwatch:           | C++            |:stopwatch:|                |           |          |      |
-| Vue        |:x:                   | BlockChain     |:stopwatch:|                |           |          |      |
-| Angular    |:stopwatch:           | SQL            |:stopwatch:|                |           |          |      |
+| Vue        |:x:                   | BlockChain     |:x:        |                |           |          |      |
+| Angular    |:stopwatch:           | SQL            |:x:        |                |           |          |      |
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |           |          |      |
 | Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |           |          |      |
 | -          |                      |                |           |                |           |          |      |
@@ -29,7 +29,7 @@ All technologies studied and those on the list to study:
 ├───1-FrontEnd
 │   ├───0-Html
 │   │   ├───acessibilidade
-│   │   │   └───media
+│   │   ├───DOM event
 │   │   ├───html semantico
 │   │   ├───input eye
 │   │   ├───New tag html
@@ -42,6 +42,7 @@ All technologies studied and those on the list to study:
 │   │   ├───div box pad
 │   │   ├───FF7 box UI
 │   │   ├───flexbox geral
+│   │   ├───focus
 │   │   ├───grid area total control
 │   │   ├───grid-areas
 │   │   ├───grid-css
@@ -60,7 +61,9 @@ All technologies studied and those on the list to study:
 │   │   ├───rev js
 │   │   ├───Scroll html js
 │   │   ├───validacao form com js
-│   │   └───videoJS mosaic
+│   │   ├───videoJS mosaic
+│   │   └───webpack-tuto
+│   │    
 │   ├───3-React
 │   ├───4-Angular
 │   ├───5-Jquery
