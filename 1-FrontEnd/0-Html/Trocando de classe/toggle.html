@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<style>
+.myStyle {
+  background-color: #42cafe;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+ }
+ 
+</style>
+
+<body>
+<h1>The DOMToken Object</h1>
+<h2>The toggle() Method</h2>
+
+<button onclick="myFunction()">Toggle</button>
+<p>Click "Toggle" to toggle "myStyle" on and off.</p>
+
+<div id="myDIV">
+<p>I am myDIV.</p>
+</div>
+
+<script>
+function myFunction() {
+  
+  document.getElementById("myDIV").classList.toggle("myStyle");
+}
+</script>
+
+</body>
+</html>
