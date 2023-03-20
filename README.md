@@ -13,7 +13,7 @@ All technologies studied and those on the list to study:
 
 |🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |            |🧪 QA    |      |
 | --------   | ----------           |--------------- |-----------|--------------- |---------  |----      |----- |
-| HTML       |:heavy_check_mark:	  | PHP            |:stopwatch:| Docker         |:x        :|Jest      |:x:   |
+| HTML       |:heavy_check_mark:	  | PHP            |:stopwatch:| Docker         |:x:        |Jest      |:x:   |
 | CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:x:        |Cypress   |:x:   |
 | JavaScript |:heavy_check_mark:    | Node           |:x:        | AWS            |:x:        |          |      |
 | Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:| Digital Ocean  |:x:        |          |      |
