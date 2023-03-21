@@ -12,6 +12,7 @@
         <p> Sobrenome salvo em local storage: <br>
             <!-- document.read(localStorage.sobreNome); -->
         </p>
+        <p id="demo"></p>
         
      
 </body>
@@ -19,5 +20,7 @@
 
 <script type="text/javascript">
     localStorage.sobreNome="Sword";
-    document.write(localStorage. sobreNome);
+    // document.write(localStorage. sobreNome);
+    document.getElementById("demo").innerHTML = localStorage.getItem("sobreNome");
+
 </script>
