@@ -29,10 +29,12 @@ All technologies studied and those on the list to study:
 ├───1-FrontEnd
 │   ├───0-Html
 │   │   ├───acessibilidade
+│   │   ├───canvas bandeira japao
 │   │   ├───DOM event
 │   │   ├───html semantico
 │   │   ├───input eye
 │   │   ├───New tag html
+│   │   ├───Trocando de classe
 │   │   └───validacao
 │   ├───1-CSS
 │   │   ├───Barra Scroll personalizada
@@ -63,7 +65,6 @@ All technologies studied and those on the list to study:
 │   │   ├───validacao form com js
 │   │   ├───videoJS mosaic
 │   │   └───webpack-tuto
-│   │    
 │   ├───3-React
 │   ├───4-Angular
 │   ├───5-Jquery
