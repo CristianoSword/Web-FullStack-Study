@@ -9,10 +9,10 @@
 <body>
   
 
-        <p> Sobrenome salvo em local storage: <br>
-            <!-- document.read(localStorage.sobreNome); -->
-        </p>
-        <p id="demo"></p>
+        <p> Sobrenome salvo em local storage: </p> 
+        <button onclick="myFunction()">Mostrar</button>
+        <br>
+        <p id="demo" style="color:white;"></p>
         
      
 </body>
@@ -23,4 +23,25 @@
     // document.write(localStorage. sobreNome);
     document.getElementById("demo").innerHTML = localStorage.getItem("sobreNome");
 
+    
+    function myFunction() {   
+
+        document.getElementById("demo").classList.toggle("myStyle");
+    }
+
 </script>
+
+<style>
+    .myStyle {
+        background-color: #42cafe;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        display: block;
+
+    }
+
+
+</style>
+
