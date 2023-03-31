@@ -7,19 +7,30 @@
     <title>Tipos</title>
 </head>
 <body>
-    <h1>Tipos primitivos</h1>
+    <h1>Tipos primitivos 🖖</h1>
+    &#128512;
+    <br>
     <?php
         $num = 341;
         echo "o valor de num é $num";
-        
+        echo "<br>";       
 
         $num2 = (int)3.14;
-        // var_dump($num);
-        echo "<br>";
         var_dump($num2);
         echo "<br>";
+
         $casado = false;
         print "a var casado tem o valor de $casado"; //false emecho/print sao apresentados como nulo ou vazio
+
+        //sintaxe Heredoc
+        $curso = "PHP";
+        $ano = date('Y');
+        echo "<br>";
+
+        echo<<< FRASE
+                Estou estudando
+                    $curso em $ano
+        FRASE;
     ?>
 </body>
 </html>
