@@ -1,7 +1,7 @@
 # Web-FullStack-Study
 
 <p>
-❤❤❤🖤🖤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 20/100% 📚 
+❤❤❤🖤🖤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 30/100% 📚 
 </p>
 
 :orange_book:	 Repo for study of FrontEnd, BackEnd and DevOps.<br>
@@ -22,7 +22,7 @@ All technologies studied and those on the list to study:
 | Angular    |:stopwatch:           | SQL            |:x:        |                |           |          |      |
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |           |          |      |
 | Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |           |          |      |
-| --          |                      |                |           |                |           |          |      |
+| -          |                      |                |           |                |           |          |      |
 
 ### Folders Tree
 <pre>
