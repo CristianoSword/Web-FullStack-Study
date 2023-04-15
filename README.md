@@ -17,7 +17,7 @@ All technologies studied and those on the list to study:
 | CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:x:        |Cypress   |:x:   |
 | JavaScript |:heavy_check_mark:    | Node           |:x:        | AWS            |:x:        |          |      |
 | Jquery     |:heavy_check_mark:    | Ruby on Rails  |:x:        | Digital Ocean  |:x:        |          |      |
-| React      |:stopwatch:           | C++            |:x:        |                |           |          |      |
+| React      |:stopwatch:           | C++            |:x:        | GCP            |:x:        |          |      |
 | Vue        |:x:                   | BlockChain     |:x:        |                |           |          |      |
 | Angular    |:stopwatch:           | SQL            |:x:        |                |           |          |      |
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |           |          |      |
