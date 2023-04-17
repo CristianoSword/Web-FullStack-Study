@@ -15,7 +15,7 @@ All technologies studied and those on the list to study:
 | --------   | ----------           |--------------- |-----------|--------------- |---------  |----      |----- |
 | HTML       |:heavy_check_mark:	  | PHP            |:stopwatch:| Docker         |:x:        |Jest      |:x:   |
 | CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:x:        |Cypress   |:x:   |
-| JavaScript |:heavy_check_mark:    | Node           |:x:        | AWS            |:x:        |          |      |
+| JavaScript |:heavy_check_mark:    | Node           |:x:        | AWS            |:x:        |Selenium  |:x:   |
 | Jquery     |:heavy_check_mark:    | Ruby on Rails  |:x:        | Digital Ocean  |:x:        |          |      |
 | React      |:stopwatch:           | C++            |:x:        | GCP            |:x:        |          |      |
 | Vue        |:x:                   | BlockChain     |:x:        |                |           |          |      |
