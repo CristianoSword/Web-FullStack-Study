@@ -1,7 +1,7 @@
 # Web-FullStack-Study
 
 <p>
-❤❤❤❤❤🖤🖤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 40/120% 📚📚     
+❤❤❤❤❤🖤🖤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 50/120% 📚📚📚     
 </p>
 
 :orange_book:	 Repo for study of FrontEnd, BackEnd and DevOps.<br>
@@ -14,9 +14,9 @@ All technologies studied and those on the list to study:
 |🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |                           |🧪 QA    |      |
 | --------   | ----------           |--------------- |-----------|--------------- |---------                 |----      |----- |
 | HTML       |:heavy_check_mark:	  | PHP            |:stopwatch:| Docker         |:stopwatch:               |Jest      |:x:   |
-| CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:stopwatch:               |Cypress   |:x:   |
-| JavaScript |:heavy_check_mark:    | Node           |:x:        | AWS            |:x:                       |Selenium  |:x:   |
-| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:x:        | Digital Ocean  |:x:                       |          |      |
+| CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:stopwatch:               |Cypress   |:stopwatch:   |
+| JavaScript |:heavy_check_mark:    | Node           |:x:        | AWS            |:x:                       |Selenium  |:stopwatch:   |
+| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:x:        | Digital Ocean  |:x:                       |JUnit          |:stopwatch:      |
 | React      |:stopwatch:           | C++            |:x:        | GCP            |:x:                       |          |      |
 | Vue        |:x:                   | BlockChain     |:x:        |                |                          |          |      |
 | Angular    |:stopwatch:           | SQL            |:x:        |                |                          |          |      |
