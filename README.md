@@ -22,7 +22,7 @@ All technologies studied and those on the list to study:
 | Angular    |:stopwatch:           | SQL            |:stopwatch:|                |                          |          |            |
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |                          |          |            |
 | Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |                          |          |            |
-| -          |                      |                |           |                |                          |          |            |
+| -          |                      | Misc Algorithm |:stopwatch:|                |                          |          |            |
 
 ### Folders Tree
 <pre>
