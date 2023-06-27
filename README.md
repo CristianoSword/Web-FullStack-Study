@@ -36,6 +36,7 @@ All technologies studied and those on the list to study:
 │   │   ├───New tag html
 │   │   ├───Trocando de classe
 │   │   └───validacao
+│   │    
 │   ├───1-CSS
 │   │   ├───Barra Scroll personalizada
 │   │   ├───css float
@@ -56,6 +57,7 @@ All technologies studied and those on the list to study:
 │   │   ├───tela RF
 │   │   ├───template navbar site
 │   │   └───zoom img
+│   │       
 │   ├───2-Javascript
 │   │   ├───clock-js-main
 │   │   ├───ES6 js rev
@@ -65,6 +67,7 @@ All technologies studied and those on the list to study:
 │   │   ├───validacao form com js
 │   │   ├───videoJS mosaic
 │   │   └───webpack-tuto
+│   │       
 │   ├───3-React
 │   ├───4-Angular
 │   ├───5-Jquery
@@ -72,6 +75,7 @@ All technologies studied and those on the list to study:
 │   │   └───jquery rev geral
 │   └───6-Bootstrap
 │       └───sidebar nav
+|
 ├───2-BackEnd
 │   ├───0-C
 │   ├───1-C++
@@ -79,4 +83,5 @@ All technologies studied and those on the list to study:
 │   ├───3-Nodejs
 │   │   └───node hello wolrd
 │   └───4-Ruby on Rails
+|
 └───3-Devops
