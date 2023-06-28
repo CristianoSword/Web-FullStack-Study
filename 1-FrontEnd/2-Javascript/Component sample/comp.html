@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+        <li>name1</li>
+        <li>name2</li>
+        <li>name3</li>
+        <button onclick="click()">name3</button>
+        <img class="image" src="fav.ico">
+    </ul>
+  </div>
+
+</body>
+</html>
+
+<script>
+    
+    var template = div(
+        ul(
+            li('name1') +
+            li('name2') +
+            li('name3') +
+            button('name3', 'click()') +
+            image('fav.ico', 'image')
+        )
+    )
+    console.log(template)
+
+</script>
