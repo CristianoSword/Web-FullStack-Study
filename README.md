@@ -11,22 +11,23 @@
 
 All technologies studied and those on the list to study:
 
-|🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |                           |🧪 QA    |            |
-| --------   | ----------           |--------------- |-----------|--------------- |---------                 |----      |-----       |
-| HTML       |:heavy_check_mark:	| PHP            |:stopwatch:| Docker         |:stopwatch:               |Jest      |:x:         |
-| CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:stopwatch:               |Cypress   |:stopwatch: |
-| JavaScript |:heavy_check_mark:    | Node           |:stopwatch:| AWS            |:x:                       |Selenium  |:stopwatch: |
-| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:| Digital Ocean  |:x:                       |JUnit     |:stopwatch: |
-| React      |:stopwatch:           | C++            |:stopwatch:| GCP            |:stopwatch:               |          |            |
-| Vue        |:stopwatch:           | BlockChain     |:stopwatch:|                |                          |          |            |
-| Angular    |:stopwatch:           | SQL            |:stopwatch:|                |                          |          |            |
-| Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |                          |          |            |
-| Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |                          |          |            |
-|            |                      | Misc Algorithm |:stopwatch:|                |                          |          |            |
-| -          |                      |                |           |                |                          |          |            |
+|🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |              |🧪 QA    |            |
+| --------   | ----------           |--------------- |-----------|--------------- |---------    |----      |-----       |
+| HTML       |:heavy_check_mark:	| PHP            |:stopwatch:| Docker         |:stopwatch:  |Jest      |:x:         |
+| CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:stopwatch:  |Cypress   |:stopwatch: |
+| JavaScript |:heavy_check_mark:    | Node           |:stopwatch:| AWS            |:x:          |Selenium  |:stopwatch: |
+| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:| Digital Ocean  |:x:          |JUnit     |:stopwatch: |
+| React      |:stopwatch:           | C++            |:stopwatch:| GCP            |:stopwatch:  |          |            |
+| Vue        |:stopwatch:           | BlockChain     |:stopwatch:|                |             |          |            |
+| Angular    |:stopwatch:           | SQL            |:stopwatch:|                |             |          |            |
+| Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |             |          |            |
+| Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |             |          |            |
+|            |                      | Misc Algorithm |:stopwatch:|                |             |          |            |
+| -          |                      |                |           |                |             |          |            |
 
 ### Folders Tree
 <pre>
+
 ├───1-FrontEnd
 │   ├───0-Html
 │   │   ├───acessibilidade
@@ -35,9 +36,10 @@ All technologies studied and those on the list to study:
 │   │   ├───html semantico
 │   │   ├───input eye
 │   │   ├───New tag html
+│   │   ├───retangulo.html
 │   │   ├───Trocando de classe
-│   │   └───validacao
-│   │    
+│   │   ├───validacao
+│   │   └───webStorage
 │   ├───1-CSS
 │   │   ├───Barra Scroll personalizada
 │   │   ├───css float
@@ -51,38 +53,48 @@ All technologies studied and those on the list to study:
 │   │   ├───grid-areas
 │   │   ├───grid-css
 │   │   ├───grid-rev
+│   │   ├───img-trans-text
 │   │   ├───javascript e css
 │   │   ├───Media query
 │   │   ├───pixel-art-css
 │   │   ├───Positions
+│   │   ├───sidenav-button
 │   │   ├───tela RF
 │   │   ├───template navbar site
 │   │   └───zoom img
-│   │       
 │   ├───2-Javascript
+│   │   ├───2d plataform game sample
 │   │   ├───clock-js-main
 │   │   ├───ES6 js rev
 │   │   ├───extensao chrome
+│   │   ├───GoogleCharts
+│   │   ├───image-grid
 │   │   ├───rev js
 │   │   ├───Scroll html js
 │   │   ├───validacao form com js
 │   │   ├───videoJS mosaic
-│   │   └───webpack-tuto
-│   │       
-│   ├───3-React
-│   ├───4-Angular
+│   │   └───webpack-tuto      
 │   ├───5-Jquery
 │   │   ├───hello wolrd jquery
 │   │   └───jquery rev geral
 │   └───6-Bootstrap
 │       └───sidebar nav
-|
+│
 ├───2-BackEnd
 │   ├───0-C
 │   ├───1-C++
 │   ├───2-PHP
+│   │   ├───ex00 - Hello world php8
+│   │   ├───ex01 - dados servidor
+│   │   ├───ex02 - date
+│   │   ├───ex03- tipos
+│   │   ├───ex04- formularios
+│   │   ├───hello php7
+│   │   └───scprits php7
 │   ├───3-Nodejs
 │   │   └───node hello wolrd
 │   └───4-Ruby on Rails
-|
-└───3-Devops
+│
+├───3-Devops
+│   
+└───4-QA
