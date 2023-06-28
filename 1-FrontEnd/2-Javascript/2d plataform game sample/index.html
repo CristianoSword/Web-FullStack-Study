@@ -40,12 +40,12 @@
     var platforms = [];
     // funcao pra render do canvas
     function rendercanvas(){
-        ctx.fillStyle = "#ADD8E6";
+        ctx.fillStyle = "#ADD8E6"; //azul claro
         ctx.fillRect(0, 0, 270, 270);
     }
     // funcao pra render do player
     function renderplayer(){
-        ctx.fillStyle = "red";
+        ctx.fillStyle = "#333C87"; //azul
         ctx.fillRect((player.x)-20, (player.y)-20, player.width, player.height);
         }
     // Funcao pra criar plataformas
@@ -63,7 +63,7 @@
         }
     // Funcao pra renderizar platformas
     function renderplat(){
-        ctx.fillStyle = "#964B00";
+        ctx.fillStyle = "#FF8C00"; //cor laranja
         ctx.fillRect(platforms[0].x, platforms[0].y, platforms[0].width, platforms[0].height);
         ctx.fillRect(platforms[1].x, platforms[1].y, platforms[1].width,platforms[1]. height);
     
