@@ -8,7 +8,6 @@
 :sparkles:  The magic of studying a little every day :sparkles: 
 
 ## Technologies 
-
 All technologies studied and those on the list to study:
 
 |🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |              |🧪 QA    |            |
