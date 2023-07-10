@@ -12,7 +12,7 @@ All technologies studied and those on the list to study:
 
 |🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |              |🧪 QA    |            |
 | --------   | ----------           |--------------- |-----------|--------------- |---------    |----      |-----       |
-| HTML       |:heavy_check_mark:	| PHP            |:stopwatch:| Docker         |:stopwatch:  |Jest      |:x:         |
+| HTML       |:heavy_check_mark:	 | PHP            |:stopwatch:| Docker         |:stopwatch:  |Jest      |:x:         |
 | CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:stopwatch:  |Cypress   |:stopwatch: |
 | JavaScript |:heavy_check_mark:    | Node           |:stopwatch:| AWS            |:x:          |Selenium  |:stopwatch: |
 | Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:| Digital Ocean  |:x:          |JUnit     |:stopwatch: |
@@ -22,7 +22,7 @@ All technologies studied and those on the list to study:
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |             |          |            |
 | Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |             |          |            |
 |            |                      | Misc Algorithm |:stopwatch:|                |             |          |            |
-| -          |                      |                |           |                |             |          |            |
+| -          |                      | Math           |:stopwatch:|                |             |          |            |
 
 ### Folders Tree
 <pre>
