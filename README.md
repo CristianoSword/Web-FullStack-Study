@@ -22,7 +22,7 @@ All technologies studied and those on the list to study:
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |             |          |            |
 | Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |             |          |            |
 |            |                      | Misc Algorithm |:stopwatch:|                |             |          |            |
-| -          |                      | Math           |:stopwatch:|                |             |          |            |
+|            |                      | Math           |:stopwatch:|                |             |          |            |
 
 ### Folders Tree
 <pre>
