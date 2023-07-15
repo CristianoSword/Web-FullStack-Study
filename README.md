@@ -74,7 +74,7 @@ All technologies studied and those on the list to study:
 │   │   ├───videoJS mosaic
 │   │   └───webpack-tuto      
 │   ├───5-Jquery
-│   │   ├───hello wolrd jquery
+│   │   ├───hello world jquery
 │   │   └───jquery rev geral
 │   └───6-Bootstrap
 │       └───sidebar nav
@@ -91,9 +91,9 @@ All technologies studied and those on the list to study:
 │   │   ├───hello php7
 │   │   └───scprits php7
 │   ├───3-Nodejs
-│   │   └───node hello wolrd
+│   │   └───hello world
 │   └───4-Ruby on Rails
-│
+│        └───hello world
 ├───3-Devops
 │   
 └───4-QA
