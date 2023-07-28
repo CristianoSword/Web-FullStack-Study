@@ -2,7 +2,7 @@
        
 <p>
 ❤❤❤❤❤❤❤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 70/120% 📚📚📚📚📚📚📚        
-</p>      
+</p>       
 
 :orange_book:	 Repo for study of FrontEnd, BackEnd and DevOps.<br>
 :sparkles:  The magic of studying a little every day :sparkles: 
