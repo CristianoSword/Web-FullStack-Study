@@ -18,7 +18,7 @@ All technologies studied and those on the list to study:
 | Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:| Digital Ocean  |:x:          |JUnit     |:stopwatch: |
 | React      |:stopwatch:           | C++            |:stopwatch:| GCP            |:stopwatch:  |          |            |
 | Vue        |:stopwatch:           | BlockChain     |:stopwatch:|                |             |          |            |
-| Angular    |:stopwatch:           | SQL            |:stopwatch:|                |             |          |            |
+| Angular    |:stopwatch:           | SQL            |:heavy_check_mark:|                |             |          |            |
 | Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |             |          |            |
 | Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |             |          |            |
 | -          |                      |                |           |                |             |          |            |
