@@ -12,15 +12,15 @@ All technologies studied and those on the list to study:
 
 |🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |              |🧪 QA    |            |
 | --------   | ----------           |--------------- |-----------|--------------- |---------    |----      |-----       |
-| HTML       |:heavy_check_mark:	 | PHP            |:stopwatch:| Docker         |:stopwatch:  |Jest      |:x:         |
+| HTML       |:heavy_check_mark:	 | PHP            |:heavy_check_mark:| Docker         |:heavy_check_mark: |Jest      |:heavy_check_mark:        |
 | CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:stopwatch:  |Cypress   |:stopwatch: |
-| JavaScript |:heavy_check_mark:    | Node           |:stopwatch:| AWS            |:x:          |Selenium  |:stopwatch: |
-| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:| Digital Ocean  |:x:          |JUnit     |:stopwatch: |
-| React      |:stopwatch:           | C++            |:stopwatch:| GCP            |:stopwatch:  |          |            |
-| Vue        |:stopwatch:           | BlockChain     |:stopwatch:|                |             |          |            |
-| Angular    |:stopwatch:           | SQL            |:heavy_check_mark:|                |             |          |            |
-| Bootstrap  |:stopwatch:           | Elixir         |:x:        |                |             |          |            |
-| Less/Sass  |:stopwatch:           | WebAssembly    |:x:        |                |             |          |            |
+| JavaScript |:heavy_check_mark:    | Node           |:heavy_check_mark:| AWS            |:x:          |Selenium  |:stopwatch: |
+| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:heavy_check_mark:| Digital Ocean  |:x:          |JUnit     |:stopwatch: |
+| React      |:heavy_check_mark:           | C++            |:heavy_check_mark:| GCP            |:stopwatch:  |          |            |
+| Vue        |:heavy_check_mark:           | BlockChain     |:stopwatch:|                |             |          |            |
+| Angular    |:heavy_check_mark:          | SQL            |:heavy_check_mark:|                |             |          |            |
+| Bootstrap  |:heavy_check_mark:           | Elixir         |:x:        |                |             |          |            |
+| Less/Sass  |:heavy_check_mark:          | WebAssembly    |:x:        |                |             |          |            |
 | -          |                      |                |           |                |             |          |            |
 
 
