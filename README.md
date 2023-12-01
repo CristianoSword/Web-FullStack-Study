@@ -1,7 +1,7 @@
 # Web-FullStack-Study
        
 <p>
-❤❤❤❤🖤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 42/100% 📚📚📚        
+❤❤❤❤🖤🖤🖤🖤🖤🖤 &nbsp&nbsp&nbsp 42/100% 📚📚📚📚📚        
 </p>         
 
 :orange_book:	 Repo for study of FrontEnd, BackEnd and DevOps.<br>
