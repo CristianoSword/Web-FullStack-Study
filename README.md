@@ -13,14 +13,14 @@ All technologies studied and those on the list to study:
 |🐤 FrontEnd |                      |⚙️  BackEnd    |           |🛠️ DevOps      |              |🧪 QA    |            |
 | --------   | ----------           |--------------- |-----------|--------------- |---------    |----      |-----       |
 | HTML       |:heavy_check_mark:	 | PHP            |:heavy_check_mark:| Docker         |:heavy_check_mark: |Jest      |:heavy_check_mark:        |
-| CSS        |:heavy_check_mark:    | Laravel        |:x:        | Heroku         |:stopwatch:  |Cypress   |:stopwatch: |
-| JavaScript |:heavy_check_mark:    | Node           |:heavy_check_mark:| AWS            |:x:          |Selenium  |:stopwatch: |
-| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:heavy_check_mark:| Digital Ocean  |:x:          |JUnit     |:stopwatch: |
+| CSS        |:heavy_check_mark:    | Laravel        |:stopwatch:        | Heroku         |:stopwatch:  |Cypress   |:stopwatch: |
+| JavaScript |:heavy_check_mark:    | Node           |:heavy_check_mark:| AWS            |:stopwatch:          |Selenium  |:stopwatch: |
+| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:heavy_check_mark:| Digital Ocean  |:stopwatch:          |JUnit     |:stopwatch: |
 | React      |:heavy_check_mark:           | C++            |:heavy_check_mark:| GCP            |:stopwatch:  |          |            |
 | Vue        |:heavy_check_mark:           | BlockChain     |:stopwatch:|                |             |          |            |
 | Angular    |:heavy_check_mark:          | SQL            |:heavy_check_mark:|                |             |          |            |
-| Bootstrap  |:heavy_check_mark:           | Elixir         |:x:        |                |             |          |            |
-| Less/Sass  |:heavy_check_mark:          | WebAssembly    |:x:        |                |             |          |            |
+| Bootstrap  |:heavy_check_mark:           | Elixir         |:stopwatch:        |                |             |          |            |
+| Less/Sass  |:heavy_check_mark:          | WebAssembly    |:stopwatch:        |                |             |          |            |
 | -          |                      |                |           |                |             |          |            |
 
 
