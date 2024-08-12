@@ -21,7 +21,7 @@ All technologies studied and those on the list to study:
 | Angular    |:heavy_check_mark:    | SQL            |:heavy_check_mark: |                |                   |          |                   |
 | Bootstrap  |:heavy_check_mark:    | Elixir         |:stopwatch:        |                |                   |          |                   |
 | Less/Sass  |:heavy_check_mark:    | WebAssembly    |:stopwatch:        |                |                   |          |                   |
-| -          |                      |                |                   |                |                   |          |                   |
+| -          |                      | Earlang        |:stopwatch:        |                |                   |          |                   |
 
 
 ### Folders Tree
