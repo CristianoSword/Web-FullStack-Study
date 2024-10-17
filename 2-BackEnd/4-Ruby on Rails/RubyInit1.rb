@@ -24,3 +24,11 @@ Hello Chris!
 irb(main):023:0> hi
 Hello World!
 => nil
+
+def multiplica(a, b)
+    return a * b  # O valor é retornado automaticamente
+end
+
+resultado = multiplica(4, 2)
+puts "O Resultado é " + resultado.to_s  
+=> O Resultado é 8
