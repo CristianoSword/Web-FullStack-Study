@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Moderno - Seletor :has()</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Estudo de CSS Moderno: O Seletor <code>:has()</code></h1>
+        <p>Explorando o poder do "seletor pai" nativo do CSS.</p>
+    </header>
+
+    <main class="container">
+        <section class="example-section">
+            <h2>Exemplo 1: Card Dinâmico</h2>
+            <div class="card-grid">
+                <!-- Card com Imagem -->
+                <div class="card">
+                    <img src="https://picsum.photos/400/200?random=1" alt="Imagem do Card">
+                    <div class="card-content">
+                        <h3>Card com Imagem</h3>
+                        <p>Este card tem uma imagem, o CSS deve detectar isso.</p>
+                    </div>
+                </div>
+
+                <!-- Card sem Imagem -->
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Card sem Imagem</h3>
+                        <p>Este card não tem imagem, terá um layout diferente.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="example-section">
+            <h2>Exemplo 2: Formulário Interativo</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" placeholder="Digite seu nome">
+                </div>
+                <div class="form-group error">
+                    <label for="email">E-mail (com erro):</label>
+                    <input type="email" id="email" value="email-invalido">
+                    <span class="error-msg">E-mail inválido!</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
