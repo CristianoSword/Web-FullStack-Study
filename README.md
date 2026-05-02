@@ -55,8 +55,8 @@ All technologies studied and those on the list to study:
 - **[C & C++](2-BackEnd/0-C/)**: Lógica e algoritmos.
 - **[PHP](2-BackEnd/2-PHP/)**: Versões 7 e 8, formulários e scripts.
 - **[Node.js](2-BackEnd/3-Nodejs/)**: Hello world e fundamentos.
-- **[Ruby on Rails](2-BackEnd/4-Ruby on Rails/)**: Inicialização e conceitos.
-- **[WebAssembly](2-BackEnd/5-Web Assembly/)**: Integração C/Web.
+- **[Ruby on Rails](2-BackEnd/4-Ruby%20on%20Rails/)**: Inicialização e conceitos.
+- **[WebAssembly](2-BackEnd/5-Web%20Assembly/)**: Integração C/Web.
 
 ### 🏗️ [DevOps](3-Devops/)
 - **[Docker & Deploy](3-Devops/)**: Configurações de ambiente.
