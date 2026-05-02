@@ -62,5 +62,19 @@ header {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: var(--bg);
+
+    /* MÁGICA: Cálculo Trigonométrico */
+    --angle: calc(var(--index) * (360deg / var(--items)));
+    --x: calc(cos(var(--angle)) * var(--radius));
+    --y: calc(sin(var(--angle)) * var(--radius));
+
+    transform: translate(var(--x), var(--y));
+}
+
+.menu-item:hover {
+    background: white;
+    scale: 1.2;
+    box-shadow: 0 0 15px var(--secondary);
 }
