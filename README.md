@@ -18,8 +18,8 @@
 </p>         
 
 <p align="center">
-  :orange_book: Repo for study of FrontEnd, BackEnd and DevOps.<br>
-  :sparkles: The magic of studying a little every day :sparkles: 
+  📙 Repo for study of FrontEnd, BackEnd and DevOps. 📙 <br>
+  🎈 The magic of studying a little every day 🎈 <br> 
 </p>
 
 ---
@@ -30,7 +30,7 @@ All technologies studied and those on the list to study:
 | 🐤 FrontEnd | Status | ⚙️ BackEnd | Status | 🛠️ DevOps | Status | 🧪 QA | Status |
 | :--- | :---: | :--- | :---: | :--- | :---: | :--- | :---: |
 | **[HTML5](1-FrontEnd/0-Html/)** | ✅ | **[PHP](2-BackEnd/2-PHP/)** | ✅ | **[Docker](3-Devops/)** | ✅ | **[Jest](4-QA/)** | ✅ |
-| **[CSS3](1-FrontEnd/1-CSS/)** | ✅ | **Laravel** | ⏳ | **Heroku** | ⏳ | **Cypress** | ⏳ |
+| **[CSS3](1-FrontEnd/1-CSS/)** | ✅ | **Laravel** | ⏳am | **Heroku** | ⏳ | **Cypress** | ⏳ |
 | **[JavaScript](1-FrontEnd/2-Javascript/)** | ✅ | **[Node](2-BackEnd/3-Nodejs/)** | ✅ | **AWS** | ⏳ | **[Selenium](4-QA/)** | ✅ |
 | **[jQuery](1-FrontEnd/5-Jquery/)** | ✅ | **Ruby on Rails**| ⏳ | **Digital Ocean**| ⏳ | **JUnit** | ⏳ |
 | **[React](https://github.com/CristianoSword/Netflix-Clone-React)** | ✅ | **[C++](2-BackEnd/1-C++/)** | ✅ | **GCP** | ⏳ | | |
