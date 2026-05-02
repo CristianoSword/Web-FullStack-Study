@@ -22,29 +22,38 @@
 <body>
     <h1>Drag and Drop Nativo</h1>
     
-    <div id="drag-item" draggable="true">Mova-me</div>
-
-    <div id="drop-zone">Zona de Drop</div>
+    <div id="drop-zone-1" class="drop-zone">Zona A</div>
+    <div id="drop-zone-2" class="drop-zone">Zona B</div>
 
     <script>
         const item = document.getElementById('drag-item');
-        const zone = document.getElementById('drop-zone');
+        const zones = document.querySelectorAll('.drop-zone');
 
-        item.addEventListener('dragstart', (e) => e.dataTransfer.setData('text/plain', e.target.id));
-
-        zone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            zone.classList.add('over');
+        // dragstart: Define qual dado está sendo movido
+        item.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', e.target.id);
+            item.style.opacity = '0.5';
         });
 
-        zone.addEventListener('dragleave', () => zone.classList.remove('over'));
+        item.addEventListener('dragend', () => item.style.opacity = '1');
 
-        zone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            zone.classList.remove('over');
-            const id = e.dataTransfer.getData('text/plain');
-            const draggedElement = document.getElementById(id);
-            zone.appendChild(draggedElement);
+        zones.forEach(zone => {
+            // dragover: Necessário para permitir o drop
+            zone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                zone.classList.add('over');
+            });
+
+            zone.addEventListener('dragleave', () => zone.classList.remove('over'));
+
+            // drop: Executa a ação de mover o elemento
+            zone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                zone.classList.remove('over');
+                const id = e.dataTransfer.getData('text/plain');
+                const draggedElement = document.getElementById(id);
+                zone.appendChild(draggedElement);
+            });
         });
     </script>
 </body>
