@@ -20,6 +20,8 @@ body {
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* Define que cada card vai ocupar 4 linhas do grid principal */
+    grid-template-rows: repeat(3, auto); 
     gap: 2rem;
 }
 
@@ -27,8 +29,12 @@ body {
     background: var(--card);
     padding: 1.5rem;
     border-radius: 12px;
+    
+    /* MÁGICA DO SUBGRID */
     display: grid;
-    /* Aqui definiremos o subgrid no próximo commit */
+    grid-template-rows: subgrid;
+    grid-row: span 4; /* Ocupa 4 linhas do grid pai: h3, img, p, button */
+    gap: 1rem;
 }
 
 .card img {
