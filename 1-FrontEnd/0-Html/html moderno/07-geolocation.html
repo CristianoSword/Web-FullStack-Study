@@ -4,12 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo: Geolocation API</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: white; padding: 40px; text-align: center; }
+        #output { margin-top: 20px; padding: 20px; background: #222; border-radius: 10px; min-height: 50px; border-left: 5px solid #42cafe; }
+        button { padding: 10px 20px; background: #42cafe; border: none; color: white; cursor: pointer; border-radius: 5px; font-weight: bold; }
+    </style>
 </head>
 <body>
     <h1>Onde estou? (Geolocation)</h1>
     
     <button id="getPos">Pegar Localização</button>
-    <div id="output"></div>
+    <div id="output">Clique no botão para iniciar...</div>
 
+    <script>
+        const btn = document.getElementById('getPos');
+        const output = document.getElementById('output');
+
+        btn.onclick = () => {
+            output.innerHTML = "Buscando...";
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    const { latitude, longitude } = pos.coords;
+                    output.innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
+                },
+                (err) => {
+                    output.innerHTML = `Erro: ${err.message}`;
+                }
+            );
+        };
+    </script>
 </body>
 </html>
