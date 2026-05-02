@@ -32,12 +32,39 @@ header {
     background: var(--primary);
     z-index: 1000;
     transform-origin: 0% 50%;
+    
+    /* MÁGICA: Animação baseada no scroll da página */
+    animation: grow-progress auto linear forwards;
+    animation-timeline: scroll(root);
+}
+
+@keyframes grow-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
 }
 
 .content {
     max-width: 800px;
     margin: 0 auto;
     padding: 5rem 2rem;
+}
+
+.scroll-item.reveal {
+    /* MÁGICA: Animação baseada na visibilidade do elemento na tela */
+    animation: reveal-view auto linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 40%;
+}
+
+@keyframes reveal-view {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .scroll-item {
