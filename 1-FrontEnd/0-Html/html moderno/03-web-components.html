@@ -16,25 +16,40 @@
 
     <script>
         class MinhaSaudacao extends HTMLElement {
+            static get observedAttributes() { return ['nome']; }
+
             constructor() {
                 super();
-                const shadow = this.attachShadow({ mode: 'open' });
-                const wrapper = document.createElement('div');
-                wrapper.setAttribute('class', 'card');
-                
+                this.attachShadow({ mode: 'open' });
+            }
+
+            // lifecycle: disparado quando o elemento entra no DOM
+            connectedCallback() {
+                this.render();
+            }
+
+            // dispara quando um atributo observado muda
+            attributeChangedCallback(name, oldValue, newValue) {
+                if (oldValue !== newValue) this.render();
+            }
+
+            render() {
                 const nome = this.getAttribute('nome') || 'Visitante';
-                wrapper.innerHTML = `
+                this.shadowRoot.innerHTML = `
                     <style>
                         .card { 
                             background: #333; padding: 20px; border-radius: 10px; 
                             margin-bottom: 10px; border-left: 5px solid #42cafe;
+                            transition: transform 0.2s;
                         }
+                        .card:hover { transform: scale(1.02); }
                         h2 { color: #42cafe; margin: 0; }
                     </style>
-                    <h2>Olá, ${nome}!</h2>
-                    <p>Este é um Custom Element com Shadow DOM.</p>
+                    <div class="card">
+                        <h2>Olá, ${nome}!</h2>
+                        <p>Este componente é reativo a mudanças de atributos.</p>
+                    </div>
                 `;
-                shadow.appendChild(wrapper);
             }
         }
         customElements.define('minha-saudacao', MinhaSaudacao);
