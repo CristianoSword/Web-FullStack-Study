@@ -33,6 +33,9 @@ header {
     background: #e2e8f0;
     padding: 1rem;
     border-radius: 12px;
+    /* Define o container */
+    container-type: inline-size;
+    container-name: post-container;
 }
 
 /* Post Card Base */
@@ -43,6 +46,33 @@ header {
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     display: flex;
     flex-direction: column;
+    gap: 0;
+}
+
+/* Se o container pai tiver mais que 500px, muda o layout */
+@container post-container (min-width: 500px) {
+    .post-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .post-card img {
+        width: 40%;
+        height: 100%;
+        aspect-ratio: 1/1;
+    }
+
+    .post-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Se o container pai for muito largo, muda a cor do título */
+@container post-container (min-width: 800px) {
+    .post-content h3 {
+        color: #059669;
+        text-transform: uppercase;
+    }
 }
 
 .post-card img {
