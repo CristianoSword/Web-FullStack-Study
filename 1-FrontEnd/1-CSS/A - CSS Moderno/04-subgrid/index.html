@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Moderno - Subgrid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Estudo de CSS Moderno: Subgrid</h1>
+        <p>Alinhando elementos filhos ao grid do pai.</p>
+    </header>
+
+    <main class="container">
+        <div class="card-grid">
+            <!-- Card 1: Texto curto -->
+            <div class="card">
+                <h3>Título Curto</h3>
+                <img src="https://picsum.photos/300/150?random=20" alt="Img">
+                <p>Descrição curta aqui.</p>
+                <button>Ver mais</button>
+            </div>
+
+            <!-- Card 2: Texto longo -->
+            <div class="card">
+                <h3>Título Bem Mais Longo Que O Normal Para Teste</h3>
+                <img src="https://picsum.photos/300/150?random=21" alt="Img">
+                <p>Uma descrição bem mais longa que vai ocupar várias linhas e normalmente quebraria o alinhamento dos outros cards vizinhos se não usássemos subgrid.</p>
+                <button>Ver mais</button>
+            </div>
+
+            <!-- Card 3: Texto médio -->
+            <div class="card">
+                <h3>Título Médio</h3>
+                <img src="https://picsum.photos/300/150?random=22" alt="Img">
+                <p>Descrição média para equilíbrio visual.</p>
+                <button>Ver mais</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
