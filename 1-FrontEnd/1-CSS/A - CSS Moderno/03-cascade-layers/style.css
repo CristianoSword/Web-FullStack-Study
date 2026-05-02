@@ -1,0 +1,27 @@
+/* Definindo a ordem das camadas - CRITICAL */
+@layer reset, base, components, utilities;
+
+@layer reset {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+@layer base {
+    body {
+        font-family: sans-serif;
+        padding: 2rem;
+        background: #f0f2f5;
+    }
+}
+
+@layer components {
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}

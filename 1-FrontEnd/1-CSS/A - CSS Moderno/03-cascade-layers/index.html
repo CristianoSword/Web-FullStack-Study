@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Moderno - Cascade Layers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Estudo de CSS Moderno: Cascade Layers (<code>@layer</code>)</h1>
+        <p>Gerenciando a especificidade sem dor de cabeça.</p>
+    </header>
+
+    <main class="container">
+        <section class="demo">
+            <h2>O Botão de Camadas</h2>
+            <p>Este botão é estilizado em diferentes camadas. A ordem das camadas define quem ganha!</p>
+            <button class="btn primary">Botão Importante</button>
+        </section>
+
+        <section class="explanation">
+            <h3>Ordem das Camadas:</h3>
+            <pre>
+@layer reset, base, components, utilities;
+            </pre>
+        </section>
+    </main>
+</body>
+</html>
