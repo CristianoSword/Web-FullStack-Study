@@ -28,11 +28,19 @@
         <label for="cor">Color Picker:</label>
         <input type="color" id="cor" value="#42cafe">
 
-        <label for="nivel">Range (Nível):</label>
-        <input type="range" id="nivel" min="0" max="100">
+        <label for="nivel">Range (Nível: <span id="val">50</span>):</label>
+        <input type="range" id="nivel" min="0" max="100" value="50">
 
         <label for="data">Data de Estudo:</label>
         <input type="date" id="data">
     </form>
+
+    <script>
+        const range = document.getElementById('nivel');
+        const val = document.getElementById('val');
+        
+        // Atualiza o valor exibido em tempo real
+        range.oninput = () => val.textContent = range.value;
+    </script>
 </body>
 </html>
