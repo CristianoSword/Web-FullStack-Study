@@ -33,9 +33,37 @@ header {
     background: #e2e8f0;
     padding: 1rem;
     border-radius: 12px;
+    position: relative;
     /* Define o container */
     container-type: inline-size;
     container-name: post-container;
+}
+
+.container-parent::before {
+    content: "Container < 500px";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 10px;
+    background: #94a3b8;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    z-index: 20;
+}
+
+@container post-container (min-width: 500px) {
+    .container-parent::before {
+        content: "Container > 500px (Horizontal)";
+        background: #0ea5e9;
+    }
+}
+
+@container post-container (min-width: 800px) {
+    .container-parent::before {
+        content: "Container > 800px (Large)";
+        background: #059669;
+    }
 }
 
 /* Post Card Base */
