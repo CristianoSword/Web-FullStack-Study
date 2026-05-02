@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo: Web Components</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; padding: 40px; }
+    </style>
 </head>
 <body>
     <h1>Web Components Nativos</h1>
     
-    <!-- Nossa tag personalizada -->
     <minha-saudacao nome="Cristiano"></minha-saudacao>
+    <minha-saudacao nome="Estudante"></minha-saudacao>
 
+    <script>
+        class MinhaSaudacao extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+                const wrapper = document.createElement('div');
+                wrapper.setAttribute('class', 'card');
+                
+                const nome = this.getAttribute('nome') || 'Visitante';
+                wrapper.innerHTML = `
+                    <style>
+                        .card { 
+                            background: #333; padding: 20px; border-radius: 10px; 
+                            margin-bottom: 10px; border-left: 5px solid #42cafe;
+                        }
+                        h2 { color: #42cafe; margin: 0; }
+                    </style>
+                    <h2>Olá, ${nome}!</h2>
+                    <p>Este é um Custom Element com Shadow DOM.</p>
+                `;
+                shadow.appendChild(wrapper);
+            }
+        }
+        customElements.define('minha-saudacao', MinhaSaudacao);
+    </script>
 </body>
 </html>
