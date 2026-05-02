@@ -95,3 +95,45 @@ input {
     font-size: 0.875rem;
     margin-top: 0.5rem;
 }
+
+/* ===========================================
+   CSS MODERN: :has() Implementation
+   =========================================== */
+
+/* 1. Mudar estilo do Card se ele TIVER uma imagem */
+.card:has(img) {
+    border-bottom: 4px solid var(--primary-color);
+}
+
+.card:has(img) .card-content {
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
+}
+
+/* 2. Mudar estilo do Card se ele NÃO TIVER imagem */
+.card:not(:has(img)) {
+    display: flex;
+    align-items: center;
+    border: 2px dashed #475569;
+    background: #0f172a;
+}
+
+/* 3. Estilizar o Form Group se ele TIVER uma mensagem de erro */
+.form-group:has(.error-msg) {
+    border: 1px solid var(--accent-color);
+    background: rgba(244, 63, 94, 0.05);
+}
+
+.form-group:has(.error-msg) label {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.form-group:has(.error-msg) .error-msg {
+    display: block;
+}
+
+/* 4. Estilizar o Form Group se o Input dentro estiver focado */
+.form-group:has(input:focus) {
+    outline: 2px solid var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+}
