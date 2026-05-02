@@ -55,5 +55,5 @@ All technologies studied and those on the list to study:
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by [CristianoSword](https://github.com/CristianoSword)</sub>
+  <sub>Built with ❤️ by CristianoSword</sub>
 </div>
