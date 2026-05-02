@@ -11,17 +11,19 @@
             display: flex; align-items: center; justify-content: center; 
             cursor: grab; border-radius: 8px; font-weight: bold;
         }
-        #drop-zone { 
+        .drop-zone { 
             width: 200px; height: 200px; border: 2px dashed #444; 
             display: flex; align-items: center; justify-content: center; 
             border-radius: 10px; transition: 0.3s;
         }
-        #drop-zone.over { border-color: #42cafe; background: rgba(66, 202, 254, 0.1); }
+        .drop-zone.over { border-color: #42cafe; background: rgba(66, 202, 254, 0.1); }
     </style>
 </head>
 <body>
     <h1>Drag and Drop Nativo</h1>
     
+    <div id="drag-item" draggable="true">Mova-me</div>
+
     <div id="drop-zone-1" class="drop-zone">Zona A</div>
     <div id="drop-zone-2" class="drop-zone">Zona B</div>
 
