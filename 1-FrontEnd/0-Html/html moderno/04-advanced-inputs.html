@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo: Advanced Inputs & Datalist</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #fff; padding: 40px; }
+        form { background: #222; padding: 20px; border-radius: 10px; display: flex; flex-direction: column; gap: 15px; width: 300px; }
+        input { padding: 8px; border-radius: 5px; border: 1px solid #444; background: #333; color: white; }
+        label { font-size: 0.9rem; color: #42cafe; }
+    </style>
 </head>
 <body>
     <h1>Inputs Modernos do HTML5</h1>
     
     <form>
-        <label for="framework">Escolha um Framework:</label>
-        <input list="frameworks" id="framework" name="framework">
+        <label for="framework">Datalist (Search):</label>
+        <input list="frameworks" id="framework" placeholder="Busque...">
         <datalist id="frameworks">
             <option value="React">
             <option value="Vue">
             <option value="Angular">
             <option value="Svelte">
+            <option value="Next.js">
         </datalist>
-    </form>
 
+        <label for="cor">Color Picker:</label>
+        <input type="color" id="cor" value="#42cafe">
+
+        <label for="nivel">Range (Nível):</label>
+        <input type="range" id="nivel" min="0" max="100">
+
+        <label for="data">Data de Estudo:</label>
+        <input type="date" id="data">
+    </form>
 </body>
 </html>
