@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/banner.png" alt="Web FullStack Study Banner" width="100%">
+  <img src="assets/banner.png?v=1" alt="Web FullStack Study Banner" width="100%">
 </div>
 
 # Web-FullStack-Study
