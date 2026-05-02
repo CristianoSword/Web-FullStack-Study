@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo: Native Dialog API</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+        button { padding: 10px 20px; cursor: pointer; background: #42cafe; border: none; color: white; font-weight: bold; border-radius: 5px; }
+        
+        dialog { 
+            border: none; border-radius: 10px; padding: 20px; width: 300px;
+            background: #2a2a2a; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        dialog::backdrop { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); }
+    </style>
 </head>
 <body>
     <h1>Tag &lt;dialog&gt; Nativa</h1>
@@ -12,9 +22,17 @@
 
     <dialog id="myModal">
         <h2>Bem-vindo!</h2>
-        <p>Este é um modal nativo do HTML5.</p>
+        <p>Este é um modal nativo do HTML5, sem bibliotecas externas.</p>
         <button id="closeBtn">Fechar</button>
     </dialog>
 
+    <script>
+        const modal = document.getElementById('myModal');
+        const openBtn = document.getElementById('openBtn');
+        const closeBtn = document.getElementById('closeBtn');
+
+        openBtn.onclick = () => modal.showModal();
+        closeBtn.onclick = () => modal.close();
+    </script>
 </body>
 </html>
