@@ -41,3 +41,35 @@ body {
 .base {
     background-color: var(--brand-color);
 }
+
+/* 1. Mistura de Cores */
+.mix-light-10 {
+    background-color: color-mix(in srgb, var(--brand-color), white 10%);
+}
+
+.mix-light-30 {
+    background-color: color-mix(in srgb, var(--brand-color), white 30%);
+}
+
+.mix-dark-10 {
+    background-color: color-mix(in srgb, var(--brand-color), black 10%);
+}
+
+.mix-dark-30 {
+    background-color: color-mix(in srgb, var(--brand-color), black 30%);
+}
+
+/* 2. Cores Relativas (Sintaxe moderna para opacidade) */
+.opacity-80 {
+    background-color: rgb(from var(--brand-color) r g b / 0.8);
+}
+
+.opacity-50 {
+    background-color: rgb(from var(--brand-color) r g b / 0.5);
+}
+
+.opacity-20 {
+    background-color: rgb(from var(--brand-color) r g b / 0.2);
+    color: var(--text-color);
+    text-shadow: none;
+}
