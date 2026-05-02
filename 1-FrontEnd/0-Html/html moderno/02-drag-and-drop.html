@@ -4,15 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo: Drag and Drop API</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: #eee; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+        #drag-item { 
+            width: 100px; height: 100px; background: #42cafe; color: white; 
+            display: flex; align-items: center; justify-content: center; 
+            cursor: grab; border-radius: 8px; font-weight: bold;
+        }
+        #drop-zone { 
+            width: 200px; height: 200px; border: 2px dashed #444; 
+            display: flex; align-items: center; justify-content: center; 
+            border-radius: 10px; transition: 0.3s;
+        }
+        #drop-zone.over { border-color: #42cafe; background: rgba(66, 202, 254, 0.1); }
+    </style>
 </head>
 <body>
     <h1>Drag and Drop Nativo</h1>
     
-    <div id="source-container">
-        <div id="drag-item" draggable="true">Arraste-me!</div>
-    </div>
+    <div id="drag-item" draggable="true">Mova-me</div>
 
-    <div id="drop-zone">Arraste aqui</div>
+    <div id="drop-zone">Zona de Drop</div>
 
+    <script>
+        const item = document.getElementById('drag-item');
+        const zone = document.getElementById('drop-zone');
+
+        item.addEventListener('dragstart', (e) => e.dataTransfer.setData('text/plain', e.target.id));
+
+        zone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            zone.classList.add('over');
+        });
+
+        zone.addEventListener('dragleave', () => zone.classList.remove('over'));
+
+        zone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            zone.classList.remove('over');
+            const id = e.dataTransfer.getData('text/plain');
+            const draggedElement = document.getElementById(id);
+            zone.appendChild(draggedElement);
+        });
+    </script>
 </body>
 </html>
