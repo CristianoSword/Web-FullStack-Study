@@ -16,3 +16,6 @@ Isso resolve o problema de "onde o componente será usado". Você cria o compone
 ## Como funciona (Resumo):
 1.  Defina o container pai com `container-type: inline-size`.
 2.  Use `@container` (ao invés de `@media`) para aplicar os estilos.
+
+> [!IMPORTANT]
+> No CSS, a **ordem das regras importa**. Sempre defina os estilos base do componente **antes** das Container Queries, para que as queries consigam sobrescrever os valores base corretamente quando a condição for atingida.
