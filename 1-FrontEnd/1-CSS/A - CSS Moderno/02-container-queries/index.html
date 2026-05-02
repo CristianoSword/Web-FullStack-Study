@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Moderno - Container Queries</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Estudo de CSS Moderno: Container Queries</h1>
+        <p>A responsividade agora é baseada no elemento pai, não no viewport.</p>
+    </header>
+
+    <main class="wrapper">
+        <div class="layout-grid">
+            <!-- Sidebar estreita -->
+            <aside class="sidebar container-parent">
+                <h2>Sidebar</h2>
+                <div class="post-card">
+                    <img src="https://picsum.photos/400/300?random=10" alt="Thumbnail">
+                    <div class="post-content">
+                        <h3>Post na Sidebar</h3>
+                        <p>Este card está apertado, deve se ajustar para uma lista vertical.</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Área principal larga -->
+            <section class="content container-parent">
+                <h2>Conteúdo Principal</h2>
+                <div class="post-card">
+                    <img src="https://picsum.photos/800/400?random=11" alt="Thumbnail">
+                    <div class="post-content">
+                        <h3>Post na Área Principal</h3>
+                        <p>Este card tem espaço de sobra, deve se expandir para um layout horizontal.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
