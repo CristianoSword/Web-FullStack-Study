@@ -5,15 +5,22 @@
 # Web-FullStack-Study
 
 <div align="center">
-  [![Progress](https://img.shields.io/badge/Study_Progress-61%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white)](https://github.com/CristianoSword/Web-FullStack-Study)
+  <a href="https://github.com/CristianoSword/Web-FullStack-Study">
+    <img src="https://img.shields.io/badge/Study_Progress-69%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+  </a>
 </div>
        
-<p>
-❤❤❤❤❤❤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 61/100% 📚📚📚📚📚📚      
+<p align="center">
+  ❤❤❤❤❤❤❤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 69/100% 📚📚📚📚📚📚📚
 </p>         
 
-:orange_book:	 Repo for study of FrontEnd, BackEnd and DevOps.<br>
-:sparkles:  The magic of studying a little every day :sparkles: 
+<p align="center">
+  :orange_book: Repo for study of FrontEnd, BackEnd and DevOps.<br>
+  :sparkles: The magic of studying a little every day :sparkles: 
+</p>
 
 ---
 
@@ -22,8 +29,8 @@ All technologies studied and those on the list to study:
 
 | 🐤 FrontEnd | Status | ⚙️ BackEnd | Status | 🛠️ DevOps | Status | 🧪 QA | Status |
 | :--- | :---: | :--- | :---: | :--- | :---: | :--- | :---: |
-| **HTML** | ✅ | **PHP** | ✅ | **Docker** | ✅ | **Jest** | ✅ |
-| **CSS** | ✅ | **Laravel** | ⏳ | **Heroku** | ⏳ | **Cypress** | ⏳ |
+| **HTML5 & Modern APIs** | ✅ | **PHP** | ✅ | **Docker** | ✅ | **Jest** | ✅ |
+| **CSS3** | ✅ | **Laravel** | ⏳ | **Heroku** | ⏳ | **Cypress** | ⏳ |
 | **JavaScript** | ✅ | **Node** | ✅ | **AWS** | ⏳ | **Selenium** | ✅ |
 | **jQuery** | ✅ | **Ruby on Rails**| ⏳ | **Digital Ocean**| ⏳ | **JUnit** | ⏳ |
 | **React** | ✅ | **C++** | ✅ | **GCP** | ⏳ | | |
@@ -38,7 +45,8 @@ All technologies studied and those on the list to study:
 ## 📂 Project Structure
 
 ### 🎨 [FrontEnd](1-FrontEnd/)
-- **[HTML](1-FrontEnd/0-Html/)**: Acessibilidade, DOM events, WebStorage.
+- **[HTML Moderno](1-FrontEnd/0-Html/html%20moderno/)**: Dialog, Drag & Drop, Web Components, Geolocation, SVG.
+- **[HTML Base](1-FrontEnd/0-Html/)**: Acessibilidade, DOM events, WebStorage.
 - **[CSS](1-FrontEnd/1-CSS/)**: Flexbox, Grid, FF7 UI, Pixel Art.
 - **[JavaScript](1-FrontEnd/2-Javascript/)**: ES6, Chrome Extensions, Webpack.
 - **[jQuery & Bootstrap](1-FrontEnd/5-Jquery/)**: Implementações e revisões.
