@@ -49,6 +49,21 @@ header {
     gap: 0;
 }
 
+.post-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 1rem;
+}
+
+.post-content h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
 /* Se o container pai tiver mais que 500px, muda o layout */
 @container post-container (min-width: 500px) {
     .post-card {
@@ -58,7 +73,6 @@ header {
 
     .post-card img {
         width: 40%;
-        height: 100%;
         aspect-ratio: 1/1;
     }
 
@@ -73,19 +87,4 @@ header {
         color: #059669;
         text-transform: uppercase;
     }
-}
-
-.post-card img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-
-.post-content {
-    padding: 1rem;
-}
-
-.post-content h3 {
-    margin-top: 0;
-    color: var(--primary);
 }
