@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudo: Details & Summary API</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: white; padding: 40px; }
+        details { 
+            background: #2a2a2a; border-radius: 8px; margin-bottom: 10px; 
+            overflow: hidden; border: 1px solid #444; 
+        }
+        summary { 
+            padding: 15px; cursor: pointer; font-weight: bold; 
+            list-style: none; display: flex; justify-content: space-between;
+        }
+        summary::after { content: '▶'; transition: 0.3s; color: #42cafe; }
+        details[open] summary::after { transform: rotate(90deg); }
+        .content { padding: 15px; border-top: 1px solid #444; background: #333; }
+    </style>
 </head>
 <body>
     <h1>Acordeão Nativo (Details)</h1>
     
     <details>
         <summary>O que é HTML5?</summary>
-        <p>HTML5 é a quinta e última versão do HTML.</p>
+        <div class="content">
+            <p>HTML5 é a quinta e última versão principal do HTML, trazendo APIs para áudio, vídeo, canvas e muito mais.</p>
+        </div>
     </details>
 
+    <details>
+        <summary>Precisa de JavaScript?</summary>
+        <div class="content">
+            <p>Não! O comportamento de abrir e fechar é 100% nativo do navegador.</p>
+        </div>
+    </details>
 </body>
 </html>
