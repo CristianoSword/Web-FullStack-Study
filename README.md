@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-69%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-71%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
        
 <p align="center">
-  ❤❤❤❤❤❤❤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 69/100% 📚📚📚📚📚📚📚
+  ❤❤❤❤❤❤❤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 71/100% 📚📚📚📚📚📚📚
 </p>         
 
 <p align="center">
@@ -32,7 +32,7 @@ All technologies studied and those on the list to study:
 | **HTML5 & Modern APIs** | ✅ | **PHP** | ✅ | **Docker** | ✅ | **Jest** | ✅ |
 | **CSS3** | ✅ | **Laravel** | ⏳ | **Heroku** | ⏳ | **Cypress** | ⏳ |
 | **JavaScript** | ✅ | **Node** | ✅ | **AWS** | ⏳ | **Selenium** | ✅ |
-| **jQuery** | ✅ | **Ruby on Rails**| ⏳ | **Digital Ocean**| ⏳ | **JUnit** | ⏳ |
+| **jQuery** | ✅ | **Ruby on Rails**| ✅ | **Digital Ocean**| ⏳ | **JUnit** | ⏳ |
 | **React** | ✅ | **C++** | ✅ | **GCP** | ⏳ | | |
 | **Vue** | ✅ | **BlockChain** | ⏳ | | | | |
 | **Angular** | ✅ | **SQL** | ✅ | | | | |
