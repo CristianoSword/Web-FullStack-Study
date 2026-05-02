@@ -16,6 +16,13 @@
             stroke-dashoffset: 0;
         }
         svg:hover circle { fill: #ff4757; stroke-dashoffset: 251; }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        svg { animation: pulse 2s infinite ease-in-out; }
     </style>
 </head>
 <body>
@@ -25,6 +32,6 @@
         <circle cx="50" cy="50" r="40" />
     </svg>
 
-    <p>Passe o mouse no círculo para ver a mágica do CSS no SVG.</p>
+    <p>O SVG faz parte do DOM, permitindo manipulação via CSS e JS como qualquer elemento HTML.</p>
 </body>
 </html>
