@@ -1,99 +1,80 @@
-# Web-FullStack-Study
-       
-<p>
-❤❤❤❤❤❤❤🖤🖤🖤 &nbsp&nbsp&nbsp 70/100% 📚📚📚📚📚📚📚      
-</p>         
+<div align="center">
+  <img src="assets/banner.png" alt="Web FullStack Study Banner" width="100%">
+  
+  # 🚀 Web FullStack Study
+  
+  **A comprehensive journey through the modern web development ecosystem.**
+  
+  [![Progress](https://img.shields.io/badge/Study_Progress-70%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white)](https://github.com/CristianoSword/Web-FullStack-Study)
+  [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+  
+  ---
+  
+  > "The magic of studying a little every day." ✨
+</div>
 
-:orange_book:	 Repo for study of FrontEnd, BackEnd and DevOps.<br>
-:sparkles:  The magic of studying a little every day :sparkles: 
+## 📚 Overview
 
-## Technologies 
-All technologies studied and those on the list to study:
+This repository serves as a personal laboratory and documentation for my learning path across the full development stack. From the intricacies of **FrontEnd** aesthetics to the robustness of **BackEnd** logic, and the efficiency of **DevOps** pipelines.
 
-|🐤 FrontEnd |                      |⚙️  BackEnd    |                   |🛠️ DevOps      |                   |🧪 QA    |                    |
-| --------   | ----------           |--------------- |-------------------|--------------- |-------------------|----      |-----              |
-| HTML       |:heavy_check_mark:	 | PHP            |:heavy_check_mark: | Docker         |:heavy_check_mark: |Jest      |:heavy_check_mark: |
-| CSS        |:heavy_check_mark:    | Laravel        |:stopwatch:        | Heroku         |:stopwatch:        |Cypress   |:stopwatch:        |
-| JavaScript |:heavy_check_mark:    | Node           |:heavy_check_mark: | AWS            |:stopwatch:        |Selenium  |:heavy_check_mark: |
-| Jquery     |:heavy_check_mark:    | Ruby on Rails  |:stopwatch:        | Digital Ocean  |:stopwatch:        |JUnit     |:stopwatch:        |
-| React      |:heavy_check_mark:    | C++            |:heavy_check_mark: | GCP            |:stopwatch:        |          |                   |
-| Vue        |:heavy_check_mark:    | BlockChain     |:stopwatch:        |                |                   |          |                   |
-| Angular    |:heavy_check_mark:    | SQL            |:heavy_check_mark: |                |                   |          |                   |
-| Bootstrap  |:heavy_check_mark:    | Elixir         |:stopwatch:        |                |                   |          |                   |
-| Less/Sass  |:heavy_check_mark:    | WebAssembly    |:stopwatch:        |                |                   |          |                   |
-| -          |                      | Earlang        |:stopwatch:        |                |                   |          |                   |
+---
 
+## 🛠️ Tech Stack
 
-### Folders Tree
-<pre>
+| 🎨 FrontEnd | Status | ⚙️ BackEnd | Status | 🏗️ DevOps | Status | 🧪 QA | Status |
+| :--- | :---: | :--- | :---: | :--- | :---: | :--- | :---: |
+| **HTML5** | ✅ | **PHP 8** | ✅ | **Docker** | ✅ | **Jest** | ✅ |
+| **CSS3** | ✅ | **Laravel** | ⏳ | **Heroku** | ⏳ | **Cypress** | ⏳ |
+| **JavaScript** | ✅ | **Node.js** | ✅ | **AWS** | ⏳ | **Selenium** | ✅ |
+| **jQuery** | ✅ | **Ruby on Rails**| ⏳ | **Digital Ocean**| ⏳ | **JUnit** | ⏳ |
+| **React** | ✅ | **C++** | ✅ | **GCP** | ⏳ | | |
+| **Vue.js** | ✅ | **BlockChain** | ⏳ | | | | |
+| **Angular** | ✅ | **SQL** | ✅ | | | | |
+| **Bootstrap** | ✅ | **Elixir** | ⏳ | | | | |
+| **SASS/LESS** | ✅ | **WebAssembly** | ✅ | | | | |
 
-├───1-FrontEnd
-│   ├───0-Html
-│   │   ├───acessibilidade
-│   │   ├───canvas bandeira japao
-│   │   ├───DOM event
-│   │   ├───html semantico
-│   │   ├───input eye
-│   │   ├───New tag html
-│   │   ├───retangulo.html
-│   │   ├───Trocando de classe
-│   │   ├───validacao
-│   │   └───webStorage
-│   ├───1-CSS
-│   │   ├───Barra Scroll personalizada
-│   │   ├───css float
-│   │   ├───CSS study
-│   │   ├───css-display-grid
-│   │   ├───div box pad
-│   │   ├───FF7 box UI
-│   │   ├───flexbox geral
-│   │   ├───focus
-│   │   ├───grid area total control
-│   │   ├───grid-areas
-│   │   ├───grid-css
-│   │   ├───grid-rev
-│   │   ├───img-trans-text
-│   │   ├───javascript e css
-│   │   ├───Media query
-│   │   ├───pixel-art-css
-│   │   ├───Positions
-│   │   ├───sidenav-button
-│   │   ├───tela RF
-│   │   ├───template navbar site
-│   │   └───zoom img
-│   ├───2-Javascript
-│   │   ├───2d plataform game sample
-│   │   ├───clock-js-main
-│   │   ├───ES6 js rev
-│   │   ├───extensao chrome
-│   │   ├───GoogleCharts
-│   │   ├───image-grid
-│   │   ├───rev js
-│   │   ├───Scroll html js
-│   │   ├───validacao form com js
-│   │   ├───videoJS mosaic
-│   │   └───webpack-tuto      
-│   ├───5-Jquery
-│   │   ├───hello world jquery
-│   │   └───jquery rev geral
-│   └───6-Bootstrap
-│       └───sidebar nav
-│
-├───2-BackEnd
-│   ├───0-C
-│   ├───1-C++
-│   ├───2-PHP
-│   │   ├───ex00 - Hello world php8
-│   │   ├───ex01 - dados servidor
-│   │   ├───ex02 - date
-│   │   ├───ex03- tipos
-│   │   ├───ex04- formularios
-│   │   ├───hello php7
-│   │   └───scprits php7
-│   ├───3-Nodejs
-│   │   └───hello world
-│   └───4-Ruby on Rails
-│        └───hello world
-├───3-Devops
-│   
-└───4-QA
+---
+
+## 📂 Project Structure
+
+### 🎨 [FrontEnd](1-FrontEnd/)
+Focuses on UI/UX, layouts, and client-side logic.
+- **[HTML](1-FrontEnd/0-Html/)**: Semantic structure, accessibility, and storage.
+- **[CSS](1-FrontEnd/1-CSS/)**: Layouts (Grid/Flexbox), animations, and custom components (FF7 UI, Pixel Art).
+- **[JavaScript](1-FrontEnd/2-Javascript/)**: DOM manipulation, ES6+, Webpack, and 2D game samples.
+- **[jQuery & Bootstrap](1-FrontEnd/5-Jquery/)**: Legacy and utility-first framework implementations.
+
+### ⚙️ [BackEnd](2-BackEnd/)
+Core logic, database management, and server-side processing.
+- **[C & C++](2-BackEnd/0-C/)**: Low-level algorithms and logic fundamentals.
+- **[PHP](2-BackEnd/2-PHP/)**: Modern PHP 8 practices and server-side scripts.
+- **[Node.js](2-BackEnd/3-Nodejs/)**: JavaScript on the server.
+- **[Ruby on Rails](2-BackEnd/4-Ruby on Rails/)**: MVC architecture and rapid development.
+- **[WebAssembly](2-BackEnd/5-Web Assembly/)**: High-performance code in the browser.
+
+### 🏗️ [DevOps](3-Devops/)
+Deployment, containerization, and infrastructure as code.
+- **[Docker](3-Devops/)**: Container management and environment isolation.
+
+### 🧪 [QA](4-QA/)
+Ensuring code quality and system reliability.
+- **[Testing](4-QA/)**: Unit tests with Jest and automation with Selenium.
+
+---
+
+## 🚀 Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/CristianoSword/Web-FullStack-Study.git
+   ```
+2. **Navigate through the folders:**
+   Explore each category to find specific examples and study notes.
+3. **Run examples:**
+   Most FrontEnd examples can be opened directly in the browser, while BackEnd folders may require specific environments (PHP, Node, etc.).
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by [CristianoSword](https://github.com/CristianoSword)</sub>
+</div>
