@@ -45,7 +45,7 @@ All technologies studied and those on the list to study:
 ## 📂 Project Structure
 
 ### 🎨 [FrontEnd](1-FrontEnd/)
-- **[HTML Moderno](1-FrontEnd/0-Html/html%20moderno/)**: Dialog, Drag & Drop, Web Components, Geolocation, SVG.
+- **[HTML Moderno](1-FrontEnd/0-Html/A%20-%20html%20moderno/)**: Dialog, Drag & Drop, Web Components, Geolocation, SVG.
 - **[HTML Base](1-FrontEnd/0-Html/)**: Acessibilidade, DOM events, WebStorage.
 - **[CSS](1-FrontEnd/1-CSS/)**: Flexbox, Grid, FF7 UI, Pixel Art.
 - **[JavaScript](1-FrontEnd/2-Javascript/)**: ES6, Chrome Extensions, Webpack.
