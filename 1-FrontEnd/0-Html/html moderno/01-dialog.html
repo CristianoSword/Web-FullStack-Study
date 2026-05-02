@@ -31,8 +31,19 @@
         const openBtn = document.getElementById('openBtn');
         const closeBtn = document.getElementById('closeBtn');
 
+        // showModal() abre o modal como um "top-layer", bloqueando interação externa
+        // Diferente de show(), que abre o elemento mas permite interagir com o fundo.
         openBtn.onclick = () => modal.showModal();
+        
+        // close() fecha o modal de forma limpa.
         closeBtn.onclick = () => modal.close();
+
+        // Bonus: Fechar ao clicar fora (no backdrop)
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.close();
+        };
+
+        // Referência: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
     </script>
 </body>
 </html>
