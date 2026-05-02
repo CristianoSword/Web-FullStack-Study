@@ -25,13 +25,19 @@
             navigator.geolocation.getCurrentPosition(
                 (pos) => {
                     const { latitude, longitude } = pos.coords;
-                    output.innerHTML = `Latitude: ${latitude} <br> Longitude: ${longitude}`;
+                    output.innerHTML = `
+                        Latitude: ${latitude} <br> 
+                        Longitude: ${longitude} <br><br>
+                        <a href="https://www.google.com/maps?q=${latitude},${longitude}" target="_blank" style="color:#42cafe">Ver no Google Maps</a>
+                    `;
                 },
                 (err) => {
                     output.innerHTML = `Erro: ${err.message}`;
                 }
             );
         };
+
+        // Nota: Esta API requer HTTPS para funcionar em produção por motivos de segurança.
     </script>
 </body>
 </html>
