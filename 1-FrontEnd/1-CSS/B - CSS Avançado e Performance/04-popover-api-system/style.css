@@ -27,11 +27,59 @@ body {
 }
 
 .main-menu {
-    border: 1px solid #334155;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background: #1e293b;
     color: white;
-    padding: 2rem;
+    padding: 0;
     border-radius: 1rem;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Pseudo-classe nativa */
+.main-menu:popover-open {
+    display: block;
+    animation: slide-up 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Backdrop nativo */
+.main-menu::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.main-menu nav ul {
+    list-style: none;
+}
+
+.main-menu nav ul li a, 
+.main-menu nav ul li button {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    color: white;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.main-menu nav ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.main-menu nav ul li a:hover,
+.main-menu nav ul li button:hover {
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .submenu {
