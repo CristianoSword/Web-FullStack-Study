@@ -59,6 +59,7 @@ header h1 {
     height: 350px;
     background-size: cover;
     background-position: center;
+    view-transition-name: movie-image;
 }
 
 .movie-info {
@@ -72,4 +73,35 @@ header h1 {
 .movie-info span {
     color: #94a3b8;
     font-size: 0.9rem;
+}
+
+/* Details Page */
+.movie-banner {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    view-transition-name: movie-image;
+}
+
+.movie-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.back-btn {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: var(--accent);
+    color: white;
 }
