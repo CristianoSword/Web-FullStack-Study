@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popover API | Command Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <header>
+            <h1>Command Center</h1>
+            <button popovertarget="menu-principal" class="menu-trigger">Menu do Sistema</button>
+        </header>
+
+        <section class="content">
+            <p>Clique no botão acima para abrir o sistema de menus nativo.</p>
+        </section>
+
+        <!-- Popover nativo -->
+        <div id="menu-principal" popover class="main-menu">
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Segurança</a></li>
+                    <li><a href="#">Rede</a></li>
+                    <li><button popovertarget="config-rapida">Configurações Rápidas</button></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Segundo nível de popover -->
+        <div id="config-rapida" popover class="submenu">
+            <h3>Configurações</h3>
+            <label>Modo Escuro <input type="checkbox" checked></label>
+            <label>Notificações <input type="checkbox"></label>
+        </div>
+    </main>
+</body>
+</html>
