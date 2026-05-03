@@ -10,16 +10,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main id="app">
-        <!-- O conteúdo será alternado entre Home e Detalhes -->
+    <main id="app" aria-live="polite">
+        <!-- O conteúdo será alternado dinamicamente -->
         <section class="page home">
             <header>
                 <h1>CineModern</h1>
                 <p>Explore a nova era de transições fluidas no CSS.</p>
             </header>
             
-            <div class="movie-grid">
-                <article class="movie-card" onclick="navigateTo('interstellar')">
+            <div class="movie-grid" role="list">
+                <article class="movie-card" onclick="navigateTo('interstellar')" role="listitem" aria-label="Ver detalhes de Interstellar">
                     <div class="movie-thumb" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=400&q=80')"></div>
                     <div class="movie-info">
                         <h3>Interstellar</h3>
@@ -27,7 +27,7 @@
                     </div>
                 </article>
                 
-                <article class="movie-card" onclick="navigateTo('inception')">
+                <article class="movie-card" onclick="navigateTo('inception')" role="listitem" aria-label="Ver detalhes de Inception">
                     <div class="movie-thumb" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80')"></div>
                     <div class="movie-info">
                         <h3>Inception</h3>

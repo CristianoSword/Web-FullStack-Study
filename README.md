@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-66%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-70%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
        
 <p align="center">
-  ❤❤❤❤❤❤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 66/100% 📚📚📚📚📚📚
+  ❤❤❤❤❤❤❤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 70/100% 📚📚📚📚📚📚📚
 </p>         
 
 <p align="center">
@@ -47,7 +47,7 @@ All technologies studied and those on the list to study:
 ### 🎨 [FrontEnd](1-FrontEnd/)
 - **[HTML Moderno](1-FrontEnd/0-Html/A%20-%20html%20moderno/)**: Dialog, Drag & Drop, Web Components, Geolocation, SVG.
 - **[HTML Base](1-FrontEnd/0-Html/)**: Acessibilidade, DOM events, WebStorage.
-- **[CSS](1-FrontEnd/1-CSS/)**: Flexbox, Grid, FF7 UI, Pixel Art, **[CSS Moderno](1-FrontEnd/1-CSS/A%20-%20CSS%20Moderno/)**.
+- **[CSS](1-FrontEnd/1-CSS/)**: Flexbox, Grid, FF7 UI, Pixel Art, **[CSS Moderno](1-FrontEnd/1-CSS/A%20-%20CSS%20Moderno/)**, **[CSS Avançado & Performance](1-FrontEnd/1-CSS/B%20-%20CSS%20Avan%C3%A7ado%20e%20Performance/)**.
 - **[JavaScript](1-FrontEnd/2-Javascript/)**: ES6, Chrome Extensions, Webpack.
 - **[jQuery & Bootstrap](1-FrontEnd/5-Jquery/)**: Implementações e revisões.
 
