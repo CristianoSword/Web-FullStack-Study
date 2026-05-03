@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering Performance | Content Visibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Otimização de Renderização</h1>
+            <p>Gerenciando 1.000 itens com 60 FPS usando <code>content-visibility</code>.</p>
+        </header>
+
+        <section class="heavy-list" id="list">
+            <!-- Itens gerados via JS para simular carga -->
+        </section>
+    </main>
+
+    <script>
+        const list = document.getElementById('list');
+        for (let i = 1; i <= 1000; i++) {
+            const item = document.createElement('article');
+            item.className = 'list-item';
+            item.innerHTML = `
+                <div class="item-id">#${i}</div>
+                <div class="item-content">
+                    <h3>Registro de Dados Beta-${i}</h3>
+                    <p>Descrição técnica detalhada para forçar o cálculo de layout do navegador durante o scroll.</p>
+                </div>
+            `;
+            list.appendChild(item);
+        }
+    </script>
+</body>
+</html>
