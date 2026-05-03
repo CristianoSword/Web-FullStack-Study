@@ -43,6 +43,10 @@ header h1 {
     gap: 2rem;
     align-items: center;
     border: 1px solid #222;
+    
+    /* Performance Optimization */
+    content-visibility: auto;
+    contain-intrinsic-size: 0 120px; /* Ajuda o browser a estimar o tamanho antes de renderizar */
 }
 
 .item-id {
