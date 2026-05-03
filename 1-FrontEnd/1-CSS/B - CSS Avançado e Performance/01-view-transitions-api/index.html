@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transitions API | Cinema Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app">
+        <!-- O conteúdo será alternado entre Home e Detalhes -->
+        <section class="page home">
+            <header>
+                <h1>CineModern</h1>
+                <p>Explore a nova era de transições fluidas no CSS.</p>
+            </header>
+            
+            <div class="movie-grid">
+                <article class="movie-card" onclick="navigateTo('interstellar')">
+                    <div class="movie-thumb" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="movie-info">
+                        <h3>Interstellar</h3>
+                        <span>Sci-Fi / Drama</span>
+                    </div>
+                </article>
+                
+                <article class="movie-card" onclick="navigateTo('inception')">
+                    <div class="movie-thumb" style="background-image: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=400&q=80')"></div>
+                    <div class="movie-info">
+                        <h3>Inception</h3>
+                        <span>Action / Sci-Fi</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function navigateTo(movie) {
+            console.log('Navegando para:', movie);
+            // Lógica de transição virá no próximo commit
+        }
+    </script>
+</body>
+</html>
