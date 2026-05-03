@@ -36,9 +36,60 @@
     </main>
 
     <script>
-        function navigateTo(movie) {
-            console.log('Navegando para:', movie);
-            // Lógica de transição virá no próximo commit
+        const movies = {
+            interstellar: {
+                title: 'Interstellar',
+                genre: 'Sci-Fi / Drama',
+                img: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80',
+                desc: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.'
+            },
+            inception: {
+                title: 'Inception',
+                genre: 'Action / Sci-Fi',
+                img: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80',
+                desc: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task.'
+            }
+        };
+
+        function navigateTo(movieId) {
+            const movie = movies[movieId];
+            
+            // Verifica suporte para View Transitions API
+            if (!document.startViewTransition) {
+                renderDetails(movie);
+                return;
+            }
+
+            // Inicia a transição
+            document.startViewTransition(() => {
+                renderDetails(movie);
+            });
+        }
+
+        function renderDetails(movie) {
+            const app = document.getElementById('app');
+            app.innerHTML = `
+                <section class="page details">
+                    <button class="back-btn" onclick="renderHome()">← Voltar</button>
+                    <div class="movie-banner" style="background-image: url('${movie.img}')"></div>
+                    <div class="movie-content">
+                        <h1>${movie.title}</h1>
+                        <span class="genre">${movie.genre}</span>
+                        <p class="desc">${movie.desc}</p>
+                    </div>
+                </section>
+            `;
+        }
+
+        function renderHome() {
+            if (!document.startViewTransition) {
+                location.reload(); // Simplificação para o exemplo
+                return;
+            }
+
+            document.startViewTransition(() => {
+                location.reload(); // Voltando para a Home
+            });
         }
     </script>
 </body>
