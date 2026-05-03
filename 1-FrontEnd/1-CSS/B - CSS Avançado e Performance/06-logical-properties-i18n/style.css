@@ -39,13 +39,17 @@ header {
 
 .info-card {
     background: var(--card-bg);
-    padding-inline: 2rem; /* Logical Padding */
+    padding-inline: 2rem;
     padding-block: 1.5rem;
     border-radius: 1rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    
+    /* Logical Borders and Text */
+    border-inline-start: 6px solid var(--accent); /* Aparece na esquerda em LTR e na direita em RTL */
+    text-align: start; /* Alinha à esquerda em LTR e à direita em RTL */
 }
 
 .info-card .text {
@@ -59,4 +63,10 @@ header {
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Girar ícone em RTL */
+[dir="rtl"] .action-btn {
+    transform: rotate(180deg);
 }
