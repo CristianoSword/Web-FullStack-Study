@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr" id="root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Properties | i18n Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="dashboard">
+        <header>
+            <div class="lang-switcher">
+                <button onclick="toggleDir('ltr')">LTR (Português)</button>
+                <button onclick="toggleDir('rtl')">RTL (Árabe/Hebraico)</button>
+            </div>
+            <h1>Dashboard Global</h1>
+        </header>
+
+        <section class="card-grid">
+            <article class="info-card">
+                <div class="icon">📊</div>
+                <div class="text">
+                    <h3>Vendas Totais</h3>
+                    <p>Relatório de performance semanal.</p>
+                </div>
+                <button class="action-btn">→</button>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        function toggleDir(dir) {
+            document.getElementById('root').dir = dir;
+        }
+    </script>
+</body>
+</html>
