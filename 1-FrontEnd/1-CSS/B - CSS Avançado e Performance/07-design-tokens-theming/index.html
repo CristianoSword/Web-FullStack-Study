@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Tokens | Theming System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-container">
+        <header>
+            <h1>Design System Tokens</h1>
+            <div class="theme-controls">
+                <button onclick="setTheme('light')">Light</button>
+                <button onclick="setTheme('dark')">Dark</button>
+                <button onclick="setTheme('cyber')">Cyber</button>
+            </div>
+        </header>
+
+        <section class="preview">
+            <div class="ui-card">
+                <h2>Componente de Exemplo</h2>
+                <p>Este card utiliza tokens semânticos que mudam de acordo com o tema selecionado.</p>
+                <div class="actions">
+                    <button class="btn-primary">Ação Primária</button>
+                    <button class="btn-outline">Cancelar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    </script>
+</body>
+</html>
