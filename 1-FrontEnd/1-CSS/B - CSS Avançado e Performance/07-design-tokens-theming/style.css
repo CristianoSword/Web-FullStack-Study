@@ -1,0 +1,58 @@
+:root {
+    /* Primitives */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-blue-500: #3b82f6;
+    --color-slate-900: #0f172a;
+    --color-slate-100: #f1f5f9;
+}
+
+[data-theme="light"] {
+    --bg: var(--color-slate-100);
+    --card-bg: var(--color-white);
+    --text: var(--color-slate-900);
+    --primary: var(--color-blue-500);
+}
+
+[data-theme="dark"] {
+    --bg: var(--color-slate-900);
+    --card-bg: #1e293b;
+    --text: var(--color-white);
+    --primary: var(--color-blue-500);
+}
+
+[data-theme="cyber"] {
+    --bg: #0d0221;
+    --card-bg: #261447;
+    --text: #ff0055;
+    --primary: #00f2ff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 3rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.ui-card {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin: 3rem auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
