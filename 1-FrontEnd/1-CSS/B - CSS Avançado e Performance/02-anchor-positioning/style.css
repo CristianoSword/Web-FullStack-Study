@@ -1,0 +1,70 @@
+:root {
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --accent: #38bdf8;
+    --danger: #ef4444;
+    --success: #22c55e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+.dashboard {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+}
+
+header p {
+    color: #94a3b8;
+    margin-bottom: 3rem;
+}
+
+.controls {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.anchor-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    background: #334155;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.anchor-btn:hover {
+    background: #475569;
+}
+
+.tooltip {
+    position: absolute;
+    background: #ffffff;
+    color: #0f172a;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
