@@ -8,9 +8,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background: var(--bg);
+    background: #050505;
     color: var(--text);
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 .container {
@@ -36,23 +36,33 @@ header h1 {
 }
 
 .list-item {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 1rem;
+    background: linear-gradient(145deg, #111, #0a0a0a);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
-    border: 1px solid #222;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
     
     /* Performance Optimization */
     content-visibility: auto;
-    contain-intrinsic-size: 0 120px; /* Ajuda o browser a estimar o tamanho antes de renderizar */
+    contain-intrinsic-size: 0 150px;
+}
+
+.list-item:hover {
+    border-color: var(--accent);
+    transform: scale(1.01);
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.1);
 }
 
 .item-id {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #444;
+    font-size: 2rem;
+    font-weight: 800;
+    color: transparent;
+    background: linear-gradient(to bottom, #333, #111);
+    -webkit-background-clip: text;
+    width: 80px;
 }
 
 .item-content h3 {
