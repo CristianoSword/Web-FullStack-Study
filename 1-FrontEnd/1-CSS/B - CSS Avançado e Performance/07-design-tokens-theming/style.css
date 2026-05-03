@@ -33,19 +33,71 @@
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: system-ui, sans-serif;
+    font-family: 'Outfit', sans-serif;
     min-height: 100vh;
     padding: 3rem;
-    transition: background 0.3s, color 0.3s;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+}
+
+.theme-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.theme-controls button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid color-mix(in srgb, var(--text), transparent 80%);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.theme-controls button:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
 }
 
 .ui-card {
     background: var(--card-bg);
-    padding: 3rem;
-    border-radius: 1rem;
-    max-width: 500px;
-    margin: 3rem auto;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 4rem;
+    border-radius: 2rem;
+    max-width: 600px;
+    margin: 4rem auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid color-mix(in srgb, var(--text), transparent 90%);
+}
+
+.ui-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.ui-card p {
+    color: color-mix(in srgb, var(--text), transparent 30%);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
 }
 
 .btn-primary {
