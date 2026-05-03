@@ -17,15 +17,15 @@
         </header>
 
         <section class="controls">
-            <button class="anchor-btn" id="btn-save">Salvar Projeto</button>
-            <button class="anchor-btn" id="btn-delete">Excluir Tudo</button>
-            <button class="anchor-btn" id="btn-share">Compartilhar</button>
+            <button class="anchor-btn" id="btn-save" aria-describedby="tooltip-save">Salvar Projeto</button>
+            <button class="anchor-btn" id="btn-delete" aria-describedby="tooltip-delete">Excluir Tudo</button>
+            <button class="anchor-btn" id="btn-share" aria-describedby="tooltip-share">Compartilhar</button>
         </section>
 
-        <!-- Tooltips que serão ancorados -->
-        <div class="tooltip" id="tooltip-save">Clique para salvar seu progresso na nuvem.</div>
-        <div class="tooltip" id="tooltip-delete">Atenção: Esta ação é irreversível!</div>
-        <div class="tooltip" id="tooltip-share">Gere um link público para este dashboard.</div>
+        <!-- Tooltips que serão ancorados nativamente -->
+        <div class="tooltip" id="tooltip-save" role="tooltip">Clique para salvar seu progresso na nuvem.</div>
+        <div class="tooltip" id="tooltip-delete" role="tooltip">Atenção: Esta ação é irreversível!</div>
+        <div class="tooltip" id="tooltip-share" role="tooltip">Gere um link público para este dashboard.</div>
     </main>
 </body>
 </html>
