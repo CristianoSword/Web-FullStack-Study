@@ -53,8 +53,46 @@ header p {
     transition: all 0.2s ease;
 }
 
+#btn-save { anchor-name: --btn-save; }
+#btn-delete { anchor-name: --btn-delete; }
+#btn-share { anchor-name: --btn-share; }
+
 .anchor-btn:hover {
     background: #475569;
+}
+
+.anchor-btn:hover + .tooltip,
+.anchor-btn:hover ~ .tooltip {
+    /* Mostra o tooltip correspondente via seletor (simplificado para o exemplo) */
+}
+
+/* Tooltip Positioning Logic */
+#tooltip-save {
+    position-anchor: --btn-save;
+    top: anchor(bottom);
+    left: anchor(center);
+    transform: translateX(-50%) translateY(10px);
+}
+
+#tooltip-delete {
+    position-anchor: --btn-delete;
+    top: anchor(bottom);
+    left: anchor(center);
+    transform: translateX(-50%) translateY(10px);
+}
+
+#tooltip-share {
+    position-anchor: --btn-share;
+    top: anchor(bottom);
+    left: anchor(center);
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Hover Logic to show tooltips */
+#btn-save:hover ~ #tooltip-save,
+#btn-delete:hover ~ #tooltip-delete,
+#btn-share:hover ~ #tooltip-share {
+    opacity: 1;
 }
 
 .tooltip {
