@@ -55,4 +55,24 @@ body {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    /* Mixa a cor primária com preto para o hover */
+    background: color-mix(in srgb, var(--primary), black 20%);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid color-mix(in srgb, var(--text), transparent 70%);
+    color: var(--text);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-outline:hover {
+    background: color-mix(in srgb, var(--text), transparent 90%);
 }
