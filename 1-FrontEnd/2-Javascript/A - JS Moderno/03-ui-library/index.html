@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native UI Library | Web Components</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🧩 Native UI Library</h1>
+            <p>Componentização moderna com <code>Custom Elements</code> & <code>Shadow DOM</code></p>
+        </header>
+
+        <section class="demo-section">
+            <h2>Botões Customizados</h2>
+            <div class="row">
+                <my-button variant="primary">Primary Button</my-button>
+                <my-button variant="secondary">Secondary Button</my-button>
+                <my-button variant="danger">Danger Button</my-button>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Cards Reutilizáveis</h2>
+            <div class="grid">
+                <my-card 
+                    title="Componente Nativo" 
+                    img="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=400&q=80">
+                    Este card foi criado usando Shadow DOM, isolando estilos e estrutura do resto da página.
+                </my-card>
+                
+                <my-card 
+                    title="Design Encapsulado" 
+                    img="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=400&q=80">
+                    O CSS deste componente não vaza para fora, e o CSS da página não entra nele.
+                </my-card>
+            </div>
+        </section>
+    </div>
+
+    <script src="components/MyButton.js" type="module"></script>
+    <script src="components/MyCard.js" type="module"></script>
+</body>
+</html>
