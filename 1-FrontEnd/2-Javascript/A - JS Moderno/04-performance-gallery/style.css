@@ -1,0 +1,82 @@
+:root {
+    --bg: #000;
+    --text: #fff;
+    --accent: #10b981;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+code { color: var(--accent); }
+
+.metrics {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--accent);
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-container {
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+.sentinel {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.loader {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #333;
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

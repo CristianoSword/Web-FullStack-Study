@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Gallery | Lazy Loading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🖼️ Performance Gallery</h1>
+            <p>Otimização extrema com <code>Intersection Observer</code> e <code>Performance API</code></p>
+            <div id="perf-metrics" class="metrics">
+                Aguardando carregamento...
+            </div>
+        </header>
+
+        <main class="gallery" id="gallery">
+            <!-- As imagens serão inseridas via JS para demonstrar o carregamento dinâmico -->
+        </main>
+
+        <div id="sentinel" class="sentinel">
+            <div class="loader"></div>
+            <p>Carregando mais imagens...</p>
+        </div>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
