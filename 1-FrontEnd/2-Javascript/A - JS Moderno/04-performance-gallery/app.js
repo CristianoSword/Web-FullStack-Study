@@ -60,3 +60,24 @@ sentinelObserver.observe(sentinel);
 
 // Inicialização
 addImages(8);
+
+/**
+ * Performance Monitoring
+ */
+if ('PerformanceObserver' in window) {
+    const observer = new PerformanceObserver((list) => {
+        list.getEntries().forEach((entry) => {
+            if (entry.name === 'first-contentful-paint') {
+                metricsDisplay.textContent = `FCP: ${entry.startTime.toFixed(2)}ms | `;
+            }
+            if (entry.entryType === 'largest-contentful-paint') {
+                metricsDisplay.textContent += `LCP: ${entry.startTime.toFixed(2)}ms`;
+            }
+        });
+    });
+
+    observer.observe({ type: 'paint', buffered: true });
+    observer.observe({ type: 'largest-contentful-paint', buffered: true });
+} else {
+    metricsDisplay.textContent = "Métricas de performance não suportadas neste navegador.";
+}
