@@ -1,0 +1,81 @@
+:root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --primary: #ab7df8;
+    --secondary: #30363d;
+    --text: #c9d1d9;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+}
+
+#app {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 { color: var(--primary); }
+code { color: #f0883e; }
+
+.vault-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--secondary);
+}
+
+h2 { font-size: 1rem; margin-bottom: 1rem; color: #8b949e; }
+
+textarea, input {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid var(--secondary);
+    border-radius: 6px;
+    padding: 0.8rem;
+    color: #fff;
+    font-family: inherit;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+textarea { height: 100px; resize: none; }
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:hover { opacity: 0.8; }
+button.secondary { background: var(--secondary); }
+
+.output-box {
+    background: #0d1117;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px dashed var(--secondary);
+    margin-bottom: 1rem;
+    word-break: break-all;
+    min-height: 100px;
+}

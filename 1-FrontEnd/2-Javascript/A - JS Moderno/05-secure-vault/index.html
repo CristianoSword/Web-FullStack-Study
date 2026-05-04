@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Vault | Web Crypto API</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🔐 Secure Vault</h1>
+            <p>Criptografia de nível militar com <code>Web Crypto API</code></p>
+        </header>
+
+        <main class="vault-container">
+            <div class="card">
+                <h2>Criptografar Mensagem</h2>
+                <textarea id="message" placeholder="Sua mensagem secreta..."></textarea>
+                <input type="password" id="encrypt-password" placeholder="Sua chave secreta">
+                <button id="encrypt-btn">🔒 Criptografar</button>
+            </div>
+
+            <div class="card">
+                <h2>Mensagem Cifrada</h2>
+                <div id="cipher-output" class="output-box">
+                    O resultado aparecerá aqui...
+                </div>
+                <button id="copy-btn" class="secondary">Copiar para o Clipboard</button>
+            </div>
+
+            <div class="card">
+                <h2>Descriptografar</h2>
+                <textarea id="cipher-input" placeholder="Cole o código cifrado aqui..."></textarea>
+                <input type="password" id="decrypt-password" placeholder="Sua chave secreta">
+                <button id="decrypt-btn">🔓 Descriptografar</button>
+            </div>
+
+            <div class="card">
+                <h2>Mensagem Revelada</h2>
+                <div id="clear-output" class="output-box">
+                    A mensagem original aparecerá aqui...
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
