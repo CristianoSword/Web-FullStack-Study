@@ -50,18 +50,20 @@ function setupAudioContext() {
     analyser.fftSize = 256; // Número de frequências (precisa ser potência de 2)
 }
 
-playPauseBtn.addEventListener('click', () => {
+playPauseBtn.addEventListener('click', async () => {
     if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
+        await audioCtx.resume();
     }
 
     if (isPlaying) {
         audio.pause();
         playPauseBtn.textContent = '▶️ Play';
     } else {
-        audio.play();
+        audio.play().then(() => {
+            console.log('Audio tocando, iniciando visualização...');
+            animate();
+        }).catch(e => console.error('Erro ao tocar áudio:', e));
         playPauseBtn.textContent = '⏸️ Pause';
-        animate(); // Inicia animação
     }
     isPlaying = !isPlaying;
 });

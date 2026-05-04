@@ -9,8 +9,8 @@ const metricsDisplay = document.getElementById('perf-metrics');
 
 let imageCount = 0;
 
-// Função para gerar URLs de imagens aleatórias (Unsplash)
-const getImageUrl = () => `https://images.unsplash.com/photo-${1550000000000 + Math.floor(Math.random() * 1000000)}?auto=format&fit=crop&w=600&q=80`;
+// Função para gerar URLs de imagens aleatórias (Picsum)
+const getImageUrl = () => `https://picsum.photos/600/400?random=${Math.random()}`;
 
 // Cria o observer para carregar imagens conforme entram no scroll
 const imgObserver = new IntersectionObserver((entries, observer) => {
@@ -21,7 +21,12 @@ const imgObserver = new IntersectionObserver((entries, observer) => {
             
             // Carrega a imagem real
             img.src = img.dataset.src;
-            img.onload = () => img.classList.add('loaded');
+            
+            if (img.complete) {
+                img.classList.add('loaded');
+            } else {
+                img.onload = () => img.classList.add('loaded');
+            }
             
             // Para de observar este container
             observer.unobserve(container);
