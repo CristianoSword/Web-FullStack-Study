@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Search Pro | AbortController</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🔍 Async Search Pro</h1>
+            <p>Busca inteligente com <code>AbortController</code> e <code>Fetch API</code></p>
+        </header>
+
+        <div class="search-container">
+            <div class="input-wrapper">
+                <input type="text" id="search-input" placeholder="Busque por repositórios do GitHub..." autocomplete="off">
+                <div id="loader" class="loader hidden"></div>
+            </div>
+            
+            <div id="status-bar" class="status-bar">
+                Pronto para buscar...
+            </div>
+
+            <ul id="results-list" class="results-list">
+                <!-- Resultados serão inseridos aqui -->
+                <li class="placeholder">Comece a digitar para ver os resultados...</li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
