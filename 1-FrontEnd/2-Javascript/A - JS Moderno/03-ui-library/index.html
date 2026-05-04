@@ -42,5 +42,13 @@
 
     <script src="components/MyButton.js" type="module"></script>
     <script src="components/MyCard.js" type="module"></script>
+    <script>
+        document.querySelectorAll('my-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const variant = btn.getAttribute('variant');
+                alert(`Você clicou no botão: ${variant}`);
+            });
+        });
+    </script>
 </body>
 </html>
