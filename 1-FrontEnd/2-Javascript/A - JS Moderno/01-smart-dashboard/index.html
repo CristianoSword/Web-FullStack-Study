@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Dashboard | Native Reactivity</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>⚡ Smart Dashboard</h1>
+            <p>Reatividade Nativa com <code>Proxy</code> & <code>Reflect</code></p>
+        </header>
+
+        <main class="dashboard-grid">
+            <section class="card" id="stats-card">
+                <h2>Estatísticas</h2>
+                <div class="stat-item">
+                    <label>Visitantes:</label>
+                    <span data-bind="visitors" class="value">0</span>
+                </div>
+                <div class="stat-item">
+                    <label>Conversões:</label>
+                    <span data-bind="conversions" class="value">0</span>
+                </div>
+                <div class="stat-item">
+                    <label>Taxa de Sucesso:</label>
+                    <span data-bind="successRate" class="value">0%</span>
+                </div>
+            </section>
+
+            <section class="card" id="control-card">
+                <h2>Controles de Dados</h2>
+                <div class="controls">
+                    <button id="add-visitor">+ Visitante</button>
+                    <button id="add-conversion">+ Conversão</button>
+                    <button id="reset">Resetar</button>
+                </div>
+                <div class="input-group">
+                    <label for="status-msg">Mensagem de Status:</label>
+                    <input type="text" id="status-msg" data-model="status" placeholder="Digite algo...">
+                </div>
+            </section>
+
+            <section class="card full-width">
+                <h2>Log de Atividade</h2>
+                <p id="status-display" data-bind="status">Sistema Inicializado</p>
+            </section>
+        </main>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
