@@ -109,6 +109,12 @@ input {
     border-bottom: 1px solid var(--border);
     transition: background 0.2s;
     cursor: pointer;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .results-list li:last-child {
@@ -123,6 +129,7 @@ input {
     text-align: center;
     color: var(--text-muted);
     padding: 2rem;
+    animation: none;
 }
 
 .repo-name {
