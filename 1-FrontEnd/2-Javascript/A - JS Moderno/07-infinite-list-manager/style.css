@@ -80,6 +80,12 @@ button:hover { filter: brightness(1.1); }
     border-bottom: 1px solid #f3f4f6;
     display: flex;
     justify-content: space-between;
+    animation: slideIn 0.2s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 .data-list li:nth-child(even) { background: #f9fafb; }
