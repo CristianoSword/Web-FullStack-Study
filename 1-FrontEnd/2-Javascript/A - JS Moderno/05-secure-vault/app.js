@@ -53,7 +53,10 @@ async function encryptMessage() {
 
     // Combina IV e Dados Criptografados em uma string Base64
     const result = bufferToBase64(iv) + '.' + bufferToBase64(encrypted);
-    document.getElementById('cipher-output').textContent = result;
+    const output = document.getElementById('cipher-output');
+    output.textContent = result;
+    output.style.borderColor = 'var(--primary)';
+    setTimeout(() => output.style.borderColor = 'var(--secondary)', 1000);
 }
 
 async function decryptMessage() {
