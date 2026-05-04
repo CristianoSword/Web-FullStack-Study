@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite List Manager | Generators</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🌀 Infinite List Manager</h1>
+            <p>Processamento de dados "Lazy" com <code>Generators</code> & <code>Iterators</code></p>
+        </header>
+
+        <main class="container">
+            <div class="metrics">
+                <div class="metric">
+                    <span>Itens Renderizados:</span>
+                    <strong id="item-count">0</strong>
+                </div>
+                <div class="metric">
+                    <span>Memória Estimada:</span>
+                    <strong id="memory-usage">Mínima</strong>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="load-next">Processar Próximo Lote (Generators)</button>
+                <button id="reset" class="secondary">Resetar</button>
+            </div>
+
+            <ul id="data-list" class="data-list">
+                <!-- Itens serão gerados aqui -->
+            </ul>
+        </main>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
