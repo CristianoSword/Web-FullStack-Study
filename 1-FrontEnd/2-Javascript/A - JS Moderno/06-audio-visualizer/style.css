@@ -1,0 +1,102 @@
+:root {
+    --bg: #000;
+    --primary: #ff0055;
+    --secondary: #00f2ff;
+}
+
+body {
+    font-family: 'Syncopate', sans-serif;
+    background-color: var(--bg);
+    color: #fff;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    padding: 2rem;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    z-index: 10;
+}
+
+h1 { font-size: 1.5rem; letter-spacing: 5px; color: var(--secondary); }
+p { font-family: sans-serif; font-size: 0.9rem; color: #888; }
+code { color: var(--primary); }
+
+.visualizer-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.custom-upload {
+    background: var(--primary);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: transform 0.2s;
+}
+
+.custom-upload:hover { transform: scale(1.05); }
+input[type="file"] { display: none; }
+
+button {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 0.5rem 2rem;
+    border-radius: 50px;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background: var(--secondary);
+    color: #000;
+}
+
+button:disabled {
+    border-color: #333;
+    color: #333;
+    cursor: not-allowed;
+}
+
+#track-name {
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    color: #555;
+}

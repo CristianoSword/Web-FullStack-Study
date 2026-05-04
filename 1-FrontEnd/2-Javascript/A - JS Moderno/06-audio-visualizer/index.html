@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visualizer | Web Audio API</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🎵 Audio Visualizer</h1>
+            <p>Análise de frequências em tempo real com <code>Web Audio API</code></p>
+        </header>
+
+        <main class="visualizer-container">
+            <canvas id="canvas"></canvas>
+            
+            <div class="controls">
+                <label for="audio-upload" class="custom-upload">
+                    📁 Escolher Arquivo de Áudio
+                    <input type="file" id="audio-upload" accept="audio/*">
+                </label>
+                <button id="play-pause" disabled>▶️ Play</button>
+                <p id="track-name">Nenhuma música carregada</p>
+            </div>
+        </main>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
