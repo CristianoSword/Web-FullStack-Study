@@ -51,8 +51,34 @@ const state = createState({
         const rate = state.visitors > 0 
             ? ((state.conversions / state.visitors) * 100).toFixed(1) 
             : 0;
-        state.successRate = `${rate}%`;
+        // Evita loop infinito checando se o valor realmente mudou
+        const newRate = `${rate}%`;
+        if (state.successRate !== newRate) {
+            state.successRate = newRate;
+        }
     }
+});
+
+// Event Listeners
+document.getElementById('add-visitor').addEventListener('click', () => {
+    state.visitors++;
+    state.status = `Novo visitante detectado! Total: ${state.visitors}`;
+});
+
+document.getElementById('add-conversion').addEventListener('click', () => {
+    state.conversions++;
+    state.status = `Venda realizada! Conversões: ${state.conversions}`;
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+    state.visitors = 0;
+    state.conversions = 0;
+    state.status = 'Estatísticas resetadas.';
+});
+
+// Two-way binding para o input
+document.getElementById('status-msg').addEventListener('input', (e) => {
+    state.status = e.target.value;
 });
 
 export default state;
