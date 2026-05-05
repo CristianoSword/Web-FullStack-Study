@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Travel Store | JS Avançado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🕰️ Time-Travel Store</h1>
+            <p>Gerenciamento de estado imutável com histórico</p>
+        </header>
+
+        <main class="store-grid">
+            <section class="card control-panel">
+                <h2>Contador</h2>
+                <div class="display" id="counter-display">0</div>
+                <div class="buttons">
+                    <button id="increment">Incrementar (+)</button>
+                    <button id="decrement">Decrementar (-)</button>
+                </div>
+            </section>
+
+            <section class="card history-panel">
+                <h2>Histórico (Time Travel)</h2>
+                <div class="history-controls">
+                    <button id="undo" class="secondary">Undo</button>
+                    <button id="redo" class="secondary">Redo</button>
+                </div>
+                <ul id="history-list">
+                    <!-- Logs de histórico aqui -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="src/app.js" type="module"></script>
+</body>
+</html>
