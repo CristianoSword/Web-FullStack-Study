@@ -78,3 +78,23 @@ class MiniBundler {
 }
 
 export const bundler = new MiniBundler('index.js');
+
+// --- UI Logic ---
+const fileList = document.getElementById('file-list');
+const buildBtn = document.getElementById('build-btn');
+const output = document.getElementById('bundle-output');
+
+// Renderiza arquivos virtuais
+Object.keys(files).forEach(name => {
+    const div = document.createElement('div');
+    div.className = 'file-item';
+    div.innerHTML = `<strong>${name}</strong><br><code>${files[name]}</code>`;
+    fileList.appendChild(div);
+});
+
+buildBtn.onclick = () => {
+    const graph = bundler.buildGraph();
+    const code = bundler.bundle(graph);
+    output.textContent = code;
+    console.log('%c [Bundler] Build concluído com sucesso!', 'color: #3b82f6; font-weight: bold;');
+};
