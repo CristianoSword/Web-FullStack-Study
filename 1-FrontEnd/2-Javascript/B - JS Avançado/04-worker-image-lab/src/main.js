@@ -60,3 +60,25 @@ function applyFilter(filterType) {
 document.getElementById('grayscale-btn').onclick = () => applyFilter('grayscale');
 document.getElementById('invert-btn').onclick = () => applyFilter('invert');
 document.getElementById('brightness-btn').onclick = () => applyFilter('brightness');
+
+document.getElementById('main-thread-btn').onclick = () => {
+    if (!originalImageData) return;
+    
+    statusMetric.textContent = 'Processando na UI Thread (TRAVANDO)...';
+    const startTime = performance.now();
+
+    // Simula processamento pesado na thread principal
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const pixels = imageData.data;
+    for (let i = 0; i < pixels.length; i += 4) {
+        const avg = (pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3;
+        pixels[i] = avg; pixels[i + 1] = avg; pixels[i + 2] = avg;
+        // Loop intencionalmente longo para ver o travamento
+        for(let j=0; j<100; j++) { Math.sqrt(j); } 
+    }
+    ctx.putImageData(imageData, 0, 0);
+
+    const endTime = performance.now();
+    timeMetric.textContent = `${Math.round(endTime - startTime)}ms (LAG)`;
+    statusMetric.textContent = 'Filtro Aplicado (UI Thread)';
+};
