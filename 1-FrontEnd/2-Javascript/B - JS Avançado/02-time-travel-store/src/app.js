@@ -34,18 +34,15 @@ function renderHistory() {
         const li = document.createElement('li');
         li.className = index === store.currentIndex ? 'active' : '';
         li.textContent = `Estado #${index} [count: ${state.count}]`;
-        li.onclick = () => jumpTo(index);
+        li.onclick = () => store.jumpTo(index);
         historyList.appendChild(li);
     });
-}
-
-function jumpTo(index) {
-    // Lógica que será implementada no Commit 4
-    console.log('Jumping to index:', index);
 }
 
 // 5. Eventos
 document.getElementById('increment').onclick = () => store.dispatch({ type: 'INCREMENT' });
 document.getElementById('decrement').onclick = () => store.dispatch({ type: 'DECREMENT' });
+document.getElementById('undo').onclick = () => store.undo();
+document.getElementById('redo').onclick = () => store.redo();
 
 export default store;
