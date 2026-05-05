@@ -1,0 +1,91 @@
+:root {
+    --bg: #050505;
+    --card: #111;
+    --primary: #38bdf8;
+    --user2: #f43f5e;
+    --text: #fff;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 2rem;
+}
+
+#app {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+h1 { font-size: 1.5rem; color: var(--primary); }
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.user-1 { background: rgba(56, 189, 248, 0.2); border: 1px solid var(--primary); color: var(--primary); }
+.user-2 { background: rgba(244, 63, 94, 0.2); border: 1px solid var(--user2); color: var(--user2); }
+
+.canvas-wrapper {
+    background: var(--card);
+    border: 1px solid #333;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+canvas {
+    display: block;
+}
+
+.controls {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid #333;
+}
+
+input[type="color"] {
+    background: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    flex: 1;
+}
+
+button {
+    background: #222;
+    color: #eee;
+    border: 1px solid #444;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #333;
+    border-color: #666;
+}
