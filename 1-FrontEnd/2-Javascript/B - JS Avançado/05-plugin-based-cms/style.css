@@ -1,0 +1,103 @@
+:root {
+    --bg: #f8fafc;
+    --sidebar: #1e293b;
+    --primary: #3b82f6;
+    --text: #334155;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+}
+
+#cms-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background: var(--sidebar);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 { font-size: 1.2rem; margin: 0; }
+
+.toolbar {
+    background: #fff;
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    gap: 1rem;
+}
+
+.toolbar button {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.toolbar button:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+#editor-view {
+    flex: 1;
+    padding: 2rem;
+}
+
+.plugin-view {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.preview {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e1;
+}
+
+.drop-zone {
+    border: 2px dashed #cbd5e1;
+    padding: 4rem;
+    text-align: center;
+    border-radius: 12px;
+    color: #64748b;
+    margin: 1rem 0;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 10vh;
+}
