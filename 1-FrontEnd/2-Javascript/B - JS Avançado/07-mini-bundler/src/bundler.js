@@ -49,6 +49,32 @@ class MiniBundler {
         }
         return queue;
     }
+
+    bundle(graph) {
+        let modules = '';
+
+        graph.forEach(mod => {
+            // Cada módulo é encapsulado em uma função para isolar o escopo
+            modules += `
+            '${mod.filename}': function(require, module, exports) {
+                ${mod.content.replace(/import.*from.*/g, '')} // Mock de remoção de import
+            },`;
+        });
+
+        const result = `
+        (function(modules) {
+            function require(filename) {
+                const fn = modules[filename];
+                const module = { exports: {} };
+                fn(require, module, module.exports);
+                return module.exports;
+            }
+            require('${this.entry}');
+        })({${modules}})
+        `;
+
+        return result;
+    }
 }
 
 export const bundler = new MiniBundler('index.js');
