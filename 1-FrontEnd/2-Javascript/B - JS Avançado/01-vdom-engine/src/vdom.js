@@ -19,3 +19,24 @@ function createTextVNode(text) {
         children: []
     };
 }
+
+/**
+ * render()
+ * Converte VNode em DOM Real
+ */
+export function render(vnode, container) {
+    const dom = vnode.tag === 'TEXT_ELEMENT'
+        ? document.createTextNode('')
+        : document.createElement(vnode.tag);
+
+    // Adiciona propriedades
+    Object.keys(vnode.props).forEach(name => {
+        dom[name] = vnode.props[name];
+    });
+
+    // Renderiza filhos recursivamente
+    vnode.children.forEach(child => render(child, dom));
+
+    container.appendChild(dom);
+    return dom;
+}
