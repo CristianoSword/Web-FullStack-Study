@@ -1,0 +1,96 @@
+:root {
+    --bg: #0b0e14;
+    --surface: #161b22;
+    --primary: #ab7df8;
+    --secondary: #30363d;
+    --text: #c9d1d9;
+    --accent: #2ea043;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--bg);
+    color: var(--text);
+    padding: 2rem;
+}
+
+#app {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 { color: var(--primary); font-size: 2.5rem; }
+
+.store-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--accent);
+    margin: 1.5rem 0;
+}
+
+.buttons, .history-controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    flex: 1;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover { opacity: 0.9; }
+button:active { transform: scale(0.95); }
+button.secondary { background: var(--secondary); }
+
+#history-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+    border-top: 1px solid var(--secondary);
+    padding-top: 1rem;
+}
+
+#history-list li {
+    padding: 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+#history-list li:hover { background: rgba(255, 255, 255, 0.05); }
+#history-list li.active {
+    background: rgba(171, 125, 248, 0.1);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
