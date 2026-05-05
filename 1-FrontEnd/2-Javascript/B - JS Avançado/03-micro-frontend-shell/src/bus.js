@@ -38,3 +38,8 @@ orchestrator.register('profile', {
     route: '/profile',
     entry: './apps/profile.js'
 });
+
+orchestrator.register('settings', {
+    route: '/settings',
+    entry: './apps/settings.js'
+});
