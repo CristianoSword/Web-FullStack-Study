@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Image Lab | JS Avançado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>⚡ Worker Image Lab</h1>
+            <p>Processamento de imagens multi-thread com <code>Web Workers</code></p>
+        </header>
+
+        <main class="lab-container">
+            <div class="canvas-area">
+                <canvas id="canvas"></canvas>
+                <div id="loading-overlay" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Processando em Background...</p>
+                </div>
+            </div>
+
+            <aside class="controls">
+                <div class="control-group">
+                    <label for="image-input" class="btn-primary">📁 Carregar Imagem</label>
+                    <input type="file" id="image-input" accept="image/*">
+                </div>
+
+                <div class="control-group">
+                    <h3>Filtros (Multi-threaded)</h3>
+                    <button id="grayscale-btn">Escala de Cinza</button>
+                    <button id="invert-btn">Inverter Cores</button>
+                    <button id="brightness-btn">Brilho Extremo</button>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">Tempo: <span id="time-metric">0ms</span></div>
+                    <div class="metric">Status: <span id="status-metric">Pronto</span></div>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="src/main.js" type="module"></script>
+</body>
+</html>
