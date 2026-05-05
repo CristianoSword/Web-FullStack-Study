@@ -9,7 +9,10 @@ const brushColor = document.getElementById('brush-color');
 const brushSize = document.getElementById('brush-size');
 const clearBtn = document.getElementById('clear-btn');
 
+import { sync } from './sync.js';
+
 let drawing = false;
+let lastEmit = Date.now();
 
 // Setup Canvas Size
 function resize() {
@@ -46,7 +49,11 @@ function draw(e) {
     ctx.beginPath();
     ctx.moveTo(x, y);
 
-    // Emitir evento de desenho (Será implementado no Commit 2)
+    // Otimização: Emitir apenas a cada 20ms (Throttle)
+    if (Date.now() - lastEmit > 20) {
+        sync.sendStroke({ x, y, color: brushColor.value, size: brushSize.value });
+        lastEmit = Date.now();
+    }
 }
 
 canvas.addEventListener('mousedown', startDrawing);
