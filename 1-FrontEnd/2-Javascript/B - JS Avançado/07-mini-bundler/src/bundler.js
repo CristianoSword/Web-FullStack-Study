@@ -15,12 +15,39 @@ export const files = {
 class MiniBundler {
     constructor(entryFile) {
         this.entry = entryFile;
-        this.graph = [];
     }
 
-    // Será implementado no Commit 2
+    createAsset(filename) {
+        const content = files[filename];
+        
+        // Regex simples para capturar imports (Simulando um Parser AST)
+        const dependencies = [];
+        const importRegex = /import\s+.*\s+from\s+['"]\.\/(.*)['"]/g;
+        let match;
+        while ((match = importRegex.exec(content)) !== null) {
+            dependencies.push(match[1]);
+        }
+
+        return {
+            filename,
+            content,
+            dependencies
+        };
+    }
+
     buildGraph() {
-        console.log('Construindo Grafo de Dependências...');
+        const mainAsset = this.createAsset(this.entry);
+        const queue = [mainAsset];
+
+        for (const asset of queue) {
+            asset.mapping = {};
+            asset.dependencies.forEach(relativePath => {
+                const child = this.createAsset(relativePath);
+                asset.mapping[relativePath] = child.filename;
+                queue.push(child);
+            });
+        }
+        return queue;
     }
 }
 
