@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plugin-Based CMS | JS Avançado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="cms-shell">
+        <header>
+            <h1>🔌 Plugin CMS Core</h1>
+            <div id="plugin-stats">Plugins Ativos: 0</div>
+        </header>
+
+        <nav class="toolbar" id="cms-toolbar">
+            <!-- Botões dos plugins serão injetados aqui -->
+        </nav>
+
+        <main id="editor-view">
+            <div class="welcome">
+                <h2>Selecione uma ferramenta na barra de ferramentas.</h2>
+                <p>O Core do CMS é extensível via Inversão de Dependência.</p>
+            </div>
+        </main>
+    </div>
+    <script src="src/core.js" type="module"></script>
+</body>
+</html>
