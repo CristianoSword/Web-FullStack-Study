@@ -44,4 +44,29 @@ export class Store {
     notify() {
         this.listeners.forEach(listener => listener(this.state));
     }
+
+    // Navegação no Tempo
+    undo() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.state = this.history[this.currentIndex];
+            this.notify();
+        }
+    }
+
+    redo() {
+        if (this.currentIndex < this.history.length - 1) {
+            this.currentIndex++;
+            this.state = this.history[this.currentIndex];
+            this.notify();
+        }
+    }
+
+    jumpTo(index) {
+        if (index >= 0 && index < this.history.length) {
+            this.currentIndex = index;
+            this.state = this.history[this.currentIndex];
+            this.notify();
+        }
+    }
 }
