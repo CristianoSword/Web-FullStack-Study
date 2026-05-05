@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Bundler | JS Avançado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>📦 Mini-Bundler Engine</h1>
+            <p>Simulação de resolução de módulos e geração de bundles</p>
+        </header>
+
+        <main class="bundler-grid">
+            <section class="card source-files">
+                <h2>Virtual File System</h2>
+                <div id="file-list">
+                    <!-- Arquivos simulados aqui -->
+                </div>
+            </section>
+
+            <section class="card bundle-view">
+                <h2>Generated Bundle</h2>
+                <pre id="bundle-output">Aguardando build...</pre>
+                <button id="build-btn">Executar Build</button>
+            </section>
+        </main>
+    </div>
+    <script src="src/bundler.js" type="module"></script>
+</body>
+</html>
