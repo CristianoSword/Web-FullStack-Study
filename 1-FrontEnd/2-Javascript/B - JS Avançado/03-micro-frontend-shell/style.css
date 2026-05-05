@@ -1,0 +1,114 @@
+:root {
+    --bg: #0f172a;
+    --primary: #38bdf8;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text: #f1f5f9;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+    color: var(--text);
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#shell {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid var(--glass-border);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 3rem;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-bottom: 1rem;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+    display: block;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.nav-links a:hover {
+    background: var(--glass);
+    color: var(--primary);
+}
+
+.status {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+.status.active {
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--primary);
+}
+
+#app-container {
+    flex: 1;
+    padding: 3rem;
+    overflow-y: auto;
+}
+
+.app-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+button {
+    background: var(--primary);
+    color: var(--bg);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.notification {
+    background: rgba(56, 189, 248, 0.1);
+    border-left: 4px solid var(--primary);
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
