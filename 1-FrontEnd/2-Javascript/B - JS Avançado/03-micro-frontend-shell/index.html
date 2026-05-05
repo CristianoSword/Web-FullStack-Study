@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Frontend Shell | JS Avançado</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="shell">
+        <nav class="sidebar">
+            <div class="logo">MF-Shell</div>
+            <ul class="nav-links">
+                <li><a href="#/" data-link>Dashboard</a></li>
+                <li><a href="#/profile" data-link>Profile</a></li>
+                <li><a href="#/settings" data-link>Settings</a></li>
+            </ul>
+            <div id="bus-status" class="status">Event Bus: Idle</div>
+        </nav>
+        
+        <main id="app-container">
+            <!-- As micro-apps serão injetadas aqui -->
+            <div class="loader">Selecione uma aplicação...</div>
+        </main>
+    </div>
+    <script src="src/orchestrator.js" type="module"></script>
+</body>
+</html>
