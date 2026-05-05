@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Canvas | JS Avançado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>🎨 Collaborative Canvas</h1>
+            <div id="user-badges">
+                <span class="badge user-1">Você (User A)</span>
+                <span class="badge user-2">User B (Simulado)</span>
+            </div>
+        </header>
+
+        <div class="canvas-wrapper">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="controls">
+            <input type="color" id="brush-color" value="#38bdf8">
+            <input type="range" id="brush-size" min="1" max="20" value="5">
+            <button id="clear-btn">Limpar Quadro</button>
+        </div>
+    </div>
+    <script src="src/app.js" type="module"></script>
+</body>
+</html>
