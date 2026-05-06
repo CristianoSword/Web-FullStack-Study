@@ -134,3 +134,38 @@ a { text-decoration: none; color: inherit; }
 .hero-condition { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
 .hero-condition i { font-size: 4rem; }
 .hero-condition span { font-weight: 600; font-size: 1.1rem; }
+
+#stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.stat-card:hover { transform: translateY(-5px); }
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.stat-info .label { font-size: 0.85rem; color: var(--text-muted); display: block; }
+.stat-info .value { font-weight: 700; font-size: 1.2rem; }
