@@ -8,19 +8,23 @@ $(document).ready(function() {
         const val = $taskInput.val().trim();
         
         if (val !== "") {
-            const taskHtml = `
-                <li class="task-item">
+            const $taskItem = $(`
+                <li class="task-item" style="display: none;">
                     <span>${val}</span>
                     <button class="delete-btn">Excluir</button>
                 </li>
-            `;
-            $taskList.append(taskHtml);
-            $taskInput.val(""); // Limpar input
+            `);
+            $taskList.append($taskItem);
+            $taskItem.fadeIn(300); // Efeito de entrada
+            $taskInput.val("");
         }
     });
 
-    // Remover Tarefa (Delegação de evento para elementos dinâmicos)
+    // Remover Tarefa com Efeito
     $taskList.on('click', '.delete-btn', function() {
-        $(this).parent().remove();
+        const $parent = $(this).parent();
+        $parent.fadeOut(300, function() {
+            $(this).remove();
+        });
     });
 });
