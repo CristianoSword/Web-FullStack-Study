@@ -122,6 +122,31 @@ class App {
                 <span>${weather[0].description}</span>
             </div>
         `).slideDown(500);
+
+        // Stats Grid
+        $('#stats-grid').html(`
+            <div class="stat-card">
+                <div class="stat-icon"><i class='bx bx-wind'></i></div>
+                <div class="stat-info">
+                    <span class="label">Vento</span>
+                    <span class="value">${data.wind.speed} km/h</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class='bx bx-droplet'></i></div>
+                <div class="stat-info">
+                    <span class="label">Umidade</span>
+                    <span class="value">${main.humidity}%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class='bx bx-tachometer'></i></div>
+                <div class="stat-info">
+                    <span class="label">Pressão</span>
+                    <span class="value">${main.pressure} hPa</span>
+                </div>
+            </div>
+        `);
     }
 
     renderForecast(data) {
