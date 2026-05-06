@@ -32,4 +32,21 @@ $(document).ready(function() {
             $(this).remove();
         });
     });
+
+    // Filtros
+    $('.filter-btn').on('click', function() {
+        const filter = $(this).data('filter');
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+
+        if (filter === 'all') {
+            $('.task-item').fadeIn(200);
+        } else if (filter === 'pending') {
+            $('.task-item').hide();
+            $('.task-item:not(.completed)').fadeIn(200);
+        } else if (filter === 'completed') {
+            $('.task-item').hide();
+            $('.task-item.completed').fadeIn(200);
+        }
+    });
 });
