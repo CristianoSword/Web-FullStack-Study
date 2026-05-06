@@ -228,4 +228,16 @@ a { text-decoration: none; color: inherit; }
 .forecast-day-card .day { font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 0.5rem; }
 .forecast-day-card i { font-size: 2rem; color: var(--primary); margin: 0.5rem 0; }
 .forecast-day-card .temps { font-size: 0.9rem; font-weight: 600; }
-.forecast-day-card .min { color: var(--text-muted); font-weight: 400; margin-left: 0.5rem; }
+.error-alert {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: var(--danger);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.4);
+    z-index: 9999;
+    display: none;
+    font-weight: 600;
+}

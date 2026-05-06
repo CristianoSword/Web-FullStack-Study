@@ -54,8 +54,16 @@ class App {
             this.updateUI(currentData);
             this.renderForecast(forecastData);
         } catch (error) {
+            this.showError('Cidade não encontrada. Verifique o nome e tente novamente.');
             console.error('Erro na busca:', error);
         }
+    }
+
+    showError(message) {
+        // Alerta simples com jQuery (poderia ser um modal no futuro)
+        const $alert = $(`<div class="error-alert">${message}</div>`);
+        $('body').append($alert);
+        $alert.fadeIn().delay(3000).fadeOut(() => $alert.remove());
     }
 
     updateUI(data) {
