@@ -1,9 +1,8 @@
 /**
- * Waifu Explorer - Versão Waifu.im
- * Resolvido problema de CORS
+ * Waifu Explorer - Versão Waifu.im (Alinhado com a Doc Oficial 2026)
  */
 
-const BASE_URL = 'https://api.waifu.im/search';
+const BASE_URL = 'https://api.waifu.im/images';
 
 class WaifuApp {
     constructor() {
@@ -13,23 +12,19 @@ class WaifuApp {
     }
 
     init() {
-        console.log('%c WaifuVerse Online (Waifu.im) ', 'background: #ff4d94; color: white; font-weight: bold;');
+        console.log('%c WaifuVerse | Official Doc Integration ', 'background: #ff4d94; color: white; font-weight: bold;');
         this.bindEvents();
         this.fetchWaifu();
         this.updateFavCount();
     }
 
     bindEvents() {
-        // Troca de Categoria
         $('#category-list li').on('click', (e) => {
             const $li = $(e.currentTarget);
             $('#category-list li').removeClass('active');
             $li.addClass('active');
             
-            // Ajuste de tags para a Waifu.im (ela usa lowercase)
-            const tag = $li.data('cat').toLowerCase();
-            this.currentTag = tag === 'waifu' ? 'waifu' : tag;
-            
+            this.currentTag = $li.data('cat');
             $('#current-category-title').text(`${this.currentTag.charAt(0).toUpperCase() + this.currentTag.slice(1)} Explorer`);
             this.fetchWaifu();
         });
@@ -48,14 +43,15 @@ class WaifuApp {
         $('#like-btn').removeClass('liked').find('i').attr('class', 'bx bx-heart');
 
         try {
-            // Waifu.im usa query params para tags
+            // Seguindo a Doc: Parâmetro 'IncludedTags' e Endpoint '/images'
             const response = await $.ajax({
-                url: `${BASE_URL}?included_tags=${this.currentTag}`,
+                url: `${BASE_URL}?IncludedTags=${this.currentTag}`,
                 method: 'GET'
             });
 
-            if (response.images && response.images.length > 0) {
-                const imageUrl = response.images[0].url;
+            // Estrutura oficial: response.items[0].url
+            if (response.items && response.items.length > 0) {
+                const imageUrl = response.items[0].url;
                 
                 const tempImg = new Image();
                 tempImg.src = imageUrl;
@@ -67,8 +63,8 @@ class WaifuApp {
             }
 
         } catch (error) {
-            console.error('Erro ao buscar:', error);
-            this.showError('Erro ao carregar imagem. Tente outra categoria.');
+            console.error('Erro API:', error);
+            this.showError('Não conseguimos carregar a imagem desta categoria.');
             $loader.hide();
         }
     }
