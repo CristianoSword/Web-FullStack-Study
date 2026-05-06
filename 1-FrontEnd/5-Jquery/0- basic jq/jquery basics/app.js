@@ -3,7 +3,14 @@ $(document).ready(function() {
     const $taskList = $('#task-list');
     const $addBtn = $('#add-btn');
 
-    // Adicionar Tarefa
+    // Adicionar Tarefa ao apertar Enter
+    $taskInput.on('keypress', function(e) {
+        if (e.which === 13) {
+            $addBtn.click();
+        }
+    });
+
+    // Adicionar Tarefa ao clicar no botão
     $addBtn.on('click', function() {
         const val = $taskInput.val().trim();
         
