@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard Pro | jQuery Advanced</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Boxicons for Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="dashboard-shell">
+        <!-- Sidebar (Commit 08) -->
+        <aside id="sidebar">
+            <div class="logo">
+                <i class='bx bx-cloud-lightning'></i>
+                <span>SkyCast Pro</span>
+            </div>
+            <div id="search-history">
+                <h3>Recentes</h3>
+                <ul id="history-list"></ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content">
+            <!-- Search Bar (Commit 04) -->
+            <nav id="top-nav">
+                <div class="search-box">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="city-search" placeholder="Pesquisar cidade...">
+                </div>
+                <div class="unit-toggle">
+                    <span class="active" data-unit="c">°C</span>
+                    <span data-unit="f">°F</span>
+                </div>
+            </nav>
+
+            <div id="weather-grid">
+                <!-- Hero Section (Commit 05) -->
+                <section id="hero-card"></section>
+                
+                <!-- Detailed Stats (Commit 06) -->
+                <section id="stats-grid"></section>
+                
+                <!-- Weekly Forecast (Commit 07) -->
+                <section id="forecast-section"></section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
