@@ -39,11 +39,28 @@ class App {
 
         try {
             const data = await weatherService.getCurrentWeather(city);
-            console.log('Dados recebidos:', data);
-            // Próximo Commit: Renderizar dados
+            this.updateUI(data);
         } catch (error) {
             console.error('Erro na busca:', error);
         }
+    }
+
+    updateUI(data) {
+        const { name, main, weather, dt, sys } = data;
+        const date = new Date(dt * 1000).toLocaleDateString('pt-br', { weekday: 'long', day: 'numeric', month: 'long' });
+
+        // Hero Card
+        $('#hero-card').html(`
+            <div class="hero-info">
+                <div class="date">${date}</div>
+                <h2>${name}, ${sys.country}</h2>
+            </div>
+            <div class="hero-temp">${Math.round(main.temp)}°</div>
+            <div class="hero-condition">
+                <i class='bx bx-cloud' id="main-icon"></i>
+                <span>${weather[0].description}</span>
+            </div>
+        `).fadeIn();
     }
 }
 
