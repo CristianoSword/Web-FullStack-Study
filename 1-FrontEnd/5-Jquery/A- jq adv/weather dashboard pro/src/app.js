@@ -111,7 +111,7 @@ class App {
         const date = new Date(dt * 1000).toLocaleDateString('pt-br', { weekday: 'long', day: 'numeric', month: 'long' });
 
         // Hero Card
-        $('#hero-card').html(`
+        $('#hero-card').hide().html(`
             <div class="hero-info">
                 <div class="date">${date}</div>
                 <h2>${name}, ${sys.country}</h2>
@@ -121,7 +121,7 @@ class App {
                 <i class='bx ${this.getIconClass(weather[0].icon)}' id="main-icon"></i>
                 <span>${weather[0].description}</span>
             </div>
-        `).fadeIn();
+        `).slideDown(500);
     }
 
     renderForecast(data) {
