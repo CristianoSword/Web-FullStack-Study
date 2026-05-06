@@ -247,3 +247,24 @@ body.bg-stormy { background: linear-gradient(135deg, #475569, #1e293b); }
 body.bg-snowy { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); }
 
 #dashboard-shell { transition: background 0.5s ease; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #sidebar { width: 80px; padding: 1rem; }
+    #sidebar span, #sidebar h3 { display: none; }
+    .logo { justify-content: center; margin-bottom: 2rem; }
+    #history-list li { justify-content: center; padding: 1rem; }
+    #stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    #dashboard-shell { flex-direction: column; }
+    #sidebar { width: 100%; height: auto; flex-direction: row; justify-content: space-between; align-items: center; }
+    .logo { margin-bottom: 0; }
+    #search-history { display: none; }
+    .search-box { width: 100%; }
+    #hero-card { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .hero-temp { font-size: 4rem; }
+    #stats-grid { grid-template-columns: 1fr; }
+    .forecast-card-grid { grid-template-columns: repeat(3, 1fr); }
+}
