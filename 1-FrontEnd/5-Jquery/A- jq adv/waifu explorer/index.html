@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaifuVerse | Premium Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app-shell">
+        <aside id="sidebar">
+            <div class="logo">
+                <i class='bx bxs-heart-circle'></i>
+                <span>WaifuVerse</span>
+            </div>
+            
+            <nav>
+                <h3>Categorias</h3>
+                <ul id="category-list">
+                    <li class="active" data-cat="waifu">Waifu</li>
+                    <li data-cat="neko">Neko</li>
+                    <li data-cat="shinobu">Shinobu</li>
+                    <li data-cat="megumin">Megumin</li>
+                    <li data-cat="bully">Bully</li>
+                    <li data-cat="cuddle">Cuddle</li>
+                </ul>
+            </nav>
+
+            <div id="favorites-stat">
+                <i class='bx bxs-star'></i>
+                <span id="fav-count">0 Favoritos</span>
+            </div>
+        </aside>
+
+        <main id="main-content">
+            <header>
+                <h1 id="current-category-title">Waifu Explorer</h1>
+                <button id="next-btn" class="primary-btn">
+                    <i class='bx bx-refresh'></i> Next Waifu
+                </button>
+            </header>
+
+            <section id="viewer-section">
+                <div id="waifu-card">
+                    <div class="card-loader"></div>
+                    <img id="waifu-img" src="" alt="Waifu Image" style="display: none;">
+                    
+                    <div class="card-actions">
+                        <button id="like-btn" title="Favoritar"><i class='bx bx-heart'></i></button>
+                        <button id="download-btn" title="Download"><i class='bx bx-download'></i></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
