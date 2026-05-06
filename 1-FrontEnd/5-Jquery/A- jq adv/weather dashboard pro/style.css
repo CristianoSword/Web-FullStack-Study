@@ -182,9 +182,13 @@ a { text-decoration: none; color: inherit; }
     gap: 1.25rem;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    cursor: default;
 }
 
-.stat-card:hover { transform: translateY(-5px); }
+.stat-card:hover { 
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
 
 .stat-icon {
     width: 50px;
