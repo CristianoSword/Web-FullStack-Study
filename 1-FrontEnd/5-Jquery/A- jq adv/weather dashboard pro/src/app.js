@@ -18,7 +18,12 @@ class App {
         // Busca ao pressionar Enter
         $('#city-search').on('keypress', (e) => {
             if (e.which === 13) {
-                this.searchCity($(e.target).val());
+                const city = $(e.target).val().trim();
+                if (city) {
+                    this.searchCity(city);
+                    $(e.target).val(''); // Limpa o campo
+                    $(e.target).blur(); // Remove o foco
+                }
             }
         });
 
