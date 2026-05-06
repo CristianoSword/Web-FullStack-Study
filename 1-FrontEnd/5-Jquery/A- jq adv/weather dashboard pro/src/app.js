@@ -38,8 +38,11 @@ class App {
         if (!city) return;
 
         try {
-            const data = await weatherService.getCurrentWeather(city);
-            this.updateUI(data);
+            const currentData = await weatherService.getCurrentWeather(city);
+            const forecastData = await weatherService.getForecast(city);
+            
+            this.updateUI(currentData);
+            this.renderForecast(forecastData);
         } catch (error) {
             console.error('Erro na busca:', error);
         }
