@@ -57,6 +57,37 @@ a { text-decoration: none; color: inherit; }
     color: var(--primary);
 }
 
+#search-history {
+    margin-top: 2rem;
+    flex: 1;
+}
+
+#search-history h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 0.5rem;
+}
+
+.history-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.history-item i { color: var(--primary); }
+.history-item span { font-weight: 500; font-size: 0.95rem; }
+
 #main-content {
     flex: 1;
     overflow-y: auto;
