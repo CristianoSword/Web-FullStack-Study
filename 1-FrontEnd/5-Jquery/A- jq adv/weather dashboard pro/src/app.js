@@ -46,6 +46,7 @@ class App {
 
     async searchCity(city) {
         if (!city) return;
+        this.toggleLoading(true);
 
         try {
             const currentData = await weatherService.getCurrentWeather(city);
@@ -56,6 +57,17 @@ class App {
         } catch (error) {
             this.showError('Cidade não encontrada. Verifique o nome e tente novamente.');
             console.error('Erro na busca:', error);
+        } finally {
+            this.toggleLoading(false);
+        }
+    }
+
+    toggleLoading(show) {
+        if (show) {
+            $('#weather-grid').css('opacity', '0.5');
+            // Poderia adicionar um spinner aqui
+        } else {
+            $('#weather-grid').css('opacity', '1');
         }
     }
 
