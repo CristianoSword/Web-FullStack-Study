@@ -20,6 +20,11 @@ $(document).ready(function() {
         }
     });
 
+    // Alternar Conclusão
+    $taskList.on('click', 'span', function() {
+        $(this).parent().toggleClass('completed');
+    });
+
     // Remover Tarefa com Efeito
     $taskList.on('click', '.delete-btn', function() {
         const $parent = $(this).parent();
