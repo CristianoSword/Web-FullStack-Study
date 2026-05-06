@@ -1,0 +1,37 @@
+:root {
+    /* Color Palette */
+    --primary: #3b82f6;
+    --primary-light: #eff6ff;
+    --sidebar: #1e293b;
+    --bg: #f1f5f9;
+    --card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    
+    /* Layout Tokens */
+    --sidebar-width: 260px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --radius: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    overflow: hidden; /* O dashboard vai gerenciar o scroll interno */
+    height: 100vh;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
