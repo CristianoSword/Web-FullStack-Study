@@ -13,7 +13,18 @@ class App {
         console.log('%c SkyCast Pro Initialized ', 'background: #3b82f6; color: white; font-weight: bold;');
         this.bindEvents();
 
-        // Recuperar última busca
+        // Tentar Geolocalização
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                (pos) => this.searchByCoords(pos.coords.latitude, pos.coords.longitude),
+                () => this.loadLastCity()
+            );
+        } else {
+            this.loadLastCity();
+        }
+    }
+
+    loadLastCity() {
         const lastCity = localStorage.getItem('lastCity') || 'São Paulo';
         this.searchCity(lastCity);
     }
@@ -46,6 +57,16 @@ class App {
             const currentCity = $('#hero-card h2').text().split(',')[0];
             if (currentCity) this.searchCity(currentCity);
         });
+    }
+
+    async searchByCoords(lat, lon) {
+        this.toggleLoading(true);
+        try {
+            const data = await weatherService.getWeatherByCoords(lat, lon);
+            this.searchCity(data.name); // Busca completa pela cidade encontrada
+        } catch (error) {
+            this.loadLastCity();
+        }
     }
 
     async searchCity(city) {
