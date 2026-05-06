@@ -144,6 +144,9 @@ class App {
             <div class="hero-info">
                 <div class="date">${dateStr} • ${timeStr}</div>
                 <h2>${name}, ${sys.country}</h2>
+                <a href="https://www.openstreetmap.org/search?query=${name}" target="_blank" class="map-link">
+                    <i class='bx bx-map-alt'></i> Ver Mapa
+                </a>
             </div>
             <div class="hero-temp">${Math.round(main.temp)}°</div>
             <div class="hero-condition">
