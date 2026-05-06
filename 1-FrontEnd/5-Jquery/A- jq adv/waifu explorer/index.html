@@ -21,11 +21,12 @@
                 <h3>Categorias</h3>
                 <ul id="category-list">
                     <li class="active" data-cat="waifu">Waifu</li>
-                    <li data-cat="neko">Neko</li>
-                    <li data-cat="shinobu">Shinobu</li>
-                    <li data-cat="megumin">Megumin</li>
-                    <li data-cat="bully">Bully</li>
-                    <li data-cat="cuddle">Cuddle</li>
+                    <li data-cat="maid">Maid</li>
+                    <li data-cat="marin-kitagawa">Marin Kitagawa</li>
+                    <li data-cat="mori-calliope">Mori Calliope</li>
+                    <li data-cat="raiden-shogun">Raiden Shogun</li>
+                    <li data-cat="selfies">Selfies</li>
+                    <li data-cat="uniform">Uniform</li>
                 </ul>
             </nav>
 
@@ -44,14 +45,11 @@
             </header>
 
             <section id="viewer-section">
-                <div id="waifu-card">
+                <div id="waifu-grid">
+                    <!-- Cards serão gerados via JQuery aqui -->
+                </div>
+                <div class="loader-container" style="display: none;">
                     <div class="card-loader"></div>
-                    <img id="waifu-img" src="" alt="Waifu Image" style="display: none;">
-                    
-                    <div class="card-actions">
-                        <button id="like-btn" title="Favoritar"><i class='bx bx-heart'></i></button>
-                        <button id="download-btn" title="Download"><i class='bx bx-download'></i></button>
-                    </div>
                 </div>
             </section>
         </main>

@@ -1,5 +1,6 @@
 /**
- * Waifu Explorer - Versão Waifu.im (Alinhado com a Doc Oficial 2026)
+ * Waifu Explorer - Versão Galeria Multi-Image
+ * API: Waifu.im
  */
 
 const BASE_URL = 'https://api.waifu.im/images';
@@ -12,93 +13,107 @@ class WaifuApp {
     }
 
     init() {
-        console.log('%c WaifuVerse | Official Doc Integration ', 'background: #ff4d94; color: white; font-weight: bold;');
+        console.log('%c WaifuVerse Gallery Online ', 'background: #ff4d94; color: white; font-weight: bold;');
         this.bindEvents();
-        this.fetchWaifu();
+        this.fetchGallery(); // Carrega inicial
         this.updateFavCount();
     }
 
     bindEvents() {
+        // Troca de Categoria
         $('#category-list li').on('click', (e) => {
             const $li = $(e.currentTarget);
             $('#category-list li').removeClass('active');
             $li.addClass('active');
             
             this.currentTag = $li.data('cat');
-            $('#current-category-title').text(`${this.currentTag.charAt(0).toUpperCase() + this.currentTag.slice(1)} Explorer`);
-            this.fetchWaifu();
+            $('#current-category-title').text(`${this.currentTag.replace('-', ' ').toUpperCase()} Gallery`);
+            
+            $('#waifu-grid').empty(); // Limpa grid ao trocar categoria
+            this.fetchGallery();
         });
 
-        $('#next-btn').on('click', () => this.fetchWaifu());
-        $('#like-btn').on('click', () => this.toggleFavorite());
-        $('#download-btn').on('click', () => this.downloadImage());
+        // Botão Next (Carrega mais)
+        $('#next-btn').on('click', () => this.fetchGallery());
+
+        // Eventos delegados para botões dentro dos cards
+        $('#waifu-grid').on('click', '.like-btn', (e) => {
+            const $btn = $(e.currentTarget);
+            const url = $btn.data('url');
+            this.toggleFavorite(url, $btn);
+        });
+
+        $('#waifu-grid').on('click', '.download-btn', (e) => {
+            const url = $(e.currentTarget).data('url');
+            this.downloadImage(url);
+        });
     }
 
-    async fetchWaifu() {
-        const $img = $('#waifu-img');
-        const $loader = $('.card-loader');
-
-        $img.hide();
+    async fetchGallery() {
+        const $loader = $('.loader-container');
         $loader.show();
-        $('#like-btn').removeClass('liked').find('i').attr('class', 'bx bx-heart');
 
         try {
-            // Seguindo a Doc: Parâmetro 'IncludedTags' e Endpoint '/images'
+            // Buscando várias imagens de uma vez
             const response = await $.ajax({
                 url: `${BASE_URL}?IncludedTags=${this.currentTag}`,
                 method: 'GET'
             });
 
-            // Estrutura oficial: response.items[0].url
-            if (response.items && response.items.length > 0) {
-                const imageUrl = response.items[0].url;
-                
-                const tempImg = new Image();
-                tempImg.src = imageUrl;
-                tempImg.onload = () => {
-                    $img.attr('src', imageUrl).fadeIn(500);
-                    $loader.hide();
-                    this.checkIfLiked(imageUrl);
-                };
+            if (response.items) {
+                response.items.forEach(item => {
+                    this.renderCard(item.url);
+                });
             }
 
         } catch (error) {
             console.error('Erro API:', error);
-            this.showError('Não conseguimos carregar a imagem desta categoria.');
+            this.showError('Erro ao carregar galeria.');
+        } finally {
             $loader.hide();
         }
     }
 
-    toggleFavorite() {
-        const url = $('#waifu-img').attr('src');
-        if (!url) return;
+    renderCard(url) {
+        const isLiked = this.favorites.includes(url);
+        const cardHtml = `
+            <div class="waifu-card" style="display: none;">
+                <img src="${url}" alt="Waifu">
+                <div class="card-overlay">
+                    <button class="like-btn ${isLiked ? 'liked' : ''}" data-url="${url}">
+                        <i class='bx ${isLiked ? 'bxs-heart' : 'bx-heart'}'></i>
+                    </button>
+                    <button class="download-btn" data-url="${url}">
+                        <i class='bx bx-download'></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        const $card = $(cardHtml);
+        $('#waifu-grid').append($card);
+        $card.fadeIn(800);
+    }
 
+    toggleFavorite(url, $btn) {
         const index = this.favorites.indexOf(url);
         if (index === -1) {
             this.favorites.push(url);
-            $('#like-btn').addClass('liked').find('i').attr('class', 'bx bxs-heart');
+            $btn.addClass('liked').find('i').attr('class', 'bx bxs-heart');
         } else {
             this.favorites.splice(index, 1);
-            $('#like-btn').removeClass('liked').find('i').attr('class', 'bx bx-heart');
+            $btn.removeClass('liked').find('i').attr('class', 'bx bx-heart');
         }
 
         localStorage.setItem('waifu_favs', JSON.stringify(this.favorites));
         this.updateFavCount();
     }
 
-    checkIfLiked(url) {
-        if (this.favorites.includes(url)) {
-            $('#like-btn').addClass('liked').find('i').attr('class', 'bx bxs-heart');
-        }
-    }
-
     updateFavCount() {
         $('#fav-count').text(`${this.favorites.length} Favoritos`);
     }
 
-    async downloadImage() {
-        const url = $('#waifu-img').attr('src');
-        if (!url) return;
+    async downloadImage(url) {
         try {
             const response = await fetch(url);
             const blob = await response.blob();
