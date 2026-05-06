@@ -66,6 +66,35 @@ class App {
         `).fadeIn();
     }
 
+    renderForecast(data) {
+        const $container = $('#forecast-section');
+        $container.empty().append('<h3>Previsão para 5 dias</h3>');
+        
+        const $grid = $('<div class="forecast-card-grid"></div>');
+        
+        // Filtra para pegar apenas uma medição por dia (ex: 12:00)
+        const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+
+        dailyData.forEach(day => {
+            const date = new Date(day.dt * 1000);
+            const dayName = date.toLocaleDateString('pt-br', { weekday: 'short' });
+            
+            const card = `
+                <div class="forecast-day-card">
+                    <span class="day">${dayName}</span>
+                    <i class='bx ${this.getIconClass(day.weather[0].icon)}'></i>
+                    <div class="temps">
+                        <span class="max">${Math.round(day.main.temp_max)}°</span>
+                        <span class="min">${Math.round(day.main.temp_min)}°</span>
+                    </div>
+                </div>
+            `;
+            $grid.append(card);
+        });
+
+        $container.append($grid);
+    }
+
     getIconClass(iconCode) {
         const iconMap = {
             '01d': 'bx-sun',
