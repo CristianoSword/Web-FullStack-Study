@@ -127,6 +127,9 @@ class App {
             </div>
         `).slideDown(500);
 
+        // Atualizar Background
+        this.updateBackground(weather[0].main);
+
         // Stats Grid
         $('#stats-grid').html(`
             <div class="stat-card">
@@ -151,6 +154,18 @@ class App {
                 </div>
             </div>
         `);
+    }
+
+    updateBackground(condition) {
+        const bgMap = {
+            'Clear': 'bg-sunny',
+            'Clouds': 'bg-cloudy',
+            'Rain': 'bg-rainy',
+            'Drizzle': 'bg-rainy',
+            'Thunderstorm': 'bg-stormy',
+            'Snow': 'bg-snowy'
+        };
+        $('body').attr('class', bgMap[condition] || '');
     }
 
     renderForecast(data) {

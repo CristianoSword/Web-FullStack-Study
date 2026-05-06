@@ -239,5 +239,11 @@ a { text-decoration: none; color: inherit; }
     box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.4);
     z-index: 9999;
     display: none;
-    font-weight: 600;
-}
+/* Dynamic Backgrounds */
+body.bg-sunny { background: linear-gradient(135deg, #fef9c3, #fde68a); }
+body.bg-cloudy { background: linear-gradient(135deg, #e2e8f0, #cbd5e1); }
+body.bg-rainy { background: linear-gradient(135deg, #cbd5e1, #94a3b8); }
+body.bg-stormy { background: linear-gradient(135deg, #475569, #1e293b); }
+body.bg-snowy { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); }
+
+#dashboard-shell { transition: background 0.5s ease; }
