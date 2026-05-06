@@ -107,13 +107,17 @@ class App {
     }
 
     updateUI(data) {
-        const { name, main, weather, dt, sys } = data;
-        const date = new Date(dt * 1000).toLocaleDateString('pt-br', { weekday: 'long', day: 'numeric', month: 'long' });
+        const { name, main, weather, dt, sys, timezone } = data;
+        
+        // Calcula a hora local baseada no timezone da API (em segundos)
+        const localDate = new Date((dt + timezone + new Date().getTimezoneOffset() * 60) * 1000);
+        const dateStr = localDate.toLocaleDateString('pt-br', { weekday: 'long', day: 'numeric', month: 'long' });
+        const timeStr = localDate.toLocaleTimeString('pt-br', { hour: '2-digit', minute: '2-digit' });
 
         // Hero Card
         $('#hero-card').hide().html(`
             <div class="hero-info">
-                <div class="date">${date}</div>
+                <div class="date">${dateStr} • ${timeStr}</div>
                 <h2>${name}, ${sys.country}</h2>
             </div>
             <div class="hero-temp">${Math.round(main.temp)}°</div>
