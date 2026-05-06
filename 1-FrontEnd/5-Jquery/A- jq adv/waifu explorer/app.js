@@ -36,6 +36,29 @@ class WaifuApp {
 
         // Like Button
         $('#like-btn').on('click', () => this.toggleFavorite());
+
+        // Download Button
+        $('#download-btn').on('click', () => this.downloadImage());
+    }
+
+    async downloadImage() {
+        const url = $('#waifu-img').attr('src');
+        if (!url) return;
+
+        try {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            const blobUrl = window.URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = `waifu-${Date.now()}.png`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } catch (e) {
+            console.error('Erro ao baixar:', e);
+        }
     }
 
     async fetchWaifu() {
