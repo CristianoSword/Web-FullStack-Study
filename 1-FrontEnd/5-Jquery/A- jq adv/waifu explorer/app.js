@@ -54,9 +54,9 @@ class WaifuApp {
         $loader.show();
 
         try {
-            // Buscando várias imagens de uma vez
+            // Buscando várias imagens de uma vez (many=true)
             const response = await $.ajax({
-                url: `${BASE_URL}?IncludedTags=${this.currentTag}`,
+                url: `${BASE_URL}?IncludedTags=${this.currentTag}&many=true`,
                 method: 'GET'
             });
 

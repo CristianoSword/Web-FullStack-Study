@@ -2,12 +2,12 @@
     --primary: #ff4d94;
     --secondary: #704dff;
     --bg-dark: #0f172a;
-    --sidebar-bg: rgba(15, 23, 42, 0.8);
+    --sidebar-bg: rgba(15, 23, 42, 0.95);
     --card-bg: rgba(255, 255, 255, 0.05);
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
-    --radius: 20px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius: 12px;
+    --transition: all 0.2s ease-out;
 }
 
 * {
@@ -22,7 +22,6 @@ body {
     color: var(--text-main);
     height: 100vh;
     overflow: hidden;
-    background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
 }
 
 #app-shell {
@@ -34,11 +33,11 @@ body {
 #sidebar {
     width: 280px;
     background: var(--sidebar-bg);
-    backdrop-filter: blur(10px);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -51,132 +50,92 @@ body {
     margin-bottom: 3rem;
 }
 
-nav h3 {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-}
-
 #category-list {
     list-style: none;
 }
 
 #category-list li {
-    padding: 1rem 1.25rem;
-    border-radius: 12px;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
     color: var(--text-muted);
-    font-weight: 500;
     margin-bottom: 0.5rem;
 }
 
-#category-list li:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-main);
-}
-
 #category-list li.active {
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    background: var(--primary);
     color: white;
-    box-shadow: 0 10px 20px -5px rgba(255, 77, 148, 0.4);
 }
 
 #favorites-stat {
     margin-top: auto;
     padding: 1rem;
-    background: var(--card-bg);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-weight: 600;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
 }
 
 /* MAIN CONTENT */
 #main-content {
     flex: 1;
-    padding: 3rem;
+    padding: 2rem;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    background: #0b1120;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .primary-btn {
     background: var(--primary);
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 15px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
     color: white;
     font-weight: 600;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition);
 }
 
-.primary-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px -10px rgba(255, 77, 148, 0.5);
-}
-
-/* WAIFU GRID */
+/* O GRID REAL */
 #waifu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     width: 100%;
 }
 
 .waifu-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #1e293b;
     border-radius: var(--radius);
     overflow: hidden;
     position: relative;
-    transition: var(--transition);
-    height: 350px;
-}
-
-.waifu-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary);
-    box-shadow: 0 20px 40px -10px rgba(255, 77, 148, 0.3);
+    height: 400px; /* Altura fixa para manter a grade alinhada */
 }
 
 .waifu-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
-}
-
-.waifu-card:hover img {
-    transform: scale(1.1);
+    display: block;
+    /* Nitidez Máxima */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .card-overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    inset: 0;
+    background: rgba(0,0,0,0.4);
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     opacity: 0;
-    transition: var(--transition);
+    transition: opacity 0.2s;
 }
 
 .waifu-card:hover .card-overlay {
@@ -184,61 +143,39 @@ header {
 }
 
 .card-overlay button {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     border: none;
     background: white;
-    color: var(--bg-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
-}
-
-.card-overlay button:hover {
-    transform: scale(1.2);
-    background: var(--primary);
-    color: white;
-}
-
-.card-overlay .like-btn.liked {
-    background: var(--primary);
-    color: white;
-}
-
-.loader-container {
-    padding: 3rem;
-    text-align: center;
-    width: 100%;
-}
-
-/* LOADING */
-.card-loader {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(255, 255, 255, 0.1);
-    border-top-color: var(--primary);
-    border-radius: 50%;
-    animation: spin 1s infinite linear;
-    margin: 100px auto;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
+    font-size: 1.2rem;
 }
 
 .error-alert {
     position: fixed;
-    top: 2rem;
-    right: 2rem;
-    background: #ff4444;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    z-index: 9999;
-    display: none;
-    font-weight: 600;
+    top: 20px;
+    right: 20px;
+    background: #f43f5e;
+    padding: 1rem;
+    border-radius: 8px;
+    z-index: 1000;
 }
+
+.loader-container {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+}
+
+.card-loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255,255,255,0.1);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
