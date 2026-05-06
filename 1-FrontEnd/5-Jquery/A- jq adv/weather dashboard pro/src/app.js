@@ -57,6 +57,11 @@ class App {
             const currentCity = $('#hero-card h2').text().split(',')[0];
             if (currentCity) this.searchCity(currentCity);
         });
+
+        // Clique no Histórico
+        $('#history-list').on('click', 'li', (e) => {
+            this.searchCity($(e.currentTarget).find('span').text());
+        });
     }
 
     async searchByCoords(lat, lon) {
@@ -82,6 +87,7 @@ class App {
             
             // Salvar no storage
             localStorage.setItem('lastCity', city);
+            this.addToHistory(city);
         } catch (error) {
             this.showError('Cidade não encontrada. Verifique o nome e tente novamente.');
             console.error('Erro na busca:', error);
@@ -104,6 +110,25 @@ class App {
         const $alert = $(`<div class="error-alert">${message}</div>`);
         $('body').append($alert);
         $alert.fadeIn().delay(3000).fadeOut(() => $alert.remove());
+    }
+
+    addToHistory(city) {
+        const $list = $('#history-list');
+        // Evita duplicados
+        if ($list.find(`span:contains("${city}")`).length > 0) return;
+
+        const item = $(`
+            <li class="history-item">
+                <i class='bx bx-history'></i>
+                <span>${city}</span>
+            </li>
+        `);
+        $list.prepend(item);
+        
+        // Limita a 5 itens
+        if ($list.children().length > 5) {
+            $list.children().last().remove();
+        }
     }
 
     updateUI(data) {
