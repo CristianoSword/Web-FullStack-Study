@@ -12,6 +12,10 @@ class App {
     init() {
         console.log('%c SkyCast Pro Initialized ', 'background: #3b82f6; color: white; font-weight: bold;');
         this.bindEvents();
+
+        // Recuperar última busca
+        const lastCity = localStorage.getItem('lastCity') || 'São Paulo';
+        this.searchCity(lastCity);
     }
 
     bindEvents() {
@@ -54,6 +58,9 @@ class App {
             
             this.updateUI(currentData);
             this.renderForecast(forecastData);
+            
+            // Salvar no storage
+            localStorage.setItem('lastCity', city);
         } catch (error) {
             this.showError('Cidade não encontrada. Verifique o nome e tente novamente.');
             console.error('Erro na busca:', error);
