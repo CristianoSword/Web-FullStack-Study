@@ -57,10 +57,29 @@ class App {
             </div>
             <div class="hero-temp">${Math.round(main.temp)}°</div>
             <div class="hero-condition">
-                <i class='bx bx-cloud' id="main-icon"></i>
+                <i class='bx ${this.getIconClass(weather[0].icon)}' id="main-icon"></i>
                 <span>${weather[0].description}</span>
             </div>
         `).fadeIn();
+    }
+
+    getIconClass(iconCode) {
+        const iconMap = {
+            '01d': 'bx-sun',
+            '01n': 'bx-moon',
+            '02d': 'bx-cloud-light-rain',
+            '02n': 'bx-cloud-moon',
+            '03d': 'bx-cloud',
+            '03n': 'bx-cloud',
+            '04d': 'bx-cloud',
+            '04n': 'bx-cloud',
+            '09d': 'bx-cloud-drizzle',
+            '10d': 'bx-cloud-rain',
+            '11d': 'bx-cloud-lightning',
+            '13d': 'bx-cloud-snow',
+            '50d': 'bx-water'
+        };
+        return iconMap[iconCode] || 'bx-cloud';
     }
 }
 
