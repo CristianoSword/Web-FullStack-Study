@@ -160,6 +160,19 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero-info h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: var(--transition);
+}
+.map-link:hover { background: white; color: var(--primary); }
 .hero-info .date { opacity: 0.8; font-weight: 500; }
 .hero-temp { font-size: 5rem; font-weight: 800; }
 .hero-condition { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
