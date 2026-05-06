@@ -24,12 +24,17 @@ class App {
 
         // Toggle de Unidades
         $('.unit-toggle span').on('click', (e) => {
-            const unit = $(e.target).data('unit');
+            const $target = $(e.target);
+            if ($target.hasClass('active')) return;
+
+            const unit = $target.data('unit');
             $('.unit-toggle span').removeClass('active');
-            $(e.target).addClass('active');
+            $target.addClass('active');
+            
             weatherService.setUnit(unit);
-            // Re-busca a cidade atual para atualizar unidades
-            const currentCity = $('#hero-card h2').text();
+            
+            // Re-busca a cidade atual
+            const currentCity = $('#hero-card h2').text().split(',')[0];
             if (currentCity) this.searchCity(currentCity);
         });
     }
