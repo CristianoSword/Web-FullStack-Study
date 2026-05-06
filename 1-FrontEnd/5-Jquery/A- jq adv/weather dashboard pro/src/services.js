@@ -1,10 +1,9 @@
 /**
- * WeatherService
- * Gerencia todas as chamadas AJAX para a API do OpenWeather
+ * WeatherService - Migrado para 7Timer! (100% Gratuito)
  */
 
-const API_KEY = 'YOUR_API_KEY_HERE'; 
-const BASE_URL = 'https://api.openweathermap.org/data/2.5';
+const BASE_7TIMER = 'https://www.7timer.info/bin/api.pl';
+const BASE_GEO = 'https://nominatim.openstreetmap.org/search';
 
 class WeatherService {
     constructor() {
@@ -12,44 +11,59 @@ class WeatherService {
     }
 
     setUnit(unit) {
-        this.unit = unit === 'f' ? 'imperial' : 'metric';
+        this.unit = unit === 'f' ? 'british' : 'metric'; // 7Timer usa 'british' para imperial
     }
 
-    async getCurrentWeather(city) {
-        return $.ajax({
-            url: `${BASE_URL}/weather`,
+    /**
+     * Transforma Nome de Cidade em Coordenadas (Geocoding)
+     */
+    async getCoords(city) {
+        const data = await $.ajax({
+            url: BASE_GEO,
             data: {
                 q: city,
-                appid: API_KEY,
-                units: this.unit,
-                lang: 'pt_br'
+                format: 'json',
+                limit: 1
+            },
+            method: 'GET'
+        });
+
+        if (data.length === 0) throw new Error('Cidade não encontrada');
+        
+        return {
+            lat: data[0].lat,
+            lon: data[0].lon,
+            displayName: data[0].display_name
+        };
+    }
+
+    /**
+     * Busca o clima (Civil Product - Detalhado)
+     */
+    async getWeather(lat, lon) {
+        return $.ajax({
+            url: BASE_7TIMER,
+            data: {
+                lon: lon,
+                lat: lat,
+                product: 'civil',
+                output: 'json'
             },
             method: 'GET'
         });
     }
 
-    async getForecast(city) {
+    /**
+     * Busca a previsão semanal (Two Product)
+     */
+    async getForecast(lat, lon) {
         return $.ajax({
-            url: `${BASE_URL}/forecast`,
+            url: BASE_7TIMER,
             data: {
-                q: city,
-                appid: API_KEY,
-                units: this.unit,
-                lang: 'pt_br'
-            },
-            method: 'GET'
-        });
-    }
-
-    async getWeatherByCoords(lat, lon) {
-        return $.ajax({
-            url: `${BASE_URL}/weather`,
-            data: {
-                lat,
-                lon,
-                appid: API_KEY,
-                units: this.unit,
-                lang: 'pt_br'
+                lon: lon,
+                lat: lat,
+                product: 'civillight',
+                output: 'json'
             },
             method: 'GET'
         });
