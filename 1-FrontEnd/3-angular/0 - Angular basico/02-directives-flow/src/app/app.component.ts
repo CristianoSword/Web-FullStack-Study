@@ -25,19 +25,41 @@ import { CommonModule } from '@angular/common';
     </div>
   `,
   styles: [`
-    .container { padding: 1rem; border: 1px solid #ccc; border-radius: 8px; }
+    .container { 
+      padding: 2rem; 
+      font-family: sans-serif; 
+      max-width: 500px; 
+      margin: 0 auto;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
     ul { list-style: none; padding: 0; }
-    li { padding: 0.5rem; background: #f4f4f4; margin-bottom: 5px; border-radius: 4px; transition: background 0.3s; }
-    li:hover { background: #e0e0e0; cursor: pointer; }
-    button { padding: 8px 16px; background: #6200ee; color: white; border: none; border-radius: 4px; margin-bottom: 1rem; }
+    li { 
+      padding: 10px; 
+      background: white; 
+      margin: 5px 0; 
+      border-radius: 6px; 
+      border-left: 4px solid #6200ee;
+    }
+    button { 
+      padding: 10px 20px; 
+      background: #6200ee; 
+      color: white; 
+      border: none; 
+      border-radius: 6px; 
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover { background: #3700b3; }
   `]
 })
 export class AppComponent {
   isVisible = true;
   items = [
-    { id: 1, name: 'Angular' },
-    { id: 2, name: 'React' },
-    { id: 3, name: 'Vue' }
+    { id: 1, name: 'Angular v18' },
+    { id: 2, name: 'TypeScript' },
+    { id: 3, name: 'Standalone Components' }
   ];
 
   toggle() {
