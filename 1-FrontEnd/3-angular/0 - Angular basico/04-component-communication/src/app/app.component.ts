@@ -39,7 +39,9 @@ export class ChildComponent {
     </div>
   `,
   styles: [`
-    .container { padding: 2rem; font-family: sans-serif; max-width: 400px; margin: auto; border: 1px solid #ccc; border-radius: 12px; }
+    .container { padding: 2rem; font-family: sans-serif; max-width: 400px; margin: 2rem auto; border: none; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background: #f9f9f9; }
+    button { padding: 10px 20px; background: #6200ee; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; }
+    button:hover { background: #3700b3; }
   `]
 })
 export class AppComponent {
