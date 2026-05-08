@@ -25,10 +25,10 @@ class WaifuApp {
             const $li = $(e.currentTarget);
             $('#category-list li').removeClass('active');
             $li.addClass('active');
-            
+
             this.currentTag = $li.data('cat');
             $('#current-category-title').text(`${this.currentTag.replace('-', ' ').toUpperCase()} Gallery`);
-            
+
             $('#waifu-grid').empty(); // Limpa grid ao trocar categoria
             this.fetchGallery();
         });
@@ -56,7 +56,7 @@ class WaifuApp {
         try {
             // Buscando várias imagens de uma vez (many=true)
             const response = await $.ajax({
-                url: `${BASE_URL}?IncludedTags=${this.currentTag}&many=true`,
+                url: `${BASE_URL}?IncludedTags=${this.currentTag}&many=true&PageSize=12&height=>=1500`,
                 method: 'GET'
             });
 
@@ -78,7 +78,7 @@ class WaifuApp {
         const isLiked = this.favorites.includes(url);
         const cardHtml = `
             <div class="waifu-card" style="display: none;">
-                <img src="${url}" alt="Waifu">
+                <img src="${url}" alt="Waifu" loading="lazy" decoding="async">
                 <div class="card-overlay">
                     <button class="like-btn ${isLiked ? 'liked' : ''}" data-url="${url}">
                         <i class='bx ${isLiked ? 'bxs-heart' : 'bx-heart'}'></i>
@@ -89,7 +89,7 @@ class WaifuApp {
                 </div>
             </div>
         `;
-        
+
         const $card = $(cardHtml);
         $('#waifu-grid').append($card);
         $card.fadeIn(800);
