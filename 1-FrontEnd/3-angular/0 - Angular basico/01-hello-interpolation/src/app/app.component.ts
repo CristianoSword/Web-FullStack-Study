@@ -1,5 +1,18 @@
-import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  template: '\n    <div class=\
-container\>\n      <h1>{{ title }}</h1>\n      <p>Bem-vindo ao estudo de Angular!</p>\n      <p>Data atual: {{ today | date:\fullDate\ }}</p>\n    </div>\n  ',\n  styles: [`
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div class="container">
+      <h1>{{ title }}</h1>
+      <p>Bem-vindo ao estudo de Angular!</p>
+      <p>Data atual: {{ today | date:'fullDate' }}</p>
+    </div>
+  `,
+  styles: [`
     .container {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 2rem;
@@ -11,4 +24,9 @@ container\>\n      <h1>{{ title }}</h1>\n      <p>Bem-vindo ao estudo de Angular
       max-width: 500px;
       margin: 2rem auto;
     }
-  `]\n})\nexport class AppComponent {\n  title = 'Hello Angular Interpolation';\n  today = new Date();\n}
+  `]
+})
+export class AppComponent {
+  title = 'Hello Angular Interpolation';
+  today = new Date();
+}
