@@ -21,7 +21,8 @@ import { Component } from '@angular/core';
   `,
   styles: [`
     .container { text-align: center; font-family: sans-serif; }
-    .box { width: 200px; height: 100px; margin: 1rem auto; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px black; border-radius: 8px; }
+    .box { width: 200px; height: 100px; margin: 1rem auto; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; text-shadow: 1px 1px 2px black; border-radius: 8px; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .box:active { transform: scale(0.95); }
     .controls { margin: 1rem; }
     input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-right: 5px; }
     button { padding: 8px 16px; cursor: pointer; }
