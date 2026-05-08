@@ -37,9 +37,13 @@ export class DataService {
     </div>
   `,
   styles: [`
-    .container { padding: 2rem; font-family: sans-serif; }
-    .input-group { margin-bottom: 1rem; }
-    .message { padding: 10px; background: #eee; margin-top: 5px; border-radius: 4px; border-left: 5px solid #6200ee; }
+    .container { padding: 2rem; font-family: 'Inter', sans-serif; max-width: 500px; margin: auto; }
+    .input-group { display: flex; gap: 10px; margin-bottom: 2rem; }
+    input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+    button { padding: 12px 24px; background: #6200ee; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: background 0.2s; }
+    button:hover { background: #3700b3; }
+    .message { padding: 15px; background: white; margin-top: 10px; border-radius: 8px; border-left: 6px solid #6200ee; box-shadow: 0 2px 4px rgba(0,0,0,0.05); animation: slideIn 0.3s ease-out; }
+    @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   `]
 })
 export class AppComponent {
