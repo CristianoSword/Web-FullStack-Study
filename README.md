@@ -34,15 +34,17 @@ All technologies studied and those on the list to study:
 | **[JavaScript](1-FrontEnd/2-Javascript/)** | ✅ | **[Node](2-BackEnd/2-Nodejs/)** | ✅ | **[AWS](3-Devops/2-AWS/)** | ⏳ | **[Selenium](4-QA/2-Selenium/)** | ✅ |
 | **[jQuery](1-FrontEnd/3-Jquery/)** | ✅ | **[Ruby on Rails](2-BackEnd/3-Ruby-on-Rails/)**| ⏳ | **[Digital Ocean](3-Devops/3-DigitalOcean/)**| ⏳ | **[JUnit](4-QA/3-JUnit/)** | ⏳ |
 | **[React](1-FrontEnd/4-React/)** | ✅ | **[C++](2-BackEnd/4-Cpp/)** | ✅ | **[GCP](3-Devops/4-GCP/)** | ⏳ | **[Playwright](4-QA/4-Playwright/)** | ⏳ |
-| **[Vue](1-FrontEnd/5-Vue/)** | ✅ | **[BlockChain](2-BackEnd/5-BlockChain/)** | ⏳ | **[GitHub Actions](3-Devops/5-GitHubActions/)** | ⏳ | **[Vitest](4-QA/5-Vitest/)** | ⏳ |
-| **[Angular](1-FrontEnd/6-Angular/)** | ✅ | **[SQL](2-BackEnd/6-SQL/)** | ✅ | **[Kubernetes](3-Devops/6-Kubernetes/)** | ⏳ | | |
-| **[Bootstrap](1-FrontEnd/7-Bootstrap/)** | ✅ | **[Elixir](2-BackEnd/7-Elixir/)** | ⏳ | **[Vercel](3-Devops/7-Vercel/)** | ⏳ | | |
-| **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | ✅ | **[WebAssembly](2-BackEnd/8-WebAssembly/)** | ⏳ | | | | |
-| **[TypeScript](1-FrontEnd/9-TypeScript/)** | ⏳ | **[Erlang](2-BackEnd/9-Erlang/)** | ⏳ | | | | |
-| **[Tailwind](1-FrontEnd/10-Tailwind/)** | ⏳ | **[Python (FastAPI)](2-BackEnd/10-Python-FastAPI/)** | ⏳ | | | | |
-| **[Next.js](1-FrontEnd/11-Nextjs/)** | ⏳ | **[Go](2-BackEnd/11-Go/)** | ⏳ | | | | |
-| **[Zustand](1-FrontEnd/12-Zustand/)** | ⏳ | **[MongoDB](2-BackEnd/12-MongoDB/)** | ⏳ | | | | |
-| **[Svelte](1-FrontEnd/13-Svelte/)** | ⏳ | **[GraphQL](2-BackEnd/13-GraphQL/)** | ⏳ | | | | |
+| **[Vue](1-FrontEnd/5-Vue/)** | ✅ | **[Java](2-BackEnd/5-Java/)** | ⏳ | **[GitHub Actions](3-Devops/5-GitHubActions/)** | ⏳ | **[Vitest](4-QA/5-Vitest/)** | ⏳ |
+| **[Angular](1-FrontEnd/6-Angular/)** | ✅ | **[C#](2-BackEnd/6-CSharp/)** | ⏳ | **[Kubernetes](3-Devops/6-Kubernetes/)** | ⏳ | | |
+| **[Bootstrap](1-FrontEnd/7-Bootstrap/)** | ✅ | **[BlockChain](2-BackEnd/7-BlockChain/)** | ⏳ | **[Vercel](3-Devops/7-Vercel/)** | ⏳ | | |
+| **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | ✅ | **[SQL](2-BackEnd/8-SQL/)** | ✅ | | | | |
+| **[TypeScript](1-FrontEnd/9-TypeScript/)** | ⏳ | **[Elixir](2-BackEnd/9-Elixir/)** | ⏳ | | | | |
+| **[Tailwind](1-FrontEnd/10-Tailwind/)** | ⏳ | **[WebAssembly](2-BackEnd/10-WebAssembly/)** | ⏳ | | | | |
+| **[Next.js](1-FrontEnd/11-Nextjs/)** | ⏳ | **[Erlang](2-BackEnd/11-Erlang/)** | ⏳ | | | | |
+| **[Zustand](1-FrontEnd/12-Zustand/)** | ⏳ | **[Python (FastAPI)](2-BackEnd/12-Python-FastAPI/)** | ⏳ | | | | |
+| **[Svelte](1-FrontEnd/13-Svelte/)** | ⏳ | **[Go](2-BackEnd/13-Go/)** | ⏳ | | | | |
+| | | **[MongoDB](2-BackEnd/14-MongoDB/)** | ⏳ | | | | |
+| | | **[GraphQL](2-BackEnd/15-GraphQL/)** | ⏳ | | | | |
 
 ---
 
@@ -65,11 +67,11 @@ Todas as pastas (exceto as isentas) seguem o padrão:
 - **[0-PHP](2-BackEnd/0-PHP/)** / **[1-Laravel](2-BackEnd/1-Laravel/)**: Desenvolvimento web robusto com PHP.
 - **[2-Nodejs](2-BackEnd/2-Nodejs/)**: APIs escaláveis com JavaScript no servidor.
 - **[3-Ruby-on-Rails](2-BackEnd/3-Ruby-on-Rails/)**: Desenvolvimento ágil e produtivo.
-- **[4-Cpp](2-BackEnd/4-Cpp/)**: Programação de sistemas e alta performance.
-- **[6-SQL](2-BackEnd/6-SQL/)** / **[12-MongoDB](2-BackEnd/12-MongoDB/)**: Bancos de dados relacionais e NoSQL.
-- **[10-Python-FastAPI](2-BackEnd/10-Python-FastAPI/)** / **[11-Go](2-BackEnd/11-Go/)**: Linguagens modernas para APIs e concorrência.
-- **[13-GraphQL](2-BackEnd/13-GraphQL/)**: Queries flexíveis para APIs modernas.
-- **Experimental:** [BlockChain](2-BackEnd/5-BlockChain/), [WebAssembly](2-BackEnd/8-WebAssembly/), [Elixir](2-BackEnd/7-Elixir/), [Erlang](2-BackEnd/9-Erlang/).
+- **[4-Cpp](2-BackEnd/4-Cpp/)** / **[5-Java](2-BackEnd/5-Java/)** / **[6-CSharp](2-BackEnd/6-CSharp/)**: Linguagens robustas e de alta performance.
+- **[8-SQL](2-BackEnd/8-SQL/)** / **[14-MongoDB](2-BackEnd/14-MongoDB/)**: Bancos de dados relacionais e NoSQL.
+- **[12-Python-FastAPI](2-BackEnd/12-Python-FastAPI/)** / **[13-Go](2-BackEnd/13-Go/)**: Linguagens modernas para APIs e concorrência.
+- **[15-GraphQL](2-BackEnd/15-GraphQL/)**: Queries flexíveis para APIs modernas.
+- **Experimental:** [7-BlockChain](2-BackEnd/7-BlockChain/), [10-WebAssembly](2-BackEnd/10-WebAssembly/), [9-Elixir](2-BackEnd/9-Elixir/), [11-Erlang](2-BackEnd/11-Erlang/).
 
 ### 🏗️ [DevOps](3-Devops/)
 - **Containers:** [Docker](3-Devops/0-Docker/), [Kubernetes](3-Devops/6-Kubernetes/).
