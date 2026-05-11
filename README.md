@@ -14,7 +14,7 @@
 </div>
        
 <p align="center">
-  ❤❤❤❤❤❤❤🌗🖤🖤 &nbsp;&nbsp;&nbsp; 75/100% 📚📚📚📚📚📚
+  ❤❤❤❤❤❤❤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 75/100% 📚📚📚📚📚📚📚
 </p>         
 
 <p align="center">
