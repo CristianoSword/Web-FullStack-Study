@@ -29,40 +29,45 @@ All technologies studied and those on the list to study:
 
 | 🐤 FrontEnd | Status | ⚙️ BackEnd | Status | 🛠️ DevOps | Status | 🧪 QA | Status |
 | :--- | :---: | :--- | :---: | :--- | :---: | :--- | :---: |
-| **[HTML5](1-FrontEnd/0-Html/)** | ✅ | **[PHP](2-BackEnd/2-PHP/)** | ✅ | **[Docker](3-Devops/)** | ✅ | **[Jest](4-QA/)** | ✅ |
-| **[CSS3](1-FrontEnd/1-CSS/)** | ✅ | **Laravel** | ⏳| **Heroku** | ⏳ | **Cypress** | ⏳ |
-| **[JavaScript](1-FrontEnd/2-Javascript/)** | ✅ | **[Node](2-BackEnd/3-Nodejs/)** | ✅ | **AWS** | ⏳ | **[Selenium](4-QA/)** | ✅ |
-| **[jQuery](1-FrontEnd/5-Jquery/)** | ✅ | **Ruby on Rails**| ⏳ | **Digital Ocean**| ⏳ | **JUnit** | ⏳ |
-| **[React](https://github.com/CristianoSword/Netflix-Clone-React)** | ✅ | **[C++](2-BackEnd/1-C++/)** | ✅ | **GCP** | ⏳ | | |
-| **Vue** | ✅ | **BlockChain** | ⏳ | | | | |
-| **[Angular](https://github.com/CristianoSword/Angular-CRUD)** | ✅ | **SQL** | ✅ | | | | |
-| **[Bootstrap](1-FrontEnd/6-Bootstrap/)** | ✅ | **Elixir** | ⏳ | | | | |
-| **Less/Sass** | ✅ | **WebAssembly** | ⏳ | | | | |
-| - | | **Erlang** | ⏳ | | | | |
+| **[HTML5](1-FrontEnd/0-Html/)** | ✅ | **[PHP](2-BackEnd/0-PHP/)** | ✅ | **[Docker](3-Devops/0-Docker/)** | ✅ | **[Jest](4-QA/0-Jest/)** | ✅ |
+| **[CSS3](1-FrontEnd/1-CSS/)** | ✅ | **[Laravel](2-BackEnd/1-Laravel/)** | ⏳| **[Heroku](3-Devops/1-Heroku/)** | ⏳ | **[Cypress](4-QA/1-Cypress/)** | ⏳ |
+| **[JavaScript](1-FrontEnd/2-Javascript/)** | ✅ | **[Node](2-BackEnd/2-Nodejs/)** | ✅ | **[AWS](3-Devops/2-AWS/)** | ⏳ | **[Selenium](4-QA/2-Selenium/)** | ✅ |
+| **[jQuery](1-FrontEnd/3-Jquery/)** | ✅ | **[Ruby on Rails](2-BackEnd/3-Ruby-on-Rails/)**| ⏳ | **[Digital Ocean](3-Devops/3-DigitalOcean/)**| ⏳ | **[JUnit](4-QA/3-JUnit/)** | ⏳ |
+| **[React](1-FrontEnd/4-React/)** | ✅ | **[C++](2-BackEnd/4-Cpp/)** | ✅ | **[GCP](3-Devops/4-GCP/)** | ⏳ | **[Playwright](4-QA/4-Playwright/)** | ⏳ |
+| **[Vue](1-FrontEnd/5-Vue/)** | ✅ | **[BlockChain](2-BackEnd/5-BlockChain/)** | ⏳ | **[GitHub Actions](3-Devops/5-GitHubActions/)** | ⏳ | **[Vitest](4-QA/5-Vitest/)** | ⏳ |
+| **[Angular](1-FrontEnd/6-Angular/)** | ✅ | **[SQL](2-BackEnd/6-SQL/)** | ✅ | **[Kubernetes](3-Devops/6-Kubernetes/)** | ⏳ | | |
+| **[Bootstrap](1-FrontEnd/7-Bootstrap/)** | ✅ | **[Elixir](2-BackEnd/7-Elixir/)** | ⏳ | **[Vercel](3-Devops/7-Vercel/)** | ⏳ | | |
+| **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | ✅ | **[WebAssembly](2-BackEnd/8-WebAssembly/)** | ⏳ | | | | |
+| **[TypeScript](1-FrontEnd/9-TypeScript/)** | ⏳ | **[Erlang](2-BackEnd/9-Erlang/)** | ⏳ | | | | |
+| **[Tailwind](1-FrontEnd/10-Tailwind/)** | ⏳ | **[Python (FastAPI)](2-BackEnd/10-Python-FastAPI/)** | ⏳ | | | | |
+| **[Next.js](1-FrontEnd/11-Nextjs/)** | ⏳ | **[Go](2-BackEnd/11-Go/)** | ⏳ | | | | |
+| **[Zustand](1-FrontEnd/12-Zustand/)** | ⏳ | **[MongoDB](2-BackEnd/12-MongoDB/)** | ⏳ | | | | |
+| **[Svelte](1-FrontEnd/13-Svelte/)** | ⏳ | **[GraphQL](2-BackEnd/13-GraphQL/)** | ⏳ | | | | |
 
 ---
 
 ## 📂 Project Structure
 
 ### 🎨 [FrontEnd](1-FrontEnd/)
-- **[HTML Moderno](1-FrontEnd/0-Html/A%20-%20html%20moderno/)**: Dialog, Drag & Drop, Web Components, Geolocation, SVG.
-- **[HTML Base](1-FrontEnd/0-Html/)**: Acessibilidade, DOM events, WebStorage.
-- **[CSS](1-FrontEnd/1-CSS/)**: Flexbox, Grid, FF7 UI, Pixel Art, **[CSS Moderno](1-FrontEnd/1-CSS/A%20-%20CSS%20Moderno/)**, **[CSS Avançado](1-FrontEnd/1-CSS/B%20-%20CSS%20Avan%C3%A7ado/)**.
-- **[JavaScript](1-FrontEnd/2-Javascript/)**: ES6, Chrome Extensions, Webpack, **[JS Moderno](1-FrontEnd/2-Javascript/A%20-%20JS%20Moderno/)**, **[JS Avançado](1-FrontEnd/2-Javascript/B%20-%20JS%20Avan%C3%A7ado/)**.
-- **[jQuery & Bootstrap](1-FrontEnd/5-Jquery/)**: Implementações e revisões.
+- **[HTML](1-FrontEnd/0-Html/)**: Moderno (Dialog, Drag & Drop) e Base (Acessibilidade, Storage).
+- **[CSS](1-FrontEnd/1-CSS/)**: Flexbox, Grid, CSS Moderno e Avançado.
+- **[JavaScript](1-FrontEnd/2-Javascript/)**: ES6+, Extensions, JS Moderno e Avançado.
+- **[Frameworks & Libs](1-FrontEnd/)**: jQuery, Bootstrap, React, Vue, Angular, Svelte.
+- **[Modern Stack](1-FrontEnd/)**: TypeScript, Tailwind, Next.js, Zustand.
 
 ### ⚙️ [BackEnd](2-BackEnd/)
-- **[C & C++](2-BackEnd/0-C/)**: Lógica e algoritmos.
-- **[PHP](2-BackEnd/2-PHP/)**: Versões 7 e 8, formulários e scripts.
-- **[Node.js](2-BackEnd/3-Nodejs/)**: Hello world e fundamentos.
-- **[Ruby on Rails](2-BackEnd/4-Ruby%20on%20Rails/)**: Inicialização e conceitos.
-- **[WebAssembly](2-BackEnd/5-Web%20Assembly/)**: Integração C/Web.
+- **[PHP & Laravel](2-BackEnd/0-PHP/)**: Fundamentos PHP 7/8 e Framework Laravel.
+- **[Node.js](2-BackEnd/2-Nodejs/)**: APIs e aplicações server-side.
+- **[C++](2-BackEnd/4-Cpp/)**: Lógica de baixo nível e algoritmos.
+- **[Ecosystem](2-BackEnd/)**: Ruby on Rails, SQL, MongoDB, GraphQL, Go, Python.
+- **[Advanced](2-BackEnd/)**: BlockChain, WebAssembly, Elixir, Erlang.
 
 ### 🏗️ [DevOps](3-Devops/)
-- **[Docker & Deploy](3-Devops/)**: Configurações de ambiente.
+- **[Containers & Cloud](3-Devops/)**: Docker, Kubernetes, AWS, GCP, Digital Ocean.
+- **[CI/CD & Deploy](3-Devops/)**: GitHub Actions, Heroku, Vercel.
 
 ### 🧪 [QA](4-QA/)
-- **[Testes](4-QA/)**: Jest e Selenium.
+- **[Testes](4-QA/)**: Jest, Selenium, Cypress, JUnit, Playwright, Vitest.
 
 ---
 
