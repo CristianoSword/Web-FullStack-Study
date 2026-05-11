@@ -48,26 +48,36 @@ All technologies studied and those on the list to study:
 
 ## 📂 Project Structure
 
+Todas as pastas (exceto as isentas) seguem o padrão:
+- `A - [Tecnologia] basico`: Fundamentos e primeiros passos.
+- `B - [Tecnologia] avançado`: Projetos complexos e performance.
+
 ### 🎨 [FrontEnd](1-FrontEnd/)
-- **[HTML](1-FrontEnd/0-Html/)**: Moderno (Dialog, Drag & Drop) e Base (Acessibilidade, Storage).
-- **[CSS](1-FrontEnd/1-CSS/)**: Flexbox, Grid, CSS Moderno e Avançado.
-- **[JavaScript](1-FrontEnd/2-Javascript/)**: ES6+, Extensions, JS Moderno e Avançado.
-- **[Frameworks & Libs](1-FrontEnd/)**: jQuery, Bootstrap, React, Vue, Angular, Svelte.
-- **[Modern Stack](1-FrontEnd/)**: TypeScript, Tailwind, Next.js, Zustand.
+- **[0-Html](1-FrontEnd/0-Html/)** / **[1-CSS](1-FrontEnd/1-CSS/)** / **[2-Javascript](1-FrontEnd/2-Javascript/)**: A tríade fundamental da web.
+- **[3-Jquery](1-FrontEnd/3-Jquery/)** / **[7-Bootstrap](1-FrontEnd/7-Bootstrap/)**: Bibliotecas clássicas e produtividade.
+- **[4-React](1-FrontEnd/4-React/)** / **[5-Vue](1-FrontEnd/5-Vue/)** / **[6-Angular](1-FrontEnd/6-Angular/)**: Os principais frameworks de mercado.
+- **[8-Less-Sass](1-FrontEnd/8-Less-Sass/)** / **[10-Tailwind](1-FrontEnd/10-Tailwind/)**: Pré-processadores e CSS utilitário.
+- **[9-TypeScript](1-FrontEnd/9-TypeScript/)**: Tipagem estática para JavaScript.
+- **[11-Nextjs](1-FrontEnd/11-Nextjs/)** / **[13-Svelte](1-FrontEnd/13-Svelte/)**: Meta-frameworks e compiladores modernos.
+- **[12-Zustand](1-FrontEnd/12-Zustand/)**: Gerenciamento de estado leve e escalável.
 
 ### ⚙️ [BackEnd](2-BackEnd/)
-- **[PHP & Laravel](2-BackEnd/0-PHP/)**: Fundamentos PHP 7/8 e Framework Laravel.
-- **[Node.js](2-BackEnd/2-Nodejs/)**: APIs e aplicações server-side.
-- **[C++](2-BackEnd/4-Cpp/)**: Lógica de baixo nível e algoritmos.
-- **[Ecosystem](2-BackEnd/)**: Ruby on Rails, SQL, MongoDB, GraphQL, Go, Python.
-- **[Advanced](2-BackEnd/)**: BlockChain, WebAssembly, Elixir, Erlang.
+- **[0-PHP](2-BackEnd/0-PHP/)** / **[1-Laravel](2-BackEnd/1-Laravel/)**: Desenvolvimento web robusto com PHP.
+- **[2-Nodejs](2-BackEnd/2-Nodejs/)**: APIs escaláveis com JavaScript no servidor.
+- **[3-Ruby-on-Rails](2-BackEnd/3-Ruby-on-Rails/)**: Desenvolvimento ágil e produtivo.
+- **[4-Cpp](2-BackEnd/4-Cpp/)**: Programação de sistemas e alta performance.
+- **[6-SQL](2-BackEnd/6-SQL/)** / **[12-MongoDB](2-BackEnd/12-MongoDB/)**: Bancos de dados relacionais e NoSQL.
+- **[10-Python-FastAPI](2-BackEnd/10-Python-FastAPI/)** / **[11-Go](2-BackEnd/11-Go/)**: Linguagens modernas para APIs e concorrência.
+- **[13-GraphQL](2-BackEnd/13-GraphQL/)**: Queries flexíveis para APIs modernas.
+- **Experimental:** [BlockChain](2-BackEnd/5-BlockChain/), [WebAssembly](2-BackEnd/8-WebAssembly/), [Elixir](2-BackEnd/7-Elixir/), [Erlang](2-BackEnd/9-Erlang/).
 
 ### 🏗️ [DevOps](3-Devops/)
-- **[Containers & Cloud](3-Devops/)**: Docker, Kubernetes, AWS, GCP, Digital Ocean.
-- **[CI/CD & Deploy](3-Devops/)**: GitHub Actions, Heroku, Vercel.
+- **Containers:** [Docker](3-Devops/0-Docker/), [Kubernetes](3-Devops/6-Kubernetes/).
+- **Cloud Providers:** [AWS](3-Devops/2-AWS/), [GCP](3-Devops/4-GCP/), [DigitalOcean](3-Devops/3-DigitalOcean/).
+- **Deploy & CI/CD:** [Heroku](3-Devops/1-Heroku/), [Vercel](3-Devops/7-Vercel/), [GitHub Actions](3-Devops/5-GitHubActions/).
 
 ### 🧪 [QA](4-QA/)
-- **[Testes](4-QA/)**: Jest, Selenium, Cypress, JUnit, Playwright, Vitest.
+- **Unitários & E2E:** [Jest](4-QA/0-Jest/), [Vitest](4-QA/5-Vitest/), [Cypress](4-QA/1-Cypress/), [Playwright](4-QA/4-Playwright/), [Selenium](4-QA/2-Selenium/), [JUnit](4-QA/3-JUnit/).
 
 ---
 
