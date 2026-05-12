@@ -17,6 +17,7 @@ export class TaskManager {
     }
 
     addTask(title: string, description: string): Task {
+        if (!title.trim()) throw new Error("Ttulo no pode ser vazio");
         const newTask: Task = {
             id: Math.random().toString(36).substr(2, 9),
             title,
@@ -34,6 +35,9 @@ export class TaskManager {
     }
 
     updateTask(id: string, update: TaskUpdate): Task | undefined {
+        if (update.title !== undefined && !update.title.trim()) {
+            throw new Error("Ttulo no pode ser vazio");
+        }
         const task = this.tasks.find(t => t.id === id);
         if (task) {
             Object.assign(task, update);
