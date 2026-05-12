@@ -57,6 +57,6 @@ export class Member {
     }
 
     getBorrowedItems(): BaseItem[] {
-        return this.borrowedItems;
+        return [...this.borrowedItems];
     }
 }
