@@ -1,60 +1,40 @@
 import './style.css'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.ts'
+import { EventBus } from './bus'
+import { EventLogger } from './logger'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const app = document.querySelector<HTMLDivElement>('#app')!
+const bus = new EventBus()
+new EventLogger(bus)
 
-<div class="ticks"></div>
-
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
+app.innerHTML = `
+  <div class="bus-container">
+    <h2>EventBus Notifier</h2>
+    <div class="actions">
+      <button id="login-btn">Simular Login</button>
+      <button id="msg-btn">Enviar Mensagem</button>
+    </div>
+    <div id="logs" class="logs-panel">
+      <h3>Event Logs</h3>
+    </div>
   </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
-
-<div class="ticks"></div>
-<section id="spacer"></section>
 `
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+const logsDiv = document.querySelector<HTMLDivElement>('#logs')!
+
+function addLog(msg: string) {
+  const p = document.createElement('p')
+  p.textContent = msg
+  logsDiv.appendChild(p)
+}
+
+document.querySelector('#login-btn')!.addEventListener('click', () => {
+  const payload = { userId: 'user_' + Math.floor(Math.random()*1000), timestamp: Date.now() }
+  bus.emit('user:login', payload)
+  addLog(`Login emitido: ${payload.userId}`)
+})
+
+document.querySelector('#msg-btn')!.addEventListener('click', () => {
+  const payload = { from: 'Cristiano', text: 'Olá Mundo TS!' }
+  bus.emit('chat:message', payload)
+  addLog(`Mensagem emitida: ${payload.text}`)
+})
