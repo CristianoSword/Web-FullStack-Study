@@ -31,6 +31,20 @@ export class Book extends BaseItem {
     }
 }
 
+export class DVD extends BaseItem {
+    constructor(
+        id: string,
+        title: string,
+        public durationMinutes: number
+    ) {
+        super(id, title);
+    }
+
+    getDetails(): string {
+        return `DVD: ${this.title} (${this.durationMinutes} min)`;
+    }
+}
+
 export class Member {
     constructor(
         public id: string,
