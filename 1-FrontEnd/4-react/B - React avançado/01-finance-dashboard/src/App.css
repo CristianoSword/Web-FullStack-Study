@@ -3,7 +3,7 @@
   --sidebar: #0f172a;
   --card: #ffffff;
   --text: #1e293b;
-  --border: #f1f5f9;
+  --border: #cbd5e1; /* Cor de borda mais visível no modo claro */
   --primary: #10b981;
 }
 
@@ -89,6 +89,11 @@ body {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 30px;
+  align-items: start;
+}
+
+.chart-card {
+  padding: 30px 10px !important; /* Ajuste para não cortar o gráfico */
 }
 
 .transaction-list {
@@ -103,8 +108,8 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.income { color: #10b981; }
-.expense { color: #ef4444; }
+.income { color: #10b981; text-decoration: none !important; }
+.expense { color: #ef4444; text-decoration: none !important; }
 
 .del-btn {
   background: none;
