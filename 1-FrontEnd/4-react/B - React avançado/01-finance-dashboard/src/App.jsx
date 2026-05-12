@@ -1,4 +1,4 @@
-import { useReducer, useMemo } from 'react'
+import { useReducer, useMemo, useCallback, useState } from 'react'
 import Sidebar from './components/Sidebar'
 import StatCard from './components/StatCard'
 import TransactionForm from './components/TransactionForm'
@@ -24,10 +24,16 @@ function reducer(state, action) {
 
 function App() {
   const [transactions, dispatch] = useReducer(reducer, initialState)
+  const [filter, setFilter] = useState('all')
 
-  const addTransaction = (transaction) => {
+  // Otimizando funções de callback
+  const addTransaction = useCallback((transaction) => {
     dispatch({ type: 'ADD', payload: transaction })
-  }
+  }, [])
+
+  const deleteTransaction = useCallback((id) => {
+    dispatch({ type: 'DELETE', payload: id })
+  }, [])
 
   const totals = useMemo(() => {
     return transactions.reduce((acc, item) => {
@@ -37,6 +43,11 @@ function App() {
       return acc
     }, { income: 0, expense: 0, balance: 0 })
   }, [transactions])
+
+  const filteredTransactions = useMemo(() => {
+    if (filter === 'all') return transactions
+    return transactions.filter(t => t.type === filter)
+  }, [transactions, filter])
 
   return (
     <div className="dashboard-container">
@@ -57,16 +68,23 @@ function App() {
           <div className="left-panel">
             <TransactionForm onAdd={addTransaction} />
             <div className="card list-card">
-              <h3>Últimas Transações</h3>
+              <div className="card-header">
+                <h3>Transações</h3>
+                <select value={filter} onChange={e => setFilter(e.target.value)}>
+                  <option value="all">Todas</option>
+                  <option value="income">Entradas</option>
+                  <option value="expense">Saídas</option>
+                </select>
+              </div>
               <ul className="transaction-list">
-                {transactions.map(item => (
+                {filteredTransactions.map(item => (
                   <li key={item.id} className={item.type}>
                     <span>{item.text}</span>
                     <div className="amount-info">
                       <strong className={item.type}>
                         {item.type === 'income' ? '+' : '-'} R$ {item.amount.toLocaleString('pt-BR')}
                       </strong>
-                      <button className="del-btn" onClick={() => dispatch({ type: 'DELETE', payload: item.id })}>×</button>
+                      <button className="del-btn" onClick={() => deleteTransaction(item.id)}>×</button>
                     </div>
                   </li>
                 ))}
