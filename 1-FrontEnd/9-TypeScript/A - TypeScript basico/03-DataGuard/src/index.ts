@@ -1,5 +1,6 @@
 import { DataGuard } from "./validator";
 import { required, minLength, isEmail } from "./rules";
+import { ValidationResult } from "./types";
 
 interface User {
     name: string;
@@ -20,7 +21,13 @@ const invalidUser: User = {
     age: 25
 };
 
-function displayResult(res: any) {
+const validUser: User = {
+    name: "Cristiano",
+    email: "contato@cristiano.com",
+    age: 30
+};
+
+function displayResult(res: ValidationResult) {
     if (res.isValid) {
         console.log("✅ Dados Vlidos!");
     } else {
