@@ -151,3 +151,26 @@ body {
   border-radius: 20px;
   cursor: pointer;
 }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  font-weight: 700;
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.chart-card h3 {
+  text-align: center;
+  margin-bottom: 25px;
+}
