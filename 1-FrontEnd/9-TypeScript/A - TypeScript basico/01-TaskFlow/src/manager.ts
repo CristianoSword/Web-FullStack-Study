@@ -1,7 +1,20 @@
 import { Task, TaskStatus, TaskUpdate } from "./types";
+import { StorageProvider } from "./storage";
 
 export class TaskManager {
     private tasks: Task[] = [];
+    private storage?: StorageProvider;
+
+    constructor(storage?: StorageProvider) {
+        this.storage = storage;
+        if (this.storage) {
+            this.tasks = this.storage.load();
+        }
+    }
+
+    private save(): void {
+        this.storage?.save(this.tasks);
+    }
 
     addTask(title: string, description: string): Task {
         const newTask: Task = {
@@ -12,6 +25,7 @@ export class TaskManager {
             createdAt: new Date()
         };
         this.tasks.push(newTask);
+        this.save();
         return newTask;
     }
 
@@ -23,6 +37,7 @@ export class TaskManager {
         const task = this.tasks.find(t => t.id === id);
         if (task) {
             Object.assign(task, update);
+            this.save();
             return task;
         }
         return undefined;
@@ -32,6 +47,7 @@ export class TaskManager {
         const index = this.tasks.findIndex(t => t.id === id);
         if (index !== -1) {
             this.tasks.splice(index, 1);
+            this.save();
             return true;
         }
         return false;
