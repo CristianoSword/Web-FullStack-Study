@@ -1,19 +1,24 @@
+import { useState, useEffect } from 'react'
 import ProfileCard from './components/ProfileCard'
 import './App.css'
 
 function App() {
-  const dummyUser = {
-    name: "Cristiano Sword",
-    username: "cristiano",
-    email: "cristiano@example.com",
-    address: { city: "Porto Alegre" }
-  }
+  const [users, setUsers] = useState([])
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => setUsers(data))
+      .catch(err => console.error(err))
+  }, [])
 
   return (
     <div className="app-container">
       <h1>Buscador de Perfis</h1>
       <div className="profile-grid">
-        <ProfileCard user={dummyUser} />
+        {users.map(user => (
+          <ProfileCard key={user.id} user={user} />
+        ))}
       </div>
     </div>
   )
