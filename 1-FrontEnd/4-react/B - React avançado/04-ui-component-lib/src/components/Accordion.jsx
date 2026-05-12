@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext, memo } from 'react'
 
 const AccordionContext = createContext()
 
@@ -11,7 +11,7 @@ export function Accordion({ children }) {
   )
 }
 
-Accordion.Item = function AccordionItem({ id, title, children }) {
+Accordion.Item = memo(function AccordionItem({ id, title, children }) {
   const { openItem, setOpenItem } = useContext(AccordionContext)
   const isOpen = openItem === id
 
@@ -24,4 +24,4 @@ Accordion.Item = function AccordionItem({ id, title, children }) {
       {isOpen && <div className="accordion-content">{children}</div>}
     </div>
   )
-}
+})
