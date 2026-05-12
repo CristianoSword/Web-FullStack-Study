@@ -40,4 +40,8 @@ export class QuizEngine {
     getState(): QuizState {
         return { ...this.state };
     }
+
+    getScorePercentage(): number {
+        return (this.state.score / this.questions.length) * 100;
+    }
 }
