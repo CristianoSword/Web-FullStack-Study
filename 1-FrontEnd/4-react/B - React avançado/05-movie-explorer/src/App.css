@@ -1,94 +1,114 @@
 .movie-app {
   min-height: 100vh;
-  background-color: #0f172a;
-  color: white;
+  background-color: #020617;
+  color: #f8fafc;
   font-family: 'Inter', sans-serif;
 }
 
 header {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 900;
   margin-bottom: 30px;
-  background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
 }
 
 .search-box input {
   width: 100%;
   max-width: 600px;
-  padding: 18px 30px;
-  border-radius: 40px;
-  border: 1px solid #334155;
-  background-color: rgba(30, 41, 59, 0.7);
+  padding: 20px 35px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background-color: rgba(30, 41, 59, 0.5);
   color: white;
   font-size: 1.1rem;
   outline: none;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3);
   transition: all 0.3s;
 }
 
 .search-box input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  border-color: #60a5fa;
+  background-color: rgba(30, 41, 59, 0.8);
 }
 
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 40px;
-  padding: 60px;
+  padding: 0 60px 100px;
 }
 
 .movie-card {
-  background: #1e293b;
-  border-radius: 15px;
+  background: rgba(30, 41, 59, 0.3);
+  border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
-  border: 1px solid #334155;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .movie-card:hover {
-  transform: scale(1.05);
-  border-color: #3b82f6;
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255,255,255,0.2);
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.4);
 }
 
 .movie-card img {
   width: 100%;
-  height: 300px;
+  height: 350px;
   object-fit: cover;
 }
 
-.movie-card .info {
-  padding: 15px;
+.movie-card .info { padding: 20px; }
+.movie-card h3 { margin: 0 0 10px 0; font-size: 1.1rem; font-weight: 700; }
+.movie-card .meta { display: flex; justify-content: space-between; align-items: center; }
+.movie-card .meta span { color: #fbbf24; font-weight: 800; }
+.movie-card .year { color: #94a3b8 !important; font-size: 0.85rem; }
+
+/* Modal Glassmorphism */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: center; z-index: 1000;
 }
 
-.movie-card h3 {
-  margin: 0;
-  font-size: 1rem;
-  white-space: nowrap;
+.modal-content {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 0;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 900px;
   overflow: hidden;
-  text-overflow: ellipsis;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
 }
 
-.movie-card span {
-  color: #fbbf24;
-  font-weight: 700;
-  font-size: 0.9rem;
+.movie-details { display: flex; }
+.movie-details img { width: 40%; object-fit: cover; }
+.details-text { padding: 60px; flex: 1; }
+.details-text h2 { font-size: 2.5rem; margin: 0 0 20px 0; font-weight: 900; }
+.details-text .meta { display: flex; gap: 15px; margin-bottom: 30px; font-weight: 700; color: #fbbf24; }
+.details-text p { line-height: 1.8; color: #cbd5e1; margin-bottom: 40px; }
+
+.watch-btn {
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  color: white; border: none; padding: 18px 40px; border-radius: 15px;
+  font-weight: 800; font-size: 1.1rem; cursor: pointer;
 }
 
-.loading {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 20px;
-  color: #3b82f6;
-  font-weight: 700;
+.close-modal-btn {
+  position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1);
+  border: none; color: white; width: 40px; height: 40px; border-radius: 50%;
+  cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
 }
