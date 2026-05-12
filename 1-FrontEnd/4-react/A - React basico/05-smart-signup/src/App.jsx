@@ -31,26 +31,32 @@ function App() {
             <h2>Informações Pessoais</h2>
             <div className="input-group">
               <label>Nome Completo</label>
-              <input 
-                name="name" 
-                value={formData.name} 
-                onChange={handleChange} 
-                placeholder="Ex: João Silva" 
-              />
+              <input name="name" value={formData.name} onChange={handleChange} placeholder="Ex: João Silva" />
             </div>
             <div className="input-group">
               <label>E-mail</label>
-              <input 
-                name="email" 
-                value={formData.email} 
-                onChange={handleChange} 
-                placeholder="Ex: joao@email.com" 
-              />
+              <input name="email" value={formData.email} onChange={handleChange} placeholder="Ex: joao@email.com" />
             </div>
             <div className="actions">
-              <button onClick={nextStep} disabled={!formData.name || !formData.email}>
-                Próximo
-              </button>
+              <button onClick={nextStep} disabled={!formData.name || !formData.email}>Próximo</button>
+            </div>
+          </div>
+        )}
+
+        {step === 2 && (
+          <div className="step">
+            <h2>Endereço</h2>
+            <div className="input-group">
+              <label>Cidade</label>
+              <input name="city" value={formData.city} onChange={handleChange} placeholder="Ex: São Paulo" />
+            </div>
+            <div className="input-group">
+              <label>CEP</label>
+              <input name="zip" value={formData.zip} onChange={handleChange} placeholder="Ex: 01234-567" />
+            </div>
+            <div className="actions">
+              <button onClick={prevStep}>Anterior</button>
+              <button onClick={nextStep} disabled={!formData.city || !formData.zip}>Próximo</button>
             </div>
           </div>
         )}
