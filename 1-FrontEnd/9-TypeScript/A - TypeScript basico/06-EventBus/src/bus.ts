@@ -1,7 +1,7 @@
 import { EventKey, EventMap, EventHandler } from "./types";
 
 export class EventBus {
-    private listeners: { [K in EventKey]?: EventHandler<K>[] } = {};
+    private listeners: Partial<Record<EventKey, EventHandler<any>[]>> = {};
 
     on<K extends EventKey>(key: K, handler: EventHandler<K>): void {
         if (!this.listeners[key]) {
