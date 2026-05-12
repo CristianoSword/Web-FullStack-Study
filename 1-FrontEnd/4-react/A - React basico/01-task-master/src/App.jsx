@@ -20,6 +20,11 @@ function App() {
     ))
   }
 
+  const deleteTodo = (id, e) => {
+    e.stopPropagation()
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
   return (
     <div className="app-container">
       <h1>Task Master</h1>
@@ -35,7 +40,13 @@ function App() {
                 className={todo.completed ? 'completed' : ''}
                 onClick={() => toggleTodo(todo.id)}
               >
-                {todo.text}
+                <span>{todo.text}</span>
+                <button 
+                  className="delete-btn"
+                  onClick={(e) => deleteTodo(todo.id, e)}
+                >
+                  Excluir
+                </button>
               </li>
             ))}
           </ul>
