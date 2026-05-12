@@ -20,12 +20,17 @@ const invalidUser: User = {
     age: 25
 };
 
-console.log("Validando usurio invlido:", validator.validate(invalidUser));
+function displayResult(res: any) {
+    if (res.isValid) {
+        console.log("✅ Dados Vlidos!");
+    } else {
+        console.log("❌ Erros encontrados:");
+        res.errors.forEach((err: string) => console.log(`  - ${err}`));
+    }
+}
 
-const validUser: User = {
-    name: "Cristiano",
-    email: "contato@cristiano.com",
-    age: 30
-};
+console.log("Teste 1:");
+displayResult(validator.validate(invalidUser));
 
-console.log("Validando usurio vlido:", validator.validate(validUser));
+console.log("\nTeste 2:");
+displayResult(validator.validate(validUser));
