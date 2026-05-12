@@ -107,12 +107,26 @@
   line-height: 1.5;
 }
 
-.bubble .time {
-  font-size: 0.7rem;
-  opacity: 0.7;
-  display: block;
-  text-align: right;
-  margin-top: 5px;
+.bubble.typing {
+  display: flex;
+  gap: 5px;
+  padding: 15px 20px;
+}
+
+.bubble.typing span {
+  width: 8px;
+  height: 8px;
+  background-color: #94a3b8;
+  border-radius: 50%;
+  animation: typing 1s infinite ease-in-out;
+}
+
+.bubble.typing span:nth-child(2) { animation-delay: 0.2s; }
+.bubble.typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 
 .chat-footer {
