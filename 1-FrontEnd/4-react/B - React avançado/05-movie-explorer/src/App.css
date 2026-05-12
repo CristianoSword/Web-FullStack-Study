@@ -47,10 +47,48 @@ header h1 {
   padding: 60px;
 }
 
-.movie-card-placeholder {
+.movie-card {
+  background: #1e293b;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
+  border: 1px solid #334155;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  border-color: #3b82f6;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-card .info {
+  padding: 15px;
+}
+
+.movie-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card span {
+  color: #fbbf24;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.loading {
   grid-column: 1 / -1;
   text-align: center;
-  color: #94a3b8;
-  font-size: 1.2rem;
-  margin-top: 100px;
+  padding: 20px;
+  color: #3b82f6;
+  font-weight: 700;
 }
