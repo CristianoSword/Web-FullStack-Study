@@ -6,6 +6,7 @@ function App() {
     { id: 1, text: 'Olá! Como você está?', sender: 'them', time: '10:00' },
   ])
   const [inputText, setInputText] = useState('')
+  const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef(null)
 
   const scrollToBottom = () => {
@@ -14,7 +15,7 @@ function App() {
 
   useEffect(() => {
     scrollToBottom()
-  }, [messages])
+  }, [messages, isTyping])
 
   const handleSend = () => {
     if (!inputText) return
@@ -30,6 +31,7 @@ function App() {
 
   useEffect(() => {
     if (messages.length > 0 && messages[messages.length - 1].sender === 'me') {
+      setIsTyping(true)
       const timer = setTimeout(() => {
         const reply = {
           id: Date.now(),
@@ -38,7 +40,8 @@ function App() {
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
         }
         setMessages(prev => [...prev, reply])
-      }, 2000)
+        setIsTyping(false)
+      }, 3000)
       return () => clearTimeout(timer)
     }
   }, [messages])
@@ -78,6 +81,13 @@ function App() {
               </div>
             </div>
           ))}
+          {isTyping && (
+            <div className="message-bubble them">
+              <div className="bubble typing">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          )}
           <div ref={messagesEndRef} />
         </div>
         <footer className="chat-footer">
