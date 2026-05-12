@@ -23,4 +23,12 @@ export class EventBus {
             this.listeners[key] = handlers.filter(h => h !== handler);
         }
     }
+
+    once<K extends EventKey>(key: K, handler: EventHandler<K>): void {
+        const wrapper: EventHandler<K> = (payload) => {
+            handler(payload);
+            this.off(key, wrapper);
+        };
+        this.on(key, wrapper);
+    }
 }
