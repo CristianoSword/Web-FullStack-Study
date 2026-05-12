@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { DndContext } from '@dnd-kit/core'
+import { useState, useEffect } from 'react'
+import { DndContext, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
 import { useKanban } from './hooks/useKanban'
 import DraggableTask from './components/DraggableTask'
 import DroppableColumn from './components/DroppableColumn'
@@ -23,6 +23,22 @@ function App() {
   const { columns, setColumns, moveTask } = useKanban(initialData)
   const [isModalOpen, setModalOpen] = useState(false)
   const [newTaskContent, setNewTaskContent] = useState('')
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8,
+      },
+    })
+  )
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light')
 
   const handleDragEnd = (event) => {
     const { active, over } = event
@@ -55,10 +71,15 @@ function App() {
     <div className="kanban-container">
       <header className="board-header">
         <h1>Kanban Board</h1>
-        <button className="add-task-btn" onClick={() => setModalOpen(true)}>+ Nova Tarefa</button>
+        <div className="header-actions">
+          <button className="theme-toggle-btn" onClick={toggleTheme}>
+            {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+          </button>
+          <button className="add-task-btn" onClick={() => setModalOpen(true)}>+ Nova Tarefa</button>
+        </div>
       </header>
       
-      <DndContext onDragEnd={handleDragEnd}>
+      <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
         <div className="board">
           {Object.entries(columns).map(([id, tasks]) => (
             <DroppableColumn key={id} id={id}>
@@ -75,7 +96,7 @@ function App() {
       </DndContext>
 
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-        <h2>Adicionar Nova Tarefa</h2>
+        <h2>Nova Tarefa</h2>
         <textarea 
           placeholder="O que precisa ser feito?" 
           value={newTaskContent}
