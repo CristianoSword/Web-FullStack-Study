@@ -3,6 +3,7 @@ import './App.css'
 
 function App() {
   const [step, setStep] = useState(1)
+  const [submitted, setSubmitted] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,6 +18,19 @@ function App() {
 
   const nextStep = () => setStep(step + 1)
   const prevStep = () => setStep(step - 1)
+  const handleSubmit = () => setSubmitted(true)
+
+  if (submitted) {
+    return (
+      <div className="app-container">
+        <div className="success-card">
+          <h2>🎉 Cadastro Realizado!</h2>
+          <p>Obrigado, {formData.name}. Seus dados foram enviados com sucesso.</p>
+          <button className="reset-btn" onClick={() => window.location.reload()}>Novo Cadastro</button>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="app-container">
@@ -38,7 +52,7 @@ function App() {
               <input name="email" value={formData.email} onChange={handleChange} placeholder="Ex: joao@email.com" />
             </div>
             <div className="actions">
-              <button onClick={nextStep} disabled={!formData.name || !formData.email}>Próximo</button>
+              <button className="next-btn" onClick={nextStep} disabled={!formData.name || !formData.email}>Próximo</button>
             </div>
           </div>
         )}
@@ -55,8 +69,24 @@ function App() {
               <input name="zip" value={formData.zip} onChange={handleChange} placeholder="Ex: 01234-567" />
             </div>
             <div className="actions">
-              <button onClick={prevStep}>Anterior</button>
-              <button onClick={nextStep} disabled={!formData.city || !formData.zip}>Próximo</button>
+              <button className="prev-btn" onClick={prevStep}>Anterior</button>
+              <button className="next-btn" onClick={nextStep} disabled={!formData.city || !formData.zip}>Próximo</button>
+            </div>
+          </div>
+        )}
+
+        {step === 3 && (
+          <div className="step">
+            <h2>Confirmar Dados</h2>
+            <div className="summary">
+              <p><strong>Nome:</strong> {formData.name}</p>
+              <p><strong>Email:</strong> {formData.email}</p>
+              <p><strong>Cidade:</strong> {formData.city}</p>
+              <p><strong>CEP:</strong> {formData.zip}</p>
+            </div>
+            <div className="actions">
+              <button className="prev-btn" onClick={prevStep}>Anterior</button>
+              <button className="submit-btn" onClick={handleSubmit}>Finalizar Cadastro</button>
             </div>
           </div>
         )}
