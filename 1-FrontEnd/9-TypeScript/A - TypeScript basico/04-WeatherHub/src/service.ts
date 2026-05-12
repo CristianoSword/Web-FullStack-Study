@@ -40,4 +40,8 @@ export class WeatherService {
     isWeatherData(data: any): data is WeatherData {
         return (data as WeatherData).city !== undefined;
     }
+
+    toFahrenheit(celsius: number): number {
+        return (celsius * 9/5) + 32;
+    }
 }
