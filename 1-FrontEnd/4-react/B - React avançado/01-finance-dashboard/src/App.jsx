@@ -1,6 +1,7 @@
 import { useReducer } from 'react'
 import Sidebar from './components/Sidebar'
 import StatCard from './components/StatCard'
+import TransactionForm from './components/TransactionForm'
 import './App.css'
 
 const initialState = [
@@ -21,6 +22,10 @@ function reducer(state, action) {
 
 function App() {
   const [transactions, dispatch] = useReducer(reducer, initialState)
+
+  const addTransaction = (transaction) => {
+    dispatch({ type: 'ADD', payload: transaction })
+  }
 
   const totals = transactions.reduce((acc, item) => {
     if (item.type === 'income') acc.income += item.amount
@@ -44,17 +49,30 @@ function App() {
           <StatCard title="Saídas" value={`R$ ${totals.expense.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`} type="expense" />
         </div>
 
-        <div className="transaction-section">
-          <div className="card">
-            <h3>Últimas Transações</h3>
-            <ul className="transaction-list">
-              {transactions.map(item => (
-                <li key={item.id} className={item.type}>
-                  <span>{item.text}</span>
-                  <strong>{item.type === 'income' ? '+' : '-'} R$ {item.amount.toLocaleString('pt-BR')}</strong>
-                </li>
-              ))}
-            </ul>
+        <div className="dashboard-grid">
+          <div className="left-panel">
+            <TransactionForm onAdd={addTransaction} />
+            <div className="card list-card">
+              <h3>Últimas Transações</h3>
+              <ul className="transaction-list">
+                {transactions.map(item => (
+                  <li key={item.id} className={item.type}>
+                    <span>{item.text}</span>
+                    <div className="amount-info">
+                      <strong>{item.type === 'income' ? '+' : '-'} R$ {item.amount.toLocaleString('pt-BR')}</strong>
+                      <button className="del-btn" onClick={() => dispatch({ type: 'DELETE', payload: item.id })}>×</button>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          
+          <div className="right-panel">
+             <div className="card chart-card">
+               <h3>Distribuição de Gastos</h3>
+               <div className="placeholder-chart">Gráfico virá em breve...</div>
+             </div>
           </div>
         </div>
       </main>
