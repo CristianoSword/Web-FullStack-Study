@@ -1,5 +1,5 @@
 import { EventBus } from "./bus";
-import { EventKey, EventMap } from "./types";
+import type { EventKey, EventMap } from "./types";
 
 export class EventLogger {
     constructor(private bus: EventBus) {
