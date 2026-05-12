@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import Modal from './components/Modal'
 import './App.css'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   ])
   const [inputText, setInputText] = useState('')
   const [isTyping, setIsTyping] = useState(false)
+  const [isSettingsOpen, setSettingsOpen] = useState(false)
   const messagesEndRef = useRef(null)
 
   const scrollToBottom = () => {
@@ -49,7 +51,10 @@ function App() {
   return (
     <div className="chat-container">
       <aside className="chat-sidebar">
-        <div className="sidebar-header">Mensagens</div>
+        <div className="sidebar-header">
+          <span>Mensagens</span>
+          <button className="settings-btn" onClick={() => setSettingsOpen(true)}>⚙️</button>
+        </div>
         <div className="user-list">
           <div className="user-item active">
             <div className="avatar">JD</div>
@@ -101,6 +106,20 @@ function App() {
           <button onClick={handleSend}>Enviar</button>
         </footer>
       </main>
+
+      <Modal isOpen={isSettingsOpen} onClose={() => setSettingsOpen(false)}>
+        <h2>Configurações</h2>
+        <div className="settings-options">
+          <div className="option">
+            <label>Notificações</label>
+            <input type="checkbox" defaultChecked />
+          </div>
+          <div className="option">
+            <label>Modo Escuro</label>
+            <input type="checkbox" />
+          </div>
+        </div>
+      </Modal>
     </div>
   )
 }
