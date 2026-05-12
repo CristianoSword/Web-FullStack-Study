@@ -5,12 +5,20 @@ import './App.css'
 function App() {
   const [users, setUsers] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
-      .then(data => setUsers(data))
-      .catch(err => console.error(err))
+      .then(data => {
+        setUsers(data)
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error(err)
+        setLoading(false)
+      })
   }, [])
 
   const filteredUsers = users.filter(user => 
@@ -29,11 +37,20 @@ function App() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>
-      <div className="profile-grid">
-        {filteredUsers.map(user => (
-          <ProfileCard key={user.id} user={user} />
-        ))}
-      </div>
+
+      {loading ? (
+        <div className="status-msg">Carregando perfis...</div>
+      ) : (
+        <div className="profile-grid">
+          {filteredUsers.length > 0 ? (
+            filteredUsers.map(user => (
+              <ProfileCard key={user.id} user={user} />
+            ))
+          ) : (
+            <div className="status-msg">Nenhum perfil encontrado para "{searchTerm}"</div>
+          )}
+        </div>
+      )}
     </div>
   )
 }
