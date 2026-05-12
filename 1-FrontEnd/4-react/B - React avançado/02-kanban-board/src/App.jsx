@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useKanban } from './hooks/useKanban'
+import TaskCard from './components/TaskCard'
 import './App.css'
 
 const initialData = {
@@ -15,7 +16,16 @@ const initialData = {
 }
 
 function App() {
-  const [columns, setColumns] = useState(initialData)
+  const { columns, moveTask } = useKanban(initialData)
+
+  const handleMove = (taskId, currentCol) => {
+    const nextColMap = {
+      todo: 'doing',
+      doing: 'done'
+    }
+    const nextCol = nextColMap[currentCol]
+    if (nextCol) moveTask(taskId, currentCol, nextCol)
+  }
 
   return (
     <div className="kanban-container">
@@ -26,9 +36,12 @@ function App() {
             <h3>{id.toUpperCase()}</h3>
             <div className="task-list">
               {tasks.map(task => (
-                <div key={task.id} className="task-card">
-                  {task.content}
-                </div>
+                <TaskCard 
+                  key={task.id} 
+                  task={task} 
+                  columnId={id} 
+                  onMove={handleMove} 
+                />
               ))}
             </div>
           </div>
