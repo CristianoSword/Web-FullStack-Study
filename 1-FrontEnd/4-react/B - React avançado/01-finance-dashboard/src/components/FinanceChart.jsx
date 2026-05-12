@@ -17,7 +17,7 @@ function FinanceChart({ data }) {
             cx="50%"
             cy="50%"
             innerRadius={60}
-            outerRadius={80}
+            outerRadius={75} // Reduzi levemente de 80 para 75
             paddingAngle={5}
             dataKey="value"
           >
