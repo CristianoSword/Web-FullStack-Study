@@ -1,9 +1,16 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import TodoInput from './components/TodoInput'
 import './App.css'
 
 function App() {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem('todos')
+    return saved ? JSON.parse(saved) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   const addTodo = (text) => {
     const newTodo = {
@@ -27,11 +34,16 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Task Master</h1>
+      <header>
+        <h1>Task Master</h1>
+        <p>Gerencie suas tarefas diárias com simplicidade.</p>
+      </header>
       <TodoInput onAdd={addTodo} />
       <div className="todo-list">
         {todos.length === 0 ? (
-          <p>Nenhuma tarefa pendente.</p>
+          <div className="empty-state">
+            <p>Nenhuma tarefa pendente. Aproveite seu dia!</p>
+          </div>
         ) : (
           <ul>
             {todos.map(todo => (
@@ -44,8 +56,9 @@ function App() {
                 <button 
                   className="delete-btn"
                   onClick={(e) => deleteTodo(todo.id, e)}
+                  title="Excluir tarefa"
                 >
-                  Excluir
+                  &times;
                 </button>
               </li>
             ))}
