@@ -1,4 +1,4 @@
-import { useReducer, useMemo, useCallback, useState } from 'react'
+import { useReducer, useMemo, useCallback, useState, useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import StatCard from './components/StatCard'
 import TransactionForm from './components/TransactionForm'
@@ -25,8 +25,15 @@ function reducer(state, action) {
 function App() {
   const [transactions, dispatch] = useReducer(reducer, initialState)
   const [filter, setFilter] = useState('all')
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
 
-  // Otimizando funções de callback
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light')
+
   const addTransaction = useCallback((transaction) => {
     dispatch({ type: 'ADD', payload: transaction })
   }, [])
@@ -55,7 +62,12 @@ function App() {
       <main className="content">
         <header>
           <h1>Overview Financeiro</h1>
-          <div className="user-info">Cristiano Sword</div>
+          <div className="header-actions">
+            <button className="theme-btn" onClick={toggleTheme}>
+              {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
+            </button>
+            <span className="user-info">Cristiano Sword</span>
+          </div>
         </header>
         
         <div className="stats-grid">
