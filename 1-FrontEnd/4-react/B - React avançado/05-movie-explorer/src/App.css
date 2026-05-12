@@ -15,6 +15,8 @@ header h1 {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 30px;
+  line-height: 1.2; /* Aumentado para evitar corte */
+  padding: 10px 0; /* Espaço para o gradiente respirar */
   background: linear-gradient(to right, #60a5fa, #a855f7, #ec4899);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
