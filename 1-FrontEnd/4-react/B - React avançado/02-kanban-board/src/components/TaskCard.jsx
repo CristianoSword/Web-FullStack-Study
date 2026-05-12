@@ -1,4 +1,6 @@
-function TaskCard({ task, columnId, onMove }) {
+import { memo } from 'react'
+
+const TaskCard = memo(({ task, columnId, onMove }) => {
   return (
     <div className="task-card">
       <p>{task.content}</p>
@@ -9,6 +11,6 @@ function TaskCard({ task, columnId, onMove }) {
       </div>
     </div>
   )
-}
+})
 
 export default TaskCard
