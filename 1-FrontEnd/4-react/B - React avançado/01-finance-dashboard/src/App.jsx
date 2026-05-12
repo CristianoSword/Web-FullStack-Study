@@ -2,11 +2,13 @@ import { useReducer, useMemo } from 'react'
 import Sidebar from './components/Sidebar'
 import StatCard from './components/StatCard'
 import TransactionForm from './components/TransactionForm'
+import FinanceChart from './components/FinanceChart'
 import './App.css'
 
 const initialState = [
   { id: 1, text: 'Salário', amount: 5000, type: 'income', date: '2024-05-01' },
   { id: 2, text: 'Aluguel', amount: 1500, type: 'expense', date: '2024-05-05' },
+  { id: 3, text: 'Freela', amount: 1200, type: 'income', date: '2024-05-07' },
 ]
 
 function reducer(state, action) {
@@ -27,7 +29,6 @@ function App() {
     dispatch({ type: 'ADD', payload: transaction })
   }
 
-  // Otimizando cálculos pesados com useMemo
   const totals = useMemo(() => {
     return transactions.reduce((acc, item) => {
       if (item.type === 'income') acc.income += item.amount
@@ -76,7 +77,7 @@ function App() {
           <div className="right-panel">
              <div className="card chart-card">
                <h3>Distribuição de Gastos</h3>
-               <div className="placeholder-chart">Gráfico virá em breve...</div>
+               <FinanceChart data={totals} />
              </div>
           </div>
         </div>
