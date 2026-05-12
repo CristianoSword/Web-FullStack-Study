@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 function Stopwatch() {
   const [time, setTime] = useState(0)
   const [isRunning, setIsRunning] = useState(false)
+  const [laps, setLaps] = useState([])
 
   useEffect(() => {
     let interval
@@ -25,6 +26,16 @@ function Stopwatch() {
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(2, '0')}`
   }
 
+  const addLap = () => {
+    setLaps([time, ...laps])
+  }
+
+  const reset = () => {
+    setTime(0)
+    setIsRunning(false)
+    setLaps([])
+  }
+
   return (
     <div className="stopwatch">
       <h2>Cronômetro</h2>
@@ -35,10 +46,23 @@ function Stopwatch() {
         <button onClick={() => setIsRunning(!isRunning)}>
           {isRunning ? 'Pausar' : 'Iniciar'}
         </button>
-        <button onClick={() => { setTime(0); setIsRunning(false); }}>
+        <button onClick={addLap} disabled={!isRunning}>
+          Volta
+        </button>
+        <button onClick={reset}>
           Resetar
         </button>
       </div>
+      {laps.length > 0 && (
+        <ul className="laps">
+          {laps.map((lap, index) => (
+            <li key={index}>
+              <span>Volta {laps.length - index}</span>
+              <span>{formatTime(lap)}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
