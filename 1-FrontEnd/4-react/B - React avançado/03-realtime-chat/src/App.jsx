@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import Modal from './components/Modal'
+import MessageList from './components/MessageList'
 import './App.css'
 
 function App() {
@@ -77,24 +78,13 @@ function App() {
         <header className="chat-header">
           <h3>John Doe</h3>
         </header>
-        <div className="message-area">
-          {messages.map(msg => (
-            <div key={msg.id} className={`message-bubble ${msg.sender}`}>
-              <div className="bubble">
-                <p>{msg.text}</p>
-                <span className="time">{msg.time}</span>
-              </div>
-            </div>
-          ))}
-          {isTyping && (
-            <div className="message-bubble them">
-              <div className="bubble typing">
-                <span></span><span></span><span></span>
-              </div>
-            </div>
-          )}
-          <div ref={messagesEndRef} />
-        </div>
+        
+        <MessageList 
+          messages={messages} 
+          isTyping={isTyping} 
+          messagesEndRef={messagesEndRef} 
+        />
+
         <footer className="chat-footer">
           <input 
             type="text" 
