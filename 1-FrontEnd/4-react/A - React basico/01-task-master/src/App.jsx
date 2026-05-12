@@ -14,6 +14,12 @@ function App() {
     setTodos([...todos, newTodo])
   }
 
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo => 
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ))
+  }
+
   return (
     <div className="app-container">
       <h1>Task Master</h1>
@@ -24,7 +30,13 @@ function App() {
         ) : (
           <ul>
             {todos.map(todo => (
-              <li key={todo.id}>{todo.text}</li>
+              <li 
+                key={todo.id} 
+                className={todo.completed ? 'completed' : ''}
+                onClick={() => toggleTodo(todo.id)}
+              >
+                {todo.text}
+              </li>
             ))}
           </ul>
         )}
