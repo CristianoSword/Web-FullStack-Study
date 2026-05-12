@@ -2,6 +2,7 @@ import { useState, useRef, useCallback } from 'react'
 import { useMovies } from './hooks/useMovies'
 import { useDebounce } from './hooks/useDebounce'
 import Modal from './components/Modal'
+import MovieCard from './components/MovieCard'
 import './App.css'
 
 function App() {
@@ -24,10 +25,14 @@ function App() {
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
-  const handleSearch = (e) => {
+  const handleSearch = useCallback((e) => {
     setSearchInput(e.target.value)
     setPage(1)
-  }
+  }, [])
+
+  const handleSelectMovie = useCallback((movie) => {
+    setSelectedMovie(movie)
+  }, [])
 
   return (
     <div className="movie-app">
@@ -47,21 +52,12 @@ function App() {
         {movies.map((movie, index) => {
           const isLast = movies.length === index + 1
           return (
-            <div 
-              ref={isLast ? lastMovieRef : null} 
-              key={movie.id} 
-              className="movie-card"
-              onClick={() => setSelectedMovie(movie)}
-            >
-              <img src={movie.poster} alt={movie.title} />
-              <div className="info">
-                <h3>{movie.title}</h3>
-                <div className="meta">
-                  <span>⭐ {movie.rating}</span>
-                  <span className="year">{movie.year}</span>
-                </div>
-              </div>
-            </div>
+            <MovieCard 
+              key={movie.id}
+              movie={movie}
+              innerRef={isLast ? lastMovieRef : null}
+              onClick={handleSelectMovie}
+            />
           )
         })}
         {loading && <div className="loading">Carregando filmes...</div>}
