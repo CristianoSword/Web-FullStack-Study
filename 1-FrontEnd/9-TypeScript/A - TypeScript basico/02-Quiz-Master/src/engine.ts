@@ -18,8 +18,9 @@ export class QuizEngine {
     }
 
     submitAnswer(answerIndex: number): boolean {
+        if (this.state.isFinished) return false;
         const currentQuestion = this.getCurrentQuestion();
-        if (!currentQuestion || this.state.isFinished) return false;
+        if (!currentQuestion) return false;
 
         const isCorrect = answerIndex === currentQuestion.correctAnswer;
         if (isCorrect) {
