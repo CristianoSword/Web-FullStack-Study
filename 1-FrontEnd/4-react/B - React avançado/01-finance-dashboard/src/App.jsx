@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useReducer, useMemo } from 'react'
 import Sidebar from './components/Sidebar'
 import StatCard from './components/StatCard'
 import TransactionForm from './components/TransactionForm'
@@ -27,12 +27,15 @@ function App() {
     dispatch({ type: 'ADD', payload: transaction })
   }
 
-  const totals = transactions.reduce((acc, item) => {
-    if (item.type === 'income') acc.income += item.amount
-    else acc.expense += item.amount
-    acc.balance = acc.income - acc.expense
-    return acc
-  }, { income: 0, expense: 0, balance: 0 })
+  // Otimizando cálculos pesados com useMemo
+  const totals = useMemo(() => {
+    return transactions.reduce((acc, item) => {
+      if (item.type === 'income') acc.income += item.amount
+      else acc.expense += item.amount
+      acc.balance = acc.income - acc.expense
+      return acc
+    }, { income: 0, expense: 0, balance: 0 })
+  }, [transactions])
 
   return (
     <div className="dashboard-container">
@@ -59,7 +62,9 @@ function App() {
                   <li key={item.id} className={item.type}>
                     <span>{item.text}</span>
                     <div className="amount-info">
-                      <strong>{item.type === 'income' ? '+' : '-'} R$ {item.amount.toLocaleString('pt-BR')}</strong>
+                      <strong className={item.type}>
+                        {item.type === 'income' ? '+' : '-'} R$ {item.amount.toLocaleString('pt-BR')}
+                      </strong>
                       <button className="del-btn" onClick={() => dispatch({ type: 'DELETE', payload: item.id })}>×</button>
                     </div>
                   </li>
