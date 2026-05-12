@@ -1,6 +1,40 @@
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
+  const [messages, setMessages] = useState([
+    { id: 1, text: 'Olá! Como você está?', sender: 'them', time: '10:00' },
+  ])
+  const [inputText, setInputText] = useState('')
+
+  const handleSend = () => {
+    if (!inputText) return
+    const newMsg = {
+      id: Date.now(),
+      text: inputText,
+      sender: 'me',
+      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    }
+    setMessages([...messages, newMsg])
+    setInputText('')
+  }
+
+  // Simulação de resposta automática para testar side effects
+  useEffect(() => {
+    if (messages.length > 0 && messages[messages.length - 1].sender === 'me') {
+      const timer = setTimeout(() => {
+        const reply = {
+          id: Date.now(),
+          text: 'Recebi sua mensagem! Vou verificar isso agora mesmo.',
+          sender: 'them',
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+        setMessages(prev => [...prev, reply])
+      }, 2000)
+      return () => clearTimeout(timer)
+    }
+  }, [messages])
+
   return (
     <div className="chat-container">
       <aside className="chat-sidebar">
@@ -28,11 +62,24 @@ function App() {
           <h3>John Doe</h3>
         </header>
         <div className="message-area">
-          <div className="msg-placeholder">Nenhuma mensagem ainda...</div>
+          {messages.map(msg => (
+            <div key={msg.id} className={`message-bubble ${msg.sender}`}>
+              <div className="bubble">
+                <p>{msg.text}</p>
+                <span className="time">{msg.time}</span>
+              </div>
+            </div>
+          ))}
         </div>
         <footer className="chat-footer">
-          <input type="text" placeholder="Digite sua mensagem..." />
-          <button>Enviar</button>
+          <input 
+            type="text" 
+            placeholder="Digite sua mensagem..." 
+            value={inputText}
+            onChange={e => setInputText(e.target.value)}
+            onKeyPress={e => e.key === 'Enter' && handleSend()}
+          />
+          <button onClick={handleSend}>Enviar</button>
         </footer>
       </main>
     </div>
