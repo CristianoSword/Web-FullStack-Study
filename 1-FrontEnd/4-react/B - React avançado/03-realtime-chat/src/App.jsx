@@ -10,7 +10,13 @@ function App() {
   const [inputText, setInputText] = useState('')
   const [isTyping, setIsTyping] = useState(false)
   const [isSettingsOpen, setSettingsOpen] = useState(false)
+  const [theme, setTheme] = useState(localStorage.getItem('chat-theme') || 'light')
   const messagesEndRef = useRef(null)
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('chat-theme', theme)
+  }, [theme])
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -37,7 +43,7 @@ function App() {
       setIsTyping(true)
       const timer = setTimeout(() => {
         const reply = {
-          id: Date.now(),
+          id: Date.now() + 1,
           text: 'Recebi sua mensagem! Vou verificar isso agora mesmo.',
           sender: 'them',
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
@@ -77,6 +83,9 @@ function App() {
       <main className="chat-main">
         <header className="chat-header">
           <h3>John Doe</h3>
+          <button className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
         </header>
         
         <MessageList 
@@ -93,7 +102,7 @@ function App() {
             onChange={e => setInputText(e.target.value)}
             onKeyPress={e => e.key === 'Enter' && handleSend()}
           />
-          <button onClick={handleSend}>Enviar</button>
+          <button className="send-btn" onClick={handleSend}>Enviar</button>
         </footer>
       </main>
 
@@ -105,8 +114,8 @@ function App() {
             <input type="checkbox" defaultChecked />
           </div>
           <div className="option">
-            <label>Modo Escuro</label>
-            <input type="checkbox" />
+            <label>Confirmação de Leitura</label>
+            <input type="checkbox" defaultChecked />
           </div>
         </div>
       </Modal>
