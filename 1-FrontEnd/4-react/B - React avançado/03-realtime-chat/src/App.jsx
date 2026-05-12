@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './App.css'
 
 function App() {
@@ -6,6 +6,15 @@ function App() {
     { id: 1, text: 'Olá! Como você está?', sender: 'them', time: '10:00' },
   ])
   const [inputText, setInputText] = useState('')
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  useEffect(() => {
+    scrollToBottom()
+  }, [messages])
 
   const handleSend = () => {
     if (!inputText) return
@@ -19,7 +28,6 @@ function App() {
     setInputText('')
   }
 
-  // Simulação de resposta automática para testar side effects
   useEffect(() => {
     if (messages.length > 0 && messages[messages.length - 1].sender === 'me') {
       const timer = setTimeout(() => {
@@ -70,6 +78,7 @@ function App() {
               </div>
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
         <footer className="chat-footer">
           <input 
