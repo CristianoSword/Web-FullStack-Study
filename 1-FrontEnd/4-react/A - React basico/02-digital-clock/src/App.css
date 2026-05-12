@@ -26,7 +26,8 @@ body {
 
 header h1 {
   display: inline-block;
-  padding: 0.1em 0;
+  padding: 0.2em 0.1em;
+  line-height: 1.2;
   margin: 0 0 20px 0;
   background: linear-gradient(to right, var(--primary), var(--accent));
   -webkit-background-clip: text;
