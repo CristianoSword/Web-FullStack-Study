@@ -1,4 +1,4 @@
-import { EventKey, EventMap, EventHandler } from "./types";
+import type { EventKey, EventMap, EventHandler } from "./types";
 
 export class EventBus {
     private listeners: Partial<Record<EventKey, EventHandler<any>[]>> = {};
