@@ -1,4 +1,4 @@
-import { WeatherData } from "./types";
+import type { WeatherData } from "./types";
 
 export class WeatherCache {
     private cache = new Map<string, { data: WeatherData, expiry: number }>();

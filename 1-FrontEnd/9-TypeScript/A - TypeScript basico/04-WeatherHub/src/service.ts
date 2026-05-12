@@ -1,4 +1,4 @@
-import { WeatherData, WeatherApiResponse, WeatherCondition } from "./types";
+import { type WeatherData, type WeatherApiResponse, WeatherCondition } from "./types";
 
 export class WeatherService {
     // Simula uma chamada de API
