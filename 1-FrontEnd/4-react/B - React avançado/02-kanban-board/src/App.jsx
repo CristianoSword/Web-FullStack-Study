@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { DndContext } from '@dnd-kit/core'
 import { useKanban } from './hooks/useKanban'
-import TaskCard from './components/TaskCard'
+import DraggableTask from './components/DraggableTask'
+import DroppableColumn from './components/DroppableColumn'
 import Modal from './components/Modal'
 import './App.css'
 
@@ -22,13 +24,17 @@ function App() {
   const [isModalOpen, setModalOpen] = useState(false)
   const [newTaskContent, setNewTaskContent] = useState('')
 
-  const handleMove = (taskId, currentCol) => {
-    const nextColMap = {
-      todo: 'doing',
-      doing: 'done'
+  const handleDragEnd = (event) => {
+    const { active, over } = event
+    if (!over) return
+
+    const taskId = active.id
+    const sourceCol = active.data.current.columnId
+    const destCol = over.id
+
+    if (sourceCol !== destCol) {
+      moveTask(taskId, sourceCol, destCol)
     }
-    const nextCol = nextColMap[currentCol]
-    if (nextCol) moveTask(taskId, currentCol, nextCol)
   }
 
   const handleAddTask = () => {
@@ -52,23 +58,21 @@ function App() {
         <button className="add-task-btn" onClick={() => setModalOpen(true)}>+ Nova Tarefa</button>
       </header>
       
-      <div className="board">
-        {Object.entries(columns).map(([id, tasks]) => (
-          <div key={id} className="column">
-            <h3>{id.toUpperCase()}</h3>
-            <div className="task-list">
+      <DndContext onDragEnd={handleDragEnd}>
+        <div className="board">
+          {Object.entries(columns).map(([id, tasks]) => (
+            <DroppableColumn key={id} id={id}>
               {tasks.map(task => (
-                <TaskCard 
+                <DraggableTask 
                   key={task.id} 
                   task={task} 
                   columnId={id} 
-                  onMove={handleMove} 
                 />
               ))}
-            </div>
-          </div>
-        ))}
-      </div>
+            </DroppableColumn>
+          ))}
+        </div>
+      </DndContext>
 
       <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
         <h2>Adicionar Nova Tarefa</h2>
