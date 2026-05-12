@@ -36,4 +36,16 @@ export class TaskManager {
         }
         return false;
     }
+
+    filterByStatus(status: TaskStatus): Task[] {
+        return this.tasks.filter(t => t.status === status);
+    }
+
+    searchTasks(query: string): Task[] {
+        const lowerQuery = query.toLowerCase();
+        return this.tasks.filter(t => 
+            t.title.toLowerCase().includes(lowerQuery) || 
+            t.description.toLowerCase().includes(lowerQuery)
+        );
+    }
 }
