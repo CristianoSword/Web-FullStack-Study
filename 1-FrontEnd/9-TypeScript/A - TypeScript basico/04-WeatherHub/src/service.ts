@@ -3,17 +3,22 @@ import { WeatherData, WeatherApiResponse, WeatherCondition } from "./types";
 export class WeatherService {
     // Simula uma chamada de API
     async fetchWeather(city: string): Promise<WeatherData> {
-        console.log(`Buscando clima para ${city}...`);
-        
-        // Simula resposta da API
-        const mockResponse: WeatherApiResponse = {
-            name: city,
-            main: { temp: 25, humidity: 60 },
-            weather: [{ main: "Clear" }],
-            wind: { speed: 10 }
-        };
+        try {
+            console.log(`Buscando clima para ${city}...`);
+            
+            // Simula resposta da API
+            const mockResponse: WeatherApiResponse = {
+                name: city,
+                main: { temp: 25, humidity: 60 },
+                weather: [{ main: "Clear" }],
+                wind: { speed: 10 }
+            };
 
-        return this.mapResponseToData(mockResponse);
+            return this.mapResponseToData(mockResponse);
+        } catch (error) {
+            console.error("Erro ao buscar clima:", error);
+            throw new Error("Cidade no encontrada");
+        }
     }
 
     private mapResponseToData(res: WeatherApiResponse): WeatherData {
