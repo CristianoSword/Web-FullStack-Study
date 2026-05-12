@@ -1,4 +1,4 @@
-import { Question, QuizState } from "./types";
+import type { Question, QuizState } from "./types";
 
 export class QuizEngine {
     private questions: Question[];
@@ -43,6 +43,7 @@ export class QuizEngine {
     }
 
     getScorePercentage(): number {
+        if (this.questions.length === 0) return 0;
         return (this.state.score / this.questions.length) * 100;
     }
 }

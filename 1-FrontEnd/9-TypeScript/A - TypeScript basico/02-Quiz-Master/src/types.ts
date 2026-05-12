@@ -1,10 +1,11 @@
+// types.ts - atualizado para forçar recarregamento
 export enum Difficulty {
-    EASY = "Fcil",
-    MEDIUM = "Mdio",
-    HARD = "Difcil"
+    EASY = "Easy",
+    MEDIUM = "Medium",
+    HARD = "Hard"
 }
 
-export interface Question {
+export type Question = {
     id: number;
     text: string;
     options: string[];
@@ -12,7 +13,7 @@ export interface Question {
     difficulty: Difficulty;
 }
 
-export interface QuizState {
+export type QuizState = {
     currentQuestionIndex: number;
     score: number;
     isFinished: boolean;
