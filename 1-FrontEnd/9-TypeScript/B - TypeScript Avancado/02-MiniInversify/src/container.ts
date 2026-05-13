@@ -37,7 +37,13 @@ export class Container {
 
     private construct<T>(constructor: Constructor<T>): T {
         const paramTypes: any[] = Reflect.getMetadata("design:paramtypes", constructor) || [];
-        const args = paramTypes.map(type => this.resolve(type));
+        const customInjections: any[] = Reflect.getMetadata("custom:injections", constructor) || [];
+
+        const args = paramTypes.map((type, index) => {
+            const custom = customInjections.find(i => i.index === index);
+            return this.resolve(custom ? custom.token : type);
+        });
+        
         return new constructor(...args);
     }
 }
