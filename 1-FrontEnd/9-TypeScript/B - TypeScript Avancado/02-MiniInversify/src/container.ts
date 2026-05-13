@@ -49,3 +49,7 @@ export class Container {
 }
 
 export const container = new Container();
+
+export function bootstrap<T>(root: Constructor<T>): T {
+    return container.resolve(root);
+}
