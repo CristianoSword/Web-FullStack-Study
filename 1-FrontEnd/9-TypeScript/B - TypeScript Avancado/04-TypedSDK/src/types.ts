@@ -16,3 +16,10 @@ export type PathParams<Path extends string> = Path extends `${string}:${infer Pa
     : Path extends `${string}:${infer Param}`
     ? Param
     : never;
+
+export type DeepReadonly<T> = {
+    readonly [P in keyof T]: T[P] extends object ? DeepReadonly<T[P]> : T[P];
+};
+
+export type UnionToIntersection<U> = 
+  (U extends any ? (k: U)=>void : never) extends ((k: infer I)=>void) ? I : never;
