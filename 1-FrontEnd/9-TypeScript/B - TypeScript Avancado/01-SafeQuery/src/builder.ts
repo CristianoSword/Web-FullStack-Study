@@ -13,9 +13,24 @@ export class QueryBuilder<T extends Schema, Table extends keyof T & string> {
         return this;
     }
 
+    private conditions: string[] = [];
+
+    where<K extends keyof T[Table] & string>(
+        column: K, 
+        operator: "=" | "!=" | ">" | "<", 
+        value: any
+    ): this {
+        this.conditions.push(`${column} ${operator} ${JSON.stringify(value)}`);
+        return this;
+    }
+
     build(): string {
         const cols = this.selectedColumns.length > 0 ? this.selectedColumns.join(", ") : "*";
-        return `SELECT ${cols} FROM ${this.tableName}`;
+        let query = `SELECT ${cols} FROM ${this.tableName}`;
+        if (this.conditions.length > 0) {
+            query += ` WHERE ${this.conditions.join(" AND ")}`;
+        }
+        return query;
     }
 
     // Mock execution to show typing
