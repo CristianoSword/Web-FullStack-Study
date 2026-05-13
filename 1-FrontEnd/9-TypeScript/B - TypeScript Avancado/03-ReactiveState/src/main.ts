@@ -1,60 +1,52 @@
 import './style.css'
-import typescriptLogo from './assets/typescript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.ts'
+import { signal, effect, computed, store } from './signals'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${typescriptLogo}" class="framework" alt="TypeScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.ts</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const app = document.querySelector<HTMLDivElement>('#app')!
 
-<div class="ticks"></div>
+// State
+const count = signal(0)
+const double = computed(() => count.value * 2)
+const user = store({ name: 'Cristiano', settings: { theme: 'dark' } })
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://www.typescriptlang.org" target="_blank">
-          <img class="button-icon" src="${typescriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
+app.innerHTML = `
+  <div class="reactive-container">
+    <h1>Reactive Signals</h1>
+    <div class="card">
+      <p>Count: <span id="count">0</span></p>
+      <p>Double: <span id="double">0</span></p>
+      <button id="inc-btn">Incrementar</button>
+    </div>
+    
+    <div class="card">
+      <p>User: <span id="user-name"></span></p>
+      <p>Theme: <span id="user-theme"></span></p>
+      <button id="toggle-theme">Alternar Tema</button>
+    </div>
   </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
-
-<div class="ticks"></div>
-<section id="spacer"></section>
 `
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// DOM References
+const countEl = document.querySelector('#count')!
+const doubleEl = document.querySelector('#double')!
+const userNameEl = document.querySelector('#user-name')!
+const userThemeEl = document.querySelector('#user-theme')!
+
+// Reactions (Effects)
+effect(() => {
+  countEl.textContent = count.value.toString();
+  doubleEl.textContent = double.value.toString();
+});
+
+effect(() => {
+  userNameEl.textContent = user.name;
+  userThemeEl.textContent = user.settings.theme;
+});
+
+// Interactions
+document.querySelector('#inc-btn')!.addEventListener('click', () => {
+  count.value++;
+});
+
+document.querySelector('#toggle-theme')!.addEventListener('click', () => {
+  user.settings.theme = user.settings.theme === 'dark' ? 'light' : 'dark';
+});
