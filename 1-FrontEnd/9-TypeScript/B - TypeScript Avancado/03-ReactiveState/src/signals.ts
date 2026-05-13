@@ -36,3 +36,11 @@ export function effect(fn: Subscriber) {
     };
     subscriber();
 }
+
+export function computed<T>(fn: () => T) {
+    const s = signal<T>(undefined as any);
+    effect(() => {
+        s.value = fn();
+    });
+    return s;
+}
