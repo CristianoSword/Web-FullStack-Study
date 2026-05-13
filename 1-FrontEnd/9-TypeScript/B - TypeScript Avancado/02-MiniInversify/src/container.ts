@@ -5,6 +5,8 @@ export class Container {
     private providers = new Map<Token, Provider>();
     private instances = new Map<Token, any>();
 
+    private resolving = new Set<Token>();
+
     register(provider: Provider): void {
         this.providers.set(provider.token, provider);
     }
@@ -14,25 +16,35 @@ export class Container {
             return this.instances.get(token);
         }
 
-        const provider = this.providers.get(token);
-        if (!provider) {
-            if (typeof token === "function") {
-                return this.construct(token as Constructor<T>);
+        if (this.resolving.has(token)) {
+            throw new Error(`Circular dependency detected for: ${String(token)}`);
+        }
+
+        this.resolving.add(token);
+
+        try {
+            const provider = this.providers.get(token);
+            if (!provider) {
+                if (typeof token === "function") {
+                    return this.construct(token as Constructor<T>);
+                }
+                throw new Error(`No provider found for token: ${String(token)}`);
             }
-            throw new Error(`No provider found for token: ${String(token)}`);
+
+            if (provider.useValue !== undefined) {
+                return provider.useValue;
+            }
+
+            const instance = this.construct(provider.useClass || (token as Constructor<T>));
+
+            if (provider.singleton) {
+                this.instances.set(token, instance);
+            }
+
+            return instance;
+        } finally {
+            this.resolving.delete(token);
         }
-
-        if (provider.useValue !== undefined) {
-            return provider.useValue;
-        }
-
-        const instance = this.construct(provider.useClass || (token as Constructor<T>));
-
-        if (provider.singleton) {
-            this.instances.set(token, instance);
-        }
-
-        return instance;
     }
 
     private construct<T>(constructor: Constructor<T>): T {
