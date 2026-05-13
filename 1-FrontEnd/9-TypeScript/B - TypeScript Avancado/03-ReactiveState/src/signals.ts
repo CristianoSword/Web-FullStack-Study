@@ -69,3 +69,8 @@ export function store<T extends object>(initialValue: T): T {
     
     return new Proxy(initialValue, handler);
 }
+
+export function batch(fn: () => void) {
+    // Implementao de batching (simplificada)
+    fn();
+}
