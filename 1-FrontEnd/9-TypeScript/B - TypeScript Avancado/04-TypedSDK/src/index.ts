@@ -37,6 +37,11 @@ async function run() {
         body: { user: "cristiano", pass: "123456" }
     });
     console.log("Token:", login.token);
+
+    const user = await api.request("/users/:id", {
+        params: { id: "1" }
+    });
+    console.log("User 1:", user);
 }
 
 run();
