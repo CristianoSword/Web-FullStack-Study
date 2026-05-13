@@ -52,6 +52,11 @@ export class Container {
         const customInjections: any[] = Reflect.getMetadata("custom:injections", constructor) || [];
 
         const args = paramTypes.map((type, index) => {
+            if (type === String || type === Number || type === Boolean || type === Object) {
+                const custom = customInjections.find(i => i.index === index);
+                if (!custom) throw new Error(`Missing @Inject for primitive parameter at index ${index} of ${constructor.name}`);
+                return this.resolve(custom.token);
+            }
             const custom = customInjections.find(i => i.index === index);
             return this.resolve(custom ? custom.token : type);
         });
