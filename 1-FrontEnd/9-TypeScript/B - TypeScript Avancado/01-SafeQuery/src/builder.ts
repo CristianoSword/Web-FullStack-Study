@@ -37,7 +37,7 @@ export class QueryBuilder<T extends Schema, Table extends keyof T & string> {
     }
 
     // Mock execution to show typing
-    execute(): QueryResult<T, Table, any>[] {
+    execute(): QueryResult<T, Table, keyof T[Table]>[] {
         console.log(`Executando: ${this.build()}`);
         return [];
     }
