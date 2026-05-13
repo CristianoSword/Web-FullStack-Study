@@ -15,6 +15,7 @@ export function signal<T>(initialValue: T) {
             return value;
         },
         set value(newValue: T) {
+            if (value === newValue) return;
             value = newValue;
             subscribers.forEach(sub => sub());
         },
