@@ -44,3 +44,27 @@ export function computed<T>(fn: () => T) {
     });
     return s;
 }
+
+export function store<T extends object>(initialValue: T): T {
+    const subscribers = new Set<Subscriber>();
+    
+    const handler: ProxyHandler<any> = {
+        get(target, prop) {
+            const currentSubscriber = context[context.length - 1];
+            if (currentSubscriber) subscribers.add(currentSubscriber);
+            
+            const value = target[prop];
+            if (typeof value === 'object' && value !== null) {
+                return new Proxy(value, handler);
+            }
+            return value;
+        },
+        set(target, prop, value) {
+            target[prop] = value;
+            subscribers.forEach(sub => sub());
+            return true;
+        }
+    };
+    
+    return new Proxy(initialValue, handler);
+}
