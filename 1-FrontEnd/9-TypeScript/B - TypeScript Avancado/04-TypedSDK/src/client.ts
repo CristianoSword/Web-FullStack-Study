@@ -11,11 +11,13 @@ export class SdkClient<T extends ApiDefinition> {
 
     async request<P extends keyof T & string>(
         path: P,
-        options: {
-            params?: T[P]["params"];
-            body?: T[P]["body"];
-        } = {}
+        ...args: T[P]["params"] extends undefined 
+            ? T[P]["body"] extends undefined 
+                ? [options?: { params?: any, body?: any }]
+                : [options: { body: T[P]["body"], params?: any }]
+            : [options: { params: T[P]["params"], body?: T[P]["body"] }]
     ): Promise<T[P]["response"]> {
+        const options = args[0] || {};
         let request = { path, ...options };
         this.interceptors.forEach(fn => request = fn(request));
         
