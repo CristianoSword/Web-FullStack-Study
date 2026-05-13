@@ -18,7 +18,10 @@ export class QueryBuilder<T extends Schema, Table extends keyof T & string> {
     where<K extends keyof T[Table] & string>(
         column: K, 
         operator: "=" | "!=" | ">" | "<", 
-        value: any
+        value: T[Table][K] extends "string" ? string :
+               T[Table][K] extends "number" ? number :
+               T[Table][K] extends "boolean" ? boolean :
+               T[Table][K] extends "date" ? Date : any
     ): this {
         this.conditions.push(`${column} ${operator} ${JSON.stringify(value)}`);
         return this;
