@@ -5,7 +5,6 @@ function sum(a, b) {
 
 module.exports = sum;
 
-
 // sum.test.js
 const sum = require('./sum');
 
