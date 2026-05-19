@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-75%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-24%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,13 +14,31 @@
 </div>
        
 <p align="center">
-  ❤❤❤❤❤❤❤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 75/100% 📚📚📚📚📚📚📚📚
+  ❤❤🖤🖤🖤🖤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 24% (115/479) 📚📚📚📚📚📚📚📚
 </p>         
 
 <p align="center">
-  📙 Repo for study of FrontEnd, BackEnd and DevOps. 📙 <br>
+  📙 Repo for study of FrontEnd, BackEnd, DevOps and QA. 📙 <br>
   🎈 The magic of studying a little every day 🎈 <br> 
 </p>
+
+---
+
+## 📊 Repo Statistics
+
+Acompanhamento do progresso real medido por projetos concluídos versus planejados nas listas de tarefas locais:
+
+| Categoria | Projetos Concluídos | Projetos Pendentes | Total Planejado | % Progresso Real |
+| :--- | :---: | :---: | :---: | :---: |
+| 🎨 **[FrontEnd](1-FrontEnd/)** | 104 | 75 | 179 | **58.1%** |
+| ⚙️ **[BackEnd](2-BackEnd/)** | 9 | 151 | 160 | **5.6%** |
+| 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
+| 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
+| **Geral** | **115** | **364** | **479** | **24.0%** |
+
+> **ℹ️ Roteiros de Estudos Locais**
+> Gerencie seu progresso através das checklists segmentadas por categoria:
+> * [Lista FrontEnd](task-list-frontend.md) | [Lista BackEnd](task-list-backend.md) | [Lista DevOps](task-list-devops.md) | [Lista QA](task-list-qa.md)
 
 ---
 
