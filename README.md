@@ -36,9 +36,6 @@ Acompanhamento do progresso real medido por projetos concluídos versus planejad
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
 | **Geral** | **115** | **364** | **479** | **24.0%** |
 
-> **ℹ️ Roteiros de Estudos Locais**
-> Gerencie seu progresso através das checklists segmentadas por categoria:
-> * [Lista FrontEnd](task-list-frontend.md) | [Lista BackEnd](task-list-backend.md) | [Lista DevOps](task-list-devops.md) | [Lista QA](task-list-qa.md)
 
 ---
 
