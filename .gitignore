@@ -30,3 +30,4 @@ desktop.ini
 .env.development.local
 .env.test.local
 .env.production.local
+task-list.md
