@@ -30,4 +30,7 @@ desktop.ini
 .env.development.local
 .env.test.local
 .env.production.local
-task-list.md
+task-list-frontend.md
+task-list-backend.md
+task-list-devops.md
+task-list-qa.md
