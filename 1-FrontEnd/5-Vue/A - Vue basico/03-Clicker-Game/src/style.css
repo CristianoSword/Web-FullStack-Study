@@ -1,1 +1,251 @@
-/* Basic Setup Style */\nbody { margin: 0; }\n
+:root {
+  --primary: #06b6d4;
+  --primary-hover: #0891b2;
+  --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+  --card-bg: rgba(15, 23, 42, 0.8);
+  --card-border: rgba(6, 182, 212, 0.15);
+  --text: #f8fafc;
+  --text-muted: #64748b;
+  --success: #10b981;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.game-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.game-header h1 {
+  font-size: 2.8rem;
+  margin: 0;
+  background: linear-gradient(to right, #22d3ee, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.game-header p {
+  color: var(--text-muted);
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clicker-section {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.05);
+}
+
+.score-display {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.score-display h2 {
+  font-size: 4.5rem;
+  margin: 0;
+  color: var(--primary);
+  text-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
+.cps-display {
+  color: var(--text-muted);
+  margin-top: 5px;
+  font-size: 0.95rem;
+}
+
+.main-click-btn {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #0e7490 0%, #0891b2 50%, #06b6d4 100%);
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.08s ease-in-out;
+  margin-bottom: 40px;
+}
+
+.main-click-btn span {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.main-click-btn:hover {
+  box-shadow: 0 0 50px rgba(6, 182, 212, 0.5);
+}
+
+.reset-btn {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reset-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.store-section {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 30px;
+}
+
+.store-section h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: var(--primary);
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 10px;
+}
+
+.upgrades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.upgrade-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 15px;
+  transition: all 0.3s;
+}
+
+.upgrade-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.upgrade-item.locked {
+  opacity: 0.6;
+}
+
+.upgrade-info h4 {
+  margin: 0 0 5px 0;
+}
+
+.upgrade-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 8px 0;
+}
+
+.cost-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.buy-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buy-btn:hover:not(:disabled) {
+  background: var(--primary-hover);
+}
+
+.buy-btn:disabled {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.achievements-title {
+  margin-top: 30px;
+}
+
+.achievements-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.ach-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 10px 15px;
+  border-radius: 12px;
+  transition: all 0.3s;
+}
+
+.ach-item.unlocked {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.ach-badge {
+  font-size: 1.5rem;
+}
+
+.ach-info h4 {
+  margin: 0;
+}
+
+.ach-info p {
+  margin: 2px 0 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ach-item.unlocked .ach-info h4 {
+  color: var(--success);
+}
