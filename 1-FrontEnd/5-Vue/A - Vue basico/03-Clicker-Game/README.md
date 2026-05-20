@@ -1,5 +1,10 @@
-# Vue 3 + Vite
+# Neon Clicker - Jogo Incremental
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este é o projeto 03 do módulo Vue.js Básico do repositório **Web-FullStack-Study**.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Conceitos Abordados
+* **Watchers Avançados**: Rastreamento profundo (`deep: true`) do objeto de upgrades para salvar o estado no localStorage de forma automática.
+* **Execuções em Intervalo (`setInterval`)**: Criação de loop assíncrono para adicionar pontos por segundo de forma passiva.
+* **Limpeza de Recursos (`onUnmounted`)**: Liberação de timers de memória ao destruir o componente principal.
+* **Transições por Estado Dinâmico**: Alteração de escala de botões em tempo de execução para feedbacks instantâneos de clique.
+* **Validação Condicional**: Desativação dinâmica de botões de compra baseados em orçamentos reativos.
