@@ -1,5 +1,9 @@
-# Vue 3 + Vite
+# Simple Store - Catálogo e Carrinho de Compras
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este é o projeto 04 do módulo Vue.js Básico do repositório **Web-FullStack-Study**.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Conceitos Abordados
+* **Comunicação Props/Emit**: Comunicação estruturada de dados do componente Pai (`App.vue`) para Filhos (`ProductCard.vue` e `CartModal.vue`) via propriedades e eventos emitidos.
+* **Slots Personalizados**: Injeção dinâmica de conteúdo HTML no componente de carrinho utilizando o sistema de `<slot>` do Vue.
+* **Vínculos em Classe Estática e Escopo Local**: Estilos de componentes encapsulados e limpos usando `scoped css`.
+* **Cálculos Reativos Modulares**: Reduções de arrays de itens em computeds com cupons de descontos.
