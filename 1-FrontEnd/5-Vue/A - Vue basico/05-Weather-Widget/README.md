@@ -1,5 +1,9 @@
-# Vue 3 + Vite
+# Weather Widget - Geolocalização Meteorológica
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este é o projeto 05 do módulo Vue.js Básico do repositório **Web-FullStack-Study**.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Conceitos Abordados
+* **API de Geolocalização Nativa**: Uso de `navigator.geolocation` para inicialização automática baseada na localização física do usuário.
+* **Consumo de Múltiplas APIs Combinadas**: Integração simultânea com as APIs Open-Meteo Weather e Open-Meteo Geocoding.
+* **Gradientes de Fundo Dinâmicos**: Manipulação de estilos CSS reativos com transições suaves com base nas condições climáticas do local.
+* **Watchers de Monitoramento (`watch`)**: Rastreamento de alterações no estado de clima para sincronização e telemetria.
