@@ -57,4 +57,15 @@ router.beforeEach((to, from, next) => {
   }
 })
 
+router.afterEach((to) => {
+  const titleMap = {
+    Dashboard: 'AuraSaaS | Painel Geral',
+    Users: 'AuraSaaS | Membros Corporativos',
+    Billing: 'AuraSaaS | Faturamento & Finanças',
+    Login: 'AuraSaaS | Autenticação',
+    Unauthorized: 'AuraSaaS | Acesso Restrito'
+  }
+  document.title = titleMap[to.name] || 'AuraSaaS'
+})
+
 export default router
