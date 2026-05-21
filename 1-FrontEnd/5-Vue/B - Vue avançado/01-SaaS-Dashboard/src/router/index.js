@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useSaasStore } from '../stores/saasStore'
 
 const routes = [
   {
@@ -15,7 +16,7 @@ const routes = [
     path: '/users',
     name: 'Users',
     component: () => import('../views/UsersView.vue'),
-    meta: { requiresAuth: true, role: 'admin' }
+    meta: { requiresAuth: true }
   },
   {
     path: '/billing',
@@ -40,19 +41,17 @@ const router = createRouter({
   routes
 })
 
-// Navigation Guard will be updated in Commit 3 once the Pinia store is ready
 router.beforeEach((to, from, next) => {
-  const isAuthenticated = localStorage.getItem('saas_token')
-  const userRole = localStorage.getItem('saas_role') || 'viewer'
+  const saasStore = useSaasStore()
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (!isAuthenticated) {
+    if (!saasStore.isAuthenticated) {
       next({ name: 'Login' })
-    } else if (to.meta.role && to.meta.role !== userRole) {
-      next({ name: 'Unauthorized' })
     } else {
       next()
     }
+  } else if (to.name === 'Login' && saasStore.isAuthenticated) {
+    next({ name: 'Dashboard' })
   } else {
     next()
   }
