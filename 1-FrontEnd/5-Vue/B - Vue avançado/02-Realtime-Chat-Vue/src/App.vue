@@ -198,6 +198,13 @@ watch(() => store.typingBotName, () => {
   scrollToBottom()
 })
 
+// Dynamic title sync
+watch(() => store.activeChannelId, () => {
+  if (store.activeChannel) {
+    document.title = `AuraChat | #${store.activeChannel.name}`
+  }
+}, { immediate: true })
+
 // Handlers
 function handleSend() {
   if (!inputMsg.value.trim()) return
