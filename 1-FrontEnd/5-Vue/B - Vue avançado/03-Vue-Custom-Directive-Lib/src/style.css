@@ -61,3 +61,97 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--border-focus);
 }
+
+/* --- PREMIUM DIRECTIVE STYLES --- */
+
+/* 1. Tooltip Bubble (Glassmorphic) */
+.aura-tooltip-bubble {
+  position: absolute;
+  z-index: 10000;
+  padding: 8px 14px;
+  background: rgba(16, 15, 28, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.aura-tooltip-bubble.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Tooltip orientation arrow cues */
+.aura-tooltip-bubble::after {
+  content: '';
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.aura-tooltip-bubble.pos-top::after {
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-color: rgba(16, 15, 28, 0.85);
+}
+
+.aura-tooltip-bubble.pos-bottom::after {
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: rgba(16, 15, 28, 0.85);
+}
+
+.aura-tooltip-bubble.pos-left::after {
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: rgba(16, 15, 28, 0.85);
+}
+
+.aura-tooltip-bubble.pos-right::after {
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: rgba(16, 15, 28, 0.85);
+}
+
+/* 2. Material Ripple Wave */
+.aura-ripple-wave {
+  position: absolute;
+  border-radius: var(--radius-full);
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(0);
+  animation: aura-ripple-animation 0.6s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes aura-ripple-animation {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* 3. Intersection Observer Reveal */
+.aura-observe-target {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.aura-observe-target.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
