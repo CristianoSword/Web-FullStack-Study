@@ -90,6 +90,10 @@ import { AnalyticsService } from '../../services/analytics.service';
               <h3>Gerar Novo Relatório</h3>
               <p class="form-desc">Defina os parâmetros do arquivo analítico para inicialização da compilação assíncrona.</p>
 
+              @if (nameError) {
+                <div class="validation-error">⚠️ {{ nameError }}</div>
+              }
+
               <div class="form-group">
                 <label>Nome do Arquivo</label>
                 <input #nameInput type="text" placeholder="Ex: Métricas Globais Q2" class="premium-input" />
@@ -384,6 +388,16 @@ import { AnalyticsService } from '../../services/analytics.service';
     }
 
     /* Form Styles */
+    .validation-error {
+      background-color: hsla(0, 100%, 50%, 0.15);
+      color: #ff4a4a;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
     .form-card {
       background-color: var(--bg-surface);
       border: 1px solid var(--border);
@@ -457,6 +471,7 @@ import { AnalyticsService } from '../../services/analytics.service';
 export class ReportsComponent {
   private analyticsService = inject(AnalyticsService);
   reports$ = this.analyticsService.reports$;
+  nameError = '';
 
   getStatusClass(status: string): string {
     if (status === 'Concluído') return 'completed';
@@ -465,9 +480,17 @@ export class ReportsComponent {
   }
 
   onGenerate(name: string, type: string, size: string) {
-    if (!name.trim()) return;
+    if (!name.trim()) {
+      this.nameError = 'O nome do relatório é obrigatório.';
+      return;
+    }
+    if (name.trim().length < 3) {
+      this.nameError = 'O nome do relatório deve ter pelo menos 3 caracteres.';
+      return;
+    }
+    this.nameError = '';
     this.analyticsService.addReport({
-      name,
+      name: name.trim(),
       type: type as 'PDF' | 'XLSX' | 'CSV',
       size,
       status: 'Concluído',
