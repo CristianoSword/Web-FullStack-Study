@@ -368,6 +368,7 @@ export class AppComponent {
       if (index > -1) {
         this.container.remove(index);
       }
+      compRef.destroy();
 
       delete this.activeComponents[widgetId];
       widget.loadingState = 'idle';
