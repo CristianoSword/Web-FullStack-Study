@@ -598,6 +598,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   clearLogs() {
     this.logsSubject.next([]);
+    this.addLog('form', 'Console de logs reativos limpo pelo administrador.');
   }
 
   private addLog(category: 'mouse' | 'click' | 'keyboard' | 'form', content: string) {
