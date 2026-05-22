@@ -525,7 +525,9 @@ export class AppComponent {
   }
 
   clearCart() {
-    this.store.dispatch(CartActions.clearCart());
+    if (confirm('Deseja realmente limpar todo o seu carrinho gamer?')) {
+      this.store.dispatch(CartActions.clearCart());
+    }
   }
 
   checkout() {
