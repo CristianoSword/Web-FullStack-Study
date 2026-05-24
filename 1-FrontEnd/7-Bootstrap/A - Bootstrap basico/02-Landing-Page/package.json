@@ -1,0 +1,11 @@
+{
+  "name": "02-landing-page",
+  "version": "1.0.0",
+  "description": "Premium Landing Page with Bootstrap 5",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
