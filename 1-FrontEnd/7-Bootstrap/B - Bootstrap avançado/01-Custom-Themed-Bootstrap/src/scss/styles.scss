@@ -1,0 +1,39 @@
+// ⚡ Aura custom themes
+$primary: #ab47bc; // Orchid Purple
+$success: #ec407a; // Neon Pink
+$info: #00e5ff;    // Cyan Neon
+
+:root {
+  --bg-app: #05020c;
+  --primary-color: #ab47bc;
+  --success-color: #ec407a;
+  --info-color: #00e5ff;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: #f3effa;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+// Emulation ofcompiled variables
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 14px rgba(171, 71, 188, 0.3);
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.alert-success {
+  border-color: var(--success-color) !important;
+  color: var(--success-color) !important;
+  background-color: rgba(236, 64, 122, 0.05) !important;
+}
+
+.bg-info {
+  background-color: var(--info-color) !important;
+  color: #05020c !important;
+}
