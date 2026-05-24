@@ -1,0 +1,11 @@
+{
+  "name": "05-interactive-form-ui",
+  "version": "1.0.0",
+  "description": "Interactive form validation using Bootstrap 5 visual feedback states",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
