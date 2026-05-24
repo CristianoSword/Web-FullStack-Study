@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #030008;
+  --bg-surface: #0a0414;
+  
+  --primary: #ab47bc; /* Orchid Purple */
+  --accent: #ec407a; /* Neon Pink */
+  --border: #201036;
+  --border-focus: #ab47bc;
+  
+  --text-primary: #f5f2fa;
+  --text-secondary: #c5bcd2;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.pricing-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px !important;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(171, 71, 188, 0.15);
+}
+
+.bg-dark-purple {
+  background-color: var(--bg-surface) !important;
+}
+
+/* Custom form check toggle */
+.form-check-input:checked {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.badge-neon {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%) !important;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(236, 64, 122, 0.25);
+}
+
+.btn-neon {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border: none;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(236, 64, 122, 0.2);
+  transition: all 0.3s;
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(236, 64, 122, 0.35);
+}

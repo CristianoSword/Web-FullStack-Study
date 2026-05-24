@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraConsole | Flexible Pricing</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Local Styles -->
+  <link href="src/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container py-5">
+    <!-- Header -->
+    <header class="text-center mb-5">
+      <span class="badge bg-secondary mb-2 text-uppercase font-monospace tracking-wide">Módulo 7 - Avançado</span>
+      <h1 class="display-4 fw-bold text-light mb-3">Planos e Assinaturas</h1>
+      <p class="text-secondary lead">Selecione a infraestrutura ideal para escalar sua aplicação com estabilidade.</p>
+    </header>
+
+    <!-- Monthly/Annual Billing Switch -->
+    <section class="d-flex justify-content-center align-items-center gap-3 mb-5">
+      <span class="text-secondary small fw-bold text-uppercase">Mensal</span>
+      <div class="form-check form-switch fs-4 p-0 m-0 d-flex align-items-center">
+        <input class="form-check-input ms-0 cursor-pointer" type="checkbox" id="billingSwitch">
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="text-secondary small fw-bold text-uppercase">Anual</span>
+        <span class="badge bg-info text-dark font-monospace fw-bold small">Economize 20%</span>
+      </div>
+    </section>
+
+    <!-- Pricing Grid Container -->
+    <main id="pricing-plans-container" class="row">
+      <!-- Rendered dynamically by main.js -->
+    </main>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Local Logic -->
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
