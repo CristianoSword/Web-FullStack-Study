@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #030008;
+  --bg-surface: #0a0515;
+  --primary: #9c27b0; /* Violet */
+  --accent: #e91e63; /* Pink */
+  
+  --border: #201135;
+  --border-focus: #9c27b0;
+  
+  --text-primary: #f5f2fa;
+  --text-secondary: #c5bcd2;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.component-showcase-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease;
+}
+
+.component-showcase-card:hover {
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 10px 30px rgba(156, 39, 176, 0.15);
+  transform: translateY(-4px);
+}
+
+.glow-orb {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(156, 39, 176, 0.15) 0%, rgba(233, 30, 99, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-right {
+  top: 10%;
+  right: -5%;
+}
