@@ -27,7 +27,7 @@
     </section>
 
     <!-- Interactive Section -->
-    <section class="card p-4 component-showcase-card mb-4">
+    <section class="card p-4 component-showcase-card mb-5">
       <h2 class="h4 text-light mb-4">⚡ Painel Interativo</h2>
       <div class="row align-items-center">
         <!-- Interactive Alert Trigger -->
@@ -44,6 +44,37 @@
           <div class="mt-3 d-flex align-items-center gap-3">
             <div id="showcase-spinner" class="spinner-border text-primary d-none" role="status">
               <span class="visually-hidden">Carregando...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accordion Section -->
+    <section class="card p-4 component-showcase-card">
+      <h2 class="h4 text-light mb-4">📚 Diretrizes do Grid System</h2>
+      <div class="accordion accordion-flush" id="gridAccordion">
+        <div class="accordion-item bg-transparent border-bottom border-secondary">
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed bg-transparent text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              Como funciona o Grid de 12 colunas?
+            </button>
+          </h3>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#gridAccordion">
+            <div class="accordion-body text-secondary small">
+              O Bootstrap divide horizontalmente o layout em 12 colunas virtuais. Usando classes como `.col-md-6` ou `.col-lg-4`, definimos o tamanho proporcional de cada componente nos diferentes breakpoints de tela.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent border-bottom border-secondary">
+          <h3 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed bg-transparent text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              O que são breakpoints responsivos?
+            </button>
+          </h3>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#gridAccordion">
+            <div class="accordion-body text-secondary small">
+              Breakpoints representam faixas de resolução de tela (como `sm`, `md`, `lg`, `xl`). O Bootstrap usa media queries baseadas em largura de tela (mobile-first) para alternar as regras visuais automaticamente.
             </div>
           </div>
         </div>
