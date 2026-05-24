@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #05050c;
+  --bg-surface: #0e0e1a;
+  --primary: #00ffcc; /* Neon Cyan */
+  --accent: #ff007f; /* Neon Pink */
+  --border: #1a1a2e;
+  --border-focus: #00ffcc;
+  
+  --text-primary: #f0f0f5;
+  --text-secondary: #a0a0b0;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Page Header */
+.page-title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Category Filter Buttons */
+.filter-btn {
+  font-weight: 600;
+  border-radius: 30px;
+  padding: 8px 24px;
+  transition: all 0.3s ease;
+}
+
+.btn-neon {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #05050c !important;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
+
+.btn-neon:hover {
+  background-color: #00e6b8 !important;
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.6);
+}
+
+/* Product Cards */
+.product-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 15px 35px rgba(0, 255, 204, 0.15);
+}
+
+.product-image {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08);
+}
+
+/* Badge Neon */
+.badge-neon {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff5e62 100%) !important;
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(255, 0, 127, 0.3);
+}
+
+.category-tag {
+  letter-spacing: 1px;
+  color: var(--primary) !important;
+}
+
+.price-text {
+  font-size: 1.15rem;
+  color: var(--primary) !important;
+}
