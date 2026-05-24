@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #030006;
+  --bg-surface: #0a0410;
+  
+  --primary: #ab47bc; /* Orchid Purple */
+  --accent: #00e5ff;  /* Cyan */
+  --border: #1e0b2a;
+  --border-focus: #00e5ff;
+  
+  --text-primary: #f5f0fa;
+  --text-secondary: #c5bcd2;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.chart-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease;
+}
+
+.chart-card:hover {
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+}
+
+.chart-container-height {
+  height: 350px;
+}
+
+.btn-cyan {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  border: none;
+  color: #030006;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+  transition: all 0.3s;
+}
+
+.btn-cyan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 229, 255, 0.35);
+  color: #030006;
+}
