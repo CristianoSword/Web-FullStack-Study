@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #030108;
+  --bg-surface: #0a0515;
+  --primary: #8e24aa;
+  
+  --border: #1e1136;
+  --border-focus: #8e24aa;
+  
+  --text-primary: #f5f2fa;
+  --text-secondary: #c5bcd2;
+  
+  --sidebar-width: 280px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Wrapper structure */
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* Sidebar Styling */
+#sidebar {
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  border-right: 1px solid var(--border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 100vh;
+  z-index: 1000;
+}
+
+#sidebar.active {
+  margin-left: calc(-1 * var(--sidebar-width));
+}
+
+.bg-dark-purple {
+  background-color: rgba(142, 36, 170, 0.15) !important;
+  border: 1px solid var(--border-focus) !important;
+}
+
+.sidebar-link {
+  transition: all 0.25s ease;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary) !important;
+}
+
+/* Content Area */
+#content {
+  width: 100%;
+  padding: 0;
+  min-height: 100vh;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--bg-app);
+}
+
+.admin-header {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: calc(-1 * var(--sidebar-width));
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  #content.active {
+    margin-left: var(--sidebar-width);
+  }
+}
