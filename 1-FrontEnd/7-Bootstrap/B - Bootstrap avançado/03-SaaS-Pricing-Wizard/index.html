@@ -32,9 +32,40 @@
     </section>
 
     <!-- Pricing Grid Container -->
-    <main id="pricing-plans-container" class="row">
+    <main id="pricing-plans-container" class="row mb-5">
       <!-- Rendered dynamically by main.js -->
     </main>
+
+    <!-- FAQ Accordion -->
+    <section class="card p-4 border-secondary bg-dark text-light mb-4">
+      <h3 class="h5 mb-4 text-light">Dúvidas Frequentes</h3>
+      <div class="accordion accordion-flush" id="pricingFAQ">
+        <div class="accordion-item bg-transparent border-bottom border-secondary">
+          <h4 class="accordion-header" id="faqOne">
+            <button class="accordion-button collapsed bg-transparent text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              Posso alterar meu plano a qualquer momento?
+            </button>
+          </h4>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+            <div class="accordion-body text-secondary small">
+              Sim! Você pode realizar o upgrade ou downgrade da sua assinatura instantaneamente através do console de gerenciamento, com cobrança proporcional imediata.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item bg-transparent border-bottom border-secondary">
+          <h4 class="accordion-header" id="faqTwo">
+            <button class="accordion-button collapsed bg-transparent text-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              Quais formas de pagamento são aceitas?
+            </button>
+          </h4>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+            <div class="accordion-body text-secondary small">
+              Aceitamos todos os principais cartões de crédito internacionais, transferências via PIX e boletos bancários para faturamento corporativo.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- Bootstrap 5 Bundle JS CDN -->
