@@ -1,0 +1,11 @@
+{
+  "name": "01-hello-bootstrap",
+  "version": "1.0.0",
+  "description": "Showcase of fundamental Bootstrap 5 components and features",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
