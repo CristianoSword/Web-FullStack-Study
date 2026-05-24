@@ -1,0 +1,11 @@
+{
+  "name": "04-dynamic-portfolio-grid",
+  "version": "1.0.0",
+  "description": "Animated masonry portfolio grid with dynamic tag filters using Bootstrap 5",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
