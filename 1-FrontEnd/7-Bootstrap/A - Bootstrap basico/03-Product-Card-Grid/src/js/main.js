@@ -3,6 +3,7 @@ import { PRODUCTS } from './models.js';
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts(PRODUCTS);
   setupFilterListeners();
+  setupPurchaseListeners();
 });
 
 function renderProducts(items) {
@@ -21,7 +22,7 @@ function renderProducts(items) {
   container.innerHTML = items.map(p => `
     <div class="col-sm-6 col-lg-3 mb-4 product-card-wrapper" data-category="${p.category}">
       <div class="card h-100 product-card p-0">
-        <div class="position-relative">
+        <div class="position-relative" style="overflow: hidden;">
           <img src="${p.image}" class="card-img-top product-image" alt="${p.name}">
           ${p.badge ? `<span class="badge position-absolute top-0 start-0 m-3 px-3 py-2 badge-neon">${p.badge}</span>` : ''}
         </div>
@@ -30,14 +31,20 @@ function renderProducts(items) {
             <span class="text-muted small text-uppercase category-tag mb-2 d-inline-block">${p.category}</span>
             <h4 class="h6 text-light mb-3">${p.name}</h4>
           </div>
-          <div class="d-flex align-items-center justify-content-between mt-3">
-            <span class="price-text text-light font-monospace fw-bold">R$ ${p.price.toFixed(2)}</span>
-            <span class="rating-text text-warning small">★ ${p.rating}</span>
+          <div class="mt-auto">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <span class="price-text text-light font-monospace fw-bold">R$ ${p.price.toFixed(2)}</span>
+              <span class="rating-text text-warning small">★ ${p.rating}</span>
+            </div>
+            <button class="btn btn-outline-info w-100 buy-btn py-2 text-uppercase fw-bold small" data-name="${p.name}">Comprar</button>
           </div>
         </div>
       </div>
     </div>
   `).join('');
+  
+  // Re-bind purchase listeners after render
+  setupPurchaseListeners();
 }
 
 function setupFilterListeners() {
@@ -59,6 +66,15 @@ function setupFilterListeners() {
         const filtered = PRODUCTS.filter(p => p.category === filterValue);
         renderProducts(filtered);
       }
+    });
+  });
+}
+
+function setupPurchaseListeners() {
+  document.querySelectorAll('.buy-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const productName = this.getAttribute('data-name');
+      alert(`⚡ [AURA SYSTEM] ${productName} adicionado ao carrinho com sucesso!`);
     });
   });
 }
