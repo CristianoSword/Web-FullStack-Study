@@ -1,0 +1,11 @@
+{
+  "name": "05-custom-plugin-integration",
+  "version": "1.0.0",
+  "description": "Integration of dynamic Chart.js third-party plugin within a custom Bootstrap 5 dashboard layout",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
