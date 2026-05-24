@@ -1,0 +1,11 @@
+{
+  "name": "03-saas-pricing-wizard",
+  "version": "1.0.0",
+  "description": "Interactive SaaS pricing matrix with monthly/annual switch using Bootstrap 5",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
