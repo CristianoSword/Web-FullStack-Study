@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #030006;
+  --bg-surface: #0a0410;
+  --primary: #d81b60; /* Neon Magenta */
+  --accent: #8e24aa;
+  
+  --border: #200f2a;
+  --border-focus: #d81b60;
+  
+  --text-primary: #f6f0fa;
+  --text-secondary: #c9bed2;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 20px !important;
+  max-width: 480px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.form-wrapper-card:hover {
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 15px 40px rgba(216, 27, 96, 0.15);
+}
+
+.form-control:focus {
+  background-color: #0d0615 !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 12px rgba(216, 27, 96, 0.25) !important;
+  color: var(--text-primary) !important;
+}
+
+/* validation overrides */
+.was-validated .form-control:invalid {
+  border-color: #ff3366 !important;
+  box-shadow: 0 0 10px rgba(255, 51, 102, 0.15) !important;
+}
+
+.was-validated .form-control:valid {
+  border-color: #00cc66 !important;
+  box-shadow: 0 0 10px rgba(0, 204, 102, 0.15) !important;
+}
+
+.btn-magenta {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.btn-magenta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
+  color: #fff;
+}
