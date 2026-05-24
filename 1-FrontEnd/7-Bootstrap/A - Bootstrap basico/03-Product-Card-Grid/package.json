@@ -1,0 +1,11 @@
+{
+  "name": "03-product-card-grid",
+  "version": "1.0.0",
+  "description": "Product Card Gallery with Filtering and Dynamic Layouts using Bootstrap 5",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
