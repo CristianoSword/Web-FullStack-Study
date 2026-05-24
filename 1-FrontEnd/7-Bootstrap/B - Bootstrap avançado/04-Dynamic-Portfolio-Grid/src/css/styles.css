@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-app: #020005;
+  --bg-surface: #090310;
+  
+  --primary: #9c27b0; /* Orchid */
+  --accent: #00e5ff;  /* Cyan */
+  --border: #1a0b2c;
+  --border-focus: #00e5ff;
+  
+  --text-primary: #f4effa;
+  --text-secondary: #c5bdd0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.portfolio-card {
+  border-radius: 16px !important;
+  transition: all 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
+}
+
+.portfolio-card:hover .portfolio-img {
+  transform: scale(1.08);
+}
+
+.btn-neon {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border: none;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(0, 229, 255, 0.2);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
