@@ -1,0 +1,11 @@
+{
+  "name": "02-dashboard-pro-bootstrap",
+  "version": "1.0.0",
+  "description": "Professional high-fidelity analytical dashboard using Bootstrap 5",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
