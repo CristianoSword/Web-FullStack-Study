@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraStore | Gamer Catalogue</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Local Styles -->
+  <link href="src/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container py-5">
+    <!-- Header -->
+    <header class="text-center mb-5">
+      <h1 class="display-4 page-title text-light mb-3">⚡ AURA<span style="color: #ff007f;">GEAR</span></h1>
+      <p class="text-secondary lead">Equipamentos de alta performance para a sua estação de batalha.</p>
+    </header>
+
+    <!-- Filters Section -->
+    <div class="d-flex flex-wrap gap-2 justify-content-center mb-5">
+      <button class="btn filter-btn btn-neon active" data-filter="all">Todos</button>
+      <button class="btn filter-btn btn-outline-secondary text-light" data-filter="perifericos">Periféricos</button>
+      <button class="btn filter-btn btn-outline-secondary text-light" data-filter="hardware">Hardware</button>
+      <button class="btn filter-btn btn-outline-secondary text-light" data-filter="audio">Áudio</button>
+    </div>
+
+    <!-- Product Grid Container -->
+    <main id="products-grid-container" class="row">
+      <!-- Rendered dynamically by main.js -->
+    </main>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Local Logic -->
+  <script type="module" src="src/js/main.js"></script>
+</body>
+</html>
