@@ -29,12 +29,40 @@
     </header>
 
     <!-- Main Chart Container -->
-    <main class="chart-card p-4 p-sm-5">
+    <main class="chart-card p-4 p-sm-5 mb-5">
       <h3 class="h5 mb-4 text-light">Métricas de Conectividade e Carga</h3>
       <div class="chart-container-height position-relative">
         <canvas id="telemetryChartCanvas"></canvas>
       </div>
     </main>
+
+    <!-- Operational Event Log -->
+    <section class="card p-4 border-secondary bg-dark text-light chart-card">
+      <h3 class="h5 mb-3 text-light">Log de Auditoria de Telemetria</h3>
+      <div class="table-responsive">
+        <table class="table table-dark table-hover border-secondary mb-0">
+          <thead>
+            <tr>
+              <th class="border-secondary text-secondary">Sensor</th>
+              <th class="border-secondary text-secondary">Status de Conexão</th>
+              <th class="border-secondary text-secondary">Amostras Consolidadas</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border-secondary font-monospace text-info">CoreSwitch-01</td>
+              <td class="border-secondary text-success">Conectado</td>
+              <td class="border-secondary">15,248 amostras/seg</td>
+            </tr>
+            <tr>
+              <td class="border-secondary font-monospace text-info">EdgeRouter-02</td>
+              <td class="border-secondary text-success">Conectado</td>
+              <td class="border-secondary">8,410 amostras/seg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
   </div>
 
   <!-- Bootstrap 5 Bundle JS CDN -->
