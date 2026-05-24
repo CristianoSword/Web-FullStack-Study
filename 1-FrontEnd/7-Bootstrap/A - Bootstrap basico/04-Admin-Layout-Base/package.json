@@ -1,0 +1,11 @@
+{
+  "name": "04-admin-layout-base",
+  "version": "1.0.0",
+  "description": "Standard responsive dashboard structure with collapsible sidebar using Bootstrap 5",
+  "scripts": {
+    "start": "echo 'Run index.html directly inside the browser'"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
