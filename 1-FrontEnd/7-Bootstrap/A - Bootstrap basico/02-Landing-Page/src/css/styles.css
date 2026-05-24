@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-app: #030108;
+  --bg-surface: #0a0516;
+  --bg-surface-hover: #160c2b;
+  
+  --primary: #ab47bc; /* Neon Purple */
+  --accent: #ec407a; /* Neon Pink */
+  
+  --text-primary: #f8f5ff;
+  --text-secondary: #cabfdc;
+  
+  --border: #21133a;
+  --border-focus: #3d246c;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Navbar */
+.navbar {
+  background-color: rgba(10, 5, 22, 0.75) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 160px 0 100px 0;
+  position: relative;
+}
+
+/* Cyberpunk Glow Orbs */
+.glow-orb {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(171, 71, 188, 0.15) 0%, rgba(236, 64, 122, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-1 {
+  top: 10%;
+  right: -10%;
+}
+
+.orb-2 {
+  bottom: 10%;
+  left: -10%;
+}
+
+/* Premium Cards */
+.feature-card, .testimonial-card {
+  background-color: var(--bg-surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 16px !important;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover, .testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 10px 30px rgba(171, 71, 188, 0.15);
+}
+
+.feature-icon {
+  font-size: 40px;
+}
+
+/* Custom Buttons */
+.btn-aura-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(236, 64, 122, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-aura-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(236, 64, 122, 0.35);
+  color: #fff;
+}
