@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-28.8%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-29.0%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
        
 <p align="center">
-  ❤❤❤🖤🖤🖤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 28.8% (138/479) 📚📚
+  ❤❤❤🖤🖤🖤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 29.0% (139/479) 📚📚
 </p>         
 
 <p align="center">
@@ -30,11 +30,11 @@ Acompanhamento do progresso real medido por projetos concluídos versus planejad
 
 | Categoria | Projetos Concluídos | Projetos Pendentes | Total Planejado | % Progresso Real |
 | :--- | :---: | :---: | :---: | :---: |
-| 🎨 **[FrontEnd](1-FrontEnd/)** | 127 | 52 | 179 | **70.9%** |
+| 🎨 **[FrontEnd](1-FrontEnd/)** | 128 | 51 | 179 | **71.5%** |
 | ⚙️ **[BackEnd](2-BackEnd/)** | 9 | 151 | 160 | **5.6%** |
 | 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **138** | **341** | **479** | **28.8%** |
+| **Geral** | **139** | **340** | **479** | **29.0%** |
 
 
 ---
@@ -49,7 +49,7 @@ All technologies studied and those on the list to study:
 | **[JavaScript](1-FrontEnd/2-Javascript/)** | ✅ | **[Node](2-BackEnd/2-Nodejs/)** | ✅ | **[AWS](3-Devops/2-AWS/)** | ⏳ | **[Selenium](4-QA/2-Selenium/)** | ✅ |
 | **[jQuery](1-FrontEnd/3-Jquery/)** | ✅ | **[Ruby on Rails](2-BackEnd/3-Ruby-on-Rails/)**| ⏳ | **[Digital Ocean](3-Devops/3-DigitalOcean/)**| ⏳ | **[JUnit](4-QA/3-JUnit/)** | ⏳ |
 | **[React](1-FrontEnd/4-React/)** | ✅ | **[C++](2-BackEnd/4-Cpp/)** | ✅ | **[GCP](3-Devops/4-GCP/)** | ⏳ | **[Playwright](4-QA/4-Playwright/)** | ⏳ |
-| **[Vue](1-FrontEnd/5-Vue/)** | ⏳ | **[Java](2-BackEnd/5-Java/)** | ⏳ | **[GitHub Actions](3-Devops/5-GitHubActions/)** | ⏳ | **[Vitest](4-QA/5-Vitest/)** | ⏳ |
+| **[Vue](1-FrontEnd/5-Vue/)** | ✅ | **[Java](2-BackEnd/5-Java/)** | ⏳ | **[GitHub Actions](3-Devops/5-GitHubActions/)** | ⏳ | **[Vitest](4-QA/5-Vitest/)** | ⏳ |
 | **[Angular](1-FrontEnd/6-Angular/)** | ✅ | **[C#](2-BackEnd/6-CSharp/)** | ⏳ | **[Kubernetes](3-Devops/6-Kubernetes/)** | ⏳ | | |
 | **[Bootstrap](1-FrontEnd/7-Bootstrap/)** | ✅ | **[BlockChain](2-BackEnd/7-BlockChain/)** | ⏳ | **[Vercel](3-Devops/7-Vercel/)** | ⏳ | | |
 | **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | ⏳ | **[SQL](2-BackEnd/8-SQL/)** | ⏳ | | | | |
