@@ -1,0 +1,238 @@
+// ==========================================================================
+// Sass Main Stylesheet - Core Logic
+// Topic: [03/06] Core Logic (Mixin invocations generating all component variants)
+// Project: 02-Mixins-Functions
+// ==========================================================================
+
+@use 'variables' as *;
+@use 'functions' as *;
+@use 'mixins' as *;
+
+// ============================================================
+// BASE RESET
+// ============================================================
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $bg-body;
+  color: hsl(210, 38%, 92%);
+  min-height: 100vh;
+  padding: $spacing-xl;
+}
+
+// ============================================================
+// LAYOUT
+// ============================================================
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  padding: $spacing-xl 0 rem(48px);
+
+  h1 {
+    font-size: rem(32px);
+    font-weight: 700;
+    background: linear-gradient(135deg, $color-primary, $color-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    color: $text-muted;
+    font-size: rem(15px);
+  }
+}
+
+.section {
+  margin-bottom: rem(48px);
+
+  &__title {
+    font-size: rem(13px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $text-muted;
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $border-panel;
+  }
+}
+
+// ============================================================
+// BUTTONS BASE
+// ============================================================
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+  align-items: center;
+}
+
+.btn {
+  @include flex-center($spacing-sm);
+  padding: rem(10px) rem(20px);
+  font-size: rem(14px);
+  font-weight: 600;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: all $transition-spring;
+  text-decoration: none;
+  font-family: $font-family;
+  letter-spacing: 0.01em;
+
+  // Size modifiers
+  &--sm { padding: rem(6px) rem(14px); font-size: rem(12px); border-radius: $radius-sm; }
+  &--lg { padding: rem(14px) rem(28px); font-size: rem(16px); border-radius: $radius-lg; }
+  &--pill { border-radius: $radius-circle; }
+  &--icon-only { padding: rem(10px); border-radius: $radius-md; }
+}
+
+// ============================================================
+// GENERATE ALL BUTTON COLOR VARIANTS VIA MIXIN
+// @mixin button-variant($h, $s, $l, $name)
+// ============================================================
+@include button-variant(263, 90%, 64%, 'primary');
+@include button-variant(200, 95%, 50%, 'secondary');
+@include button-variant(145, 80%, 45%, 'success');
+@include button-variant(355, 85%, 55%, 'danger');
+@include button-variant(38, 95%, 55%, 'warning');
+@include button-variant(180, 85%, 45%, 'info');
+
+// ============================================================
+// ALERTS BASE
+// ============================================================
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-lg;
+  padding: $spacing-lg rem(20px);
+  border-radius: $radius-md;
+  margin-bottom: $spacing-md;
+  position: relative;
+
+  &__icon {
+    font-size: rem(20px);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  &__content { flex: 1; }
+
+  &__title {
+    font-size: rem(14px);
+    font-weight: 700;
+    margin-bottom: rem(4px);
+  }
+
+  &__body {
+    font-size: rem(13px);
+    line-height: 1.55;
+  }
+
+  &__close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: $radius-sm;
+    width: rem(28px);
+    height: rem(28px);
+    @include flex-center;
+    font-size: rem(14px);
+    transition: all $transition-normal;
+    flex-shrink: 0;
+  }
+}
+
+// ============================================================
+// GENERATE ALL ALERT COLOR VARIANTS VIA MIXIN
+// @mixin alert-variant($h, $s, $l, $name)
+// ============================================================
+@include alert-variant(263, 90%, 64%, 'primary');
+@include alert-variant(200, 95%, 50%, 'secondary');
+@include alert-variant(145, 80%, 45%, 'success');
+@include alert-variant(355, 85%, 55%, 'danger');
+@include alert-variant(38, 95%, 55%, 'warning');
+@include alert-variant(180, 85%, 45%, 'info');
+
+// ============================================================
+// BADGES BASE
+// ============================================================
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(5px);
+  padding: rem(4px) rem(10px);
+  border-radius: $radius-circle;
+  font-size: rem(11px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@include badge-variant(263, 90%, 64%, 'primary');
+@include badge-variant(200, 95%, 50%, 'secondary');
+@include badge-variant(145, 80%, 45%, 'success');
+@include badge-variant(355, 85%, 55%, 'danger');
+@include badge-variant(38, 95%, 55%, 'warning');
+@include badge-variant(180, 85%, 45%, 'info');
+
+// ============================================================
+// CONTROL PANEL (to toggle outlined/ghost/solid)
+// ============================================================
+.control-panel {
+  @include glass;
+  border-radius: $radius-lg;
+  padding: $spacing-lg rem(20px);
+  margin-bottom: rem(40px);
+  @include flex-center($spacing-lg);
+  flex-wrap: wrap;
+
+  label {
+    font-size: rem(13px);
+    font-weight: 600;
+    color: $text-muted;
+  }
+
+  .variant-toggle {
+    @include flex-center($spacing-sm);
+
+    button {
+      padding: rem(6px) rem(14px);
+      font-size: rem(12px);
+      font-weight: 600;
+      border: 1px solid hsla(222, 20%, 35%, 0.4);
+      background: transparent;
+      color: $text-muted;
+      border-radius: $radius-sm;
+      cursor: pointer;
+      transition: all $transition-normal;
+      font-family: $font-family;
+
+      &.active,
+      &:hover {
+        background: $color-primary;
+        color: #fff;
+        border-color: $color-primary;
+      }
+    }
+  }
+}
+
+// ============================================================
+// RESPONSIVE
+// ============================================================
+@media (max-width: 600px) {
+  body { padding: $spacing-lg; }
+  .page-header h1 { font-size: rem(24px); }
+  .btn-row { gap: $spacing-sm; }
+}
