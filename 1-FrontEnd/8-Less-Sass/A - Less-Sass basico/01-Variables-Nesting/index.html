@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Developer Portfolio | Sass Variables & Nesting</title>
+  
+  <!-- Fontes Premium e Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Estilo Customizado Compilado do Sass -->
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+  <!-- Background Orbs de Efeito Visual -->
+  <div class="background-glows">
+    <div class="glow-orb glow-orb--1"></div>
+    <div class="glow-orb glow-orb--2"></div>
+  </div>
+
+  <!-- Painel Flutuante de Controles (Live Theme Switcher) -->
+  <div class="control-panel">
+    <button class="theme-btn" id="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+      <span id="theme-text">Modo Claro</span>
+    </button>
+  </div>
+
+  <!-- Card de Perfil Premium -->
+  <main class="profile-card" id="profile-card">
+    
+    <!-- Header: Avatar, Título e Badges -->
+    <header class="profile-card__header">
+      <div class="avatar-wrapper">
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=220&h=220&q=80" alt="Cyber Developer Avatar" class="avatar-img">
+        <span class="status-badge" title="Disponível para Projetos"></span>
+      </div>
+      
+      <h1 class="profile-title">Cristiano Sword</h1>
+      <p class="profile-handle">@cristianosword</p>
+      
+      <div class="tag-container">
+        <span class="badge">Sass Architect</span>
+        <span class="badge badge--vip">OpenGL Guru</span>
+      </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="profile-card__stats">
+      <div class="stat-item">
+        <span class="stat-num">147</span>
+        <span class="stat-lbl">Projetos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">23k+</span>
+        <span class="stat-lbl">Commits</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">Rank S</span>
+        <span class="stat-lbl">Nível</span>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="profile-card__nav" id="tab-navigation">
+      <button class="nav-tab nav-tab--active" data-tab="bio">Bio</button>
+      <button class="nav-tab" data-tab="skills">Habilidades</button>
+      <button class="nav-tab" data-tab="experience">Carreira</button>
+    </nav>
+
+    <!-- Content Area (Abas Interativas) -->
+    <article class="profile-card__content">
+      
+      <!-- ABA 1: BIO (Ativa) -->
+      <div class="tab-pane tab-pane--active" id="pane-bio">
+        <p>Desenvolvedor Full-Stack apaixonado por engenharia de software de alta performance, renderização gráfica moderna em OpenGL e arquiteturas modulares limpas.</p>
+        <p>Especialista em construir soluções web completas com interfaces dinâmicas, responsividade fluida e performance otimizada até o último frame.</p>
+      </div>
+
+      <!-- ABA 2: HABILIDADES -->
+      <div class="tab-pane" id="pane-skills">
+        <p>Minha stack técnica principal e ferramentas de otimização de performance diárias:</p>
+        <div class="skills-grid">
+          <span class="skill-tag"><i class="fa-brands fa-sass"></i> Sass / Less</span>
+          <span class="skill-tag"><i class="fa-brands fa-angular"></i> Angular</span>
+          <span class="skill-tag"><i class="fa-brands fa-vuejs"></i> Vue.js</span>
+          <span class="skill-tag"><i class="fa-brands fa-js"></i> TypeScript</span>
+          <span class="skill-tag"><i class="fa-solid fa-code"></i> C++ / OpenGL</span>
+          <span class="skill-tag"><i class="fa-solid fa-gauge-high"></i> Performance Web</span>
+        </div>
+      </div>
+
+      <!-- ABA 3: EXPERIÊNCIA -->
+      <div class="tab-pane" id="pane-experience">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4 class="time-title">Arquiteto de Sistemas Sênior</h4>
+            <span class="time-company">Tech Titan Lab • 2024 - Presente</span>
+            <p class="time-desc">Liderando a migração estrutural de frameworks legados e otimizando pipelines de renderização e carregamento de assets.</p>
+          </div>
+          <div class="timeline-item">
+            <h4 class="time-title">Desenvolvedor Gráfico & Web</h4>
+            <span class="time-company">MuOnline Source Dev • 2021 - 2024</span>
+            <p class="time-desc">Modernização de motores gráficos baseados em OpenGL e UI/UX avançadas de jogos e painéis interativos.</p>
+          </div>
+        </div>
+      </div>
+
+    </article>
+
+    <!-- Footer Actions Section -->
+    <footer class="profile-card__actions">
+      <a href="mailto:cristiano@example.com" class="btn btn--primary">
+        <i class="fa-solid fa-envelope"></i> Contatar
+      </a>
+      <button class="btn btn--secondary" id="action-stats">
+        <i class="fa-solid fa-chart-simple"></i> Estatísticas
+      </button>
+    </footer>
+
+  </main>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>
