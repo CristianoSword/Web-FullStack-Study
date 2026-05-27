@@ -29,7 +29,7 @@
   $hover:  hsl($h, $s, calc(#{$l} + 8%));
   $active: hsl($h, $s, calc(#{$l} - 8%));
   $glow:   hsla($h, $s, $l, 0.45);
-  $text:   if($l > 55%, hsl(222, 26%, 10%), hsl(0, 0%, 100%));
+  $text:   hsl(0, 0%, 100%); // white works for all our accent HSL values
 
   .btn--#{$name} {
     background: $base;

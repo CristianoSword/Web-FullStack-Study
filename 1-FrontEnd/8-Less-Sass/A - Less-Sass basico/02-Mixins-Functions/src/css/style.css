@@ -1,0 +1,649 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: hsl(222, 26%, 9%);
+  color: hsl(210, 38%, 92%);
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  padding: 1.5rem 0 calc(3px * 1rem);
+}
+.page-header h1 {
+  font-size: calc(2px * 1rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, hsl(263, 90%, 64%), hsl(200, 95%, 50%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+.page-header p {
+  color: hsl(215, 15%, 75%);
+  font-size: calc(0.9375px * 1rem);
+}
+
+.section {
+  margin-bottom: calc(3px * 1rem);
+}
+.section__title {
+  font-size: calc(0.8125px * 1rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: hsl(215, 15%, 75%);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid hsla(222, 20%, 30%, 0.3);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: calc(0.625px * 1rem) calc(1.25px * 1rem);
+  font-size: calc(0.875px * 1rem);
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+  text-decoration: none;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.01em;
+}
+.btn--sm {
+  padding: calc(0.375px * 1rem) calc(0.875px * 1rem);
+  font-size: calc(0.75px * 1rem);
+  border-radius: 6px;
+}
+.btn--lg {
+  padding: calc(0.875px * 1rem) calc(1.75px * 1rem);
+  font-size: calc(1px * 1rem);
+  border-radius: 24px;
+}
+.btn--pill {
+  border-radius: 9999px;
+}
+.btn--icon-only {
+  padding: calc(0.625px * 1rem);
+  border-radius: 12px;
+}
+
+.btn--primary {
+  background: hsl(263, 90%, 64%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  box-shadow: 0 4px 14px hsla(263, 90%, 64%, 0.45);
+}
+.btn--primary:hover:not(:disabled) {
+  background: hsl(263, 90%, calc(64% + 8%));
+  box-shadow: 0 6px 20px hsla(263, 90%, 64%, 0.45), 0 0 0 3px hsla(263, 90%, 64%, 0.25);
+  transform: translateY(-2px);
+}
+.btn--primary:active:not(:disabled) {
+  background: hsl(263, 90%, calc(64% - 8%));
+  transform: translateY(0);
+  box-shadow: 0 2px 8px hsla(263, 90%, 64%, 0.45);
+}
+.btn--primary:focus-visible {
+  outline: 3px solid hsla(263, 90%, 64%, 0.6);
+  outline-offset: 3px;
+}
+.btn--primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn--primary.btn--outline {
+  background: transparent;
+  color: hsl(263, 90%, 64%);
+  border: 2px solid hsl(263, 90%, 64%);
+  box-shadow: none;
+}
+.btn--primary.btn--outline:hover:not(:disabled) {
+  background: hsla(263, 90%, 64%, 0.12);
+  box-shadow: 0 0 0 3px hsla(263, 90%, 64%, 0.2);
+  transform: translateY(-2px);
+}
+.btn--primary.btn--ghost {
+  background: hsla(263, 90%, 64%, 0.1);
+  color: hsl(263, 90%, calc(64% + 15%));
+  border: 1px solid hsla(263, 90%, 64%, 0.25);
+  box-shadow: none;
+}
+.btn--primary.btn--ghost:hover:not(:disabled) {
+  background: hsla(263, 90%, 64%, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background: hsl(200, 95%, 50%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  box-shadow: 0 4px 14px hsla(200, 95%, 50%, 0.45);
+}
+.btn--secondary:hover:not(:disabled) {
+  background: hsl(200, 95%, calc(50% + 8%));
+  box-shadow: 0 6px 20px hsla(200, 95%, 50%, 0.45), 0 0 0 3px hsla(200, 95%, 50%, 0.25);
+  transform: translateY(-2px);
+}
+.btn--secondary:active:not(:disabled) {
+  background: hsl(200, 95%, calc(50% - 8%));
+  transform: translateY(0);
+  box-shadow: 0 2px 8px hsla(200, 95%, 50%, 0.45);
+}
+.btn--secondary:focus-visible {
+  outline: 3px solid hsla(200, 95%, 50%, 0.6);
+  outline-offset: 3px;
+}
+.btn--secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn--secondary.btn--outline {
+  background: transparent;
+  color: hsl(200, 95%, 50%);
+  border: 2px solid hsl(200, 95%, 50%);
+  box-shadow: none;
+}
+.btn--secondary.btn--outline:hover:not(:disabled) {
+  background: hsla(200, 95%, 50%, 0.12);
+  box-shadow: 0 0 0 3px hsla(200, 95%, 50%, 0.2);
+  transform: translateY(-2px);
+}
+.btn--secondary.btn--ghost {
+  background: hsla(200, 95%, 50%, 0.1);
+  color: hsl(200, 95%, calc(50% + 15%));
+  border: 1px solid hsla(200, 95%, 50%, 0.25);
+  box-shadow: none;
+}
+.btn--secondary.btn--ghost:hover:not(:disabled) {
+  background: hsla(200, 95%, 50%, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn--success {
+  background: hsl(145, 80%, 45%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  box-shadow: 0 4px 14px hsla(145, 80%, 45%, 0.45);
+}
+.btn--success:hover:not(:disabled) {
+  background: hsl(145, 80%, calc(45% + 8%));
+  box-shadow: 0 6px 20px hsla(145, 80%, 45%, 0.45), 0 0 0 3px hsla(145, 80%, 45%, 0.25);
+  transform: translateY(-2px);
+}
+.btn--success:active:not(:disabled) {
+  background: hsl(145, 80%, calc(45% - 8%));
+  transform: translateY(0);
+  box-shadow: 0 2px 8px hsla(145, 80%, 45%, 0.45);
+}
+.btn--success:focus-visible {
+  outline: 3px solid hsla(145, 80%, 45%, 0.6);
+  outline-offset: 3px;
+}
+.btn--success:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn--success.btn--outline {
+  background: transparent;
+  color: hsl(145, 80%, 45%);
+  border: 2px solid hsl(145, 80%, 45%);
+  box-shadow: none;
+}
+.btn--success.btn--outline:hover:not(:disabled) {
+  background: hsla(145, 80%, 45%, 0.12);
+  box-shadow: 0 0 0 3px hsla(145, 80%, 45%, 0.2);
+  transform: translateY(-2px);
+}
+.btn--success.btn--ghost {
+  background: hsla(145, 80%, 45%, 0.1);
+  color: hsl(145, 80%, calc(45% + 15%));
+  border: 1px solid hsla(145, 80%, 45%, 0.25);
+  box-shadow: none;
+}
+.btn--success.btn--ghost:hover:not(:disabled) {
+  background: hsla(145, 80%, 45%, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn--danger {
+  background: hsl(355, 85%, 55%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  box-shadow: 0 4px 14px hsla(355, 85%, 55%, 0.45);
+}
+.btn--danger:hover:not(:disabled) {
+  background: hsl(355, 85%, calc(55% + 8%));
+  box-shadow: 0 6px 20px hsla(355, 85%, 55%, 0.45), 0 0 0 3px hsla(355, 85%, 55%, 0.25);
+  transform: translateY(-2px);
+}
+.btn--danger:active:not(:disabled) {
+  background: hsl(355, 85%, calc(55% - 8%));
+  transform: translateY(0);
+  box-shadow: 0 2px 8px hsla(355, 85%, 55%, 0.45);
+}
+.btn--danger:focus-visible {
+  outline: 3px solid hsla(355, 85%, 55%, 0.6);
+  outline-offset: 3px;
+}
+.btn--danger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn--danger.btn--outline {
+  background: transparent;
+  color: hsl(355, 85%, 55%);
+  border: 2px solid hsl(355, 85%, 55%);
+  box-shadow: none;
+}
+.btn--danger.btn--outline:hover:not(:disabled) {
+  background: hsla(355, 85%, 55%, 0.12);
+  box-shadow: 0 0 0 3px hsla(355, 85%, 55%, 0.2);
+  transform: translateY(-2px);
+}
+.btn--danger.btn--ghost {
+  background: hsla(355, 85%, 55%, 0.1);
+  color: hsl(355, 85%, calc(55% + 15%));
+  border: 1px solid hsla(355, 85%, 55%, 0.25);
+  box-shadow: none;
+}
+.btn--danger.btn--ghost:hover:not(:disabled) {
+  background: hsla(355, 85%, 55%, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn--warning {
+  background: hsl(38, 95%, 55%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  box-shadow: 0 4px 14px hsla(38, 95%, 55%, 0.45);
+}
+.btn--warning:hover:not(:disabled) {
+  background: hsl(38, 95%, calc(55% + 8%));
+  box-shadow: 0 6px 20px hsla(38, 95%, 55%, 0.45), 0 0 0 3px hsla(38, 95%, 55%, 0.25);
+  transform: translateY(-2px);
+}
+.btn--warning:active:not(:disabled) {
+  background: hsl(38, 95%, calc(55% - 8%));
+  transform: translateY(0);
+  box-shadow: 0 2px 8px hsla(38, 95%, 55%, 0.45);
+}
+.btn--warning:focus-visible {
+  outline: 3px solid hsla(38, 95%, 55%, 0.6);
+  outline-offset: 3px;
+}
+.btn--warning:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn--warning.btn--outline {
+  background: transparent;
+  color: hsl(38, 95%, 55%);
+  border: 2px solid hsl(38, 95%, 55%);
+  box-shadow: none;
+}
+.btn--warning.btn--outline:hover:not(:disabled) {
+  background: hsla(38, 95%, 55%, 0.12);
+  box-shadow: 0 0 0 3px hsla(38, 95%, 55%, 0.2);
+  transform: translateY(-2px);
+}
+.btn--warning.btn--ghost {
+  background: hsla(38, 95%, 55%, 0.1);
+  color: hsl(38, 95%, calc(55% + 15%));
+  border: 1px solid hsla(38, 95%, 55%, 0.25);
+  box-shadow: none;
+}
+.btn--warning.btn--ghost:hover:not(:disabled) {
+  background: hsla(38, 95%, 55%, 0.18);
+  transform: translateY(-2px);
+}
+
+.btn--info {
+  background: hsl(180, 85%, 45%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  box-shadow: 0 4px 14px hsla(180, 85%, 45%, 0.45);
+}
+.btn--info:hover:not(:disabled) {
+  background: hsl(180, 85%, calc(45% + 8%));
+  box-shadow: 0 6px 20px hsla(180, 85%, 45%, 0.45), 0 0 0 3px hsla(180, 85%, 45%, 0.25);
+  transform: translateY(-2px);
+}
+.btn--info:active:not(:disabled) {
+  background: hsl(180, 85%, calc(45% - 8%));
+  transform: translateY(0);
+  box-shadow: 0 2px 8px hsla(180, 85%, 45%, 0.45);
+}
+.btn--info:focus-visible {
+  outline: 3px solid hsla(180, 85%, 45%, 0.6);
+  outline-offset: 3px;
+}
+.btn--info:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn--info.btn--outline {
+  background: transparent;
+  color: hsl(180, 85%, 45%);
+  border: 2px solid hsl(180, 85%, 45%);
+  box-shadow: none;
+}
+.btn--info.btn--outline:hover:not(:disabled) {
+  background: hsla(180, 85%, 45%, 0.12);
+  box-shadow: 0 0 0 3px hsla(180, 85%, 45%, 0.2);
+  transform: translateY(-2px);
+}
+.btn--info.btn--ghost {
+  background: hsla(180, 85%, 45%, 0.1);
+  color: hsl(180, 85%, calc(45% + 15%));
+  border: 1px solid hsla(180, 85%, 45%, 0.25);
+  box-shadow: none;
+}
+.btn--info.btn--ghost:hover:not(:disabled) {
+  background: hsla(180, 85%, 45%, 0.18);
+  transform: translateY(-2px);
+}
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem calc(1.25px * 1rem);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+.alert__icon {
+  font-size: calc(1.25px * 1rem);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.alert__content {
+  flex: 1;
+}
+.alert__title {
+  font-size: calc(0.875px * 1rem);
+  font-weight: 700;
+  margin-bottom: calc(0.25px * 1rem);
+}
+.alert__body {
+  font-size: calc(0.8125px * 1rem);
+  line-height: 1.55;
+}
+.alert__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  width: calc(1.75px * 1rem);
+  height: calc(1.75px * 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(0.875px * 1rem);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.alert--primary {
+  background: hsla(263, 90%, 64%, 0.1);
+  border: 1px solid hsla(263, 90%, 64%, 0.35);
+  border-left: 4px solid hsl(263, 90%, 64%);
+}
+.alert--primary .alert__icon {
+  color: hsl(263, 90%, calc(64% + 10%));
+}
+.alert--primary .alert__title {
+  color: hsl(263, 90%, calc(64% + 20%));
+}
+.alert--primary .alert__body {
+  color: hsl(263, calc(90% - 20%), calc(64% + 15%));
+}
+.alert--primary .alert__close {
+  color: hsl(263, 90%, calc(64% + 10%));
+}
+.alert--primary .alert__close:hover {
+  background: hsla(263, 90%, 64%, 0.15);
+  color: hsl(263, 90%, calc(64% + 20%));
+}
+
+.alert--secondary {
+  background: hsla(200, 95%, 50%, 0.1);
+  border: 1px solid hsla(200, 95%, 50%, 0.35);
+  border-left: 4px solid hsl(200, 95%, 50%);
+}
+.alert--secondary .alert__icon {
+  color: hsl(200, 95%, calc(50% + 10%));
+}
+.alert--secondary .alert__title {
+  color: hsl(200, 95%, calc(50% + 20%));
+}
+.alert--secondary .alert__body {
+  color: hsl(200, calc(95% - 20%), calc(50% + 15%));
+}
+.alert--secondary .alert__close {
+  color: hsl(200, 95%, calc(50% + 10%));
+}
+.alert--secondary .alert__close:hover {
+  background: hsla(200, 95%, 50%, 0.15);
+  color: hsl(200, 95%, calc(50% + 20%));
+}
+
+.alert--success {
+  background: hsla(145, 80%, 45%, 0.1);
+  border: 1px solid hsla(145, 80%, 45%, 0.35);
+  border-left: 4px solid hsl(145, 80%, 45%);
+}
+.alert--success .alert__icon {
+  color: hsl(145, 80%, calc(45% + 10%));
+}
+.alert--success .alert__title {
+  color: hsl(145, 80%, calc(45% + 20%));
+}
+.alert--success .alert__body {
+  color: hsl(145, calc(80% - 20%), calc(45% + 15%));
+}
+.alert--success .alert__close {
+  color: hsl(145, 80%, calc(45% + 10%));
+}
+.alert--success .alert__close:hover {
+  background: hsla(145, 80%, 45%, 0.15);
+  color: hsl(145, 80%, calc(45% + 20%));
+}
+
+.alert--danger {
+  background: hsla(355, 85%, 55%, 0.1);
+  border: 1px solid hsla(355, 85%, 55%, 0.35);
+  border-left: 4px solid hsl(355, 85%, 55%);
+}
+.alert--danger .alert__icon {
+  color: hsl(355, 85%, calc(55% + 10%));
+}
+.alert--danger .alert__title {
+  color: hsl(355, 85%, calc(55% + 20%));
+}
+.alert--danger .alert__body {
+  color: hsl(355, calc(85% - 20%), calc(55% + 15%));
+}
+.alert--danger .alert__close {
+  color: hsl(355, 85%, calc(55% + 10%));
+}
+.alert--danger .alert__close:hover {
+  background: hsla(355, 85%, 55%, 0.15);
+  color: hsl(355, 85%, calc(55% + 20%));
+}
+
+.alert--warning {
+  background: hsla(38, 95%, 55%, 0.1);
+  border: 1px solid hsla(38, 95%, 55%, 0.35);
+  border-left: 4px solid hsl(38, 95%, 55%);
+}
+.alert--warning .alert__icon {
+  color: hsl(38, 95%, calc(55% + 10%));
+}
+.alert--warning .alert__title {
+  color: hsl(38, 95%, calc(55% + 20%));
+}
+.alert--warning .alert__body {
+  color: hsl(38, calc(95% - 20%), calc(55% + 15%));
+}
+.alert--warning .alert__close {
+  color: hsl(38, 95%, calc(55% + 10%));
+}
+.alert--warning .alert__close:hover {
+  background: hsla(38, 95%, 55%, 0.15);
+  color: hsl(38, 95%, calc(55% + 20%));
+}
+
+.alert--info {
+  background: hsla(180, 85%, 45%, 0.1);
+  border: 1px solid hsla(180, 85%, 45%, 0.35);
+  border-left: 4px solid hsl(180, 85%, 45%);
+}
+.alert--info .alert__icon {
+  color: hsl(180, 85%, calc(45% + 10%));
+}
+.alert--info .alert__title {
+  color: hsl(180, 85%, calc(45% + 20%));
+}
+.alert--info .alert__body {
+  color: hsl(180, calc(85% - 20%), calc(45% + 15%));
+}
+.alert--info .alert__close {
+  color: hsl(180, 85%, calc(45% + 10%));
+}
+.alert--info .alert__close:hover {
+  background: hsla(180, 85%, 45%, 0.15);
+  color: hsl(180, 85%, calc(45% + 20%));
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(0.3125px * 1rem);
+  padding: calc(0.25px * 1rem) calc(0.625px * 1rem);
+  border-radius: 9999px;
+  font-size: calc(0.6875px * 1rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge--primary {
+  background: hsla(263, 90%, 64%, 0.15);
+  color: hsl(263, 90%, calc(64% + 15%));
+  border: 1px solid hsla(263, 90%, 64%, 0.3);
+}
+
+.badge--secondary {
+  background: hsla(200, 95%, 50%, 0.15);
+  color: hsl(200, 95%, calc(50% + 15%));
+  border: 1px solid hsla(200, 95%, 50%, 0.3);
+}
+
+.badge--success {
+  background: hsla(145, 80%, 45%, 0.15);
+  color: hsl(145, 80%, calc(45% + 15%));
+  border: 1px solid hsla(145, 80%, 45%, 0.3);
+}
+
+.badge--danger {
+  background: hsla(355, 85%, 55%, 0.15);
+  color: hsl(355, 85%, calc(55% + 15%));
+  border: 1px solid hsla(355, 85%, 55%, 0.3);
+}
+
+.badge--warning {
+  background: hsla(38, 95%, 55%, 0.15);
+  color: hsl(38, 95%, calc(55% + 15%));
+  border: 1px solid hsla(38, 95%, 55%, 0.3);
+}
+
+.badge--info {
+  background: hsla(180, 85%, 45%, 0.15);
+  color: hsl(180, 85%, calc(45% + 15%));
+  border: 1px solid hsla(180, 85%, 45%, 0.3);
+}
+
+.control-panel {
+  background: hsla(222, 20%, 15%, 0.55);
+  backdrop-filter: blur(16px);
+  border: 1px solid hsla(222, 20%, 35%, 0.3);
+  border-radius: 24px;
+  padding: 1rem calc(1.25px * 1rem);
+  margin-bottom: calc(2.5px * 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.control-panel label {
+  font-size: calc(0.8125px * 1rem);
+  font-weight: 600;
+  color: hsl(215, 15%, 75%);
+}
+.control-panel .variant-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.control-panel .variant-toggle button {
+  padding: calc(0.375px * 1rem) calc(0.875px * 1rem);
+  font-size: calc(0.75px * 1rem);
+  font-weight: 600;
+  border: 1px solid hsla(222, 20%, 35%, 0.4);
+  background: transparent;
+  color: hsl(215, 15%, 75%);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+.control-panel .variant-toggle button.active, .control-panel .variant-toggle button:hover {
+  background: hsl(263, 90%, 64%);
+  color: #fff;
+  border-color: hsl(263, 90%, 64%);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .page-header h1 {
+    font-size: calc(1.5px * 1rem);
+  }
+  .btn-row {
+    gap: 0.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
