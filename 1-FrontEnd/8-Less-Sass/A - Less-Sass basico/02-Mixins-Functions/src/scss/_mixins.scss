@@ -1,0 +1,134 @@
+// ==========================================================================
+// Sass Mixins - Parametric Component Generators
+// Topic: [02/06] Types & Models
+// Project: 02-Mixins-Functions
+// ==========================================================================
+
+@use 'variables' as *;
+
+// --- Mixin: Flexbox Row Centralizado ---
+@mixin flex-center($gap: 0) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @if $gap > 0 { gap: $gap; }
+}
+
+// --- Mixin: Glassmorphism Panel ---
+@mixin glass($blur: 16px, $alpha: 0.55) {
+  background: hsla(222, 20%, 15%, $alpha);
+  backdrop-filter: blur($blur);
+  border: 1px solid hsla(222, 20%, 35%, 0.3);
+}
+
+// --- Mixin Paramétrico: Botão Dinâmico ---
+// Gera todas as variações de cor, hover, focus e disabled automaticamente
+// $h, $s, $l = valores HSL da cor base do botão
+@mixin button-variant($h, $s, $l, $name) {
+  $base:   hsl($h, $s, $l);
+  $hover:  hsl($h, $s, calc(#{$l} + 8%));
+  $active: hsl($h, $s, calc(#{$l} - 8%));
+  $glow:   hsla($h, $s, $l, 0.45);
+  $text:   if($l > 55%, hsl(222, 26%, 10%), hsl(0, 0%, 100%));
+
+  .btn--#{$name} {
+    background: $base;
+    color: $text;
+    border: none;
+    box-shadow: 0 4px 14px $glow;
+
+    &:hover:not(:disabled) {
+      background: $hover;
+      box-shadow: 0 6px 20px $glow, 0 0 0 3px hsla($h, $s, $l, 0.25);
+      transform: translateY(-2px);
+    }
+
+    &:active:not(:disabled) {
+      background: $active;
+      transform: translateY(0);
+      box-shadow: 0 2px 8px $glow;
+    }
+
+    &:focus-visible {
+      outline: 3px solid hsla($h, $s, $l, 0.6);
+      outline-offset: 3px;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    &.btn--outline {
+      background: transparent;
+      color: $base;
+      border: 2px solid $base;
+      box-shadow: none;
+
+      &:hover:not(:disabled) {
+        background: hsla($h, $s, $l, 0.12);
+        box-shadow: 0 0 0 3px hsla($h, $s, $l, 0.2);
+        transform: translateY(-2px);
+      }
+    }
+
+    &.btn--ghost {
+      background: hsla($h, $s, $l, 0.1);
+      color: hsl($h, $s, calc(#{$l} + 15%));
+      border: 1px solid hsla($h, $s, $l, 0.25);
+      box-shadow: none;
+
+      &:hover:not(:disabled) {
+        background: hsla($h, $s, $l, 0.18);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// --- Mixin Paramétrico: Alerta/Banner Dinâmico ---
+// Gera variações visuais de alertas com ícone, barra lateral colorida e fundo suave
+@mixin alert-variant($h, $s, $l, $name) {
+  $bg:     hsla($h, $s, $l, 0.1);
+  $border: hsla($h, $s, $l, 0.35);
+  $bar:    hsl($h, $s, $l);
+  $icon:   hsl($h, $s, calc(#{$l} + 10%));
+  $text:   hsl($h, calc(#{$s} - 20%), calc(#{$l} + 15%));
+
+  .alert--#{$name} {
+    background: $bg;
+    border: 1px solid $border;
+    border-left: 4px solid $bar;
+
+    .alert__icon {
+      color: $icon;
+    }
+
+    .alert__title {
+      color: hsl($h, $s, calc(#{$l} + 20%));
+    }
+
+    .alert__body {
+      color: $text;
+    }
+
+    .alert__close {
+      color: $icon;
+
+      &:hover {
+        background: hsla($h, $s, $l, 0.15);
+        color: hsl($h, $s, calc(#{$l} + 20%));
+      }
+    }
+  }
+}
+
+// --- Mixin: Badge Compacto ---
+@mixin badge-variant($h, $s, $l, $name) {
+  .badge--#{$name} {
+    background: hsla($h, $s, $l, 0.15);
+    color: hsl($h, $s, calc(#{$l} + 15%));
+    border: 1px solid hsla($h, $s, $l, 0.3);
+  }
+}

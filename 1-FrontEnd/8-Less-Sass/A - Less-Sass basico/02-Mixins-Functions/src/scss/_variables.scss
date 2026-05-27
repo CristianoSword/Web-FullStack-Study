@@ -1,0 +1,43 @@
+// ==========================================================================
+// Sass Design System - Variables & Theme Tokens
+// Topic: [02/06] Types & Models (Design Schema & Color Definitions)
+// Project: 02-Mixins-Functions (Reusable Component UI Kit)
+// ==========================================================================
+
+// --- Base Body Colors (Midnight Blue) ---
+$bg-body:           hsl(222, 26%, 9%);
+$bg-panel:          hsla(222, 20%, 15%, 0.6);
+$border-panel:       hsla(222, 20%, 30%, 0.3);
+
+// --- Component Base Colors (Accents) ---
+$color-primary:     hsl(263, 90%, 64%);   // Electric Purple
+$color-secondary:   hsl(200, 95%, 50%);   // Cyber Blue
+$color-success:     hsl(145, 80%, 45%);   // Emerald Green
+$color-danger:      hsl(355, 85%, 55%);   // Crimson Red
+$color-warning:     hsl(38, 95%, 55%);    // Amber Orange
+$color-info:        hsl(180, 85%, 45%);   // Bright Teal
+
+// --- Text Status ---
+$text-light:        hsl(0, 0%, 100%);
+$text-dark:         hsl(222, 26%, 15%);
+$text-muted:        hsl(215, 15%, 75%);
+
+// --- Typography ---
+$font-family:       'Inter', system-ui, -apple-system, sans-serif;
+$font-size-base:    16px;
+
+// --- Spacings & Border Radii ---
+$spacing-sm:        0.5rem;   // 8px
+$spacing-md:        0.75rem;  // 12px
+$spacing-lg:        1rem;     // 16px
+$spacing-xl:        1.5rem;   // 24px
+
+$radius-sm:         6px;
+$radius-md:         12px;
+$radius-lg:         24px;
+$radius-circle:     9999px;
+
+// --- Transitions & Motion ---
+$transition-fast:   0.15s ease;
+$transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-spring: 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.25);

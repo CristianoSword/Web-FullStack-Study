@@ -1,0 +1,23 @@
+// ==========================================================================
+// Sass Functions - Custom Math & Color Utilities
+// Topic: [02/06] Types & Models
+// Project: 02-Mixins-Functions
+// ==========================================================================
+
+@use 'sass:math';
+@use 'variables' as *;
+
+// --- Converte px para rem ---
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// --- Gera um tom mais claro de uma cor HSL (ajuste de luminosidade) ---
+@function tint($hue, $sat, $light, $amount: 15%) {
+  @return hsl($hue, $sat, calc(#{$light} + #{$amount}));
+}
+
+// --- Calcula opacidade de sombra baseada numa cor ---
+@function glow($h, $s, $l, $alpha: 0.45) {
+  @return hsla($h, $s, $l, $alpha);
+}
