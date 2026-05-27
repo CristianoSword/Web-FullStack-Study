@@ -1,0 +1,42 @@
+// ==========================================================================
+// Project 01: CSS-Framework-From-Scratch
+// abstracts/_mixins.scss — Framework modular helpers
+// ==========================================================================
+
+// Flexbox alignment shorthand
+@mixin flex($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+// Media Query container wrapper
+@mixin tablet {
+  @media (min-width: 768px) { @content; }
+}
+@mixin desktop {
+  @media (min-width: 1024px) { @content; }
+}
+
+// Button base style helper
+@mixin btn-style {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}

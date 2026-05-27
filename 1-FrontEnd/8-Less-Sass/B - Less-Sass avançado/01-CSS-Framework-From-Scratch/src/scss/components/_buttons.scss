@@ -1,0 +1,41 @@
+// ==========================================================================
+// Project 01: CSS-Framework-From-Scratch
+// components/_buttons.scss — Dynamic Button Variant Generator
+// ==========================================================================
+
+@use 'sass:color';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+  @include btn-style;
+  background-color: transparent;
+  color: inherit;
+}
+
+// Generate colored button variants automatically
+@each $color-name, $color-val in $theme-colors {
+  $text-color: #ffffff;
+  @if $color-name == 'light' {
+    $text-color: #1a1a1a;
+  }
+
+  .btn--#{$color-name} {
+    background-color: $color-val;
+    color: $text-color;
+
+    &:hover {
+      background-color: color.scale($color-val, $lightness: -10%);
+    }
+  }
+
+  .btn-outline--#{$color-name} {
+    border-color: $color-val;
+    color: $color-val;
+
+    &:hover {
+      background-color: $color-val;
+      color: $text-color;
+    }
+  }
+}

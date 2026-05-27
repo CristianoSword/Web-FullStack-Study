@@ -1,0 +1,54 @@
+// ==========================================================================
+// Project 01: CSS-Framework-From-Scratch
+// main.scss — Main framework entry point
+// ==========================================================================
+
+@use 'sass:map';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
+@use 'components/buttons';
+@use 'components/cards';
+
+// Global styling reset
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: map.get($theme-colors, 'dark');
+  color: map.get($theme-colors, 'light');
+  padding: 2.5rem 1rem;
+  line-height: 1.5;
+}
+
+// Dynamic Utilities Generator (Margins & Paddings)
+@each $prefix, $property in ('m': 'margin', 'p': 'padding') {
+  @each $key, $value in $spacers {
+    .#{$prefix}-#{$key} {
+      #{$property}: #{$value} !important;
+    }
+    .#{$prefix}t-#{$key} {
+      #{$property}-top: #{$value} !important;
+    }
+    .#{$prefix}b-#{$key} {
+      #{$property}-bottom: #{$value} !important;
+    }
+    .#{$prefix}l-#{$key} {
+      #{$property}-left: #{$value} !important;
+    }
+    .#{$prefix}r-#{$key} {
+      #{$property}-right: #{$value} !important;
+    }
+  }
+}
+
+// Flex helper classes
+.d-flex { display: flex !important; }
+.flex-column { flex-direction: column !important; }
+.justify-between { justify-content: space-between !important; }
+.align-center { align-items: center !important; }
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 1rem !important; }
