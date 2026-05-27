@@ -1,0 +1,26 @@
+// ==========================================================================
+// Project 02: Advanced-Math-Animations
+// _variables.scss — Animation timings & physics-based tokens
+// ==========================================================================
+
+// Physics & timing definitions
+$particle-count:   12;
+$animation-duration: 3s;
+$spin-duration:    6s;
+$radius:           120px;
+
+// Easing presets
+$ease-out-back:   cubic-bezier(0.34, 1.56, 0.64, 1);
+$ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1);
+$ease-elastic:     cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+// Showcase styles
+$bg-dark:          hsl(222, 28%, 8%);
+$bg-card:          hsla(222, 22%, 14%, 0.65);
+$accent:           hsl(263, 90%, 64%);
+$accent-alt:       hsl(190, 95%, 50%);
+$text:             hsl(210, 38%, 95%);
+$text-muted:       hsl(215, 16%, 60%);
+$border:           hsla(222, 22%, 30%, 0.2);
+$font-family:      'Inter', system-ui, sans-serif;
+$radius-lg:        20px;
