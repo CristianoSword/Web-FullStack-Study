@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sass Mini CSS Framework Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/style.css">
+  <style>
+    /* Custom Demo-specific layout */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <main style="max-width: 1000px; margin: 0 auto;">
+    
+    <header class="mb-4 text-center">
+      <h1 class="mb-2" style="font-size: 2.25rem; font-weight: 700; color: #a855f7;">Sass Mini CSS Framework</h1>
+      <p style="color: #94a3b8;">Um mini-framework modular, escalável e gerado dinamicamente no Sass</p>
+    </header>
+
+    <!-- Showcase Grid -->
+    <section class="showcase-grid mb-4">
+      
+      <!-- Card 1 -->
+      <article class="card">
+        <h2 class="card__title">Componente de Card</h2>
+        <p class="card__body">
+          Este card foi construído usando nossa arquitetura modular de CSS no Sass. O design é vidro-mórfico e conta com transições suaves.
+        </p>
+        <div class="card__footer">
+          <button class="btn btn--primary">Selecionar</button>
+          <button class="btn btn-outline--secondary">Ver Mais</button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <h2 class="card__title" style="color: #22c55e;">Status do Sistema</h2>
+        <p class="card__body">
+          Utilidades de espaçamento dinâmica e loops de cores foram geradas no Sass para formatar todos os componentes sem código redundante.
+        </p>
+        <div class="card__footer">
+          <button class="btn btn--success">Online</button>
+          <button class="btn btn-outline--danger">Logs</button>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Botões Showcase -->
+    <section class="card p-4">
+      <h3 class="mb-3" style="font-weight: 600;">Demonstração de Botões</h3>
+      <div class="d-flex align-center gap-3" style="flex-wrap: wrap;">
+        <button class="btn btn--primary">Primary</button>
+        <button class="btn btn--secondary">Secondary</button>
+        <button class="btn btn--success">Success</button>
+        <button class="btn btn--danger">Danger</button>
+        <button class="btn btn--warning">Warning</button>
+        <button class="btn btn--info">Info</button>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
