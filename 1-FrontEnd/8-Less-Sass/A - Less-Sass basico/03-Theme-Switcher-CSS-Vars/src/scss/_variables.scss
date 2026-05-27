@@ -1,0 +1,38 @@
+// ==========================================================================
+// Project 03: Theme-Switcher-CSS-Vars
+// _variables.scss — Sass maps that generate CSS Custom Properties
+// ==========================================================================
+
+// Theme color maps — Sass iterates these to emit CSS vars
+$themes: (
+  'dark': (
+    bg-body:      hsl(224, 26%, 8%),
+    bg-surface:   hsl(224, 22%, 13%),
+    bg-card:      hsla(224, 22%, 16%, 0.7),
+    border:       hsla(224, 20%, 30%, 0.25),
+    text-primary: hsl(210, 38%, 95%),
+    text-muted:   hsl(215, 16%, 65%),
+    accent:       hsl(263, 90%, 64%),
+    accent-alt:   hsl(190, 95%, 50%),
+    shadow:       hsla(0, 0%, 0%, 0.4),
+  ),
+  'light': (
+    bg-body:      hsl(220, 22%, 96%),
+    bg-surface:   hsl(220, 16%, 90%),
+    bg-card:      hsla(0, 0%, 100%, 0.85),
+    border:       hsla(220, 14%, 75%, 0.5),
+    text-primary: hsl(224, 26%, 14%),
+    text-muted:   hsl(220, 10%, 44%),
+    accent:       hsl(263, 82%, 56%),
+    accent-alt:   hsl(200, 90%, 40%),
+    shadow:       hsla(0, 0%, 0%, 0.08),
+  )
+);
+
+// Typography & Spacing
+$font-family:  'Inter', system-ui, sans-serif;
+$radius-sm:    8px;
+$radius-md:    16px;
+$radius-lg:    24px;
+$radius-pill:  9999px;
+$transition:   0.35s cubic-bezier(0.4, 0, 0.2, 1);
