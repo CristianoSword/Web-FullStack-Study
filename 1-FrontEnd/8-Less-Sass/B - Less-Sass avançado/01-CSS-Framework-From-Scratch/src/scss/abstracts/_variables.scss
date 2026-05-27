@@ -1,0 +1,49 @@
+// ==========================================================================
+// Project 01: CSS-Framework-From-Scratch
+// abstracts/_variables.scss — Framework core design tokens
+// ==========================================================================
+
+// Color Palette (HSL based)
+$theme-colors: (
+  'primary':   hsl(263, 90%, 64%),
+  'secondary': hsl(215, 20%, 50%),
+  'success':   hsl(145, 80%, 45%),
+  'danger':    hsl(355, 85%, 55%),
+  'warning':   hsl(38, 95%, 55%),
+  'info':      hsl(190, 95%, 50%),
+  'dark':      hsl(222, 28%, 8%),
+  'light':     hsl(220, 22%, 96%),
+);
+
+// Spacing scale (rem conversion ready)
+$spacers: (
+  '0':   0,
+  '1':   0.25rem,
+  '2':   0.5rem,
+  '3':   1rem,
+  '4':   1.5rem,
+  '5':   3rem,
+);
+
+// Font weights & families
+$font-family-base: 'Inter', system-ui, sans-serif;
+$font-sizes: (
+  'xs': 0.75rem,
+  'sm': 0.875rem,
+  'base': 1rem,
+  'lg': 1.25rem,
+  'xl': 1.5rem,
+  'xxl': 2rem,
+);
+
+// Border radius options
+$radii: (
+  'sm':   4px,
+  'md':   8px,
+  'lg':   16px,
+  'circle': 50%,
+  'pill': 9999px,
+);
+
+// Transition default
+$transition-base: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
