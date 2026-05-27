@@ -1,0 +1,41 @@
+// ==========================================================================
+// Project 04: Responsive-Grid-System
+// _variables.scss — Grid config & breakpoints
+// ==========================================================================
+@use 'sass:math';
+
+// Grid config
+$grid-columns:   12;
+$grid-gap:       1.5rem;
+
+// Breakpoint map
+$breakpoints: (
+  'xs':  0px,
+  'sm':  576px,
+  'md':  768px,
+  'lg':  992px,
+  'xl':  1200px,
+  'xxl': 1400px,
+);
+
+// Container max-widths
+$container-maxwidths: (
+  'sm':  540px,
+  'md':  720px,
+  'lg':  960px,
+  'xl':  1140px,
+  'xxl': 1320px,
+);
+
+// Design tokens
+$bg-dark:       hsl(222, 28%, 8%);
+$bg-card:       hsla(222, 22%, 14%, 0.6);
+$accent:        hsl(263, 90%, 64%);
+$accent-2:      hsl(190, 95%, 50%);
+$text:          hsl(210, 38%, 93%);
+$text-muted:    hsl(215, 16%, 60%);
+$border:        hsla(222, 22%, 30%, 0.25);
+$font-family:   'Inter', system-ui, sans-serif;
+$radius-md:     12px;
+$radius-lg:     20px;
+$transition:    0.25s cubic-bezier(0.4, 0, 0.2, 1);
