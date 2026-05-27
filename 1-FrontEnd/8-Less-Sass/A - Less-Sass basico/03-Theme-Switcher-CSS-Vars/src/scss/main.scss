@@ -1,0 +1,149 @@
+// ==========================================================================
+// Project 03: Theme-Switcher-CSS-Vars
+// main.scss — Generates CSS Variables from Sass Maps & Styles the page
+// ==========================================================================
+
+@use 'sass:map';
+@use 'variables' as *;
+
+// --- Emissão automatizada das Custom Properties CSS ---
+:root {
+  color-scheme: dark;
+  @each $key, $value in map.get($themes, 'dark') {
+    --#{$key}: #{$value};
+  }
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  @each $key, $value in map.get($themes, 'light') {
+    --#{$key}: #{$value};
+  }
+}
+
+// --- Base Reset ---
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  transition: background-color $transition, color $transition;
+}
+
+// --- Theme Switcher Layout Card ---
+.theme-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: $radius-lg;
+  padding: 2.5rem;
+  box-shadow: 0 12px 40px var(--shadow);
+  backdrop-filter: blur(12px);
+  transition: background-color $transition, border-color $transition, box-shadow $transition;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .icon-container {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem;
+      border-radius: $radius-md;
+      background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.75rem;
+      box-shadow: 0 8px 24px rgba(110, 68, 255, 0.25);
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+  }
+
+  &__options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .theme-option {
+    background: var(--bg-surface);
+    border: 2px solid transparent;
+    border-radius: $radius-md;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all $transition;
+
+    i {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      transition: color $transition;
+    }
+
+    &:hover {
+      border-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      border-color: var(--accent);
+      background: rgba(110, 68, 255, 0.08);
+
+      i {
+        color: var(--accent);
+      }
+    }
+  }
+
+  &__content {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: $radius-sm;
+    padding: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    transition: all $transition;
+
+    code {
+      display: block;
+      margin-top: 0.5rem;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--accent-alt);
+    }
+  }
+}
