@@ -1,0 +1,10 @@
+{
+  "name": "04-responsive-grid-system",
+  "version": "1.0.0",
+  "description": "Custom responsive grid system built entirely with Sass loops, maps and math",
+  "scripts": {
+    "build:sass": "sass src/scss/main.scss src/css/style.css",
+    "watch:sass": "sass --watch src/scss/main.scss:src/css/style.css"
+  },
+  "dependencies": { "sass": "^1.77.2" }
+}
