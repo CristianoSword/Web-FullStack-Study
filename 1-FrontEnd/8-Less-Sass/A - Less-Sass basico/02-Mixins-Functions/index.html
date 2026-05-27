@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sass Mixins & Functions | UI Component Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <header class="page-header">
+    <h1>Sass Mixins & Functions</h1>
+    <p>Kit de componentes gerados automaticamente por <code>@mixin button-variant()</code> e <code>@mixin alert-variant()</code> com parâmetros HSL dinâmicos</p>
+  </header>
+
+  <!-- Variant switcher (solid / outline / ghost) -->
+  <div class="control-panel">
+    <label>Estilo dos Botões:</label>
+    <div class="variant-toggle">
+      <button class="active" data-variant="">Solid</button>
+      <button data-variant="btn--outline">Outline</button>
+      <button data-variant="btn--ghost">Ghost</button>
+    </div>
+  </div>
+
+  <!-- ===================== BUTTONS ===================== -->
+  <section class="section">
+    <h2 class="section__title">Botões — Variantes de Cor</h2>
+
+    <div class="btn-row" id="btn-row">
+      <button class="btn btn--primary"><i class="fa-solid fa-bolt"></i> Primary</button>
+      <button class="btn btn--secondary"><i class="fa-solid fa-layer-group"></i> Secondary</button>
+      <button class="btn btn--success"><i class="fa-solid fa-check"></i> Success</button>
+      <button class="btn btn--danger"><i class="fa-solid fa-xmark"></i> Danger</button>
+      <button class="btn btn--warning"><i class="fa-solid fa-triangle-exclamation"></i> Warning</button>
+      <button class="btn btn--info"><i class="fa-solid fa-circle-info"></i> Info</button>
+    </div>
+
+    <h2 class="section__title">Tamanhos</h2>
+    <div class="btn-row">
+      <button class="btn btn--sm btn--primary">Small</button>
+      <button class="btn btn--primary">Default</button>
+      <button class="btn btn--lg btn--primary">Large</button>
+      <button class="btn btn--pill btn--primary">Pill Shape</button>
+      <button class="btn btn--icon-only btn--primary" title="Icon Only"><i class="fa-solid fa-star"></i></button>
+      <button class="btn btn--primary" disabled>Disabled</button>
+    </div>
+  </section>
+
+  <!-- ===================== BADGES ===================== -->
+  <section class="section">
+    <h2 class="section__title">Badges — Gerados com <code>@mixin badge-variant()</code></h2>
+    <div class="btn-row">
+      <span class="badge badge--primary"><i class="fa-solid fa-circle-dot"></i> Primary</span>
+      <span class="badge badge--secondary">Secondary</span>
+      <span class="badge badge--success"><i class="fa-solid fa-check"></i> Success</span>
+      <span class="badge badge--danger">Danger</span>
+      <span class="badge badge--warning"><i class="fa-solid fa-triangle-exclamation"></i> Warning</span>
+      <span class="badge badge--info">Info</span>
+    </div>
+  </section>
+
+  <!-- ===================== ALERTS ===================== -->
+  <section class="section">
+    <h2 class="section__title">Alertas — Gerados com <code>@mixin alert-variant()</code></h2>
+
+    <div class="alert alert--primary" id="alert-primary">
+      <i class="fa-solid fa-bolt alert__icon"></i>
+      <div class="alert__content">
+        <p class="alert__title">Alerta Primary</p>
+        <p class="alert__body">Este alerta foi gerado automaticamente via <strong>@mixin alert-variant(263, 90%, 64%, 'primary')</strong> — cor, borda lateral e ícone derivados dos mesmos parâmetros HSL.</p>
+      </div>
+      <button class="alert__close" data-dismiss="alert-primary"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="alert alert--success" id="alert-success">
+      <i class="fa-solid fa-circle-check alert__icon"></i>
+      <div class="alert__content">
+        <p class="alert__title">Operação Bem-sucedida</p>
+        <p class="alert__body">Sass compilado sem erros! Todos os mixins geraram o CSS de forma dinâmica e consistente a partir de um único ponto de definição.</p>
+      </div>
+      <button class="alert__close" data-dismiss="alert-success"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="alert alert--danger" id="alert-danger">
+      <i class="fa-solid fa-circle-xmark alert__icon"></i>
+      <div class="alert__content">
+        <p class="alert__title">Erro Crítico Detectado</p>
+        <p class="alert__body">Variante gerada por <strong>alert-variant(355, 85%, 55%, 'danger')</strong>. Remova este alert clicando no botão X à direita.</p>
+      </div>
+      <button class="alert__close" data-dismiss="alert-danger"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="alert alert--warning" id="alert-warning">
+      <i class="fa-solid fa-triangle-exclamation alert__icon"></i>
+      <div class="alert__content">
+        <p class="alert__title">Atenção Necessária</p>
+        <p class="alert__body">Esta variante foi gerada por <strong>alert-variant(38, 95%, 55%, 'warning')</strong> com borda e ícone âmbar derivados do mesmo token de cor.</p>
+      </div>
+      <button class="alert__close" data-dismiss="alert-warning"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="alert alert--info" id="alert-info">
+      <i class="fa-solid fa-circle-info alert__icon"></i>
+      <div class="alert__content">
+        <p class="alert__title">Informação</p>
+        <p class="alert__body">Variante <strong>info (teal)</strong> — mostra que o mesmo mixin funciona com qualquer hue HSL sem alterar nenhum código adicional.</p>
+      </div>
+      <button class="alert__close" data-dismiss="alert-info"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </section>
+
+</div>
+
+<script src="src/js/main.js"></script>
+</body>
+</html>
