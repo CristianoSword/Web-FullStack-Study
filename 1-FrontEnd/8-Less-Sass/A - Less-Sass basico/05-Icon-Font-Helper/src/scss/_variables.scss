@@ -1,0 +1,62 @@
+// ==========================================================================
+// Project 05: Icon-Font-Helper
+// _variables.scss — Icon map & design tokens
+// ==========================================================================
+
+// Icon registry — name: FontAwesome class
+$icons: (
+  'home':       'fa-house',
+  'user':       'fa-user',
+  'settings':   'fa-gear',
+  'bell':       'fa-bell',
+  'search':     'fa-magnifying-glass',
+  'heart':      'fa-heart',
+  'star':       'fa-star',
+  'mail':       'fa-envelope',
+  'lock':       'fa-lock',
+  'chart':      'fa-chart-line',
+  'code':       'fa-code',
+  'bolt':       'fa-bolt',
+  'cloud':      'fa-cloud',
+  'check':      'fa-check',
+  'cross':      'fa-xmark',
+  'plus':       'fa-plus',
+  'trash':      'fa-trash',
+  'edit':       'fa-pen-to-square',
+  'download':   'fa-download',
+  'upload':     'fa-upload',
+);
+
+// Color palette for icon color utilities
+$icon-colors: (
+  'purple':  hsl(263, 90%, 64%),
+  'cyan':    hsl(190, 95%, 50%),
+  'green':   hsl(145, 80%, 45%),
+  'red':     hsl(355, 85%, 55%),
+  'amber':   hsl(38, 95%, 55%),
+  'teal':    hsl(180, 85%, 45%),
+  'white':   hsl(0, 0%, 100%),
+  'muted':   hsl(215, 16%, 60%),
+);
+
+// Icon sizes
+$icon-sizes: (
+  'xs':  0.75rem,
+  'sm':  1rem,
+  'md':  1.5rem,
+  'lg':  2rem,
+  'xl':  3rem,
+  'xxl': 4rem,
+);
+
+// Design tokens
+$bg-dark:      hsl(222, 28%, 8%);
+$bg-card:      hsla(222, 22%, 14%, 0.6);
+$text:         hsl(210, 38%, 93%);
+$text-muted:   hsl(215, 16%, 60%);
+$border:       hsla(222, 22%, 30%, 0.2);
+$font-family:  'Inter', system-ui, sans-serif;
+$radius-md:    12px;
+$radius-lg:    20px;
+$radius-pill:  9999px;
+$transition:   0.25s ease;
