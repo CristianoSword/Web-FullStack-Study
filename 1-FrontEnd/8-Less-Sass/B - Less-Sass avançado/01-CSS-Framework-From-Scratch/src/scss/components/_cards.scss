@@ -1,0 +1,43 @@
+// ==========================================================================
+// Project 01: CSS-Framework-From-Scratch
+// components/_cards.scss — Responsive Card UI
+// ==========================================================================
+
+@use 'sass:map';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.card {
+  background-color: hsla(0, 0%, 100%, 0.05);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: map.get($radii, 'lg');
+  padding: map.get($spacers, '4');
+  transition: $transition-base;
+  backdrop-filter: blur(8px);
+
+  &__title {
+    font-size: map.get($font-sizes, 'lg');
+    font-weight: 700;
+    margin-bottom: map.get($spacers, '2');
+    color: map.get($theme-colors, 'primary');
+  }
+
+  &__body {
+    font-size: map.get($font-sizes, 'base');
+    color: hsla(0, 0%, 100%, 0.7);
+    line-height: 1.6;
+    margin-bottom: map.get($spacers, '3');
+  }
+
+  &__footer {
+    @include flex(space-between, center);
+    border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+    padding-top: map.get($spacers, '3');
+  }
+
+  &:hover {
+    border-color: map.get($theme-colors, 'primary');
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(110, 68, 255, 0.15);
+  }
+}
