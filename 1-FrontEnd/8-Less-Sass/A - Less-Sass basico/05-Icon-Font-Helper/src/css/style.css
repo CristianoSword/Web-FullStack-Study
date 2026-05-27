@@ -1,0 +1,166 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: hsl(222, 28%, 8%);
+  color: hsl(210, 38%, 93%);
+  padding: 2rem 1rem;
+}
+
+.icon-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+.icon-base:hover {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.icon-size--xs {
+  font-size: 0.75rem;
+  width: calc(0.75rem * 1.5);
+  height: calc(0.75rem * 1.5);
+}
+
+.icon-size--sm {
+  font-size: 1rem;
+  width: calc(1rem * 1.5);
+  height: calc(1rem * 1.5);
+}
+
+.icon-size--md {
+  font-size: 1.5rem;
+  width: calc(1.5rem * 1.5);
+  height: calc(1.5rem * 1.5);
+}
+
+.icon-size--lg {
+  font-size: 2rem;
+  width: calc(2rem * 1.5);
+  height: calc(2rem * 1.5);
+}
+
+.icon-size--xl {
+  font-size: 3rem;
+  width: calc(3rem * 1.5);
+  height: calc(3rem * 1.5);
+}
+
+.icon-size--xxl {
+  font-size: 4rem;
+  width: calc(4rem * 1.5);
+  height: calc(4rem * 1.5);
+}
+
+.icon-color--purple {
+  color: hsl(263, 90%, 64%);
+}
+.icon-color--purple.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(143.922, 80.58, 245.82, 0.55));
+}
+
+.icon-color--cyan {
+  color: hsl(190, 95%, 50%);
+}
+.icon-color--cyan.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(6.375, 208.25, 248.625, 0.55));
+}
+
+.icon-color--green {
+  color: hsl(145, 80%, 45%);
+}
+.icon-color--green.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(22.95, 206.55, 99.45, 0.55));
+}
+
+.icon-color--red {
+  color: hsl(355, 85%, 55%);
+}
+.icon-color--red.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(237.7875, 42.7125, 58.96875, 0.55));
+}
+
+.icon-color--amber {
+  color: hsl(38, 95%, 55%);
+}
+.icon-color--amber.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(249.2625, 169.32, 31.2375, 0.55));
+}
+
+.icon-color--teal {
+  color: hsl(180, 85%, 45%);
+}
+.icon-color--teal.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(17.2125, 212.2875, 212.2875, 0.55));
+}
+
+.icon-color--white {
+  color: hsl(0, 0%, 100%);
+}
+.icon-color--white.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.55));
+}
+
+.icon-color--muted {
+  color: hsl(215, 16%, 60%);
+}
+.icon-color--muted.icon-glow {
+  filter: drop-shadow(0 0 10px rgba(136.68, 150.28, 169.32, 0.55));
+}
+
+.icon-showcase {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.icon-showcase .header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.icon-showcase .header h1 {
+  font-size: 2rem;
+  background: linear-gradient(135deg, hsl(263, 90%, 64%), hsl(190, 95%, 50%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.icon-showcase .header p {
+  color: hsl(215, 16%, 60%);
+  margin-top: 0.5rem;
+}
+.icon-showcase .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.icon-showcase .icon-card {
+  background: hsla(222, 22%, 14%, 0.6);
+  border: 1px solid hsla(222, 22%, 30%, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.icon-showcase .icon-card span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: hsl(215, 16%, 60%);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.icon-showcase .icon-card:hover {
+  border-color: hsl(263, 90%, 64%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=style.css.map */
