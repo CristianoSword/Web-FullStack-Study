@@ -1,0 +1,82 @@
+// ==========================================================================
+// Sass Design System - Variables & Tokens
+// Topic: [02/06] Types & Models (Design Schema & Layout Tokens)
+// Project: 01-Variables-Nesting (Futuristic Developer Profile Card)
+// ==========================================================================
+
+// --- Color Palette: Sleek Dark Mode & Neon Accents ---
+$bg-dark:           hsl(224, 25%, 8%);         // Futuristic slate-black base
+$bg-card:           hsla(223, 20%, 14%, 0.6);  // Semi-transparent card body (glass)
+$bg-card-hover:     hsla(223, 20%, 18%, 0.7);  // Brightened glass state
+$bg-input:          hsla(223, 25%, 10%, 0.5);  // Deep inset elements
+
+// --- Accent Colors ---
+$accent-primary:    hsl(263, 90%, 64%);        // Electric Purple
+$accent-secondary:  hsl(190, 95%, 50%);        // Cyber Cyan
+$accent-tertiary:   hsl(339, 90%, 60%);        // Neon Pink
+$accent-success:     hsl(145, 80%, 45%);        // Glow Green
+
+// --- Text Colors ---
+$text-pure:         hsl(0, 0%, 100%);          // High-contrast titles
+$text-primary:      hsl(210, 38%, 95%);        // Highly readable content
+$text-secondary:    hsl(215, 18%, 72%);        // Subtext / Muted descriptors
+$text-muted:        hsl(217, 12%, 52%);        // Disabled / Secondary meta
+
+// --- Gradients ---
+$gradient-cyber:    linear-gradient(135deg, $accent-primary, $accent-secondary);
+$gradient-pink:     linear-gradient(135deg, $accent-tertiary, $accent-primary);
+$gradient-card:     linear-gradient(180deg, hsla(223, 20%, 14%, 0.7), hsla(223, 20%, 10%, 0.8));
+
+// --- Typography Specs ---
+$font-family-base:  'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$font-size-xs:      0.75rem;   // 12px
+$font-size-sm:      0.875rem;  // 14px
+$font-size-base:    1rem;      // 16px
+$font-size-lg:      1.125rem;  // 18px
+$font-size-xl:      1.25rem;   // 20px
+$font-size-xxl:     1.75rem;   // 28px
+$font-size-jumbo:   2.5rem;    // 40px
+
+// --- Font Weights ---
+$weight-light:      300;
+$weight-regular:    400;
+$weight-medium:     500;
+$weight-semibold:   600;
+$weight-bold:       700;
+
+// --- Spacing Scale (Rem-based for accessibility) ---
+$space-xs:          0.25rem;   // 4px
+$space-sm:          0.5rem;    // 8px
+$space-md:          0.75rem;   // 12px
+$space-base:        1rem;      // 16px
+$space-lg:          1.5rem;    // 24px
+$space-xl:          2rem;      // 32px
+$space-xxl:         3rem;      // 48px
+
+// --- Borders & Radii ---
+$border-width:      1px;
+$border-color:      hsla(223, 20%, 30%, 0.3);
+$border-color-glow:  hsla(263, 90%, 64%, 0.4);
+
+$radius-sm:         6px;
+$radius-md:         12px;
+$radius-lg:         24px;
+$radius-circle:     9999px;
+
+// --- Shadow & Glow Effects ---
+$shadow-sm:         0 2px 8px rgba(0, 0, 0, 0.2);
+$shadow-md:         0 8px 30px rgba(0, 0, 0, 0.35);
+$shadow-lg:         0 16px 40px rgba(0, 0, 0, 0.5);
+$shadow-glow:       0 0 20px hsla(263, 90%, 64%, 0.35);
+$shadow-inset:      inset 0 2px 4px rgba(0, 0, 0, 0.4);
+
+// --- Glassmorphism System ---
+$glass-backdrop-blur:  16px;
+$glass-border:         1px solid hsla(0, 0%, 100%, 0.08);
+$glass-shadow:         0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+// --- Transitions & Motion ---
+$transition-fast:   0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow:   0.5s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
