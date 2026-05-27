@@ -1,0 +1,105 @@
+// ==========================================================================
+// Project 05: Icon-Font-Helper
+// main.scss — Dynamic Icon Utility Generator via Map Loops
+// ==========================================================================
+
+@use 'variables' as *;
+
+// --- Base Reset ---
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $bg-dark;
+  color: $text;
+  padding: 2rem 1rem;
+}
+
+// --- Base Icon Template Class ---
+.icon-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all $transition;
+  user-select: none;
+
+  &:hover {
+    transform: scale(1.15) rotate(5deg);
+  }
+}
+
+// --- 1. Loop para Tamanhos de Ícones ---
+@each $size-name, $size-val in $icon-sizes {
+  .icon-size--#{$size-name} {
+    font-size: #{$size-val};
+    width: calc(#{$size-val} * 1.5);
+    height: calc(#{$size-val} * 1.5);
+  }
+}
+
+// --- 2. Loop para Cores e Efeitos Glow ---
+@each $color-name, $color-val in $icon-colors {
+  .icon-color--#{$color-name} {
+    color: #{$color-val};
+
+    &.icon-glow {
+      filter: drop-shadow(0 0 10px rgba($color-val, 0.55));
+    }
+  }
+}
+
+// --- Showcase Layout ---
+.icon-showcase {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, hsl(263, 90%, 64%), hsl(190, 95%, 50%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p { color: $text-muted; margin-top: 0.5rem; }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .icon-card {
+    background: $bg-card;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all $transition;
+
+    span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: $text-muted;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    &:hover {
+      border-color: hsl(263, 90%, 64%);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
