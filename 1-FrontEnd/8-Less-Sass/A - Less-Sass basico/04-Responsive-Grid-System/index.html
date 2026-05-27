@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sass Responsive Grid System | Flexbox Row & Columns</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/style.css">
+</head>
+<body>
+
+  <div class="container grid-demo">
+    
+    <header class="header">
+      <h1>Custom Responsive Grid</h1>
+      <p>Grid responsivo de 12 colunas programado com Sass maps e loops para breakpoints dinâmicos</p>
+    </header>
+
+    <!-- Exemplo 1: Coluna Cheia -->
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="grid-box">
+          col-xs-12
+          <span>Largura de 100% em qualquer tamanho de tela</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exemplo 2: Duas Colunas (Metades) -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="grid-box">
+          col-md-6
+          <span>50% a partir do breakpoint MD (768px)</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="grid-box">
+          col-md-6
+          <span>50% a partir do breakpoint MD (768px)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exemplo 3: Três Colunas (Terços) -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="grid-box">col-md-4 (33.3%)</div>
+      </div>
+      <div class="col-md-4">
+        <div class="grid-box">col-md-4 (33.3%)</div>
+      </div>
+      <div class="col-md-4">
+        <div class="grid-box">col-md-4 (33.3%)</div>
+      </div>
+    </div>
+
+    <!-- Exemplo 4: Quatro Colunas Responsivas -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="grid-box">
+          Item 1
+          <span>xs-12 / sm-6 / lg-3</span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="grid-box">
+          Item 2
+          <span>xs-12 / sm-6 / lg-3</span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="grid-box">
+          Item 3
+          <span>xs-12 / sm-6 / lg-3</span>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-lg-3">
+        <div class="grid-box">
+          Item 4
+          <span>xs-12 / sm-6 / lg-3</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
