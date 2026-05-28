@@ -1,0 +1,14 @@
+{
+  "name": "05-schema-validator-factory",
+  "version": "1.0.0",
+  "description": "Gerador de validadores de runtime baseados em tipos TS estaticos.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
