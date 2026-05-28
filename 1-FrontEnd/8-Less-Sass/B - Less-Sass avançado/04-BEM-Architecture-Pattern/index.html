@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEM Architecture Pattern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-hero">
+      <div class="site-hero__content">
+        <span class="site-hero__eyebrow">Less-Sass avancado 04</span>
+        <h1 class="site-hero__title">Arquitetura BEM para interfaces escalaveis</h1>
+        <p class="site-hero__text">Blocos, elementos e modificadores mantem componentes previsiveis mesmo quando a pagina cresce.</p>
+        <div class="site-hero__actions">
+          <a class="button button--primary" href="#features">Ver blocos</a>
+          <a class="button button--outline" href="#pricing">Ver plano</a>
+        </div>
+      </div>
+      <aside class="metric-card metric-card--featured">
+        <span class="metric-card__label">Componentes</span>
+        <strong class="metric-card__value">12</strong>
+        <p class="metric-card__caption">Classes organizadas por bloco BEM.</p>
+      </aside>
+    </header>
+
+    <section class="feature-list" id="features">
+      <article class="feature-list__item feature-list__item--active">
+        <span class="feature-list__icon">01</span>
+        <h2 class="feature-list__title">Bloco isolado</h2>
+        <p class="feature-list__text">Cada componente tem uma raiz clara, como `feature-list` ou `metric-card`.</p>
+      </article>
+      <article class="feature-list__item">
+        <span class="feature-list__icon">02</span>
+        <h2 class="feature-list__title">Elemento previsivel</h2>
+        <p class="feature-list__text">Partes internas usam `block__element`, evitando seletores longos e fragilidade.</p>
+      </article>
+      <article class="feature-list__item">
+        <span class="feature-list__icon">03</span>
+        <h2 class="feature-list__title">Modificador explicito</h2>
+        <p class="feature-list__text">Estados visuais usam `block--modifier` sem depender de cascata acidental.</p>
+      </article>
+    </section>
+
+    <section class="pricing-card" id="pricing">
+      <div class="pricing-card__content">
+        <span class="pricing-card__label">Exemplo final</span>
+        <h2 class="pricing-card__title">Card com elementos nomeados</h2>
+        <p class="pricing-card__text">A estrutura do HTML conversa diretamente com a arquitetura do Sass.</p>
+      </div>
+      <a class="button button--primary" href="#">Aplicar padrao</a>
+    </section>
+  </main>
+</body>
+</html>
