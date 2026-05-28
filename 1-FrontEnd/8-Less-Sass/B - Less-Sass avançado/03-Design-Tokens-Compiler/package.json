@@ -1,0 +1,13 @@
+{
+  "name": "03-design-tokens-compiler",
+  "version": "1.0.0",
+  "description": "Compilacao automatizada de design tokens JSON para variaveis Sass",
+  "scripts": {
+    "build:sass": "npm run compile-tokens && sass src/scss/main.scss src/css/style.css",
+    "watch:sass": "sass --watch src/scss/main.scss:src/css/style.css",
+    "compile-tokens": "node scripts/compile-tokens.js"
+  },
+  "dependencies": {
+    "sass": "^1.77.2"
+  }
+}
