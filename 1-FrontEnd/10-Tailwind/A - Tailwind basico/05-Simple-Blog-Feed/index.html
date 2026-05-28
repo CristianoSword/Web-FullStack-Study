@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>05 – Simple Blog Feed | Tailwind Básico</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen py-12 px-4">
+
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-extrabold text-gray-900 mb-2">Blog Feed</h1>
+    <p class="text-gray-500 mb-10">Últimas postagens e artigos em destaque.</p>
+
+    <div class="space-y-6">
+
+      <!-- Card 1 -->
+      <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex gap-6 hover:shadow-md transition-shadow duration-300 group">
+        <div class="flex-1">
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Tecnologia</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-2 group-hover:text-indigo-600 transition-colors">Como o Tailwind mudou meu fluxo de trabalho</h2>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">Descubra como a abordagem utility-first pode acelerar o desenvolvimento de interfaces modernas sem sacrificar a qualidade do código.</p>
+          <div class="flex items-center gap-4 mt-4 text-xs text-gray-400">
+            <span>28 Mai 2026</span>
+            <span>·</span>
+            <span>5 min de leitura</span>
+          </div>
+        </div>
+        <div class="hidden sm:block w-28 h-28 bg-indigo-100 rounded-xl flex-shrink-0"></div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex gap-6 hover:shadow-md transition-shadow duration-300 group">
+        <div class="flex-1">
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest">Design</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-2 group-hover:text-emerald-600 transition-colors">Princípios de Design que todo dev deveria conhecer</h2>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">De tipografia a hierarquia visual, esses princípios vão melhorar a qualidade das suas interfaces de imediato.</p>
+          <div class="flex items-center gap-4 mt-4 text-xs text-gray-400">
+            <span>25 Mai 2026</span>
+            <span>·</span>
+            <span>8 min de leitura</span>
+          </div>
+        </div>
+        <div class="hidden sm:block w-28 h-28 bg-emerald-100 rounded-xl flex-shrink-0"></div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex gap-6 hover:shadow-md transition-shadow duration-300 group">
+        <div class="flex-1">
+          <span class="text-xs font-bold text-rose-500 uppercase tracking-widest">Performance</span>
+          <h2 class="text-xl font-bold text-gray-900 mt-2 group-hover:text-rose-500 transition-colors">Otimizando CSS para produção com PurgeCSS</h2>
+          <p class="text-gray-500 text-sm mt-2 leading-relaxed">Saiba como eliminar classes não utilizadas e reduzir seu bundle final de dezenas de KB para menos de 10 KB.</p>
+          <div class="flex items-center gap-4 mt-4 text-xs text-gray-400">
+            <span>20 Mai 2026</span>
+            <span>·</span>
+            <span>6 min de leitura</span>
+          </div>
+        </div>
+        <div class="hidden sm:block w-28 h-28 bg-rose-100 rounded-xl flex-shrink-0"></div>
+      </article>
+
+    </div>
+  </div>
+</body>
+</html>
