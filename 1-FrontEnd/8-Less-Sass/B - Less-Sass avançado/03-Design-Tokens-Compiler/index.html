@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Tokens Compiler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+  <main class="token-page">
+    <section class="hero">
+      <div>
+        <span class="hero__label">Less-Sass avancado 03</span>
+        <h1>Design tokens compilados de JSON para Sass</h1>
+        <p>O script converte `tokens/tokens.json` em `_tokens.scss`, e o Sass usa esses valores para gerar esta interface.</p>
+      </div>
+      <article class="token-card">
+        <div class="token-card__swatch"></div>
+        <h2>Fonte unica de verdade</h2>
+        <p>Altere o JSON, rode o compilador e todo o tema acompanha os tokens.</p>
+      </article>
+    </section>
+
+    <section class="token-grid">
+      <article class="token-item"><span>color.primary</span><strong>#3157ff</strong></article>
+      <article class="token-item"><span>color.secondary</span><strong>#08a88a</strong></article>
+      <article class="token-item"><span>space.xl</span><strong>2rem</strong></article>
+      <article class="token-item"><span>radius.lg</span><strong>14px</strong></article>
+    </section>
+
+    <section class="token-command">
+      <div>
+        <strong>Fluxo completo</strong>
+        <p>Compile tokens e CSS em um comando.</p>
+      </div>
+      <code>npm run build:sass</code>
+    </section>
+  </main>
+</body>
+</html>
