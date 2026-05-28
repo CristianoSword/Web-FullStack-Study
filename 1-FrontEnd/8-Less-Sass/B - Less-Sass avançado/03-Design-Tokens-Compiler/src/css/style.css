@@ -1,0 +1,125 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: #f6f8fb;
+  color: #172033;
+}
+
+.token-page {
+  width: min(1080px, 100% - 2rem);
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.hero__label {
+  color: #08a88a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hero h1 {
+  margin: 1rem 0 0;
+  font-size: clamp(2.3rem, 5vw, 4.6rem);
+  line-height: 0.98;
+}
+.hero p {
+  margin: 1.5rem 0 0;
+  color: #65758b;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.token-card,
+.token-command {
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 14px;
+  box-shadow: 0 18px 42px rgba(23, 32, 51, 0.1);
+  padding: 1.5rem;
+}
+
+.token-card {
+  display: grid;
+  gap: 1rem;
+}
+.token-card__swatch {
+  height: 84px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3157ff, #08a88a);
+}
+.token-card h2,
+.token-card p {
+  margin: 0;
+}
+.token-card p {
+  color: #65758b;
+  line-height: 1.6;
+}
+
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.token-item {
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.token-item span {
+  display: block;
+  color: #65758b;
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+}
+.token-item strong {
+  font-size: 1.1rem;
+}
+
+.token-command {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.token-command p {
+  margin: 0.35rem 0 0;
+  color: #65758b;
+}
+.token-command code {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  background: #172033;
+  color: #d9fff7;
+}
+
+@media (max-width: 760px) {
+  .hero,
+  .token-grid {
+    grid-template-columns: 1fr;
+  }
+  .token-command {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
