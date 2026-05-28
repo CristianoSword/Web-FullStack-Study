@@ -9,7 +9,7 @@
 
 // --- Converte px para rem ---
 @function rem($px) {
-  @return math.div($px, 16) * 1rem;
+  @return math.div($px, $font-size-base) * 1rem;
 }
 
 // --- Gera um tom mais claro de uma cor HSL (ajuste de luminosidade) ---

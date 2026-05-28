@@ -1,0 +1,15 @@
+{
+  "name": "06-less-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Projeto basico demonstrando variaveis, mixins e nesting com Less",
+  "scripts": {
+    "build:less": "lessc src/less/main.less src/css/style.css",
+    "watch:less": "lessc --watch src/less/main.less src/css/style.css",
+    "start": "npm run build:less && live-server ."
+  },
+  "devDependencies": {
+    "less": "^4.2.0",
+    "live-server": "^1.2.1"
+  }
+}

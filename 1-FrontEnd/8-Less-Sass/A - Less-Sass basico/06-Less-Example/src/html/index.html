@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Less Example | Variaveis, Mixins e Nesting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="less-demo">
+    <section class="hero">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Less basico 06</span>
+        <h1>Variaveis, mixins e nesting trabalhando juntos</h1>
+        <p>
+          Um exemplo visual pequeno para mostrar como Less organiza estilos
+          reutilizaveis sem transformar o CSS em repeticao manual.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#cards">
+            <i class="fa-solid fa-layer-group"></i>
+            Ver componentes
+          </a>
+          <a class="button button--ghost" href="#code">
+            <i class="fa-solid fa-code"></i>
+            Ver conceitos
+          </a>
+        </div>
+      </div>
+
+      <aside class="preview-panel" aria-label="Resumo do exemplo Less">
+        <div class="preview-panel__top">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="preview-panel__line preview-panel__line--wide"></div>
+        <div class="preview-panel__line"></div>
+        <div class="preview-panel__grid">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="feature-grid" id="cards" aria-label="Recursos demonstrados">
+      <article class="feature-card feature-card--blue">
+        <i class="fa-solid fa-swatchbook"></i>
+        <h2>Variaveis</h2>
+        <p>Cores, fontes, raios e espacamentos saem de tokens no `_variables.less`.</p>
+      </article>
+
+      <article class="feature-card feature-card--green">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <h2>Mixins</h2>
+        <p>Sombras, botoes e paineis usam blocos reaproveitaveis com parametros.</p>
+      </article>
+
+      <article class="feature-card feature-card--orange">
+        <i class="fa-solid fa-code-branch"></i>
+        <h2>Nesting</h2>
+        <p>Estados e elementos internos ficam perto do componente que eles estilizam.</p>
+      </article>
+    </section>
+
+    <section class="code-note" id="code">
+      <div>
+        <span class="code-note__label">Fluxo do projeto</span>
+        <h2>Edite Less, compile CSS</h2>
+        <p>O comando abaixo gera `src/css/style.css`, que e carregado por esta pagina.</p>
+      </div>
+      <code>npm run build:less</code>
+    </section>
+  </main>
+</body>
+</html>

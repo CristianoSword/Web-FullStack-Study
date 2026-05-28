@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Less Buttons | Button Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <main class="button-lab">
+    <header class="page-header">
+      <span class="page-header__label">Less basico 07</span>
+      <h1>Button kit com variantes geradas por mixins</h1>
+      <p>Um exercicio focado em Less para criar botoes consistentes sem repetir blocos de CSS.</p>
+    </header>
+
+    <section class="toolbar" aria-label="Acoes principais">
+      <button class="btn btn--primary">
+        <i class="fa-solid fa-plus"></i>
+        Criar novo
+      </button>
+      <button class="btn btn--secondary btn--outline">
+        <i class="fa-solid fa-filter"></i>
+        Filtrar
+      </button>
+      <button class="btn btn--danger btn--ghost">
+        <i class="fa-solid fa-trash"></i>
+        Excluir
+      </button>
+    </section>
+
+    <section class="section">
+      <div class="section__header">
+        <span>01</span>
+        <h2>Variantes solid</h2>
+      </div>
+      <div class="button-row">
+        <button class="btn btn--primary"><i class="fa-solid fa-bolt"></i> Primary</button>
+        <button class="btn btn--secondary"><i class="fa-solid fa-layer-group"></i> Secondary</button>
+        <button class="btn btn--success"><i class="fa-solid fa-check"></i> Success</button>
+        <button class="btn btn--warning"><i class="fa-solid fa-triangle-exclamation"></i> Warning</button>
+        <button class="btn btn--danger"><i class="fa-solid fa-xmark"></i> Danger</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__header">
+        <span>02</span>
+        <h2>Outline e ghost</h2>
+      </div>
+      <div class="button-row">
+        <button class="btn btn--primary btn--outline">Outline</button>
+        <button class="btn btn--secondary btn--outline">Outline</button>
+        <button class="btn btn--success btn--outline">Outline</button>
+        <button class="btn btn--warning btn--ghost">Ghost</button>
+        <button class="btn btn--danger btn--ghost">Ghost</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__header">
+        <span>03</span>
+        <h2>Tamanhos e estados</h2>
+      </div>
+      <div class="button-row">
+        <button class="btn btn--primary btn--sm">Small</button>
+        <button class="btn btn--primary">Default</button>
+        <button class="btn btn--primary btn--lg">Large</button>
+        <button class="btn btn--secondary btn--pill">Pill shape</button>
+        <button class="btn btn--primary btn--icon" aria-label="Favoritar">
+          <i class="fa-solid fa-star"></i>
+        </button>
+        <button class="btn btn--primary" disabled>Disabled</button>
+      </div>
+    </section>
+
+    <section class="code-panel">
+      <div>
+        <span class="code-panel__label">Comando</span>
+        <h2>Compile o Less para CSS</h2>
+      </div>
+      <code>npm run build:less</code>
+    </section>
+  </main>
+</body>
+</html>
