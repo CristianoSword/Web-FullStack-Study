@@ -1,0 +1,13 @@
+{
+  "name": "06-less-advanced-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tema avancado usando Less no modulo avancado",
+  "scripts": {
+    "build:less": "lessc src/less/main.less src/css/style.css",
+    "watch:less": "lessc --watch src/less/main.less src/css/style.css"
+  },
+  "devDependencies": {
+    "less": "^4.2.0"
+  }
+}

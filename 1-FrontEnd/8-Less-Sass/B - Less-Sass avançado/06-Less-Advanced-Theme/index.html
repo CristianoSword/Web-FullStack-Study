@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Less Advanced Theme</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body class="theme theme--aurora">
+  <main class="dashboard">
+    <header class="dashboard__header">
+      <div>
+        <span class="dashboard__label">Less avancado 06</span>
+        <h1>Advanced theme system em Less</h1>
+        <p>Variaveis, guards, mixins e loops geram tokens de tema e componentes.</p>
+      </div>
+      <button class="button button--primary">Aplicar tema</button>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card stat-card--primary"><span>Receita</span><strong>R$ 84k</strong></article>
+      <article class="stat-card stat-card--success"><span>Conversao</span><strong>18.4%</strong></article>
+      <article class="stat-card stat-card--warning"><span>Alertas</span><strong>07</strong></article>
+    </section>
+
+    <section class="panel">
+      <h2>Paleta gerada</h2>
+      <div class="palette">
+        <span class="palette__swatch palette__swatch--primary"></span>
+        <span class="palette__swatch palette__swatch--success"></span>
+        <span class="palette__swatch palette__swatch--warning"></span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

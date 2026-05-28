@@ -1,0 +1,13 @@
+{
+  "name": "07-less-buttons",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kit basico de botoes estilizados com Less",
+  "scripts": {
+    "build:less": "lessc src/less/main.less src/css/style.css",
+    "watch:less": "lessc --watch src/less/main.less src/css/style.css"
+  },
+  "devDependencies": {
+    "less": "^4.2.0"
+  }
+}
