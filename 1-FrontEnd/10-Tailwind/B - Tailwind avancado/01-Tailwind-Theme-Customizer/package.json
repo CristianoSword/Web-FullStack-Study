@@ -1,0 +1,7 @@
+{
+  "name": "01-tailwind-theme-customizer",
+  "version": "1.0.0",
+  "description": "Dashboard com alternância de tema dark/light e accent color em tempo real usando Tailwind CSS",
+  "scripts": { "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css" },
+  "devDependencies": { "tailwindcss": "^3.4.19" }
+}
