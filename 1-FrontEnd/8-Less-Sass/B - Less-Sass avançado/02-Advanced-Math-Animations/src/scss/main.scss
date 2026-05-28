@@ -1,0 +1,129 @@
+// ==========================================================================
+// Project 02: Advanced-Math-Animations
+// main.scss — Trigonometric math & dynamic orbit keyframes generator
+// ==========================================================================
+
+@use 'sass:math';
+@use 'variables' as *;
+
+// Reset
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  background-color: $bg-dark;
+  color: $text;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  span {
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+    color: $accent-alt;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    background: linear-gradient(135deg, $accent, $accent-alt);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  p { color: $text-muted; margin-top: 0.5rem; }
+}
+
+// Orbit Stage Container
+.stage {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  background-color: $bg-card;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.center-core {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, $accent, $accent-alt);
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 25px rgba($accent, 0.5);
+  animation: pulse-core 2s infinite alternate;
+}
+
+.orbital-particle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: $accent-alt;
+  box-shadow: 0 0 12px $accent-alt;
+  
+  // Calculate dynamic circular coordinates using sine and cosine loops
+  @for $i from 1 through $particle-count {
+    &:nth-child(#{$i}) {
+      $angle: math.div(360deg, $particle-count) * $i;
+      $x: math.cos($angle) * $radius;
+      $y: math.sin($angle) * $radius;
+      
+      transform: translate($x, $y);
+      animation: orbit-#{$i} $animation-duration $ease-in-out-sine infinite alternate;
+      animation-delay: ($i * 0.1s);
+    }
+  }
+}
+
+// Generate Keyframes for each orbit angle dynamically
+@for $i from 1 through $particle-count {
+  $angle: math.div(360deg, $particle-count) * $i;
+  $x: math.cos($angle) * $radius;
+  $y: math.sin($angle) * $radius;
+
+  @keyframes orbit-#{$i} {
+    0% {
+      transform: translate(0, 0) scale(0.4);
+      opacity: 0.25;
+      background-color: $accent;
+      box-shadow: 0 0 8px $accent;
+    }
+    100% {
+      transform: translate($x, $y) scale(1.15);
+      opacity: 1;
+      background-color: $accent-alt;
+      box-shadow: 0 0 15px $accent-alt;
+    }
+  }
+}
+
+@keyframes pulse-core {
+  0% {
+    transform: scale(0.9);
+    filter: brightness(0.9);
+  }
+  100% {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+  }
+}
