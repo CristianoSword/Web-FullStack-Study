@@ -1,0 +1,11 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "types": ["vite/client"]
+  },
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.svelte"]
+}
+

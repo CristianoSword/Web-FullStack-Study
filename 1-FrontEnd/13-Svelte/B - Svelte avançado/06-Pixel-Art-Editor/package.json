@@ -1,0 +1,21 @@
+{
+  "name": "06-pixel-art-editor",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "svelte": "^5.19.0",
+    "svelte-check": "^4.3.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
+

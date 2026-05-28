@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>03 - Tailwind Plugin Library | Avancado</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#111827',
+            line: '#e5e7eb',
+            brand: '#2563eb'
+          },
+          boxShadow: {
+            'soft': '0 20px 45px rgba(15, 23, 42, 0.08)'
+          }
+        }
+      },
+      plugins: [
+        function ({ addComponents, addUtilities, theme }) {
+          addComponents({
+            '.surface-card': {
+              borderRadius: theme('borderRadius.lg'),
+              border: '1px solid ' + theme('colors.line'),
+              backgroundColor: '#ffffff',
+              boxShadow: theme('boxShadow.soft')
+            },
+            '.button-solid': {
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: theme('spacing.2'),
+              borderRadius: theme('borderRadius.md'),
+              backgroundColor: theme('colors.brand'),
+              color: '#ffffff',
+              fontWeight: '700',
+              padding: theme('spacing.3') + ' ' + theme('spacing.4'),
+              transition: 'transform 160ms ease, background-color 160ms ease'
+            },
+            '.button-solid:hover': {
+              backgroundColor: '#1d4ed8',
+              transform: 'translateY(-1px)'
+            },
+            '.status-pill': {
+              display: 'inline-flex',
+              alignItems: 'center',
+              borderRadius: '999px',
+              fontSize: theme('fontSize.xs')[0],
+              fontWeight: '700',
+              padding: theme('spacing.1') + ' ' + theme('spacing.3')
+            },
+            '.metric-tile': {
+              borderRadius: theme('borderRadius.lg'),
+              border: '1px solid ' + theme('colors.line'),
+              background: 'linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)',
+              padding: theme('spacing.5')
+            }
+          });
+          addUtilities({
+            '.scrollbar-stable': {
+              scrollbarGutter: 'stable'
+            },
+            '.content-grid': {
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: theme('spacing.4')
+            }
+          });
+        }
+      ]
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-950 scrollbar-stable">
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-blue-600">Plugin library</p>
+        <h1 class="mt-1 text-2xl font-black">Componentes customizados para Tailwind</h1>
+      </div>
+      <button class="button-solid">Publicar pacote</button>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-8">
+    <section class="surface-card p-5">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div>
+          <h2 class="text-lg font-extrabold">Preview da biblioteca</h2>
+          <p class="mt-1 max-w-2xl text-sm text-slate-500">
+            Classes geradas via plugin: cards, botoes, pills, tiles e utilitarios de layout.
+          </p>
+        </div>
+        <span class="status-pill bg-emerald-100 text-emerald-700">build pronto</span>
+      </div>
+    </section>
+
+    <section class="content-grid mt-5">
+      <article class="metric-tile">
+        <p class="text-sm font-bold text-slate-500">Downloads</p>
+        <strong class="mt-2 block text-3xl">18.4k</strong>
+        <span class="status-pill mt-4 bg-blue-100 text-blue-700">+22%</span>
+      </article>
+      <article class="metric-tile">
+        <p class="text-sm font-bold text-slate-500">Componentes</p>
+        <strong class="mt-2 block text-3xl">24</strong>
+        <span class="status-pill mt-4 bg-amber-100 text-amber-700">beta</span>
+      </article>
+      <article class="metric-tile">
+        <p class="text-sm font-bold text-slate-500">Cobertura visual</p>
+        <strong class="mt-2 block text-3xl">96%</strong>
+        <span class="status-pill mt-4 bg-rose-100 text-rose-700">review</span>
+      </article>
+    </section>
+
+    <section class="mt-5 grid gap-5 lg:grid-cols-[1fr_340px]">
+      <div class="surface-card overflow-hidden">
+        <div class="border-b border-slate-200 px-5 py-4">
+          <h2 class="font-extrabold">Catalogo de classes</h2>
+        </div>
+        <div class="divide-y divide-slate-100 text-sm">
+          <div class="grid gap-2 px-5 py-4 md:grid-cols-[180px_1fr]">
+            <code class="font-bold text-blue-700">.surface-card</code>
+            <span class="text-slate-600">Card base com borda, sombra suave e fundo consistente.</span>
+          </div>
+          <div class="grid gap-2 px-5 py-4 md:grid-cols-[180px_1fr]">
+            <code class="font-bold text-blue-700">.button-solid</code>
+            <span class="text-slate-600">Botao primario com estados de hover e alinhamento flex.</span>
+          </div>
+          <div class="grid gap-2 px-5 py-4 md:grid-cols-[180px_1fr]">
+            <code class="font-bold text-blue-700">.status-pill</code>
+            <span class="text-slate-600">Badge reutilizavel para status, filtros e estados de workflow.</span>
+          </div>
+          <div class="grid gap-2 px-5 py-4 md:grid-cols-[180px_1fr]">
+            <code class="font-bold text-blue-700">.content-grid</code>
+            <span class="text-slate-600">Utility responsiva com auto-fit para layouts de componentes.</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="surface-card p-5">
+        <h2 class="font-extrabold">Instalacao simulada</h2>
+        <pre class="mt-4 overflow-auto rounded-lg bg-slate-950 p-4 text-xs text-slate-100">plugins: [
+  require('./plugins/ui-kit')
+]</pre>
+        <button class="button-solid mt-4 w-full">Copiar snippet</button>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
+

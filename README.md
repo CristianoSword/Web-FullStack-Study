@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-29.6%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-38.2%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
        
 <p align="center">
-  ❤❤❤🖤🖤🖤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 29.6% (142/479) 📚📚
+  ❤❤❤❤🖤🖤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 38.2% (191/500) 📚📚
 </p>         
 
 <p align="center">
@@ -26,15 +26,15 @@
 
 ## 📊 Repo Statistics
 
-Acompanhamento do progresso real medido por projetos concluídos versus planejados nas locais listas de tarefas:
+Acompanhamento do progresso real medido por projetos concluídos versus planejados no roadmap do repositório:
 
 | Categoria | Projetos Concluídos | Projetos Pendentes | Total Planejado | % Progresso Real |
 | :--- | :---: | :---: | :---: | :---: |
-| 🎨 **[FrontEnd](1-FrontEnd/)** | 131 | 48 | 179 | **73.2%** |
-| ⚙️ **[BackEnd](2-BackEnd/)** | 9 | 151 | 160 | **5.6%** |
+| 🎨 **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
+| ⚙️ **[BackEnd](2-BackEnd/)** | 9 | 171 | 180 | **5.0%** |
 | 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **142** | **337** | **479** | **29.6%** |
+| **Geral** | **191** | **309** | **500** | **38.2%** |
 
 
 ---
@@ -52,14 +52,16 @@ All technologies studied and those on the list to study:
 | **[Vue](1-FrontEnd/5-Vue/)** | ✅ | **[Java](2-BackEnd/5-Java/)** | ⏳ | **[GitHub Actions](3-Devops/5-GitHubActions/)** | ⏳ | **[Vitest](4-QA/5-Vitest/)** | ⏳ |
 | **[Angular](1-FrontEnd/6-Angular/)** | ✅ | **[C#](2-BackEnd/6-CSharp/)** | ⏳ | **[Kubernetes](3-Devops/6-Kubernetes/)** | ⏳ | | |
 | **[Bootstrap](1-FrontEnd/7-Bootstrap/)** | ✅ | **[BlockChain](2-BackEnd/7-BlockChain/)** | ⏳ | **[Vercel](3-Devops/7-Vercel/)** | ⏳ | | |
-| **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | ⏳ | **[SQL](2-BackEnd/8-SQL/)** | ⏳ | | | | |
+| **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | ✅ | **[SQL](2-BackEnd/8-SQL/)** | ⏳ | | | | |
 | **[TypeScript](1-FrontEnd/9-TypeScript/)** | ✅ | **[Elixir](2-BackEnd/9-Elixir/)** | ⏳ | | | | |
-| **[Tailwind](1-FrontEnd/10-Tailwind/)** | ⏳ | **[WebAssembly](2-BackEnd/10-WebAssembly/)** | ⏳ | | | | |
-| **[Next.js](1-FrontEnd/11-Nextjs/)** | ⏳ | **[Erlang](2-BackEnd/11-Erlang/)** | ⏳ | | | | |
-| **[Zustand](1-FrontEnd/12-Zustand/)** | ⏳ | **[Python (FastAPI)](2-BackEnd/12-Python-FastAPI/)** | ⏳ | | | | |
-| **[Svelte](1-FrontEnd/13-Svelte/)** | ⏳ | **[Go](2-BackEnd/13-Go/)** | ⏳ | | | | |
+| **[Tailwind](1-FrontEnd/10-Tailwind/)** | ✅ | **[WebAssembly](2-BackEnd/10-WebAssembly/)** | ⏳ | | | | |
+| **[Next.js](1-FrontEnd/11-Nextjs/)** | ✅ | **[Erlang](2-BackEnd/11-Erlang/)** | ⏳ | | | | |
+| **[Zustand](1-FrontEnd/12-Zustand/)** | ✅ | **[Python (FastAPI)](2-BackEnd/12-Python-FastAPI/)** | ⏳ | | | | |
+| **[Svelte](1-FrontEnd/13-Svelte/)** | ✅ | **[Go](2-BackEnd/13-Go/)** | ⏳ | | | | |
 | | | **[MongoDB](2-BackEnd/14-MongoDB/)** | ⏳ | | | | |
 | | | **[GraphQL](2-BackEnd/15-GraphQL/)** | ⏳ | | | | |
+| | | **[Kafka](2-BackEnd/16-Kafka/)** | ⏳ | | | | |
+| | | **[RabbitMQ](2-BackEnd/17-RabbitMQ/)** | ⏳ | | | | |
 
 ---
 
@@ -86,6 +88,7 @@ Todas as pastas (exceto as isentas) seguem o padrão:
 - **[8-SQL](2-BackEnd/8-SQL/)** / **[14-MongoDB](2-BackEnd/14-MongoDB/)**: Bancos de dados relacionais e NoSQL.
 - **[12-Python-FastAPI](2-BackEnd/12-Python-FastAPI/)** / **[13-Go](2-BackEnd/13-Go/)**: Linguagens modernas para APIs e concorrência.
 - **[15-GraphQL](2-BackEnd/15-GraphQL/)**: Queries flexíveis para APIs modernas.
+- **[16-Kafka](2-BackEnd/16-Kafka/)** / **[17-RabbitMQ](2-BackEnd/17-RabbitMQ/)**: Mensageria, streaming de eventos e filas assíncronas.
 - **Experimental:** [7-BlockChain](2-BackEnd/7-BlockChain/), [10-WebAssembly](2-BackEnd/10-WebAssembly/), [9-Elixir](2-BackEnd/9-Elixir/), [11-Erlang](2-BackEnd/11-Erlang/).
 
 ### 🏗️ [DevOps](3-Devops/)

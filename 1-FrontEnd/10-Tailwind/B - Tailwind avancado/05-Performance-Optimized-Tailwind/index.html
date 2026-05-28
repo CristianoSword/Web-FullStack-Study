@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>05 - Performance Optimized Tailwind</title>
+  <link rel="stylesheet" href="dist/styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">optimized build</p>
+        <h1 class="title">Tailwind CSS enxuto para producao</h1>
+      </div>
+      <button class="button">Deploy</button>
+    </header>
+
+    <section class="grid metrics">
+      <article class="metric">
+        <p class="metric-label">CSS final</p>
+        <strong class="metric-value">8.4kb</strong>
+      </article>
+      <article class="metric">
+        <p class="metric-label">Rotas escaneadas</p>
+        <strong class="metric-value">18</strong>
+      </article>
+      <article class="metric">
+        <p class="metric-label">Safelist</p>
+        <strong class="metric-value">12</strong>
+      </article>
+    </section>
+
+    <section class="grid layout" style="margin-top:1rem">
+      <article class="panel">
+        <div class="panel-header">
+          <strong>Pipeline</strong>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <span>Content scanning</span>
+            <span class="pill bg-emerald-50 text-emerald-700 border-emerald-200">ativo</span>
+          </div>
+          <div class="row">
+            <span>Safelist dinamica</span>
+            <span class="pill bg-amber-50 text-amber-700 border-amber-200">controlada</span>
+          </div>
+          <div class="row">
+            <span>Minificacao</span>
+            <span class="pill bg-emerald-50 text-emerald-700 border-emerald-200">pronta</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="panel">
+        <div class="panel-header">
+          <strong>Comandos</strong>
+        </div>
+        <div class="panel-body">
+          <pre style="overflow:auto;margin:0;font-size:.82rem">npm install
+npm run build
+npm run watch</pre>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
+
