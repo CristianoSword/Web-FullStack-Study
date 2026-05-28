@@ -1,0 +1,12 @@
+{
+  "name": "03-navbar-responsive",
+  "version": "1.0.0",
+  "description": "Navbar responsiva com toggle mobile usando Tailwind CSS",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
