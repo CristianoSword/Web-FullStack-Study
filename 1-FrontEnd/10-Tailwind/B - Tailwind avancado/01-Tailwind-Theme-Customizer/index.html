@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 – Tailwind Theme Customizer | Avançado</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: { brand: '#6366f1' } } }
+    }
+  </script>
+</head>
+<body id="body" class="bg-gray-50 text-gray-900 min-h-screen transition-colors duration-300">
+
+  <header class="bg-white dark:bg-gray-900 shadow-sm px-6 py-4 flex items-center justify-between">
+    <h1 class="text-xl font-extrabold text-indigo-600">Theme Customizer</h1>
+    <div class="flex items-center gap-3">
+      <span class="text-sm text-gray-500 dark:text-gray-400">Tema:</span>
+      <button id="toggle-dark" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">
+        🌙 Dark
+      </button>
+      <select id="accent-select" class="border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg px-3 py-1.5 text-sm focus:outline-none">
+        <option value="indigo">Indigo</option>
+        <option value="rose">Rose</option>
+        <option value="emerald">Emerald</option>
+        <option value="amber">Amber</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div id="card" class="rounded-2xl p-6 shadow-md bg-indigo-600 text-white">
+        <h2 class="text-lg font-bold">Card de Destaque</h2>
+        <p class="mt-2 text-indigo-100 text-sm">Este card usa a cor de accent selecionada acima.</p>
+        <button class="mt-4 px-4 py-2 bg-white text-indigo-700 font-semibold rounded-xl text-sm hover:bg-indigo-50 transition">Ação</button>
+      </div>
+      <div class="rounded-2xl p-6 shadow-md bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 col-span-2">
+        <h2 class="text-lg font-bold dark:text-white">Painel de Conteúdo</h2>
+        <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">O fundo e texto mudam automaticamente no modo escuro. Selecione uma cor de accent para ver o card mudar.</p>
+        <div class="mt-4 flex gap-2 flex-wrap">
+          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs text-gray-600 dark:text-gray-300">tailwindcss</span>
+          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs text-gray-600 dark:text-gray-300">dark mode</span>
+          <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs text-gray-600 dark:text-gray-300">plugins</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const accents = {
+      indigo: { bg: 'bg-indigo-600', text: 'text-indigo-700', btn: 'text-indigo-700' },
+      rose:   { bg: 'bg-rose-500',   text: 'text-rose-700',   btn: 'text-rose-700' },
+      emerald:{ bg: 'bg-emerald-600',text: 'text-emerald-700',btn: 'text-emerald-700' },
+      amber:  { bg: 'bg-amber-500',  text: 'text-amber-700',  btn: 'text-amber-700' },
+    };
+    const card = document.getElementById('card');
+    const btn  = card.querySelector('button');
+    let isDark = false;
+
+    document.getElementById('toggle-dark').addEventListener('click', () => {
+      isDark = !isDark;
+      document.documentElement.classList.toggle('dark', isDark);
+      document.getElementById('toggle-dark').textContent = isDark ? '☀️ Light' : '🌙 Dark';
+    });
+
+    document.getElementById('accent-select').addEventListener('change', (e) => {
+      const a = accents[e.target.value];
+      card.className = card.className.replace(/bg-\w+-\d+/, a.bg);
+      btn.className  = btn.className.replace(/text-\w+-\d+/, a.btn);
+    });
+  </script>
+</body>
+</html>
