@@ -1,0 +1,28 @@
+@use "sass:color";
+@use "sass:map";
+
+$font-base: 'Inter', system-ui, -apple-system, sans-serif;
+$themes: (
+  ocean: #3157ff,
+  forest: #08a88a,
+  sunset: #e79512
+);
+
+@function surface($base) {
+  @return color.mix(#fff, $base, 92%);
+}
+
+@function ink($base) {
+  @return color.mix(#111827, $base, 82%);
+}
+
+@mixin theme-class($name, $base) {
+  .theme-#{$name} {
+    --theme-base: #{$base};
+    --theme-surface: #{surface($base)};
+    --theme-ink: #{ink($base)};
+    --theme-muted: #{color.mix(#64748b, $base, 72%)};
+    --theme-border: #{color.mix(#fff, $base, 74%)};
+    --theme-glow: #{rgba($base, 0.22)};
+  }
+}
