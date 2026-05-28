@@ -365,450 +365,460 @@ Lista de projetos pendentes de estudo para a categoria **Frontend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Automated-Theme-Generator
+#### [x] 05-Automated-Theme-Generator
 - **O que é:** Gerador automático de paletas de cores a partir de uma cor primária.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 1-FrontEnd/9-TypeScript
 
 ### ⚙️ Projetos Avançados
 
-#### [ ] 05-Schema-Validator-Factory
+#### [x] 05-Schema-Validator-Factory
 - **O que é:** Gerador de validadores de runtime baseados em tipos TS estáticos.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 1-FrontEnd/10-Tailwind
 
 ### 🐤 Projetos Básicos
 
-#### [ ] 01-Profile-Card
+#### [x] 01-Profile-Card
 - **O que é:** Card de usuário estilizado apenas com classes utilitárias do Tailwind.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Pricing-Section
+#### [x] 02-Pricing-Section
 - **O que é:** Seção de planos e preços responsiva com hover states modernos.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Navbar-Responsive
+#### [x] 03-Navbar-Responsive
 - **O que é:** Barra de navegação móvel interativa usando Tailwind e JS básico.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Form-Validation-UI
+#### [x] 04-Form-Validation-UI
 - **O que é:** Formulário de cadastro estilizado com states de erro e sucesso.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Simple-Blog-Feed
+#### [x] 05-Simple-Blog-Feed
 - **O que é:** Feed de notícias com cards estruturados e efeitos de transição.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ### ⚙️ Projetos Avançados
 
-#### [ ] 01-Tailwind-Theme-Customizer
+#### [x] 01-Tailwind-Theme-Customizer
 - **O que é:** Dashboard com alteração de tema em tempo real usando plugins Tailwind.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Complex-Admin-Dashboard
+#### [x] 02-Complex-Admin-Dashboard
 - **O que é:** Dashboard rico com sidebar colapsável, tabelas complexas e gráficos.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Tailwind-Plugin-Library
+#### [x] 03-Tailwind-Plugin-Library
 - **O que é:** Desenvolvimento de plugins customizados para componentes complexos.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-E-Commerce-Storefront
+#### [x] 04-E-Commerce-Storefront
 - **O que é:** Catálogo completo de loja virtual com filtros avançados e transições.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Performance-Optimized-Tailwind
+#### [x] 05-Performance-Optimized-Tailwind
 - **O que é:** Configurações de otimização de build, PurgeCSS avançado e JIT compile.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 1-FrontEnd/11-Nextjs
 
 ### 🐤 Projetos Básicos
 
-#### [ ] 01-Static-Blog
+#### [x] 01-Static-Blog
 - **O que é:** Blog básico utilizando SSG (Static Site Generation) com Markdown.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Dynamic-Product-Detail
+#### [x] 02-Dynamic-Product-Detail
 - **O que é:** Detalhes de produtos usando SSR (Server-Side Rendering) e rotas dinâmicas.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Local-Search-Directory
+#### [x] 03-Local-Search-Directory
 - **O que é:** Diretório local com busca filtrada usando Next Router.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Form-Server-Action
+#### [x] 04-Form-Server-Action
 - **O que é:** Formulário de contato que envia dados usando Server Actions nativas.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Image-Gallery-Optimization
+#### [x] 05-Image-Gallery-Optimization
 - **O que é:** Galeria de imagens com carregamento otimizado usando Next Image.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ### ⚙️ Projetos Avançados
 
-#### [ ] 01-Multi-Tenant-SaaS
+#### [x] 01-Multi-Tenant-SaaS
 - **O que é:** Plataforma SaaS multi-tenant com subdomínios dinâmicos via middleware.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-ISR-Dashboard-Realtime
+#### [x] 02-ISR-Dashboard-Realtime
 - **O que é:** Dashboard analítico usando ISR (Incremental Static Regeneration).
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Next-Auth-SSO
+#### [x] 03-Next-Auth-SSO
 - **O que é:** Autenticação completa com JWT, OAuth e SSO integrado.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Streaming-Suspense-UI
+#### [x] 04-Streaming-Suspense-UI
 - **O que é:** Interface de relatórios pesados utilizando streaming e React Suspense.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Headless-CMS-Integration
+#### [x] 05-Headless-CMS-Integration
 - **O que é:** Integração completa com CMS headless e preview de conteúdo em tempo real.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 1-FrontEnd/12-Zustand
 
 ### 🐤 Projetos Básicos
 
-#### [ ] 01-Simple-Counter
+#### [x] 01-Simple-Counter
 - **O que é:** Contador simples com múltiplas ações e persistência no localStorage.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Todo-Store
+#### [x] 02-Todo-Store
 - **O que é:** Lista de tarefas clássica com filtros de status gerenciada pelo Zustand.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-User-Auth-State
+#### [x] 03-User-Auth-State
 - **O que é:** Estado de autenticação simulado (login, logout, perfil do usuário).
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Theme-Toggle
+#### [x] 04-Theme-Toggle
 - **O que é:** Gerenciamento de tema global integrado com preferências do SO.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Notification-Toast-System
+#### [x] 05-Notification-Toast-System
 - **O que é:** Gerenciador de toasts globais temporizados adicionados dinamicamente.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ### ⚙️ Projetos Avançados
 
-#### [ ] 01-Multi-Step-Checkout-Store
+#### [x] 01-Multi-Step-Checkout-Store
 - **O que é:** Estado de formulário de checkout multi-etapas com validações.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Realtime-Data-Sync
+#### [x] 02-Realtime-Data-Sync
 - **O que é:** Sincronização de estado do Zustand com conexões WebSocket.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Undo-Redo-History
+#### [x] 03-Undo-Redo-History
 - **O que é:** Implementação de histórico (desfazer/refazer) de estado de canvas virtual.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Zustand-Middleware-Pro
+#### [x] 04-Zustand-Middleware-Pro
 - **O que é:** Criação de middlewares customizados de logging, criptografia e telemetria.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Sub-State-Slices-Architecture
+#### [x] 05-Sub-State-Slices-Architecture
 - **O que é:** Arquitetura complexa dividindo a store principal em fatias modulares.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 1-FrontEnd/13-Svelte
 
 ### 🐤 Projetos Básicos
 
-#### [ ] 01-Reactive-Form
+#### [x] 01-Reactive-Form
 - **O que é:** Formulário reativo simples com bind de dados bidirecional.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Dynamic-List
+#### [x] 02-Dynamic-List
 - **O que é:** Lista dinâmica de itens animada usando transições nativas do Svelte.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Simple-Calculator
+#### [x] 03-Simple-Calculator
 - **O que é:** Calculadora com memória básica gerenciada por declarações reativas.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Custom-Event-Dispatcher
+#### [x] 04-Custom-Event-Dispatcher
 - **O que é:** Componente filho comunicando com pai usando custom dispatchers.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-Store-Subscriber
+#### [x] 05-Store-Subscriber
 - **O que é:** Uso de stores graváveis básicas do Svelte para compartilhar estado.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ### ⚙️ Projetos Avançados
 
-#### [ ] 01-SvelteKit-Portal
+#### [x] 01-SvelteKit-Portal
 - **O que é:** Portal completo de notícias com rotas dinâmicas e SSR.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Complex-Transition-Library
+#### [x] 02-Complex-Transition-Library
 - **O que é:** Desenvolvimento de transições matemáticas complexas personalizadas.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 03-Svelte-State-Machine
+#### [x] 03-Svelte-State-Machine
 - **O que é:** Máquina de estados finita integrada no fluxo de renderização.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 04-Svelte-Canvas-Game
+#### [x] 04-Svelte-Canvas-Game
 - **O que é:** Jogo interativo desenhado no canvas HTML utilizando ciclo de vida do Svelte.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 05-SvelteKit-API-Endpoints
+#### [x] 05-SvelteKit-API-Endpoints
 - **O que é:** Construção de API REST embutida no SvelteKit com autenticação.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+
+#### [x] 06-Pixel-Art-Editor
+- **O que é:** Editor avançado de pixel art com ferramentas, histórico e exportação PNG.
+- **Tasks (6 Commits):**
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
