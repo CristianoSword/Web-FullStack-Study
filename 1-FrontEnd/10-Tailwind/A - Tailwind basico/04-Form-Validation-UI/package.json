@@ -1,0 +1,7 @@
+{
+  "name": "04-form-validation-ui",
+  "version": "1.0.0",
+  "description": "Formulário com validação visual de estados de erro e sucesso usando Tailwind CSS",
+  "scripts": { "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css" },
+  "devDependencies": { "tailwindcss": "^3.4.19" }
+}
