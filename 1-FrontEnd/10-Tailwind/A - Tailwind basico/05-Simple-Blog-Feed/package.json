@@ -1,0 +1,7 @@
+{
+  "name": "05-simple-blog-feed",
+  "version": "1.0.0",
+  "description": "Feed de notícias com cards estruturados e efeitos de transição usando Tailwind CSS",
+  "scripts": { "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css" },
+  "devDependencies": { "tailwindcss": "^3.4.19" }
+}
