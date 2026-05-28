@@ -17,7 +17,7 @@ export function validate<T extends SchemaDefinition>(
   }
 
   if (!schema.required && (data === undefined || data === null)) {
-    return data as InferType<T>;
+    return data as unknown as InferType<T>;
   }
 
   switch (schema.type) {
