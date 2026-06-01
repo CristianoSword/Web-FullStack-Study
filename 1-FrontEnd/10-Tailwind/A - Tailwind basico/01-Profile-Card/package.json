@@ -1,14 +1,11 @@
 {
   "name": "01-profile-card",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Card de usuário estilizado apenas com classes utilitárias do Tailwind CSS",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "tailwindcss": "^3.4.19"
   }
