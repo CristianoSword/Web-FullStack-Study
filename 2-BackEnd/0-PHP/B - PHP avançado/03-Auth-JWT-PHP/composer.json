@@ -1,0 +1,11 @@
+{
+    "name": "study/auth-jwt-php",
+    "description": "JWT Authentication system in pure PHP without complex dependencies",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
