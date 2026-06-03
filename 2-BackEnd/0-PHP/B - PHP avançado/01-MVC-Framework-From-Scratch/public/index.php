@@ -39,6 +39,16 @@ if (file_exists(ROOT_DIR . '/vendor/autoload.php')) {
 // Bootstrap Application
 $config = require_once ROOT_DIR . '/config/config.php';
 
-// Initialize and run the application
-// To be implemented in core-logic
-echo "MVC Framework Bootstrapped Successfully!";
+use Core\Application;
+
+$app = new Application();
+
+// Define web routes
+$app->router->get('/', 'UserController@home');
+$app->router->get('/users', 'UserController@index');
+
+// Define API routes
+$app->router->get('/api/users', 'UserController@apiUsers');
+
+// Run application
+$app->run();
