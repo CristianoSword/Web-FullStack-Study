@@ -1,0 +1,12 @@
+{
+    "name": "study/mvc-framework-from-scratch",
+    "description": "A simple MVC framework from scratch in modern PHP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "core/"
+        }
+    },
+    "require": {}
+}
