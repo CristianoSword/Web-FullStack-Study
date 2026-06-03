@@ -24,8 +24,12 @@ class ProductController
     public function store(): void
     {
         $body = $this->parseBody();
-        if (!isset($body['name'], $body['price'])) {
-            $this->json(['error' => 'name and price are required'], 422);
+        $v = (new \App\Validator())
+            ->required($body, ['name', 'price'])
+            ->numeric($body, ['price', 'stock'])
+            ->min($body, 'price', 0);
+        if (!$v->passes()) {
+            $this->json(['errors' => $v->errors()], 422);
             return;
         }
         $product = $this->repo->create($body);
@@ -35,8 +39,12 @@ class ProductController
     public function update(int $id): void
     {
         $body = $this->parseBody();
-        if (!isset($body['name'], $body['price'])) {
-            $this->json(['error' => 'name and price are required'], 422);
+        $v = (new \App\Validator())
+            ->required($body, ['name', 'price'])
+            ->numeric($body, ['price', 'stock'])
+            ->min($body, 'price', 0);
+        if (!$v->passes()) {
+            $this->json(['errors' => $v->errors()], 422);
             return;
         }
         $product = $this->repo->update($id, $body);
