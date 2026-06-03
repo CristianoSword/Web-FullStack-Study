@@ -32,7 +32,21 @@ class Router
 
         if ($callback === false) {
             $this->response->setStatusCode(404);
-            echo "404 - Not Found";
+            $content = "404 - Not Found";
+            $errorFile = APP_DIR . "/Views/_error.php";
+            if (file_exists($errorFile)) {
+                $code = 404;
+                $message = "The requested page was not found on this server.";
+                ob_start();
+                include_once $errorFile;
+                $content = ob_get_clean();
+            }
+            $layoutFile = APP_DIR . "/Views/layouts/main.php";
+            if (file_exists($layoutFile)) {
+                include_once $layoutFile;
+            } else {
+                echo $content;
+            }
             return;
         }
 
