@@ -1,0 +1,11 @@
+{
+    "name": "study/restful-api-php-pdo",
+    "description": "RESTful API connecting to MySQL via PDO with prepared statements",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
