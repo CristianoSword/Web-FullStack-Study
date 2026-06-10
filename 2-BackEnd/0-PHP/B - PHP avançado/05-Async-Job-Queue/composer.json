@@ -1,0 +1,13 @@
+{
+    "name": "study/async-job-queue",
+    "description": "Fila de processamento de tarefas em background assíncrona baseada em CLI",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0"
+    }
+}
