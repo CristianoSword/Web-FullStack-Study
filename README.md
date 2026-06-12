@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-38.2%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-38.6%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
        
 <p align="center">
-  ❤❤❤❤🖤🖤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 38.2% (191/500) 📚📚
+  ❤❤❤❤🖤🖤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 38.6% (193/500) 📚📚
 </p>         
 
 <p align="center">
@@ -31,10 +31,10 @@ Acompanhamento do progresso real medido por projetos concluídos versus planejad
 | Categoria | Projetos Concluídos | Projetos Pendentes | Total Planejado | % Progresso Real |
 | :--- | :---: | :---: | :---: | :---: |
 | 🎨 **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| ⚙️ **[BackEnd](2-BackEnd/)** | 9 | 171 | 180 | **5.0%** |
+| ⚙️ **[BackEnd](2-BackEnd/)** | 11 | 169 | 180 | **6.1%** |
 | 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **191** | **309** | **500** | **38.2%** |
+| **Geral** | **193** | **307** | **500** | **38.6%** |
 
 
 ---
