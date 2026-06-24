@@ -1,0 +1,12 @@
+{
+  "name": "command-line-cli-tool",
+  "version": "1.0.0",
+  "description": "CLI basico para processar argumentos em Node.js.",
+  "main": "src/index.js",
+  "bin": {
+    "task-helper": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
