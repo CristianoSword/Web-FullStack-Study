@@ -1,0 +1,110 @@
+:root {
+    --bg: #f2f5ef;
+    --surface: #fbfdf8;
+    --line: #d7dfd1;
+    --text: #1f2a1f;
+    --muted: #5d695d;
+    --accent: #355c4b;
+    --accent-soft: #dfeadf;
+    --shadow: 0 20px 45px rgba(32, 49, 36, 0.1);
+    --radius: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top right, rgba(53, 92, 75, 0.12), transparent 28%),
+        linear-gradient(180deg, #f7faf4 0%, #edf3e8 100%);
+}
+
+.page-shell {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 48px;
+    display: grid;
+    gap: 20px;
+}
+
+.hero-card,
+.metric-card,
+.panel-card,
+.relationship-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(251, 253, 248, 0.94);
+    box-shadow: var(--shadow);
+}
+
+.hero-card,
+.relationship-card {
+    padding: 28px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+.hero-card h1,
+.relationship-card h2,
+.panel-card h2 {
+    margin: 10px 0 12px;
+}
+
+.hero-card p,
+.panel-card li,
+.relationship-card li {
+    color: var(--muted);
+}
+
+.metric-grid,
+.panel-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.metric-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metric-card,
+.panel-card {
+    padding: 22px;
+}
+
+.metric-card strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.metric-card span {
+    color: var(--muted);
+}
+
+.panel-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.panel-card ul,
+.relationship-card ol {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 8px;
+}
+
+@media (max-width: 900px) {
+    .metric-grid,
+    .panel-grid {
+        grid-template-columns: 1fr;
+    }
+}
