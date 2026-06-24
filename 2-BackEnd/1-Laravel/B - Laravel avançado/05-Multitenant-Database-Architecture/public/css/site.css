@@ -33,7 +33,8 @@ body {
 .hero-card,
 .active-card,
 .tenant-card,
-.workspace-card {
+.workspace-card,
+.flash-card {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: rgba(253, 253, 255, 0.95);
@@ -82,13 +83,53 @@ body {
     background: var(--surface);
 }
 
+.switch-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.switch-form select,
+.switch-form button {
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    font: inherit;
+}
+
+.switch-form button {
+    border: 0;
+    background: var(--accent);
+    color: #f5f7ff;
+    font-weight: 700;
+}
+
 .tenant-item-active {
     border-color: rgba(74, 92, 197, 0.34);
     background: rgba(232, 236, 255, 0.95);
 }
 
+.flash-success {
+    background: rgba(234, 240, 255, 0.97);
+}
+
+.flash-error {
+    background: rgba(255, 244, 244, 0.97);
+}
+
+.flash-error ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+}
+
 @media (max-width: 900px) {
     .content-grid {
         grid-template-columns: 1fr;
+    }
+
+    .switch-form {
+        flex-direction: column;
     }
 }

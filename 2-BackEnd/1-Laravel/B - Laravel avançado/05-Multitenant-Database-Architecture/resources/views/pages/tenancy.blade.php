@@ -11,6 +11,16 @@
         <span class="eyebrow">Tenant ativo</span>
         <h2>{{ $activeTenant?->name }}</h2>
         <p>{{ $activeTenant?->database }} · {{ $activeTenant?->region }} · {{ $activeTenant?->status }}</p>
+
+        <form class="switch-form" method="POST" action="{{ route('tenancy.activate') }}">
+            @csrf
+            <select name="tenant_id">
+                @foreach ($tenants as $tenant)
+                    <option value="{{ $tenant->id }}" @selected($activeTenant?->id === $tenant->id)>{{ $tenant->name }}</option>
+                @endforeach
+            </select>
+            <button type="submit">Ativar tenant</button>
+        </form>
     </section>
 
     <section class="content-grid">
