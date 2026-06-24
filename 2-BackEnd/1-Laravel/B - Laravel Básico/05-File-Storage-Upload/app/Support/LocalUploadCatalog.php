@@ -51,6 +51,28 @@ class LocalUploadCatalog
         );
     }
 
+    public function find(string $id): ?StoredUpload
+    {
+        foreach ($this->index->all() as $record) {
+            if (($record['id'] ?? null) !== $id) {
+                continue;
+            }
+
+            return new StoredUpload(
+                id: $record['id'],
+                originalName: $record['original_name'],
+                storedName: $record['stored_name'],
+                category: $record['category'],
+                mimeType: $record['mime_type'],
+                size: (int) $record['size'],
+                uploadedBy: $record['uploaded_by'],
+                storedAt: $record['stored_at'],
+            );
+        }
+
+        return null;
+    }
+
     public function store(UploadedFile $file, string $category, string $uploadedBy): StoredUpload
     {
         $id = (string) Str::uuid();

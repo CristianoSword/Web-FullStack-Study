@@ -1,0 +1,150 @@
+:root {
+    --bg: #eff4f7;
+    --surface: #ffffff;
+    --surface-alt: #f8fbfc;
+    --line: #d6e0e7;
+    --text: #17212a;
+    --muted: #5c6a75;
+    --accent: #156c86;
+    --accent-soft: #dff1f6;
+    --shadow: 0 20px 40px rgba(21, 58, 74, 0.12);
+    --radius: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(21, 108, 134, 0.12), transparent 30%),
+        linear-gradient(180deg, #f8fbfc 0%, #edf3f6 100%);
+}
+
+.page-shell {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 48px;
+    display: grid;
+    gap: 20px;
+}
+
+.hero-card,
+.upload-card,
+.info-card,
+.table-card,
+.flash-success {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow);
+}
+
+.hero-card,
+.table-card,
+.flash-success {
+    padding: 28px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    color: var(--accent);
+}
+
+.hero-card h1 {
+    margin: 10px 0 12px;
+}
+
+.hero-card p,
+.category-item p,
+.upload-row p,
+.empty-state {
+    color: var(--muted);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 18px;
+}
+
+.upload-card,
+.info-card {
+    padding: 24px;
+}
+
+.upload-card {
+    display: grid;
+    gap: 14px;
+}
+
+.upload-card label {
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.upload-card input,
+.upload-card select,
+.upload-card button {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    font: inherit;
+}
+
+.upload-card button {
+    border: 0;
+    background: var(--accent);
+    color: #f4fbfd;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.category-list,
+.upload-list {
+    display: grid;
+    gap: 12px;
+}
+
+.category-item,
+.upload-row {
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: var(--surface-alt);
+}
+
+.table-header,
+.upload-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.upload-row a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.flash-success {
+    background: rgba(224, 247, 238, 0.96);
+}
+
+@media (max-width: 900px) {
+    .content-grid,
+    .upload-row,
+    .table-header {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+}
