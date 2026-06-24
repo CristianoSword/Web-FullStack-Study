@@ -1,0 +1,9 @@
+{
+  "name": "http-server-native",
+  "version": "1.0.0",
+  "description": "Servidor HTTP nativo para estudo de rotas sem framework.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  }
+}
