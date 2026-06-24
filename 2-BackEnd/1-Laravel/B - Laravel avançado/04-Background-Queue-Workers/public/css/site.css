@@ -1,0 +1,143 @@
+:root {
+    --bg: #eef3ef;
+    --surface: #fcfdfc;
+    --line: #d5dfd8;
+    --text: #172119;
+    --muted: #5f6a61;
+    --accent: #2e7d4f;
+    --shadow: 0 22px 44px rgba(37, 74, 46, 0.12);
+    --radius: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(46, 125, 79, 0.12), transparent 30%),
+        linear-gradient(180deg, #f8fbf8 0%, #ebf2ec 100%);
+}
+
+.page-shell {
+    width: min(1140px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 48px;
+    display: grid;
+    gap: 20px;
+}
+
+.hero-card,
+.metric-card,
+.dispatch-card,
+.batch-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(252, 253, 252, 0.95);
+    box-shadow: var(--shadow);
+}
+
+.hero-card,
+.metric-card,
+.dispatch-card,
+.batch-card {
+    padding: 24px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    color: var(--accent);
+}
+
+.hero-card h1,
+.dispatch-card h2,
+.batch-card h2 {
+    margin: 10px 0 12px;
+}
+
+.hero-card p,
+.metric-card p,
+.batch-item p,
+.empty-state {
+    color: var(--muted);
+}
+
+.metric-grid,
+.content-grid {
+    display: grid;
+    gap: 18px;
+}
+
+.metric-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metric-card strong {
+    display: block;
+    font-size: 1.9rem;
+    color: var(--accent);
+}
+
+.content-grid {
+    grid-template-columns: 0.9fr 1.1fr;
+}
+
+.dispatch-form {
+    display: grid;
+    gap: 12px;
+}
+
+.dispatch-form label {
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.dispatch-form input,
+.dispatch-form button {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    font: inherit;
+}
+
+.dispatch-form button {
+    border: 0;
+    background: var(--accent);
+    color: #f5fcf7;
+    font-weight: 700;
+}
+
+.batch-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.batch-list {
+    display: grid;
+    gap: 12px;
+}
+
+.batch-item {
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+@media (max-width: 900px) {
+    .metric-grid,
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
