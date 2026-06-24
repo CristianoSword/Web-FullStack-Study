@@ -1,0 +1,94 @@
+:root {
+    --bg: #f1f2f7;
+    --surface: #fdfdff;
+    --line: #d8dced;
+    --text: #1b2031;
+    --muted: #606983;
+    --accent: #4a5cc5;
+    --shadow: 0 22px 46px rgba(42, 51, 96, 0.12);
+    --radius: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(74, 92, 197, 0.12), transparent 30%),
+        linear-gradient(180deg, #fafbfe 0%, #eceff7 100%);
+}
+
+.page-shell {
+    width: min(1140px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 48px;
+    display: grid;
+    gap: 20px;
+}
+
+.hero-card,
+.active-card,
+.tenant-card,
+.workspace-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(253, 253, 255, 0.95);
+    box-shadow: var(--shadow);
+    padding: 24px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    color: var(--accent);
+}
+
+.hero-card h1,
+.active-card h2,
+.tenant-card h2,
+.workspace-card h2 {
+    margin: 10px 0 12px;
+}
+
+.hero-card p,
+.active-card p,
+.tenant-item p,
+.workspace-item p {
+    color: var(--muted);
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 18px;
+}
+
+.tenant-list,
+.workspace-list {
+    display: grid;
+    gap: 12px;
+}
+
+.tenant-item,
+.workspace-item {
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.tenant-item-active {
+    border-color: rgba(74, 92, 197, 0.34);
+    background: rgba(232, 236, 255, 0.95);
+}
+
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
