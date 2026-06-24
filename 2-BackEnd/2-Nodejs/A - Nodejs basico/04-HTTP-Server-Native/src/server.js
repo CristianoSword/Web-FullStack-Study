@@ -1,9 +1,31 @@
 const http = require("http");
 const { URL } = require("url");
+const { guardMethod } = require("./middleware/request-guard");
 const { resolveRoute } = require("./services/router-service");
 
 const server = http.createServer((req, res) => {
-  const url = new URL(req.url, "http://localhost:3001");
+  const blocked = guardMethod(req.method);
+
+  if (blocked) {
+    res.writeHead(blocked.statusCode, {
+      "Content-Type": "application/json; charset=utf-8",
+    });
+    res.end(JSON.stringify(blocked.payload, null, 2));
+    return;
+  }
+
+  let url;
+
+  try {
+    url = new URL(req.url, "http://localhost:3001");
+  } catch (_error) {
+    res.writeHead(400, {
+      "Content-Type": "application/json; charset=utf-8",
+    });
+    res.end(JSON.stringify({ message: "Invalid URL" }, null, 2));
+    return;
+  }
+
   const { statusCode, payload } = resolveRoute(req.method, url.pathname);
 
   res.writeHead(statusCode, {
