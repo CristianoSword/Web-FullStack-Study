@@ -1,5 +1,9 @@
 const express = require("express");
 const {
+  validateTaskPayload,
+  validateTaskId,
+} = require("./middleware/task-validation");
+const {
   listTasks,
   findTask,
   createTask,
@@ -18,8 +22,8 @@ app.get("/tasks", (_req, res) => {
   res.json({ data: listTasks() });
 });
 
-app.get("/tasks/:id", (req, res) => {
-  const task = findTask(Number(req.params.id));
+app.get("/tasks/:id", validateTaskId, (req, res) => {
+  const task = findTask(req.taskId);
 
   if (!task) {
     return res.status(404).json({ message: "Task not found" });
@@ -28,13 +32,13 @@ app.get("/tasks/:id", (req, res) => {
   return res.json({ data: task });
 });
 
-app.post("/tasks", (req, res) => {
+app.post("/tasks", validateTaskPayload, (req, res) => {
   const task = createTask(req.body);
   res.status(201).json({ message: "Task created", data: task });
 });
 
-app.put("/tasks/:id", (req, res) => {
-  const task = updateTask(Number(req.params.id), req.body);
+app.put("/tasks/:id", validateTaskId, validateTaskPayload, (req, res) => {
+  const task = updateTask(req.taskId, req.body);
 
   if (!task) {
     return res.status(404).json({ message: "Task not found" });
@@ -43,8 +47,8 @@ app.put("/tasks/:id", (req, res) => {
   return res.json({ message: "Task updated", data: task });
 });
 
-app.delete("/tasks/:id", (req, res) => {
-  const removed = removeTask(Number(req.params.id));
+app.delete("/tasks/:id", validateTaskId, (req, res) => {
+  const removed = removeTask(req.taskId);
 
   if (!removed) {
     return res.status(404).json({ message: "Task not found" });
