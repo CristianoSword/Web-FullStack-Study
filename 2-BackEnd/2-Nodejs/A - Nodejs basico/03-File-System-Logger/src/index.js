@@ -1,9 +1,12 @@
 const { appendLog, readLogs, summarizeLogs } = require("./services/logger-service");
+const { assertCommand, assertLevel } = require("./validators/log-validator");
 
 async function main() {
   const [command = "summary", level = "info", source = "cli", ...messageParts] = process.argv.slice(2);
+  assertCommand(command);
 
   if (command === "write") {
+    assertLevel(level);
     const message = messageParts.join(" ") || "No message provided";
     const entry = await appendLog({ level, source, message });
     console.log("Log written:", entry);
