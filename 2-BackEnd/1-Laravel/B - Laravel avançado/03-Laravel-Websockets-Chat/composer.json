@@ -1,0 +1,13 @@
+{
+  "name": "study/laravel-websockets-chat",
+  "description": "Projeto didatico de chat em tempo real inspirado em Laravel Echo e canais privados.",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
