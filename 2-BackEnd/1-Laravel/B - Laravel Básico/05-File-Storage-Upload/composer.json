@@ -1,0 +1,13 @@
+{
+  "name": "study/laravel-file-storage-upload",
+  "description": "Projeto didatico para upload e download local de arquivos em Laravel.",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

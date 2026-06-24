@@ -1,0 +1,7 @@
+/vendor/
+/node_modules/
+/bootstrap/cache/
+/storage/app/private/uploads/*
+!/storage/app/private/uploads/.gitkeep
+/storage/app/private/indexes/*
+!/storage/app/private/indexes/.gitkeep
