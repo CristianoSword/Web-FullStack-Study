@@ -20,18 +20,19 @@
     <section class="content-grid">
         <section class="dispatch-card">
             <h2>Disparar campanha</h2>
-            <form class="dispatch-form">
+            <form class="dispatch-form" method="POST" action="{{ route('queue.store') }}">
+                @csrf
                 <label>
                     Nome da campanha
-                    <input type="text" placeholder="Newsletter de produto">
+                    <input type="text" name="campaign" value="{{ old('campaign') }}" placeholder="Newsletter de produto">
                 </label>
 
                 <label>
                     Volume de jobs
-                    <input type="number" placeholder="2500">
+                    <input type="number" name="job_count" value="{{ old('job_count') }}" placeholder="2500">
                 </label>
 
-                <button type="button">Enfileirar lote</button>
+                <button type="submit">Enfileirar lote</button>
             </form>
         </section>
 

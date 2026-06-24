@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DispatchBatchRequest;
 use App\Support\JsonQueueBatchStore;
 use App\Support\QueueLabWorkspace;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class QueueLabController extends Controller
@@ -24,5 +26,19 @@ class QueueLabController extends Controller
             'metrics' => $this->workspace->metrics(),
             'batches' => $this->workspace->batches(),
         ]);
+    }
+
+    public function store(DispatchBatchRequest $request): RedirectResponse
+    {
+        $validated = $request->validated();
+
+        $this->workspace->dispatchBatch(
+            $validated['campaign'],
+            $validated['job_count']
+        );
+
+        return redirect()
+            ->route('queue.index')
+            ->with('success', 'Lote enfileirado com sucesso para processamento em background.');
     }
 }
