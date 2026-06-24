@@ -1,0 +1,13 @@
+{
+  "name": "study/laravel-background-queue-workers",
+  "description": "Projeto didatico de fila em background para envio em lote usando worker local.",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

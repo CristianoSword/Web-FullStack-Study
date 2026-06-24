@@ -1,0 +1,4 @@
+/vendor/
+/node_modules/
+/bootstrap/cache/
+/storage/app/private/queue-batches.json
