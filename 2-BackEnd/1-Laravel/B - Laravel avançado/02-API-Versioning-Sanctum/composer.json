@@ -1,0 +1,13 @@
+{
+  "name": "study/laravel-api-versioning-sanctum",
+  "description": "Projeto didatico de API versionada protegida por autenticacao estilo Sanctum.",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
