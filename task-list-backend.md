@@ -180,7 +180,7 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
 #### [ ] 03-File-System-Logger
 - **O que é:** Script que lê, escreve e manipula arquivos de log locais assincronamente.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
   2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
   3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
   4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
