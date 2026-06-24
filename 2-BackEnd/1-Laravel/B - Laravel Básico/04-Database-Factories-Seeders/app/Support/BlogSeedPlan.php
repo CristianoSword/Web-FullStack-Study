@@ -37,4 +37,39 @@ class BlogSeedPlan implements SeedPlanSource
             'max' => (int) ($range['max'] ?? 0),
         ];
     }
+
+    /**
+     * @param array<string, mixed> $overrides
+     * @return array{counts: array<string, int>, comments: array{min:int,max:int}}
+     */
+    public function resolve(array $overrides = []): array
+    {
+        $counts = $this->entityCounts();
+        $commentWindow = $this->commentWindow();
+
+        $resolvedCounts = [
+            'authors' => $this->clamp((int) ($overrides['authors'] ?? $counts['authors']), 1, 50),
+            'categories' => $this->clamp((int) ($overrides['categories'] ?? $counts['categories']), 1, 20),
+            'posts' => $this->clamp((int) ($overrides['posts'] ?? $counts['posts']), 1, 200),
+        ];
+
+        $resolvedComments = [
+            'min' => $this->clamp((int) ($overrides['comments_min'] ?? $commentWindow['min']), 0, 20),
+            'max' => $this->clamp((int) ($overrides['comments_max'] ?? $commentWindow['max']), 1, 40),
+        ];
+
+        if ($resolvedComments['max'] < $resolvedComments['min']) {
+            $resolvedComments['max'] = $resolvedComments['min'];
+        }
+
+        return [
+            'counts' => $resolvedCounts,
+            'comments' => $resolvedComments,
+        ];
+    }
+
+    private function clamp(int $value, int $min, int $max): int
+    {
+        return max($min, min($max, $value));
+    }
 }
