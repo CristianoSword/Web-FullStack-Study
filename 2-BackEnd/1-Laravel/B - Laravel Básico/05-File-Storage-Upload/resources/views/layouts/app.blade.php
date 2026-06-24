@@ -12,6 +12,17 @@
             <section class="flash-success">{{ session('success') }}</section>
         @endif
 
+        @if ($errors->any())
+            <section class="flash-error">
+                <strong>Revise os campos abaixo.</strong>
+                <ul>
+                    @foreach ($errors->all() as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+            </section>
+        @endif
+
         @yield('content')
     </main>
 </body>

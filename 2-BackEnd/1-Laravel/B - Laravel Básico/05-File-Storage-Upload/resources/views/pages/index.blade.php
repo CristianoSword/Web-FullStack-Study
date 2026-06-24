@@ -13,14 +13,14 @@
 
             <label>
                 Responsavel pelo envio
-                <input type="text" name="uploaded_by" placeholder="Equipe interna">
+                <input type="text" name="uploaded_by" value="{{ old('uploaded_by') }}" placeholder="Equipe interna">
             </label>
 
             <label>
                 Categoria
                 <select name="category">
                     @foreach ($categories as $category)
-                        <option value="{{ $category->key }}">{{ $category->label }}</option>
+                        <option value="{{ $category->key }}" @selected(old('category') === $category->key)>{{ $category->label }}</option>
                     @endforeach
                 </select>
             </label>
@@ -62,7 +62,7 @@
                     </div>
 
                     <div>
-                        <span>{{ number_format($upload->size / 1024, 1) }} KB</span>
+                        <span>{{ number_format($upload->size / 1024, 1) }} KB · {{ strtoupper(pathinfo($upload->storedName, PATHINFO_EXTENSION)) }}</span>
                         <a href="{{ route('files.download', $upload->id) }}">Download</a>
                     </div>
                 </article>

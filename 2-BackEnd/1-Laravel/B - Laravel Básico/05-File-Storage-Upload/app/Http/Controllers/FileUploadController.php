@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUploadRequest;
 use App\Support\JsonUploadIndex;
 use App\Support\LocalUploadCatalog;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class FileUploadController extends Controller
@@ -28,18 +29,15 @@ class FileUploadController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StoreUploadRequest $request): RedirectResponse
     {
+        $validated = $request->validated();
         $file = $request->file('document');
-
-        if (! $file) {
-            return redirect()->route('files.index');
-        }
 
         $this->catalog->store(
             $file,
-            (string) $request->input('category', 'reports'),
-            (string) $request->input('uploaded_by', 'Equipe interna')
+            $validated['category'],
+            $validated['uploaded_by']
         );
 
         return redirect()

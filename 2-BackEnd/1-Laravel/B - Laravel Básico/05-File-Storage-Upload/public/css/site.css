@@ -36,7 +36,8 @@ body {
 .upload-card,
 .info-card,
 .table-card,
-.flash-success {
+.flash-success,
+.flash-error {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: rgba(255, 255, 255, 0.94);
@@ -45,7 +46,8 @@ body {
 
 .hero-card,
 .table-card,
-.flash-success {
+.flash-success,
+.flash-error {
     padding: 28px;
 }
 
@@ -138,6 +140,18 @@ body {
 
 .flash-success {
     background: rgba(224, 247, 238, 0.96);
+}
+
+.flash-error {
+    background: rgba(255, 243, 241, 0.96);
+    border-color: rgba(166, 76, 58, 0.25);
+}
+
+.flash-error ul {
+    margin: 12px 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
 }
 
 @media (max-width: 900px) {
