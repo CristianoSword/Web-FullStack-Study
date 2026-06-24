@@ -8,6 +8,21 @@
 </head>
 <body>
     <main class="page-shell">
+        @if (session('success'))
+            <section class="flash-card flash-success">{{ session('success') }}</section>
+        @endif
+
+        @if ($errors->any())
+            <section class="flash-card flash-error">
+                <strong>Confira os campos antes de publicar no canal.</strong>
+                <ul>
+                    @foreach ($errors->all() as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+            </section>
+        @endif
+
         @yield('content')
     </main>
 </body>

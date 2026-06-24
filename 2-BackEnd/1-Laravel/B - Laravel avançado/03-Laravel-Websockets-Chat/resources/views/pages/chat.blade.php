@@ -43,6 +43,14 @@
                     <p class="empty-state">Nenhuma mensagem ainda para esta sala.</p>
                 @endforelse
             </div>
+
+            <form class="composer-card" method="POST" action="{{ route('chat.store') }}">
+                @csrf
+                <input type="hidden" name="room_id" value="{{ $activeRoom?->id }}">
+                <input type="text" name="author" value="{{ old('author') }}" placeholder="Seu nome">
+                <textarea name="body" rows="3" placeholder="Digite uma mensagem privada">{{ old('body') }}</textarea>
+                <button type="submit">Publicar mensagem</button>
+            </form>
         </section>
 
         <aside class="members-card">

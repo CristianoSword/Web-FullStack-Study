@@ -34,7 +34,8 @@ body {
 .hero-card,
 .rooms-card,
 .timeline-card,
-.members-card {
+.members-card,
+.flash-card {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: rgba(253, 252, 255, 0.95);
@@ -44,7 +45,8 @@ body {
 .hero-card,
 .rooms-card,
 .timeline-card,
-.members-card {
+.members-card,
+.flash-card {
     padding: 24px;
 }
 
@@ -81,6 +83,30 @@ body {
 .member-list {
     display: grid;
     gap: 12px;
+}
+
+.composer-card {
+    display: grid;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.composer-card input,
+.composer-card textarea,
+.composer-card button {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    font: inherit;
+}
+
+.composer-card button {
+    border: 0;
+    background: var(--accent);
+    color: #f6f9ff;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .room-item,
@@ -120,6 +146,21 @@ body {
     justify-content: space-between;
     gap: 12px;
     margin-bottom: 8px;
+}
+
+.flash-success {
+    background: rgba(231, 244, 255, 0.97);
+}
+
+.flash-error {
+    background: rgba(255, 244, 244, 0.97);
+}
+
+.flash-error ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
 }
 
 @media (max-width: 980px) {
