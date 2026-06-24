@@ -1,0 +1,129 @@
+:root {
+    --bg: #f2f0f7;
+    --surface: #fdfcff;
+    --line: #dad3eb;
+    --text: #1c1830;
+    --muted: #675d84;
+    --accent: #365fd8;
+    --accent-soft: #e3ebff;
+    --shadow: 0 22px 46px rgba(44, 36, 86, 0.12);
+    --radius: 24px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top right, rgba(54, 95, 216, 0.14), transparent 30%),
+        linear-gradient(180deg, #faf9fe 0%, #ece8f7 100%);
+}
+
+.page-shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 48px;
+    display: grid;
+    gap: 20px;
+}
+
+.hero-card,
+.rooms-card,
+.timeline-card,
+.members-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(253, 252, 255, 0.95);
+    box-shadow: var(--shadow);
+}
+
+.hero-card,
+.rooms-card,
+.timeline-card,
+.members-card {
+    padding: 24px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    color: var(--accent);
+}
+
+.hero-card h1,
+.timeline-header h2,
+.rooms-card h2,
+.members-card h2 {
+    margin: 10px 0 12px;
+}
+
+.hero-card p,
+.message-item p,
+.member-item span,
+.room-item span,
+.empty-state {
+    color: var(--muted);
+}
+
+.chat-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.4fr 0.8fr;
+    gap: 18px;
+}
+
+.room-list,
+.message-list,
+.member-list {
+    display: grid;
+    gap: 12px;
+}
+
+.room-item,
+.message-item,
+.member-item {
+    padding: 16px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.room-item-active {
+    border-color: rgba(54, 95, 216, 0.35);
+    background: var(--accent-soft);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.presence-pill {
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(54, 95, 216, 0.12);
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.message-item div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 980px) {
+    .chat-layout {
+        grid-template-columns: 1fr;
+    }
+}
