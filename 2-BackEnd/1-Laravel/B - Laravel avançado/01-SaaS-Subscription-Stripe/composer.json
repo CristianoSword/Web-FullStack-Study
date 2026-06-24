@@ -1,0 +1,13 @@
+{
+  "name": "study/laravel-saas-subscription-stripe",
+  "description": "Projeto didatico de SaaS com planos e assinaturas inspirado em Stripe Billing e Laravel Cashier.",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}

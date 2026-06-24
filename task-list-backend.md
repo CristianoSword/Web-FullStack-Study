@@ -116,7 +116,7 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
 #### [ ] 01-SaaS-Subscription-Stripe
 - **O que é:** Plataforma com cobranças recorrentes via Stripe Billing e Laravel Cashier.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
   2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
   3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
   4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
