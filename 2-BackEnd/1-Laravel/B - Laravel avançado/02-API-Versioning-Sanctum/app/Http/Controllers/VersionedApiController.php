@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\VersionedCatalogRequest;
 use App\Support\ApiVersionWorkspace;
 use App\Support\ConfigVersionedCatalog;
 use App\Support\SanctumVersionGate;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class VersionedApiController extends Controller
 {
@@ -20,17 +20,10 @@ class VersionedApiController extends Controller
         );
     }
 
-    public function __invoke(Request $request, string $version): JsonResponse
+    public function __invoke(VersionedCatalogRequest $request, string $version): JsonResponse
     {
-        $token = (string) $request->bearerToken();
-        $resolved = $this->workspace->resolve($version, $token ?: null);
-
-        if (! $resolved['authorized']) {
-            return response()->json([
-                'message' => 'Unauthorized token for demo API.',
-                'version' => $version,
-            ], 401);
-        }
+        $validated = $request->validated();
+        $resolved = $this->workspace->resolve($version, $validated['token']);
 
         return response()->json([
             'version' => $resolved['version'],
