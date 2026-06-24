@@ -18,29 +18,43 @@
             @endforeach
         </div>
 
-        <form class="contact-form">
+        <form class="contact-form" method="POST" action="{{ route('site.contact.submit') }}">
+            @csrf
+
             <label>
                 Nome
-                <input type="text" name="name" placeholder="Seu nome">
+                <input type="text" name="name" value="{{ old('name') }}" placeholder="Seu nome">
+                @error('name')
+                    <small class="field-error">{{ $message }}</small>
+                @enderror
             </label>
 
             <label>
                 Email
-                <input type="email" name="email" placeholder="voce@empresa.com">
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="voce@empresa.com">
+                @error('email')
+                    <small class="field-error">{{ $message }}</small>
+                @enderror
             </label>
 
             <label>
                 Objetivo
                 <select name="goal">
-                    <option>Landing page</option>
-                    <option>Site institucional</option>
-                    <option>Biblioteca de componentes</option>
+                    @foreach (['Landing page', 'Site institucional', 'Biblioteca de componentes'] as $goal)
+                        <option value="{{ $goal }}" @selected(old('goal') === $goal)>{{ $goal }}</option>
+                    @endforeach
                 </select>
+                @error('goal')
+                    <small class="field-error">{{ $message }}</small>
+                @enderror
             </label>
 
             <label>
                 Desafio atual
-                <textarea name="message" rows="5" placeholder="Conte o que precisa evoluir"></textarea>
+                <textarea name="message" rows="5" placeholder="Conte o que precisa evoluir">{{ old('message') }}</textarea>
+                @error('message')
+                    <small class="field-error">{{ $message }}</small>
+                @enderror
             </label>
 
             <button type="submit" class="button button-primary">Enviar interesse</button>

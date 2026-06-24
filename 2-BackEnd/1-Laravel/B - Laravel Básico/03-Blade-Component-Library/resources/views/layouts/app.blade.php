@@ -27,6 +27,12 @@
         </header>
 
         <main class="site-main">
+            @if (session('success'))
+                <div class="flash-message flash-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             @yield('content')
         </main>
 

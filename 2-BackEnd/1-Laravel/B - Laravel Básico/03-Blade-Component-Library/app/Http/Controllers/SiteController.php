@@ -3,13 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\ProvidesInstitutionalContent;
+use App\Http\Requests\ContactLeadRequest;
+use App\Support\ConfigInstitutionalContent;
+use App\Support\LeadCaptureStore;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class SiteController extends Controller
 {
+    private readonly ProvidesInstitutionalContent $content;
+
+    private readonly LeadCaptureStore $leadCaptureStore;
+
     public function __construct(
-        private readonly ProvidesInstitutionalContent $content
+        ?ProvidesInstitutionalContent $content = null,
+        ?LeadCaptureStore $leadCaptureStore = null,
     ) {
+        $this->content = $content ?? new ConfigInstitutionalContent();
+        $this->leadCaptureStore = $leadCaptureStore ?? new LeadCaptureStore(
+            storage_path('app/private/contact-leads.json')
+        );
     }
 
     public function home(): View
@@ -36,6 +49,20 @@ class SiteController extends Controller
             ...$this->sharedPayload(),
             'contactChannels' => $this->content->getContactChannels(),
         ]);
+    }
+
+    public function submitContact(ContactLeadRequest $request): RedirectResponse
+    {
+        $payload = $request->validated();
+
+        $this->leadCaptureStore->append([
+            ...$payload,
+            'submitted_at' => now()->toIso8601String(),
+        ]);
+
+        return redirect()
+            ->route('site.contact')
+            ->with('success', 'Interesse enviado com sucesso. Vamos retornar em breve.');
     }
 
     /**
