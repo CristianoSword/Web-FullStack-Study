@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CheckoutRequest;
 use App\Support\ConfigBillingCatalog;
 use App\Support\SaaSBillingWorkspace;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class BillingController extends Controller
@@ -35,5 +37,19 @@ class BillingController extends Controller
             'subscription' => $this->workspace->currentSubscription(),
             'selectedPlan' => $this->workspace->selectedPlan(),
         ]);
+    }
+
+    public function checkout(CheckoutRequest $request): RedirectResponse
+    {
+        $validated = $request->validated();
+        $plan = $this->workspace->selectedPlan($validated['plan_id']);
+
+        return redirect()
+            ->route('billing.dashboard')
+            ->with('success', sprintf(
+                'Checkout simulado iniciado para o plano %s usando %s.',
+                $plan?->name ?? $validated['plan_id'],
+                $validated['email']
+            ));
     }
 }

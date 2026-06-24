@@ -20,7 +20,12 @@
                     @endforeach
                 </ul>
 
-                <a href="{{ route('billing.dashboard') }}" class="button">Ver dashboard</a>
+                <form class="checkout-form" method="POST" action="{{ route('billing.checkout') }}">
+                    @csrf
+                    <input type="hidden" name="plan_id" value="{{ $plan->id }}">
+                    <input type="email" name="email" value="{{ old('email', $customer->email) }}" placeholder="financeiro@company.com">
+                    <button type="submit" class="button">Simular checkout</button>
+                </form>
             </article>
         @endforeach
     </section>
