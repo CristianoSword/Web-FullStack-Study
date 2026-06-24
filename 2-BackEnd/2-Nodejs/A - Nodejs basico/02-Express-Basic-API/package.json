@@ -1,0 +1,13 @@
+{
+  "name": "express-basic-api",
+  "version": "1.0.0",
+  "description": "API Express basica para estudo de CRUD REST.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
