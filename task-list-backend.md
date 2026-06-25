@@ -322,7 +322,7 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
   3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
   4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 #### [ ] 03-Rails-API-Only-JWT
