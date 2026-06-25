@@ -1,0 +1,2 @@
+class ExportBatch < ApplicationRecord
+end
