@@ -1,6 +1,7 @@
-import { Body, Controller, Get, Post } from "@nestjs/common";
+import { Body, Controller, Get, Post, UsePipes } from "@nestjs/common";
 import { AccountsService } from "./accounts.service";
 import { CreateAccountDto } from "./dto/create-account.dto";
+import { AccountPayloadPipe } from "./pipes/account-payload.pipe";
 
 @Controller("accounts")
 export class AccountsController {
@@ -12,6 +13,7 @@ export class AccountsController {
   }
 
   @Post()
+  @UsePipes(AccountPayloadPipe)
   create(@Body() payload: CreateAccountDto) {
     return this.accountsService.create(payload);
   }
