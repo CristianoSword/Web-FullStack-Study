@@ -1,6 +1,8 @@
 class NotificationsController < ApplicationController
   def create
-    notification = Notification.create!(notification_params)
+    notification = Notification.new(notification_params)
+    return render json: { errors: notification.errors.full_messages }, status: :unprocessable_entity unless notification.save
+
     NotificationBroadcaster.new.broadcast(notification)
   end
 
