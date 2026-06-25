@@ -1,0 +1,8 @@
+{
+  "name": "fastify-microservice",
+  "version": "1.0.0",
+  "description": "Microsservico didatico com Fastify.",
+  "scripts": {
+    "start": "node src/server.js"
+  }
+}
