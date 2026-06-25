@@ -1,0 +1,8 @@
+{
+  "name": "websocket-realtime-server",
+  "version": "1.0.0",
+  "description": "Servidor WebSocket didatico com canais de sala.",
+  "scripts": {
+    "start": "node src/server.js"
+  }
+}
