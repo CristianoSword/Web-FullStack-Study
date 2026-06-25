@@ -1,7 +1,9 @@
 class SessionsController < ApplicationController
   def create
     user = SessionAuthenticator.new.authenticate(params[:email], params[:password_digest])
-    session[:user_id] = user.id if user
+    head :unauthorized and return unless user
+
+    session[:user_id] = user.id
   end
 
   def destroy
