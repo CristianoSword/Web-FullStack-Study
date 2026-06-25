@@ -1,0 +1,8 @@
+{
+  "name": "node-worker-threads-lab",
+  "version": "1.0.0",
+  "description": "Laboratorio didatico de worker threads.",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
