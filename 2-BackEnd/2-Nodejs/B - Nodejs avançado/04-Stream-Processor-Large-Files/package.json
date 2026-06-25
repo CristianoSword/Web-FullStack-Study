@@ -1,0 +1,8 @@
+{
+  "name": "stream-processor-large-files",
+  "version": "1.0.0",
+  "description": "Processador didatico de CSV com streams.",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
