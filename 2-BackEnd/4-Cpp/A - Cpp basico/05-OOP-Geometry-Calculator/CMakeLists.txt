@@ -3,4 +3,4 @@ project(oop_geometry_calculator)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(oop_geometry_calculator src/main.cpp)
+add_executable(oop_geometry_calculator src/main.cpp src/rectangle.cpp src/circle.cpp)
