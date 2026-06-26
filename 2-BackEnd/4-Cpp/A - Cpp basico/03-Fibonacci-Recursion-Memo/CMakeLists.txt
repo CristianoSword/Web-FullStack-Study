@@ -3,4 +3,4 @@ project(fibonacci_recursion_memo)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(fibonacci_recursion_memo src/main.cpp)
+add_executable(fibonacci_recursion_memo src/main.cpp src/fibonacci_service.cpp)
