@@ -3,4 +3,4 @@ project(multithreaded_task_pool)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(multithreaded_task_pool src/main.cpp)
+add_executable(multithreaded_task_pool src/main.cpp src/task_pool.cpp)
