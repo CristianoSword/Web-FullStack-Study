@@ -1,7 +1,15 @@
 #include "../include/report_reader.hpp"
+#include "../include/report_validator.hpp"
+
+#include <algorithm>
 
 std::vector<Record> loadSampleRecords() {
-  return {{"hardware", 12}, {"software", 7}};
+  std::vector<Record> records = {{"hardware", 12}, {"software", 7}};
+  records.erase(std::remove_if(records.begin(), records.end(), [](const Record& record) {
+                  return !isValidRecord(record);
+                }),
+                records.end());
+  return records;
 }
 
 ReportStats calculateStats(const std::vector<Record>& records) {
