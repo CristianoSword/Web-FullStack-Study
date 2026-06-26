@@ -465,7 +465,7 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [ ] 02-Bank-Account-Simulation
+#### [x] 02-Bank-Account-Simulation
 - **O que é:** Simulação de transações bancárias usando classes, objetos e encapsulamento.
 - **Tasks (6 Commits):**
   1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
@@ -473,7 +473,7 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
   4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 #### [ ] 03-Inventory-Management
 - **O que é:** Sistema CRUD básico de estoque armazenado em coleções na memória.
