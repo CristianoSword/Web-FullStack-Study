@@ -2,6 +2,7 @@ package study.java.concurrency;
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println("concurrency ready");
+    SyncSnapshot snapshot = new SyncCoordinator().incrementMany(3);
+    System.out.println(snapshot.increments());
   }
 }
