@@ -2,6 +2,7 @@ package study.java.patterns;
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println("patterns ready");
+    Notifier notifier = new NotifierFactory().createEmail();
+    System.out.println(notifier.notifyMessage("report-ready"));
   }
 }
