@@ -1,16 +1,16 @@
 # 02-WebSocket-Realtime-Server
 
-Servidor de estudo para salas em tempo real com fluxo de entrada, broadcast e validacao.
+Servidor WebSocket real com `ws`, salas, broadcast e validacao de payload.
 
 ## Partes principais
 
-- `src/server.js`: servidor HTTP base.
-- `src/handlers/socket-handler.js`: ciclo de vida da conexao.
-- `src/services/realtime-hub.js`: gestao das salas e broadcast.
+- `src/server.js`: servidor HTTP com rota `GET /health` e bootstrap do socket server.
+- `src/handlers/socket-handler.js`: ciclo de vida da conexao e troca de sala.
+- `src/services/realtime-hub.js`: gestao das salas, historico curto e broadcast.
 - `src/validators/message-validator.js`: saneamento das mensagens recebidas.
 
 ## Fluxo
 
 - cliente entra em `general` por padrao;
-- cada mensagem pode redefinir a sala atual;
-- mensagens invalidas sao rejeitadas antes do broadcast.
+- cada mensagem pode mover o cliente para outra sala;
+- mensagens invalidas retornam erro para o socket sem derrubar a conexao.

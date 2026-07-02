@@ -1,8 +1,7 @@
 const { processLines } = require("../services/report-processor");
-const { validateLines } = require("../validators/report-validator");
 
-function runReport(sampleLines) {
-  return processLines(validateLines(sampleLines));
+function runReport(filePath) {
+  return processLines(filePath);
 }
 
 module.exports = {

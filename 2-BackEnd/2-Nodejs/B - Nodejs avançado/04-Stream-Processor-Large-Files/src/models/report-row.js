@@ -1,7 +1,7 @@
 function buildReportRow(columns) {
   return {
-    id: columns[0],
-    category: columns[1],
+    id: String(columns[0] || "").trim(),
+    category: String(columns[1] || "").trim(),
     amount: Number(columns[2] || 0),
   };
 }

@@ -4,5 +4,8 @@
   "description": "Servidor WebSocket didatico com canais de sala.",
   "scripts": {
     "start": "node src/server.js"
+  },
+  "dependencies": {
+    "ws": "latest"
   }
 }

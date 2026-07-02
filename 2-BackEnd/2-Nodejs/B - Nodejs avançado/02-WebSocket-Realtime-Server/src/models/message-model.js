@@ -1,5 +1,6 @@
-function createMessage(room, author, content) {
+function createMessage(room, author, content, type = "message") {
   return {
+    type,
     room,
     author,
     content,

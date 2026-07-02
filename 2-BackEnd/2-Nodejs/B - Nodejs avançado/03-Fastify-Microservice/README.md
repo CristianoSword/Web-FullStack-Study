@@ -1,10 +1,10 @@
 # 03-Fastify-Microservice
 
-Microsservico enxuto para estudar plugins, rotas e validacao de payload.
+Microsservico Fastify real com plugin de rotas, schema de payload e respostas HTTP.
 
 ## Arquivos
 
-- `src/server.js`: cria o servidor e registra os plugins.
-- `src/routes/order-routes.js`: expoe as rotas de pedidos.
-- `src/services/order-service.js`: armazena e cria pedidos.
+- `src/server.js`: cria o servidor Fastify e registra os plugins.
+- `src/routes/order-routes.js`: expoe `GET /orders`, `GET /orders/:id` e `POST /orders`.
+- `src/services/order-service.js`: armazena, busca e cria pedidos.
 - `src/validators/order-validator.js`: protege a entrada do `POST /orders`.

@@ -7,6 +7,10 @@ function validateConfig(config) {
     throw new Error("Chunk size must be a positive integer.");
   }
 
+  if (config.chunkSize > config.limit) {
+    throw new Error("Chunk size cannot be greater than limit.");
+  }
+
   return config;
 }
 

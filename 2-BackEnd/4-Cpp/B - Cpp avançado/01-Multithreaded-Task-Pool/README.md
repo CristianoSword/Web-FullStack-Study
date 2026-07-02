@@ -1,9 +1,9 @@
 # 01-Multithreaded-Task-Pool
 
-Pool simplificado para estudar fila de tarefas e drenagem controlada.
+Pool de tarefas com threads reais, fila compartilhada e sincronizacao por condition variable.
 
 ## Arquivos
 
-- `include/task_pool.hpp`: contrato do pool.
-- `src/task_pool.cpp`: enfileiramento e drenagem.
-- `src/main.cpp`: simula execucao de duas tarefas.
+- `include/task_pool.hpp`: contrato do pool e controle das workers.
+- `src/task_pool.cpp`: enfileiramento, execucao concorrente e espera por idle.
+- `src/main.cpp`: dispara tarefas e imprime o estado consolidado.

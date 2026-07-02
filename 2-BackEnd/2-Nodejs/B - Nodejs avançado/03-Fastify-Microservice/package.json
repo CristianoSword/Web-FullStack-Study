@@ -4,5 +4,8 @@
   "description": "Microsservico didatico com Fastify.",
   "scripts": {
     "start": "node src/server.js"
+  },
+  "dependencies": {
+    "fastify": "latest"
   }
 }

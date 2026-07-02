@@ -19,29 +19,33 @@ class UserController extends Controller
 
     public function index(Request $request, Response $response): void
     {
-        // For demonstration, let's return some mock users since DB might not be configured
         $userModel = new User();
-        
+
         try {
             $users = $userModel->all();
+            $error = null;
         } catch (\PDOException $e) {
-            // Fallback to mock data if DB isn't running
-            $users = [
-                ['id' => 1, 'name' => 'Alice', 'email' => 'alice@example.com'],
-                ['id' => 2, 'name' => 'Bob', 'email' => 'bob@example.com'],
-                ['id' => 3, 'name' => 'Charlie', 'email' => 'charlie@example.com'],
-            ];
+            $users = [];
+            $error = 'Database unavailable. Configure PDO access to list users.';
         }
 
-        $this->render('users', ['users' => $users]);
+        $this->render('users', [
+            'users' => $users,
+            'error' => $error
+        ]);
     }
 
     public function apiUsers(Request $request, Response $response): void
     {
-        $users = [
-            ['id' => 1, 'name' => 'Alice', 'email' => 'alice@example.com'],
-            ['id' => 2, 'name' => 'Bob', 'email' => 'bob@example.com']
-        ];
-        $response->json($users);
+        $userModel = new User();
+
+        try {
+            $response->json($userModel->all());
+        } catch (\PDOException $e) {
+            $response->json([
+                'message' => 'Database unavailable',
+                'error' => $e->getMessage()
+            ], 503);
+        }
     }
 }

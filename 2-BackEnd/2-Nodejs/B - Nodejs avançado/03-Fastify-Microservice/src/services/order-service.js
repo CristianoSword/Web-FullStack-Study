@@ -16,7 +16,12 @@ function createOrder(payload) {
   return order;
 }
 
+function findOrder(id) {
+  return orders.find((order) => order.id === id) ?? null;
+}
+
 module.exports = {
   listOrders,
   createOrder,
+  findOrder,
 };

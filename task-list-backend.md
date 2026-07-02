@@ -113,55 +113,55 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
 
 ### ⚙️ Projetos Avançados
 
-#### [x] 01-SaaS-Subscription-Stripe
+#### [ ] 01-SaaS-Subscription-Stripe
 - **O que é:** Plataforma com cobranças recorrentes via Stripe Billing e Laravel Cashier.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 02-API-Versioning-Sanctum
+#### [ ] 02-API-Versioning-Sanctum
 - **O que é:** API REST versionada protegida por autenticação Laravel Sanctum.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 03-Laravel-Websockets-Chat
+#### [ ] 03-Laravel-Websockets-Chat
 - **O que é:** Chat em tempo real utilizando canais privados com Laravel Echo.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 04-Background-Queue-Workers
+#### [ ] 04-Background-Queue-Workers
 - **O que é:** Sistema de fila com Redis tratando envio de e-mails em lote.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 05-Multitenant-Database-Architecture
+#### [ ] 05-Multitenant-Database-Architecture
 - **O que é:** Arquitetura multi-tenant com banco de dados isolado por cliente.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 2-BackEnd/2-Nodejs
 
@@ -335,15 +335,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 04-Multi-Search-ElasticSearch
+#### [ ] 04-Multi-Search-ElasticSearch
 - **O que é:** Sistema de busca textual complexo integrado com ElasticSearch.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 #### [x] 05-Rails-Engine-Plugin
 - **O que é:** Desenvolvimento de uma Engine reusável para acoplar em projetos Rails.
@@ -411,15 +411,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 02-TCP-Server-Sockets
+#### [ ] 02-TCP-Server-Sockets
 - **O que é:** Servidor de chat básico via sockets TCP usando APIs nativas de rede OS.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 #### [x] 03-Smart-Pointer-Implementation
 - **O que é:** Implementação simplificada de unique_ptr e shared_ptr do zero.
@@ -507,15 +507,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
 
 ### ⚙️ Projetos Avançados
 
-#### [x] 01-Spring-Boot-REST-API
+#### [ ] 01-Spring-Boot-REST-API
 - **O que é:** API corporativa com Spring Boot, JPA/Hibernate e banco H2.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 #### [x] 02-Concurrency-Thread-Sync
 - **O que é:** Simulação de concorrência com travas (Locks) e semáforos em Java.
@@ -527,15 +527,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 03-Reactive-Java-Project
+#### [ ] 03-Reactive-Java-Project
 - **O que é:** Implementação de fluxo assíncrono não-bloqueante usando Project Reactor.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 #### [x] 04-Design-Patterns-Catalog
 - **O que é:** Projeto prático aplicando padrões de design como Factory, Singleton e Decorator.
@@ -547,15 +547,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
   6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
-#### [x] 05-Custom-Annotation-Processor
+#### [ ] 05-Custom-Annotation-Processor
 - **O que é:** Criação de anotações customizadas Java e processador por reflexão.
 - **Tasks (6 Commits):**
-  1. `[x]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[x]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[x]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[x]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
+  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
+  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
+  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
+  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
 
 ## 📂 2-BackEnd/6-CSharp
 

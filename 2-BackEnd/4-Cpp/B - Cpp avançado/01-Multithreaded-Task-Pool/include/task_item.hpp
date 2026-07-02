@@ -5,4 +5,5 @@
 struct TaskItem {
   int id;
   std::string label;
+  int durationMs;
 };
