@@ -5,15 +5,18 @@ public sealed class CalculatorApplication
     public Configuration.CalculatorSettings Settings { get; }
     public Services.ExpressionParser Parser { get; }
     public Services.CalculatorEngine Engine { get; }
+    public Cli.CommandLoop ConsoleLoop { get; }
 
     private CalculatorApplication(
         Configuration.CalculatorSettings settings,
         Services.ExpressionParser parser,
-        Services.CalculatorEngine engine)
+        Services.CalculatorEngine engine,
+        Cli.CommandLoop consoleLoop)
     {
         Settings = settings;
         Parser = parser;
         Engine = engine;
+        ConsoleLoop = consoleLoop;
     }
 
     public static CalculatorApplication CreateDefault()
@@ -28,16 +31,20 @@ public sealed class CalculatorApplication
         ]);
         var history = new Services.CalculationHistory(settings.HistoryCapacity);
 
+        var parser = new Services.ExpressionParser(settings.Culture);
+        var engine = new Services.CalculatorEngine(registry, history);
+
         return new CalculatorApplication(
             settings,
-            new Services.ExpressionParser(settings.Culture),
-            new Services.CalculatorEngine(registry, history));
+            parser,
+            engine,
+            new Cli.CommandLoop(parser, engine));
     }
 
     public void Run()
     {
-        Console.WriteLine("Console Calculator bootstrap complete.");
+        Cli.MenuRenderer.PrintBanner();
         Console.WriteLine($"Configured culture: {Settings.Culture}");
-        Console.WriteLine("Core services loaded: parser, operations and history.");
+        ConsoleLoop.Run();
     }
 }
