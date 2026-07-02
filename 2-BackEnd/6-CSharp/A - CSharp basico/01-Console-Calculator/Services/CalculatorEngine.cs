@@ -1,4 +1,5 @@
 using Study.CSharp.ConsoleCalculator.Models;
+using Study.CSharp.ConsoleCalculator.Validation;
 
 namespace Study.CSharp.ConsoleCalculator.Services;
 
@@ -15,6 +16,7 @@ public sealed class CalculatorEngine
 
     public CalculationResult Calculate(CalculationRequest request)
     {
+        CalculationRequestValidator.Validate(request);
         var operation = _operationRegistry.Resolve(request.Operation);
         var value = operation.Execute(request.LeftOperand, request.RightOperand);
         var result = new CalculationResult(

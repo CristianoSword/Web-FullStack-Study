@@ -46,9 +46,16 @@ public sealed class CommandLoop
                 continue;
             }
 
-            var request = _parser.Parse(input);
-            var result = _engine.Calculate(request);
-            MenuRenderer.PrintResult(result);
+            try
+            {
+                var request = _parser.Parse(input);
+                var result = _engine.Calculate(request);
+                MenuRenderer.PrintResult(result);
+            }
+            catch (Exception error)
+            {
+                Console.WriteLine($"Error: {error.Message}");
+            }
         }
     }
 }

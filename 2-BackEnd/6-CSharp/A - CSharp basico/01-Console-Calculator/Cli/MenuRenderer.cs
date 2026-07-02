@@ -19,7 +19,8 @@ public static class MenuRenderer
 
     public static void PrintResult(CalculationResult result)
     {
-        Console.WriteLine($"{result.LeftOperand} {ToSymbol(result.Operation)} {result.RightOperand} = {result.Value}");
+        Console.WriteLine(
+            $"{result.LeftOperand:0.##} {ToSymbol(result.Operation)} {result.RightOperand:0.##} = {result.Value:0.##}");
     }
 
     public static void PrintHistory(IReadOnlyCollection<CalculationResult> history)

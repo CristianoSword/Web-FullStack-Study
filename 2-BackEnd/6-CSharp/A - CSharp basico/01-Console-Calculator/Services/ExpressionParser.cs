@@ -20,7 +20,11 @@ public sealed class ExpressionParser
             throw new InvalidOperationException("Use the format: <left> <operator> <right>.");
         }
 
-        var left = decimal.Parse(tokens[0], _cultureInfo);
+        if (!decimal.TryParse(tokens[0], NumberStyles.Number, _cultureInfo, out var left))
+        {
+            throw new InvalidOperationException($"Invalid left operand: {tokens[0]}");
+        }
+
         var operation = tokens[1] switch
         {
             "+" => OperationKind.Add,
@@ -29,7 +33,11 @@ public sealed class ExpressionParser
             "/" => OperationKind.Divide,
             _ => throw new InvalidOperationException("Supported operators: +, -, *, /."),
         };
-        var right = decimal.Parse(tokens[2], _cultureInfo);
+
+        if (!decimal.TryParse(tokens[2], NumberStyles.Number, _cultureInfo, out var right))
+        {
+            throw new InvalidOperationException($"Invalid right operand: {tokens[2]}");
+        }
 
         return new CalculationRequest(left, right, operation);
     }
