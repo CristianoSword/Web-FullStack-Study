@@ -4,13 +4,16 @@ public sealed class LibraryCatalogApplication
 {
     public Configuration.LibrarySettings Settings { get; }
     public Services.LibraryCatalogService CatalogService { get; }
+    public Cli.LibraryConsole ConsoleUi { get; }
 
     private LibraryCatalogApplication(
         Configuration.LibrarySettings settings,
-        Services.LibraryCatalogService catalogService)
+        Services.LibraryCatalogService catalogService,
+        Cli.LibraryConsole consoleUi)
     {
         Settings = settings;
         CatalogService = catalogService;
+        ConsoleUi = consoleUi;
     }
 
     public static LibraryCatalogApplication CreateDefault()
@@ -19,17 +22,14 @@ public sealed class LibraryCatalogApplication
         var repository = new Services.InMemoryCatalogRepository(settings.SeedData);
         var loanPolicy = new Policies.StandardLoanPolicy(settings.DefaultLoanDays);
         var catalogService = new Services.LibraryCatalogService(repository, loanPolicy);
+        var consoleUi = new Cli.LibraryConsole(catalogService);
 
-        return new LibraryCatalogApplication(settings, catalogService);
+        return new LibraryCatalogApplication(settings, catalogService, consoleUi);
     }
 
     public void Run()
     {
-        Console.WriteLine("Library Catalog OOP bootstrapped.");
-        Console.WriteLine($"Seed data: {Settings.SeedData}");
-        Console.WriteLine($"Default loan days: {Settings.DefaultLoanDays}");
-        Console.WriteLine($"Max concurrent loans: {Settings.MaxConcurrentLoansPerMember}");
-        Console.WriteLine($"Books loaded: {CatalogService.ListBooks().Count}");
-        Console.WriteLine($"Members loaded: {CatalogService.ListMembers().Count}");
+        Cli.MenuRenderer.PrintBanner(Settings, CatalogService.ListBooks().Count, CatalogService.ListMembers().Count);
+        ConsoleUi.Run();
     }
 }
