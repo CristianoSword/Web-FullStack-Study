@@ -1,3 +1,4 @@
+using Study.CSharp.LibraryCatalogOop.Exceptions;
 using Study.CSharp.LibraryCatalogOop.Models;
 using Study.CSharp.LibraryCatalogOop.Services;
 
@@ -18,63 +19,74 @@ public sealed class LibraryConsole
 
         while (running)
         {
-            MenuRenderer.PrintPrompt();
-            var input = Console.ReadLine()?.Trim() ?? string.Empty;
-
-            if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+            try
             {
-                running = false;
-                continue;
-            }
+                MenuRenderer.PrintPrompt();
+                var input = Console.ReadLine()?.Trim() ?? string.Empty;
 
-            if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+                {
+                    running = false;
+                    continue;
+                }
+
+                if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintHelp();
+                    continue;
+                }
+
+                if (string.Equals(input, "catalog", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintBooks(_catalogService.ListBooks());
+                    continue;
+                }
+
+                if (string.Equals(input, "members", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintMembers(_catalogService.ListMembers());
+                    continue;
+                }
+
+                if (string.Equals(input, "loans", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintLoans(_catalogService.ListLoans());
+                    continue;
+                }
+
+                if (input.StartsWith("search ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var term = input["search ".Length..];
+                    MenuRenderer.PrintBooks(_catalogService.SearchBooks(term));
+                    continue;
+                }
+
+                if (input.StartsWith("borrow ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var payload = ParsePayload(input["borrow ".Length..]);
+                    var loan = _catalogService.BorrowBook(new BorrowBookRequest(payload.MemberId, payload.BookId, DateTimeOffset.UtcNow));
+                    MenuRenderer.PrintMessage($"Loan #{loan.Id} created with due date {loan.DueAt:yyyy-MM-dd}.");
+                    continue;
+                }
+
+                if (input.StartsWith("return ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var payload = ParsePayload(input["return ".Length..]);
+                    var loan = _catalogService.ReturnBook(new ReturnBookRequest(payload.MemberId, payload.BookId, DateTimeOffset.UtcNow));
+                    MenuRenderer.PrintMessage($"Loan #{loan.Id} closed at {loan.ReturnedAt:yyyy-MM-dd HH:mm}.");
+                    continue;
+                }
+
+                MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
+            }
+            catch (DomainValidationException exception)
             {
-                MenuRenderer.PrintHelp();
-                continue;
+                MenuRenderer.PrintMessage($"Validation error: {exception.Message}");
             }
-
-            if (string.Equals(input, "catalog", StringComparison.OrdinalIgnoreCase))
+            catch (InvalidOperationException exception)
             {
-                MenuRenderer.PrintBooks(_catalogService.ListBooks());
-                continue;
+                MenuRenderer.PrintMessage(exception.Message);
             }
-
-            if (string.Equals(input, "members", StringComparison.OrdinalIgnoreCase))
-            {
-                MenuRenderer.PrintMembers(_catalogService.ListMembers());
-                continue;
-            }
-
-            if (string.Equals(input, "loans", StringComparison.OrdinalIgnoreCase))
-            {
-                MenuRenderer.PrintLoans(_catalogService.ListLoans());
-                continue;
-            }
-
-            if (input.StartsWith("search ", StringComparison.OrdinalIgnoreCase))
-            {
-                var term = input["search ".Length..];
-                MenuRenderer.PrintBooks(_catalogService.SearchBooks(term));
-                continue;
-            }
-
-            if (input.StartsWith("borrow ", StringComparison.OrdinalIgnoreCase))
-            {
-                var payload = ParsePayload(input["borrow ".Length..]);
-                var loan = _catalogService.BorrowBook(new BorrowBookRequest(payload.MemberId, payload.BookId, DateTimeOffset.UtcNow));
-                MenuRenderer.PrintMessage($"Loan #{loan.Id} created with due date {loan.DueAt:yyyy-MM-dd}.");
-                continue;
-            }
-
-            if (input.StartsWith("return ", StringComparison.OrdinalIgnoreCase))
-            {
-                var payload = ParsePayload(input["return ".Length..]);
-                var loan = _catalogService.ReturnBook(new ReturnBookRequest(payload.MemberId, payload.BookId, DateTimeOffset.UtcNow));
-                MenuRenderer.PrintMessage($"Loan #{loan.Id} closed at {loan.ReturnedAt:yyyy-MM-dd HH:mm}.");
-                continue;
-            }
-
-            MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
         }
     }
 

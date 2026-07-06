@@ -6,10 +6,12 @@ namespace Study.CSharp.LibraryCatalogOop.Policies;
 public sealed class StandardLoanPolicy : ILoanPolicy
 {
     private readonly int _defaultLoanDays;
+    private readonly int _maxConcurrentLoansPerMember;
 
-    public StandardLoanPolicy(int defaultLoanDays)
+    public StandardLoanPolicy(int defaultLoanDays, int maxConcurrentLoansPerMember)
     {
         _defaultLoanDays = defaultLoanDays;
+        _maxConcurrentLoansPerMember = maxConcurrentLoansPerMember;
     }
 
     public DateTimeOffset CalculateDueDate(DateTimeOffset borrowedAt, Member member)
@@ -19,6 +21,7 @@ public sealed class StandardLoanPolicy : ILoanPolicy
 
     public bool CanBorrowMoreBooks(Member member, IReadOnlyCollection<LoanRecord> activeLoans)
     {
-        return activeLoans.Count < member.MaxConcurrentLoans;
+        var effectiveLimit = Math.Max(1, Math.Min(member.MaxConcurrentLoans, _maxConcurrentLoansPerMember));
+        return activeLoans.Count < effectiveLimit;
     }
 }
