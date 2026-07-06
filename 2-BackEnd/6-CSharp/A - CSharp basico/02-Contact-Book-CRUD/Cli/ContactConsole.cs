@@ -1,3 +1,4 @@
+using Study.CSharp.ContactBookCrud.Exceptions;
 using Study.CSharp.ContactBookCrud.Models;
 using Study.CSharp.ContactBookCrud.Services;
 
@@ -18,59 +19,74 @@ public sealed class ContactConsole
 
         while (running)
         {
-            MenuRenderer.PrintPrompt();
-            var input = Console.ReadLine()?.Trim() ?? string.Empty;
-
-            if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+            try
             {
-                running = false;
-                continue;
-            }
+                MenuRenderer.PrintPrompt();
+                var input = Console.ReadLine()?.Trim() ?? string.Empty;
 
-            if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+                {
+                    running = false;
+                    continue;
+                }
+
+                if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintHelp();
+                    continue;
+                }
+
+                if (string.Equals(input, "list", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintContacts(_service.ListContacts());
+                    continue;
+                }
+
+                if (input.StartsWith("search ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var query = input["search ".Length..];
+                    MenuRenderer.PrintContacts(_service.SearchByName(query));
+                    continue;
+                }
+
+                if (input.StartsWith("add ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var payload = ParsePayload(input["add ".Length..], requireId: false);
+                    var contact = _service.CreateContact(new CreateContactInput(payload.FullName, payload.Email, payload.Phone));
+                    MenuRenderer.PrintMessage($"Created contact #{contact.Id}.");
+                    continue;
+                }
+
+                if (input.StartsWith("update ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var payload = ParsePayload(input["update ".Length..], requireId: true);
+                    var contact = _service.UpdateContact(new UpdateContactInput(payload.Id, payload.FullName, payload.Email, payload.Phone));
+                    MenuRenderer.PrintMessage(contact is null ? "Contact not found." : $"Updated contact #{contact.Id}.");
+                    continue;
+                }
+
+                if (input.StartsWith("delete ", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(input["delete ".Length..], out var id))
+                    {
+                        throw new InvalidOperationException("Use: delete <id>");
+                    }
+
+                    var deleted = _service.DeleteContact(id);
+                    MenuRenderer.PrintMessage(deleted ? $"Deleted contact #{id}." : "Contact not found.");
+                    continue;
+                }
+
+                MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
+            }
+            catch (DomainValidationException exception)
             {
-                MenuRenderer.PrintHelp();
-                continue;
+                MenuRenderer.PrintMessage($"Validation error: {exception.Message}");
             }
-
-            if (string.Equals(input, "list", StringComparison.OrdinalIgnoreCase))
+            catch (InvalidOperationException exception)
             {
-                MenuRenderer.PrintContacts(_service.ListContacts());
-                continue;
+                MenuRenderer.PrintMessage(exception.Message);
             }
-
-            if (input.StartsWith("search ", StringComparison.OrdinalIgnoreCase))
-            {
-                var query = input["search ".Length..];
-                MenuRenderer.PrintContacts(_service.SearchByName(query));
-                continue;
-            }
-
-            if (input.StartsWith("add ", StringComparison.OrdinalIgnoreCase))
-            {
-                var payload = ParsePayload(input["add ".Length..], requireId: false);
-                var contact = _service.CreateContact(new CreateContactInput(payload.FullName, payload.Email, payload.Phone));
-                MenuRenderer.PrintMessage($"Created contact #{contact.Id}.");
-                continue;
-            }
-
-            if (input.StartsWith("update ", StringComparison.OrdinalIgnoreCase))
-            {
-                var payload = ParsePayload(input["update ".Length..], requireId: true);
-                var contact = _service.UpdateContact(new UpdateContactInput(payload.Id, payload.FullName, payload.Email, payload.Phone));
-                MenuRenderer.PrintMessage(contact is null ? "Contact not found." : $"Updated contact #{contact.Id}.");
-                continue;
-            }
-
-            if (input.StartsWith("delete ", StringComparison.OrdinalIgnoreCase) &&
-                int.TryParse(input["delete ".Length..], out var id))
-            {
-                var deleted = _service.DeleteContact(id);
-                MenuRenderer.PrintMessage(deleted ? $"Deleted contact #{id}." : "Contact not found.");
-                continue;
-            }
-
-            MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
         }
     }
 
