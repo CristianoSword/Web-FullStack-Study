@@ -1,3 +1,4 @@
+using Study.CSharp.InterfacePolymorphism.Exceptions;
 using Study.CSharp.InterfacePolymorphism.Models;
 using Study.CSharp.InterfacePolymorphism.Services;
 
@@ -18,42 +19,53 @@ public sealed class NotificationConsole
 
         while (running)
         {
-            MenuRenderer.PrintPrompt();
-            var input = Console.ReadLine()?.Trim() ?? string.Empty;
-
-            if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+            try
             {
-                running = false;
-                continue;
-            }
+                MenuRenderer.PrintPrompt();
+                var input = Console.ReadLine()?.Trim() ?? string.Empty;
 
-            if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+                {
+                    running = false;
+                    continue;
+                }
+
+                if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintHelp();
+                    continue;
+                }
+
+                if (string.Equals(input, "channels", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintChannels(_dispatcher.ListChannels());
+                    continue;
+                }
+
+                if (string.Equals(input, "history", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintHistory(_dispatcher.ListHistory());
+                    continue;
+                }
+
+                if (input.StartsWith("send ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var request = ParseRequest(input["send ".Length..]);
+                    var result = _dispatcher.Dispatch(request);
+                    MenuRenderer.PrintMessage(result.TransportMessage);
+                    continue;
+                }
+
+                MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
+            }
+            catch (DomainValidationException exception)
             {
-                MenuRenderer.PrintHelp();
-                continue;
+                MenuRenderer.PrintMessage($"Validation error: {exception.Message}");
             }
-
-            if (string.Equals(input, "channels", StringComparison.OrdinalIgnoreCase))
+            catch (InvalidOperationException exception)
             {
-                MenuRenderer.PrintChannels(_dispatcher.ListChannels());
-                continue;
+                MenuRenderer.PrintMessage(exception.Message);
             }
-
-            if (string.Equals(input, "history", StringComparison.OrdinalIgnoreCase))
-            {
-                MenuRenderer.PrintHistory(_dispatcher.ListHistory());
-                continue;
-            }
-
-            if (input.StartsWith("send ", StringComparison.OrdinalIgnoreCase))
-            {
-                var request = ParseRequest(input["send ".Length..]);
-                var result = _dispatcher.Dispatch(request);
-                MenuRenderer.PrintMessage(result.TransportMessage);
-                continue;
-            }
-
-            MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
         }
     }
 
