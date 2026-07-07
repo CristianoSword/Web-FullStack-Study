@@ -4,13 +4,16 @@ public sealed class JsonConfigParserApplication
 {
     public Configuration.RuntimeSettings Settings { get; }
     public Services.ConfigParserService ParserService { get; }
+    public Cli.ConfigConsole ConsoleUi { get; }
 
     private JsonConfigParserApplication(
         Configuration.RuntimeSettings settings,
-        Services.ConfigParserService parserService)
+        Services.ConfigParserService parserService,
+        Cli.ConfigConsole consoleUi)
     {
         Settings = settings;
         ParserService = parserService;
+        ConsoleUi = consoleUi;
     }
 
     public static JsonConfigParserApplication CreateDefault()
@@ -24,18 +27,15 @@ public sealed class JsonConfigParserApplication
         var store = new Services.FileConfigurationStore(fileSet, merger);
         var navigator = new Services.ConfigurationNavigator();
         var parserService = new Services.ConfigParserService(store, navigator);
+        var consoleUi = new Cli.ConfigConsole(parserService);
 
-        return new JsonConfigParserApplication(settings, parserService);
+        return new JsonConfigParserApplication(settings, parserService, consoleUi);
     }
 
     public void Run()
     {
-        Console.WriteLine("JSON Config Parser bootstrapped.");
-        Console.WriteLine($"Environment: {Settings.EnvironmentName}");
-        Console.WriteLine($"Base file: {Settings.BaseFileName}");
-        Console.WriteLine($"Override file: {Settings.OverrideFileName}");
         var configuration = ParserService.Load();
-        Console.WriteLine($"App name: {configuration.App.Name}");
-        Console.WriteLine($"Server: {configuration.App.Server.Host}:{configuration.App.Server.Port}");
+        Cli.MenuRenderer.PrintBanner(Settings, configuration);
+        ConsoleUi.Run();
     }
 }
