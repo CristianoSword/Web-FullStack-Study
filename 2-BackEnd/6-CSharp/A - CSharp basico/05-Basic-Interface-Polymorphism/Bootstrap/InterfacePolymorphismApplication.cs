@@ -4,13 +4,16 @@ public sealed class InterfacePolymorphismApplication
 {
     public Configuration.NotificationSettings Settings { get; }
     public Services.NotificationDispatcher Dispatcher { get; }
+    public Cli.NotificationConsole ConsoleUi { get; }
 
     private InterfacePolymorphismApplication(
         Configuration.NotificationSettings settings,
-        Services.NotificationDispatcher dispatcher)
+        Services.NotificationDispatcher dispatcher,
+        Cli.NotificationConsole consoleUi)
     {
         Settings = settings;
         Dispatcher = dispatcher;
+        ConsoleUi = consoleUi;
     }
 
     public static InterfacePolymorphismApplication CreateDefault()
@@ -24,17 +27,14 @@ public sealed class InterfacePolymorphismApplication
             new Channels.SlackNotificationChannel(settings.SlackEnabled),
         };
         var dispatcher = new Services.NotificationDispatcher(settings.DefaultSender, channels, logRepository);
+        var consoleUi = new Cli.NotificationConsole(dispatcher);
 
-        return new InterfacePolymorphismApplication(settings, dispatcher);
+        return new InterfacePolymorphismApplication(settings, dispatcher, consoleUi);
     }
 
     public void Run()
     {
-        Console.WriteLine("Interface Polymorphism bootstrapped.");
-        Console.WriteLine($"Default sender: {Settings.DefaultSender}");
-        Console.WriteLine($"Email enabled: {Settings.EmailEnabled}");
-        Console.WriteLine($"Sms enabled: {Settings.SmsEnabled}");
-        Console.WriteLine($"Slack enabled: {Settings.SlackEnabled}");
-        Console.WriteLine($"Channels registered: {Dispatcher.ListChannels().Count}");
+        Cli.MenuRenderer.PrintBanner(Settings, Dispatcher.ListChannels());
+        ConsoleUi.Run();
     }
 }
