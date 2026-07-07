@@ -1,3 +1,4 @@
+using Study.CSharp.JsonConfigParser.Exceptions;
 using Study.CSharp.JsonConfigParser.Models;
 using Study.CSharp.JsonConfigParser.Services;
 
@@ -18,56 +19,67 @@ public sealed class ConfigConsole
 
         while (running)
         {
-            MenuRenderer.PrintPrompt();
-            var input = Console.ReadLine()?.Trim() ?? string.Empty;
-
-            if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+            try
             {
-                running = false;
-                continue;
-            }
+                MenuRenderer.PrintPrompt();
+                var input = Console.ReadLine()?.Trim() ?? string.Empty;
 
-            if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
+                {
+                    running = false;
+                    continue;
+                }
+
+                if (string.Equals(input, "help", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintHelp();
+                    continue;
+                }
+
+                if (string.Equals(input, "show", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintSummary(_parserService.Current());
+                    continue;
+                }
+
+                if (string.Equals(input, "export", StringComparison.OrdinalIgnoreCase))
+                {
+                    MenuRenderer.PrintJson(_parserService.GetValue("App"));
+                    continue;
+                }
+
+                if (string.Equals(input, "reload", StringComparison.OrdinalIgnoreCase))
+                {
+                    var configuration = _parserService.Load();
+                    MenuRenderer.PrintMessage($"Reloaded {configuration.Files.EnvironmentName} configuration.");
+                    continue;
+                }
+
+                if (input.StartsWith("get ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var path = input["get ".Length..];
+                    MenuRenderer.PrintJson(_parserService.GetValue(path));
+                    continue;
+                }
+
+                if (input.StartsWith("set ", StringComparison.OrdinalIgnoreCase))
+                {
+                    var mutation = ParseMutation(input["set ".Length..]);
+                    var configuration = _parserService.SetValue(mutation);
+                    MenuRenderer.PrintMessage($"Updated '{mutation.Path}' in {configuration.Files.BasePath}.");
+                    continue;
+                }
+
+                MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
+            }
+            catch (DomainValidationException exception)
             {
-                MenuRenderer.PrintHelp();
-                continue;
+                MenuRenderer.PrintMessage($"Validation error: {exception.Message}");
             }
-
-            if (string.Equals(input, "show", StringComparison.OrdinalIgnoreCase))
+            catch (InvalidOperationException exception)
             {
-                MenuRenderer.PrintSummary(_parserService.Current());
-                continue;
+                MenuRenderer.PrintMessage(exception.Message);
             }
-
-            if (string.Equals(input, "export", StringComparison.OrdinalIgnoreCase))
-            {
-                MenuRenderer.PrintJson(_parserService.GetValue("App"));
-                continue;
-            }
-
-            if (string.Equals(input, "reload", StringComparison.OrdinalIgnoreCase))
-            {
-                var configuration = _parserService.Load();
-                MenuRenderer.PrintMessage($"Reloaded {configuration.Files.EnvironmentName} configuration.");
-                continue;
-            }
-
-            if (input.StartsWith("get ", StringComparison.OrdinalIgnoreCase))
-            {
-                var path = input["get ".Length..];
-                MenuRenderer.PrintJson(_parserService.GetValue(path));
-                continue;
-            }
-
-            if (input.StartsWith("set ", StringComparison.OrdinalIgnoreCase))
-            {
-                var mutation = ParseMutation(input["set ".Length..]);
-                var configuration = _parserService.SetValue(mutation);
-                MenuRenderer.PrintMessage($"Updated '{mutation.Path}' in {configuration.Files.BasePath}.");
-                continue;
-            }
-
-            MenuRenderer.PrintMessage("Unknown command. Type 'help' to see supported commands.");
         }
     }
 

@@ -8,6 +8,11 @@ public sealed class ConfigurationNavigator
     public string NormalizePath(string path)
     {
         var normalized = path.Trim();
+        if (normalized.Length == 0)
+        {
+            throw new InvalidOperationException("Configuration paths cannot be empty.");
+        }
+
         if (!normalized.StartsWith("App.", StringComparison.OrdinalIgnoreCase) &&
             !string.Equals(normalized, "App", StringComparison.OrdinalIgnoreCase))
         {
@@ -54,6 +59,11 @@ public sealed class ConfigurationNavigator
 
     public JsonNode ParseScalar(string rawValue)
     {
+        if (string.Equals(rawValue, "null", StringComparison.OrdinalIgnoreCase))
+        {
+            return null!;
+        }
+
         if (bool.TryParse(rawValue, out var boolValue))
         {
             return JsonValue.Create(boolValue)!;

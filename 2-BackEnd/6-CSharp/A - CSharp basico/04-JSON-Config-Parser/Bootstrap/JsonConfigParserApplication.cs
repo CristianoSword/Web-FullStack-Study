@@ -18,15 +18,17 @@ public sealed class JsonConfigParserApplication
 
     public static JsonConfigParserApplication CreateDefault()
     {
-        var settings = new Configuration.RuntimeSettings();
+        var settings = LoadSettings();
         var fileSet = new Models.ConfigurationFileSet(
             Path.Combine(AppContext.BaseDirectory, settings.BaseFileName),
             Path.Combine(AppContext.BaseDirectory, settings.OverrideFileName),
             settings.EnvironmentName);
         var merger = new Services.JsonConfigurationMerger();
-        var store = new Services.FileConfigurationStore(fileSet, merger);
+        var binder = new Services.ConfigurationBinder();
+        var store = new Services.FileConfigurationStore(fileSet, merger, binder);
         var navigator = new Services.ConfigurationNavigator();
-        var parserService = new Services.ConfigParserService(store, navigator);
+        var validator = new Validation.ConfigurationValidator();
+        var parserService = new Services.ConfigParserService(store, navigator, validator, merger, binder);
         var consoleUi = new Cli.ConfigConsole(parserService);
 
         return new JsonConfigParserApplication(settings, parserService, consoleUi);
@@ -37,5 +39,20 @@ public sealed class JsonConfigParserApplication
         var configuration = ParserService.Load();
         Cli.MenuRenderer.PrintBanner(Settings, configuration);
         ConsoleUi.Run();
+    }
+
+    private static Configuration.RuntimeSettings LoadSettings()
+    {
+        var environmentName = Environment.GetEnvironmentVariable("JSON_CONFIG_ENVIRONMENT");
+        var effectiveEnvironment = string.IsNullOrWhiteSpace(environmentName)
+            ? "Development"
+            : environmentName.Trim();
+
+        return new Configuration.RuntimeSettings
+        {
+            EnvironmentName = effectiveEnvironment,
+            BaseFileName = "appsettings.json",
+            OverrideFileName = $"appsettings.{effectiveEnvironment}.json",
+        };
     }
 }

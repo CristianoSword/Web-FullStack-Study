@@ -9,11 +9,16 @@ public sealed class FileConfigurationStore : IConfigurationStore
 {
     private readonly ConfigurationFileSet _files;
     private readonly IJsonConfigurationMerger _merger;
+    private readonly ConfigurationBinder _binder;
 
-    public FileConfigurationStore(ConfigurationFileSet files, IJsonConfigurationMerger merger)
+    public FileConfigurationStore(
+        ConfigurationFileSet files,
+        IJsonConfigurationMerger merger,
+        ConfigurationBinder binder)
     {
         _files = files;
         _merger = merger;
+        _binder = binder;
     }
 
     public ParsedConfiguration Load()
@@ -25,7 +30,7 @@ public sealed class FileConfigurationStore : IConfigurationStore
         var mergedJson = overrideJson is null
             ? (JsonObject)baseJson.DeepClone()
             : _merger.Merge((JsonObject)baseJson.DeepClone(), overrideJson);
-        var app = ParseApplicationConfig(mergedJson);
+        var app = _binder.Bind(mergedJson);
 
         return new ParsedConfiguration(_files, baseJson, overrideJson, mergedJson, app);
     }
@@ -52,9 +57,4 @@ public sealed class FileConfigurationStore : IConfigurationStore
         return jsonObject;
     }
 
-    private static ApplicationConfig ParseApplicationConfig(JsonObject root)
-    {
-        var appNode = root["App"]?.Deserialize<ApplicationConfig>();
-        return appNode ?? throw new InvalidOperationException("The App configuration section is missing.");
-    }
 }
