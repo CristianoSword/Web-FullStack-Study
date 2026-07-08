@@ -6,10 +6,14 @@ namespace Study.CSharp.BackgroundWorkerService.Workers;
 public sealed class ScheduledWorker : BackgroundService
 {
     private readonly ILogger<ScheduledWorker> _logger;
+    private readonly Services.JobScheduler _scheduler;
 
-    public ScheduledWorker(ILogger<ScheduledWorker> logger)
+    public ScheduledWorker(
+        ILogger<ScheduledWorker> logger,
+        Services.JobScheduler scheduler)
     {
         _logger = logger;
+        _scheduler = scheduler;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -18,8 +22,17 @@ public sealed class ScheduledWorker : BackgroundService
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            _logger.LogInformation("Worker heartbeat at {Timestamp}.", DateTimeOffset.UtcNow);
-            await Task.Delay(TimeSpan.FromSeconds(30), stoppingToken);
+            var executed = await _scheduler.RunPendingJobsAsync(DateTimeOffset.UtcNow, stoppingToken);
+            foreach (var entry in executed)
+            {
+                _logger.LogInformation(
+                    "Job {JobName} finished with success {Success}: {Summary}",
+                    entry.JobName,
+                    entry.Success,
+                    entry.Summary);
+            }
+
+            await Task.Delay(TimeSpan.FromSeconds(_scheduler.PollIntervalSeconds), stoppingToken);
         }
     }
 }
