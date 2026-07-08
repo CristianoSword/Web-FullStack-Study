@@ -1,15 +1,19 @@
 using Study.CSharp.WebApiAspNetCore.Contracts;
+using Study.CSharp.WebApiAspNetCore.Exceptions;
 using Study.CSharp.WebApiAspNetCore.Models;
+using Study.CSharp.WebApiAspNetCore.Validation;
 
 namespace Study.CSharp.WebApiAspNetCore.Services;
 
 public sealed class ProductService
 {
     private readonly IProductRepository _repository;
+    private readonly ProductValidator _validator;
 
-    public ProductService(IProductRepository repository)
+    public ProductService(IProductRepository repository, ProductValidator validator)
     {
         _repository = repository;
+        _validator = validator;
     }
 
     public async Task<IReadOnlyCollection<ProductResponse>> ListAsync(CancellationToken cancellationToken = default)
@@ -26,6 +30,12 @@ public sealed class ProductService
 
     public async Task<ProductResponse> CreateAsync(CreateProductRequest request, CancellationToken cancellationToken = default)
     {
+        _validator.ValidateCreate(request);
+        if (await _repository.ExistsBySkuAsync(request.Sku, cancellationToken: cancellationToken))
+        {
+            throw new DomainValidationException("A product with this SKU already exists.");
+        }
+
         var product = new Product
         {
             Id = Guid.NewGuid(),
@@ -44,10 +54,17 @@ public sealed class ProductService
 
     public async Task<ProductResponse?> UpdateAsync(Guid id, UpdateProductRequest request, CancellationToken cancellationToken = default)
     {
+        _validator.ValidateUpdate(request);
+
         var product = await _repository.FindByIdAsync(id, cancellationToken);
         if (product is null)
         {
             return null;
+        }
+
+        if (await _repository.ExistsBySkuAsync(request.Sku, id, cancellationToken))
+        {
+            throw new DomainValidationException("A product with this SKU already exists.");
         }
 
         product.Sku = request.Sku;
