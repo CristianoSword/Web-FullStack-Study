@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using Study.CSharp.BackgroundWorkerService.Configuration;
 using Study.CSharp.BackgroundWorkerService.Contracts;
 using Study.CSharp.BackgroundWorkerService.Models;
+using Study.CSharp.BackgroundWorkerService.Validation;
 
 namespace Study.CSharp.BackgroundWorkerService.Services;
 
@@ -19,12 +20,14 @@ public sealed class JobScheduler
         IOptions<WorkerRuntimeSettings> settings,
         IEnumerable<IWorkerJobHandler> handlers,
         IJobExecutionLogRepository logRepository,
+        WorkerConfigurationValidator validator,
         ILogger<JobScheduler> logger)
     {
         _settings = settings.Value;
         _handlers = handlers.ToDictionary(handler => handler.Name, StringComparer.OrdinalIgnoreCase);
         _logRepository = logRepository;
         _logger = logger;
+        validator.Validate(_settings, _handlers.Keys);
         _states = _settings.Jobs
             .Select(job => new JobScheduleState(job, CronExpression.Parse(job.Cron), null))
             .ToList();
@@ -90,7 +93,17 @@ public sealed class JobScheduler
 
         var context = new ScheduledJobContext(definition, startedAt);
         _logger.LogInformation("Executing job {JobName} with handler {Handler}.", definition.Name, definition.Handler);
-        var result = await handler.ExecuteAsync(context, cancellationToken);
+        JobExecutionResult result;
+        try
+        {
+            result = await handler.ExecuteAsync(context, cancellationToken);
+        }
+        catch (Exception exception) when (exception is not OperationCanceledException)
+        {
+            _logger.LogError(exception, "Job {JobName} failed unexpectedly.", definition.Name);
+            result = new JobExecutionResult(false, exception.Message);
+        }
+
         var entry = new JobExecutionLogEntry(0, definition.Name, definition.Handler, startedAt, DateTimeOffset.UtcNow, result.Success, result.Summary);
         _logRepository.Add(entry);
         return entry;
