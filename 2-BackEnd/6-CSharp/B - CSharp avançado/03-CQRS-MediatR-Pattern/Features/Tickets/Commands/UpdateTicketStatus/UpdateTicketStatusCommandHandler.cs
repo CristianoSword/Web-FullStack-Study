@@ -1,6 +1,7 @@
 using MediatR;
 using Study.CSharp.CqrsMediatRPattern.Contracts;
 using Study.CSharp.CqrsMediatRPattern.Domain;
+using Study.CSharp.CqrsMediatRPattern.Exceptions;
 using Study.CSharp.CqrsMediatRPattern.Models;
 using Study.CSharp.CqrsMediatRPattern.Services;
 
@@ -17,13 +18,18 @@ public sealed class UpdateTicketStatusCommandHandler : IRequestHandler<UpdateTic
 
     public async Task<TicketResponse?> Handle(UpdateTicketStatusCommand request, CancellationToken cancellationToken)
     {
+        if (!Enum.TryParse<TicketStatus>(request.Status, true, out var status))
+        {
+            throw new DomainValidationException("Status must be one of: Open, InProgress, Resolved.");
+        }
+
         var ticket = await _repository.FindByIdAsync(request.TicketId, cancellationToken);
         if (ticket is null)
         {
             return null;
         }
 
-        ticket.Status = Enum.Parse<TicketStatus>(request.Status, ignoreCase: true);
+        ticket.Status = status;
         if (!string.IsNullOrWhiteSpace(request.Assignee))
         {
             ticket.Assignee = request.Assignee.Trim();

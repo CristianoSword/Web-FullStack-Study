@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using Study.CSharp.CqrsMediatRPattern.Configuration;
 using Study.CSharp.CqrsMediatRPattern.Contracts;
 using Study.CSharp.CqrsMediatRPattern.Domain;
+using Study.CSharp.CqrsMediatRPattern.Exceptions;
 using Study.CSharp.CqrsMediatRPattern.Models;
 using Study.CSharp.CqrsMediatRPattern.Services;
 
@@ -23,6 +24,11 @@ public sealed class CreateTicketCommandHandler : IRequestHandler<CreateTicketCom
 
     public async Task<TicketResponse> Handle(CreateTicketCommand request, CancellationToken cancellationToken)
     {
+        if (!Enum.TryParse<TicketPriority>(request.Priority, true, out var priority))
+        {
+            throw new DomainValidationException("Priority must be one of: Low, Medium, High, Critical.");
+        }
+
         var ticket = new SupportTicket
         {
             Id = Guid.NewGuid(),
@@ -30,7 +36,7 @@ public sealed class CreateTicketCommandHandler : IRequestHandler<CreateTicketCom
             Description = request.Description,
             CustomerEmail = request.CustomerEmail,
             Assignee = string.IsNullOrWhiteSpace(request.Assignee) ? _settings.DefaultAssignee : request.Assignee.Trim(),
-            Priority = Enum.Parse<TicketPriority>(request.Priority, ignoreCase: true),
+            Priority = priority,
             Status = TicketStatus.Open,
             CreatedAt = DateTimeOffset.UtcNow,
             UpdatedAt = DateTimeOffset.UtcNow,
