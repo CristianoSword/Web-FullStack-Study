@@ -26,6 +26,26 @@ public sealed class PipelineCoordinator
     public async Task<PipelineRunSummary> RunAsync(CancellationToken cancellationToken = default)
     {
         var workItems = await _source.LoadAsync(cancellationToken);
+        var results = await ProcessItemsAsync(workItems, cancellationToken);
+        return CreateSummary(results.Items, results.Elapsed);
+    }
+
+    public Task<IReadOnlyCollection<WorkItem>> LoadPreviewAsync(CancellationToken cancellationToken = default)
+    {
+        return _source.LoadAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyCollection<ProcessedWorkItem>> RunSampleAsync(CancellationToken cancellationToken = default)
+    {
+        var workItems = (await _source.LoadAsync(cancellationToken)).Take(_settings.BatchSize).ToArray();
+        var results = await ProcessItemsAsync(workItems, cancellationToken);
+        return results.Items;
+    }
+
+    private async Task<(IReadOnlyCollection<ProcessedWorkItem> Items, TimeSpan Elapsed)> ProcessItemsAsync(
+        IReadOnlyCollection<WorkItem> workItems,
+        CancellationToken cancellationToken)
+    {
         var results = new ConcurrentBag<ProcessedWorkItem>();
         var stopwatch = Stopwatch.StartNew();
 
@@ -63,11 +83,15 @@ public sealed class PipelineCoordinator
         await resultBlock.Completion;
         stopwatch.Stop();
 
-        var processedItems = results.ToArray();
+        return (results.ToArray(), stopwatch.Elapsed);
+    }
+
+    private static PipelineRunSummary CreateSummary(IReadOnlyCollection<ProcessedWorkItem> processedItems, TimeSpan elapsed)
+    {
         return new PipelineRunSummary(
-            processedItems.Length,
+            processedItems.Count,
             processedItems.Count(item => item.Success),
             processedItems.Count(item => !item.Success),
-            stopwatch.Elapsed);
+            elapsed);
     }
 }

@@ -4,13 +4,16 @@ public sealed class TaskParallelApplication
 {
     public Configuration.PipelineSettings Settings { get; }
     public Services.PipelineCoordinator Coordinator { get; }
+    public Cli.PipelineConsole ConsoleUi { get; }
 
     private TaskParallelApplication(
         Configuration.PipelineSettings settings,
-        Services.PipelineCoordinator coordinator)
+        Services.PipelineCoordinator coordinator,
+        Cli.PipelineConsole consoleUi)
     {
         Settings = settings;
         Coordinator = coordinator;
+        ConsoleUi = consoleUi;
     }
 
     public static TaskParallelApplication CreateDefault()
@@ -19,16 +22,13 @@ public sealed class TaskParallelApplication
         var source = new Services.InMemoryWorkItemSource();
         var processor = new Services.WorkItemProcessor(settings);
         var coordinator = new Services.PipelineCoordinator(settings, source, processor);
-        return new TaskParallelApplication(settings, coordinator);
+        var consoleUi = new Cli.PipelineConsole(coordinator);
+        return new TaskParallelApplication(settings, coordinator, consoleUi);
     }
 
     public async Task RunAsync()
     {
-        Console.WriteLine("Task Parallel Library pipeline bootstrapped.");
-        Console.WriteLine($"Batch size: {Settings.BatchSize}");
-        Console.WriteLine($"Max degree of parallelism: {Settings.MaxDegreeOfParallelism}");
-        Console.WriteLine($"Simulated latency: {Settings.SimulatedLatencyMs}ms");
-        var summary = await Coordinator.RunAsync();
-        Console.WriteLine($"Processed {summary.TotalItems} items with {summary.SuccessfulItems} successes.");
+        Cli.MenuRenderer.PrintBanner(Settings);
+        await ConsoleUi.RunAsync();
     }
 }
