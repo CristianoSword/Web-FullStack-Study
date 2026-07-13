@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  inventory-service:
+    build:
+      context: ./InventoryService
+    ports:
+      - "6001:8080"
+  ordering-service:
+    build:
+      context: ./OrderingService
+    ports:
+      - "6002:8080"
