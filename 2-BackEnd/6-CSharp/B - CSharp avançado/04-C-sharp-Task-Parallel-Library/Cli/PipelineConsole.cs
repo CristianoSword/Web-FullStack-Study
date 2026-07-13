@@ -1,3 +1,4 @@
+using Study.CSharp.TaskParallelLibrary.Exceptions;
 using Study.CSharp.TaskParallelLibrary.Services;
 
 namespace Study.CSharp.TaskParallelLibrary.Cli;
@@ -35,7 +36,14 @@ public sealed class PipelineConsole
                     MenuRenderer.PrintResults(await _coordinator.RunSampleAsync());
                     break;
                 case "run":
-                    MenuRenderer.PrintSummary(await _coordinator.RunAsync());
+                    try
+                    {
+                        MenuRenderer.PrintSummary(await _coordinator.RunAsync());
+                    }
+                    catch (DomainValidationException exception)
+                    {
+                        Console.WriteLine($"Validation error: {exception.Message}");
+                    }
                     break;
                 default:
                     Console.WriteLine("Unknown command. Type 'help' to see supported commands.");

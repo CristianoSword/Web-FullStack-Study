@@ -4,6 +4,7 @@ using System.Threading.Tasks.Dataflow;
 using Study.CSharp.TaskParallelLibrary.Configuration;
 using Study.CSharp.TaskParallelLibrary.Contracts;
 using Study.CSharp.TaskParallelLibrary.Models;
+using Study.CSharp.TaskParallelLibrary.Validation;
 
 namespace Study.CSharp.TaskParallelLibrary.Services;
 
@@ -12,19 +13,23 @@ public sealed class PipelineCoordinator
     private readonly PipelineSettings _settings;
     private readonly IWorkItemSource _source;
     private readonly IWorkProcessor _processor;
+    private readonly PipelineValidator _validator;
 
     public PipelineCoordinator(
         PipelineSettings settings,
         IWorkItemSource source,
-        IWorkProcessor processor)
+        IWorkProcessor processor,
+        PipelineValidator validator)
     {
         _settings = settings;
         _source = source;
         _processor = processor;
+        _validator = validator;
     }
 
     public async Task<PipelineRunSummary> RunAsync(CancellationToken cancellationToken = default)
     {
+        _validator.ValidateSettings(_settings);
         var workItems = await _source.LoadAsync(cancellationToken);
         var results = await ProcessItemsAsync(workItems, cancellationToken);
         return CreateSummary(results.Items, results.Elapsed);
@@ -46,6 +51,7 @@ public sealed class PipelineCoordinator
         IReadOnlyCollection<WorkItem> workItems,
         CancellationToken cancellationToken)
     {
+        _validator.ValidateWorkItems(workItems);
         var results = new ConcurrentBag<ProcessedWorkItem>();
         var stopwatch = Stopwatch.StartNew();
 
