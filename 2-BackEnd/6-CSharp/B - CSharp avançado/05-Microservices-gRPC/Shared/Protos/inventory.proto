@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "Study.CSharp.Grpc.Contracts.Inventory";
+
+package inventory;
+
+service InventoryService {
+  rpc GetProductStock (ProductStockRequest) returns (ProductStockReply);
+  rpc ReserveStock (ReserveStockRequest) returns (ReserveStockReply);
+}
+
+message ProductStockRequest {
+  string sku = 1;
+}
+
+message ProductStockReply {
+  string sku = 1;
+  string name = 2;
+  int32 available_quantity = 3;
+}
+
+message ReserveStockRequest {
+  string sku = 1;
+  int32 quantity = 2;
+}
+
+message ReserveStockReply {
+  bool accepted = 1;
+  string message = 2;
+}

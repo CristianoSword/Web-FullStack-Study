@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option csharp_namespace = "Study.CSharp.Grpc.Contracts.Orders";
+
+package orders;
+
+service OrdersService {
+  rpc CreateOrder (CreateOrderRequest) returns (CreateOrderReply);
+  rpc GetOrder (GetOrderRequest) returns (GetOrderReply);
+}
+
+message CreateOrderRequest {
+  string customer_email = 1;
+  string sku = 2;
+  int32 quantity = 3;
+}
+
+message CreateOrderReply {
+  string order_id = 1;
+  string status = 2;
+  string message = 3;
+}
+
+message GetOrderRequest {
+  string order_id = 1;
+}
+
+message GetOrderReply {
+  string order_id = 1;
+  string customer_email = 2;
+  string sku = 3;
+  int32 quantity = 4;
+  string status = 5;
+}
