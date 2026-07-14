@@ -1,0 +1,14 @@
+{
+  "name": "local-blockchain-scratch",
+  "version": "1.0.0",
+  "description": "Basic local blockchain with proof of work in Node.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "demo": "node src/index.js demo",
+    "chain": "node src/index.js chain"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
