@@ -1,1 +1,4 @@
-console.log("Local blockchain scratch bootstrapped.");
+import { Blockchain } from "./services/blockchain.js";
+
+const blockchain = new Blockchain();
+console.log(`Blockchain bootstrapped with genesis hash ${blockchain.getLatestBlock().hash}`);
