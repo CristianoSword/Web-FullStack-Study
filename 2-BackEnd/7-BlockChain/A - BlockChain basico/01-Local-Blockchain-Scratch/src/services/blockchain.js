@@ -31,10 +31,28 @@ export class Blockchain {
   }
 
   addTransaction(transaction) {
-    this.state.pendingTransactions.push(new Transaction(transaction));
+    const normalizedTransaction = new Transaction(transaction);
+
+    if (!normalizedTransaction.from || !normalizedTransaction.to) {
+      throw new Error("Transactions require both sender and recipient addresses.");
+    }
+
+    if (!Number.isFinite(normalizedTransaction.amount) || normalizedTransaction.amount <= 0) {
+      throw new Error("Transactions require a positive numeric amount.");
+    }
+
+    this.state.pendingTransactions.push(normalizedTransaction);
   }
 
   minePendingTransactions(minerAddress) {
+    if (!minerAddress) {
+      throw new Error("A miner address is required to collect the mining reward.");
+    }
+
+    if (this.state.pendingTransactions.length === 0) {
+      throw new Error("There are no pending transactions to mine.");
+    }
+
     const transactions = [
       ...this.state.pendingTransactions,
       new Transaction({
