@@ -1,0 +1,16 @@
+{
+  "name": "digital-signature-keys",
+  "version": "1.0.0",
+  "description": "Key generation and digital signature project for blockchain studies",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "demo": "node src/index.js demo",
+    "generate": "node src/index.js generate-wallet",
+    "sign": "node src/index.js sign-transaction",
+    "verify": "node src/index.js verify-transaction"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
