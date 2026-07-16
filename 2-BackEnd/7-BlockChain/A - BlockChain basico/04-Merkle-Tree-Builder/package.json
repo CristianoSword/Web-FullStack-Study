@@ -1,0 +1,16 @@
+{
+  "name": "merkle-tree-builder",
+  "version": "1.0.0",
+  "description": "Merkle tree construction and proof validation for blockchain studies",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "demo": "node src/index.js demo",
+    "root": "node src/index.js root",
+    "proof": "node src/index.js proof",
+    "verify": "node src/index.js verify"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
