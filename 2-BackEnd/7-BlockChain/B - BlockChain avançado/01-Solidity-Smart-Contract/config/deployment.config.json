@@ -1,0 +1,10 @@
+{
+  "hardhat": {
+    "minimumDepositWei": "10000000000000000",
+    "platformFeeBps": 50
+  },
+  "sepolia": {
+    "minimumDepositWei": "10000000000000000",
+    "platformFeeBps": 50
+  }
+}
