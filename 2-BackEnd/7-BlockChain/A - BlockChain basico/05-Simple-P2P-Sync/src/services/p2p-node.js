@@ -6,6 +6,8 @@ import { SyncMessage } from "../models/sync-message.js";
 
 export class P2PNode {
   constructor({ id = crypto.randomUUID(), name, port }) {
+    this.assertName(name);
+    this.assertPort(port);
     this.peer = new PeerNode({
       id,
       name,
@@ -15,6 +17,26 @@ export class P2PNode {
     this.chain = [this.createGenesisBlock()];
     this.server = null;
     this.sockets = new Map();
+  }
+
+  assertName(name) {
+    if (typeof name !== "string" || name.trim().length < 2) {
+      throw new Error("Peer name must contain at least 2 characters.");
+    }
+  }
+
+  assertPort(port) {
+    if (!Number.isInteger(port) || port < 1024 || port > 65535) {
+      throw new Error("Peer port must be an integer between 1024 and 65535.");
+    }
+  }
+
+  assertMessage(message) {
+    const allowedTypes = ["HELLO", "CHAIN_REQUEST", "CHAIN_RESPONSE", "NEW_BLOCK"];
+
+    if (!allowedTypes.includes(message?.type)) {
+      throw new Error(`Unsupported message type "${message?.type}".`);
+    }
   }
 
   createGenesisBlock() {
@@ -120,8 +142,18 @@ export class P2PNode {
     this.sockets.set(peerUrl, socket);
 
     socket.on("message", (raw) => {
-      const message = JSON.parse(raw.toString());
-      this.handleMessage(socket, message);
+      try {
+        const message = JSON.parse(raw.toString());
+        this.handleMessage(socket, message);
+      } catch (error) {
+        socket.send(
+          JSON.stringify({
+            type: "ERROR",
+            senderId: this.peer.id,
+            payload: { message: error.message }
+          })
+        );
+      }
     });
 
     socket.on("close", () => {
@@ -139,7 +171,9 @@ export class P2PNode {
 
       socket.on("open", () => {
         this.registerSocket(socket, peerUrl);
-        this.peer.knownPeers.push(peerUrl);
+        if (!this.peer.knownPeers.includes(peerUrl)) {
+          this.peer.knownPeers.push(peerUrl);
+        }
         this.send(socket, "HELLO", {
           id: this.peer.id,
           name: this.peer.name,
@@ -155,6 +189,7 @@ export class P2PNode {
 
   handleMessage(socket, messageInput) {
     const message = new SyncMessage(messageInput);
+    this.assertMessage(message);
 
     if (message.type === "HELLO") {
       const peerUrl = `ws://127.0.0.1:${message.payload.port}`;
@@ -185,6 +220,10 @@ export class P2PNode {
   }
 
   send(socket, type, payload) {
+    if (socket.readyState !== WebSocket.OPEN) {
+      return;
+    }
+
     socket.send(
       JSON.stringify(
         new SyncMessage({

@@ -117,6 +117,9 @@ async function run() {
   }
 
   if (command === "start-node") {
+    if (!args.port) {
+      throw new Error("Use --port to start a node server.");
+    }
     await startSingleNode(args, asJson);
     return;
   }
