@@ -1,0 +1,16 @@
+{
+  "name": "solidity-smart-contract",
+  "version": "1.0.0",
+  "description": "Hardhat project for smart contract development, testing, and deployment",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "hardhat": "^2.26.3"
+  }
+}
