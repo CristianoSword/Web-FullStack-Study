@@ -40,6 +40,10 @@ contract StudyToken is ERC20, ERC20Capped, Ownable, IStudyToken {
         emit TreasuryWalletUpdated(previousTreasury, newTreasuryWallet);
     }
 
+    function cap() public view override(ERC20Capped, IStudyToken) returns (uint256) {
+        return super.cap();
+    }
+
     function _update(address from, address to, uint256 value)
         internal
         override(ERC20, ERC20Capped)
