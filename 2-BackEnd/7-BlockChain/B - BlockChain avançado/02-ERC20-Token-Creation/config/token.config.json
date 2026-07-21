@@ -1,0 +1,16 @@
+{
+  "hardhat": {
+    "name": "StudyToken",
+    "symbol": "STDY",
+    "cap": "1000000000000000000000000",
+    "initialSupply": "250000000000000000000000",
+    "mintAmount": "1000000000000000000000"
+  },
+  "sepolia": {
+    "name": "StudyToken",
+    "symbol": "STDY",
+    "cap": "1000000000000000000000000",
+    "initialSupply": "250000000000000000000000",
+    "mintAmount": "1000000000000000000000"
+  }
+}
