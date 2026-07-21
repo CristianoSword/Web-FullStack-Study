@@ -1,0 +1,16 @@
+{
+  "name": "decentralized-voting-dapp",
+  "version": "1.0.0",
+  "description": "Hardhat voting contract with browser-based Web3 voting interface",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "hardhat": "^2.26.3"
+  }
+}
