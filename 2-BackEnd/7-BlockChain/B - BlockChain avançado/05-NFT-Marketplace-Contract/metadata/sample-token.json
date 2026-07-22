@@ -1,0 +1,10 @@
+{
+  "name": "Backend Masters #1",
+  "description": "Genesis NFT for the backend blockchain study track.",
+  "image": "ipfs://backend-masters/1.png",
+  "attributes": [
+    { "trait_type": "Track", "value": "Blockchain" },
+    { "trait_type": "Level", "value": "Advanced" },
+    { "trait_type": "Edition", "value": "Genesis" }
+  ]
+}

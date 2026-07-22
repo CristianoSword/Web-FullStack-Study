@@ -1,0 +1,6 @@
+{
+  "name": "Backend Masters Collection",
+  "symbol": "BMC",
+  "royaltyBps": 500,
+  "baseTokenURI": "ipfs://backend-masters/"
+}
