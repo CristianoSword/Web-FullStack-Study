@@ -1,7 +1,12 @@
 import "@nomicfoundation/hardhat-toolbox";
 
 export default {
-  solidity: "0.8.28",
+  solidity: {
+    version: "0.8.28",
+    settings: {
+      evmVersion: "cancun"
+    }
+  },
   networks: {
     hardhat: {}
   }
