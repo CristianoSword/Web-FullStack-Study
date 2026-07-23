@@ -1,32 +1,5 @@
 PRAGMA foreign_keys = ON;
 
-CREATE INDEX idx_addresses_customer_id ON addresses (customer_id);
-CREATE INDEX idx_products_category_id ON products (category_id);
-CREATE INDEX idx_orders_customer_id ON orders (customer_id);
-CREATE INDEX idx_orders_status ON orders (status);
-CREATE INDEX idx_order_items_order_id ON order_items (order_id);
-CREATE INDEX idx_order_items_product_id ON order_items (product_id);
-CREATE INDEX idx_payments_order_id ON payments (order_id);
-
-CREATE VIEW vw_order_summary AS
-SELECT
-    o.order_id,
-    c.full_name AS customer_name,
-    o.status,
-    o.order_total,
-    COUNT(oi.order_item_id) AS item_count,
-    SUM(oi.quantity) AS quantity_total,
-    MAX(p.payment_status) AS latest_payment_status
-FROM orders o
-JOIN customers c ON c.customer_id = o.customer_id
-LEFT JOIN order_items oi ON oi.order_id = o.order_id
-LEFT JOIN payments p ON p.order_id = o.order_id
-GROUP BY
-    o.order_id,
-    c.full_name,
-    o.status,
-    o.order_total;
-
 /* Relational rebuild for engines that support table-level FK/check definitions during create */
 DROP VIEW IF EXISTS vw_order_summary;
 DROP TABLE IF EXISTS payments;
