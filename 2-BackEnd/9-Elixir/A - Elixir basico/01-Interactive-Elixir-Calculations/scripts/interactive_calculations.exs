@@ -2,6 +2,7 @@ base = Path.expand("../lib/interactive_calculations", __DIR__)
 
 Code.require_file(Path.join(base, "calculation_request.ex"))
 Code.require_file(Path.join(base, "calculation_result.ex"))
+Code.require_file(Path.join(base, "input_validator.ex"))
 Code.require_file(Path.join(base, "calculator.ex"))
 
 alias InteractiveCalculations.CalculationRequest
