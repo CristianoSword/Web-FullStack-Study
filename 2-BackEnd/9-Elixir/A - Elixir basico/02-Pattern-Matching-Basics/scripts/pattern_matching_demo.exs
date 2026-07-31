@@ -2,18 +2,19 @@ base = Path.expand("../lib/pattern_matching_basics", __DIR__)
 
 Code.require_file(Path.join(base, "match_payload.ex"))
 Code.require_file(Path.join(base, "match_result.ex"))
+Code.require_file(Path.join(base, "payload_builder.ex"))
 Code.require_file(Path.join(base, "matcher.ex"))
 
-alias PatternMatchingBasics.MatchPayload
 alias PatternMatchingBasics.Matcher
+alias PatternMatchingBasics.PayloadBuilder
 
 scenarios = %{
-  "greeting" => %MatchPayload{kind: :tuple, value: {:greet, "Ana", "pt-BR"}},
-  "point" => %MatchPayload{kind: :tuple, value: {:point, 12, 45}},
-  "list" => %MatchPayload{kind: :list, value: ["keyboard", "monitor", "hub"]},
-  "admin" => %MatchPayload{kind: :map, value: %{role: :admin, name: "Carla", active: true}},
-  "event" => %MatchPayload{kind: :map, value: %{type: "event", payload: %{"source" => "cli", "kind" => "sync"}}},
-  "command" => %MatchPayload{kind: :binary, value: "cmd:reindex"}
+  "greeting" => PayloadBuilder.build!(:tuple, {:greet, "Ana", "pt-BR"}),
+  "point" => PayloadBuilder.build!(:tuple, {:point, 12, 45}),
+  "list" => PayloadBuilder.build!(:list, ["keyboard", "monitor", "hub"]),
+  "admin" => PayloadBuilder.build!(:map, %{role: :admin, name: "Carla", active: true}),
+  "event" => PayloadBuilder.build!(:map, %{type: "event", payload: %{"source" => "cli", "kind" => "sync"}}),
+  "command" => PayloadBuilder.build!(:binary, "cmd:reindex")
 }
 
 scenario_key =
