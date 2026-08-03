@@ -1,30 +1,40 @@
 defmodule RecursionListManipulator.RecursiveOps do
+  alias RecursionListManipulator.JobValidator
   alias RecursionListManipulator.ListJob
   alias RecursionListManipulator.ListResult
 
   def execute(%ListJob{operation: :sum, items: items}) do
+    JobValidator.validate_items!(items)
     total = sum(items)
     %ListResult{operation: :sum, result: total, summary: "Recursive sum = #{total}"}
   end
 
   def execute(%ListJob{operation: :count, items: items}) do
+    JobValidator.validate_items!(items)
     total = count(items)
     %ListResult{operation: :count, result: total, summary: "Recursive count = #{total}"}
   end
 
   def execute(%ListJob{operation: :reverse, items: items}) do
+    JobValidator.validate_items!(items)
     reversed = reverse(items)
     %ListResult{operation: :reverse, result: reversed, summary: "Recursive reverse completed"}
   end
 
   def execute(%ListJob{operation: :double, items: items}) do
+    JobValidator.validate_items!(items)
     doubled = map_double(items)
     %ListResult{operation: :double, result: doubled, summary: "Recursive doubling completed"}
   end
 
   def execute(%ListJob{operation: :evens, items: items}) do
+    JobValidator.validate_items!(items)
     evens = filter_evens(items)
     %ListResult{operation: :evens, result: evens, summary: "Recursive even filtering completed"}
+  end
+
+  def execute(%ListJob{operation: operation}) do
+    JobValidator.validate_operation!(operation)
   end
 
   def sum([]), do: 0

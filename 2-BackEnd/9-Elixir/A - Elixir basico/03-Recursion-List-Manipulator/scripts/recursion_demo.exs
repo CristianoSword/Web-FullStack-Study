@@ -2,6 +2,7 @@ base = Path.expand("../lib/recursion_list_manipulator", __DIR__)
 
 Code.require_file(Path.join(base, "list_job.ex"))
 Code.require_file(Path.join(base, "list_result.ex"))
+Code.require_file(Path.join(base, "job_validator.ex"))
 Code.require_file(Path.join(base, "recursive_ops.ex"))
 
 alias RecursionListManipulator.ListJob
