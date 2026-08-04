@@ -1,7 +1,7 @@
 defmodule OtpGenServerProcess.GameServer do
   use GenServer
 
-  alias OtpGenServerProcess.{Engine, Move, Player}
+  alias OtpGenServerProcess.{Engine, Move, Player, Validator}
 
   def start_link(opts \\ []) do
     server_name = Keyword.get(opts, :name, __MODULE__)
@@ -32,23 +32,41 @@ defmodule OtpGenServerProcess.GameServer do
 
   @impl true
   def handle_call({:join_player, player}, _from, state) do
-    case Engine.join_player(state, player) do
-      {:ok, updated_state} -> {:reply, {:ok, updated_state}, updated_state}
-      {:error, reason} -> {:reply, {:error, reason}, state}
+    case Validator.validate_join(state, player) do
+      :ok ->
+        case Engine.join_player(state, player) do
+          {:ok, updated_state} -> {:reply, {:ok, updated_state}, updated_state}
+          {:error, reason} -> {:reply, {:error, reason}, state}
+        end
+
+      {:error, reason} ->
+        {:reply, {:error, reason}, state}
     end
   end
 
   def handle_call(:start_game, _from, state) do
-    case Engine.start_game(state) do
-      {:ok, updated_state} -> {:reply, {:ok, updated_state}, updated_state}
-      {:error, reason} -> {:reply, {:error, reason}, state}
+    case Validator.validate_start(state) do
+      :ok ->
+        case Engine.start_game(state) do
+          {:ok, updated_state} -> {:reply, {:ok, updated_state}, updated_state}
+          {:error, reason} -> {:reply, {:error, reason}, state}
+        end
+
+      {:error, reason} ->
+        {:reply, {:error, reason}, state}
     end
   end
 
   def handle_call({:apply_move, move}, _from, state) do
-    case Engine.apply_move(state, move) do
-      {:ok, updated_state} -> {:reply, {:ok, updated_state}, updated_state}
-      {:error, reason} -> {:reply, {:error, reason}, state}
+    case Validator.validate_move(state, move) do
+      :ok ->
+        case Engine.apply_move(state, move) do
+          {:ok, updated_state} -> {:reply, {:ok, updated_state}, updated_state}
+          {:error, reason} -> {:reply, {:error, reason}, state}
+        end
+
+      {:error, reason} ->
+        {:reply, {:error, reason}, state}
     end
   end
 

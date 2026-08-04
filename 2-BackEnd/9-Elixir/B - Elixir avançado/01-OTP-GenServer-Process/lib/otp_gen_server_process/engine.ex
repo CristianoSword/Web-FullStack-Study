@@ -25,6 +25,7 @@ defmodule OtpGenServerProcess.Engine do
   def join_player(%GameState{}, %Player{}), do: {:error, :game_already_started}
 
   def start_game(%GameState{players: []}), do: {:error, :not_enough_players}
+  def start_game(%GameState{players: [_one_player]}), do: {:error, :not_enough_players}
 
   def start_game(%GameState{players: players} = state) do
     turn_order = Enum.map(players, & &1.id)
