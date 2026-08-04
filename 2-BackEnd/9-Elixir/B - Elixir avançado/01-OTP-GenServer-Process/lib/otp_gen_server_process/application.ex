@@ -3,7 +3,9 @@ defmodule OtpGenServerProcess.Application do
 
   @impl true
   def start(_type, _args) do
-    children = []
+    children = [
+      {OtpGenServerProcess.GameServer, name: OtpGenServerProcess.GameServer}
+    ]
 
     opts = [strategy: :one_for_one, name: OtpGenServerProcess.Supervisor]
     Supervisor.start_link(children, opts)
