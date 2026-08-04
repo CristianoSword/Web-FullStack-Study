@@ -2,6 +2,7 @@ base = Path.expand("../lib/simple_agent_state", __DIR__)
 
 Code.require_file(Path.join(base, "inventory_item.ex"))
 Code.require_file(Path.join(base, "state_snapshot.ex"))
+Code.require_file(Path.join(base, "state_validator.ex"))
 Code.require_file(Path.join(base, "inventory_agent.ex"))
 
 alias SimpleAgentState.InventoryAgent

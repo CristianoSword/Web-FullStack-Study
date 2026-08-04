@@ -1,9 +1,13 @@
 defmodule SimpleAgentState.InventoryAgent do
   alias SimpleAgentState.InventoryItem
+  alias SimpleAgentState.StateValidator
   alias SimpleAgentState.StateSnapshot
 
   def start_link(initial_state \\ default_state()) do
-    Agent.start_link(fn -> initial_state end, name: __MODULE__)
+    case Process.whereis(__MODULE__) do
+      nil -> Agent.start_link(fn -> initial_state end, name: __MODULE__)
+      pid -> {:ok, pid}
+    end
   end
 
   def increment_counter do
@@ -13,6 +17,9 @@ defmodule SimpleAgentState.InventoryAgent do
   end
 
   def put_item(name, quantity) do
+    StateValidator.validate_item_name!(name)
+    StateValidator.validate_quantity!(quantity)
+
     Agent.update(__MODULE__, fn state ->
       item = %InventoryItem{name: name, quantity: quantity}
       Map.put(state, :items, upsert_item(state.items, item))
