@@ -5,7 +5,8 @@ defmodule SupervisorTreeRecovery.Application do
   def start(_type, _args) do
     children = [
       {Registry, keys: :unique, name: SupervisorTreeRecovery.Registry},
-      {DynamicSupervisor, strategy: :one_for_one, name: SupervisorTreeRecovery.WorkerSupervisor}
+      SupervisorTreeRecovery.RecoveryTracker,
+      SupervisorTreeRecovery.WorkerSupervisor
     ]
 
     opts = [strategy: :one_for_one, name: SupervisorTreeRecovery.Supervisor]
