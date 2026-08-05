@@ -8,12 +8,18 @@ defmodule PhoenixRealtimeChannelsWeb.PageController do
   end
 
   def room(conn, %{"room" => room}) do
-    summary = Chat.room_summary(room)
+    case Chat.room_summary(room) do
+      {:ok, summary} ->
+        json(conn, %{
+          room: summary.room,
+          message_count: summary.message_count,
+          online_users: Enum.map(summary.online_users, & &1.display_name)
+        })
 
-    json(conn, %{
-      room: summary.room,
-      message_count: summary.message_count,
-      online_users: Enum.map(summary.online_users, & &1.display_name)
-    })
+      {:error, reason} ->
+        conn
+        |> put_status(:bad_request)
+        |> json(%{error: Atom.to_string(reason)})
+    end
   end
 end

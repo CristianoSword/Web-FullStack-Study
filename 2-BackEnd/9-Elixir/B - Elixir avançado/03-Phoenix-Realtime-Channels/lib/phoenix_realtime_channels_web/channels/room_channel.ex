@@ -5,7 +5,7 @@ defmodule PhoenixRealtimeChannelsWeb.RoomChannel do
 
   def join("room:" <> room, %{"user_id" => user_id, "display_name" => display_name}, socket) do
     with {:ok, _session} <- Chat.join_room(room, user_id, display_name) do
-      summary = Chat.room_summary(room)
+      {:ok, summary} = Chat.room_summary(room)
 
       {:ok,
        socket
@@ -13,6 +13,9 @@ defmodule PhoenixRealtimeChannelsWeb.RoomChannel do
        |> assign(:user_id, user_id)
        |> assign(:display_name, display_name)
        |> assign(:summary, summary)}
+    else
+      {:error, reason} ->
+        {:error, %{reason: Atom.to_string(reason)}}
     end
   end
 
@@ -29,11 +32,17 @@ defmodule PhoenixRealtimeChannelsWeb.RoomChannel do
       })
 
       {:reply, {:ok, %{message_id: message.id}}, socket}
+    else
+      {:error, reason} ->
+        {:reply, {:error, %{reason: Atom.to_string(reason)}}, socket}
     end
   end
 
   def handle_in("room:summary", _payload, socket) do
-    {:reply, {:ok, summary_payload(Chat.room_summary(socket.assigns.room))}, socket}
+    case Chat.room_summary(socket.assigns.room) do
+      {:ok, summary} -> {:reply, {:ok, summary_payload(summary)}, socket}
+      {:error, reason} -> {:reply, {:error, %{reason: Atom.to_string(reason)}}, socket}
+    end
   end
 
   def terminate(_reason, socket) do
