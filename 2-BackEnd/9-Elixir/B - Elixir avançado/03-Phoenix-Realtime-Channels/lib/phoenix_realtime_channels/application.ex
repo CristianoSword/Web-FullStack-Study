@@ -5,6 +5,7 @@ defmodule PhoenixRealtimeChannels.Application do
   def start(_type, _args) do
     children = [
       {Phoenix.PubSub, name: PhoenixRealtimeChannels.PubSub},
+      PhoenixRealtimeChannels.ChatStore,
       PhoenixRealtimeChannelsWeb.Endpoint
     ]
 
