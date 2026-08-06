@@ -2,6 +2,7 @@ defmodule DistributedClusterCommunication.ClusterServer do
   use GenServer
 
   alias DistributedClusterCommunication.{ClusterMessage, ClusterSnapshot, NodePeer}
+  alias DistributedClusterCommunication.Validator
 
   def start_link(_opts) do
     GenServer.start_link(__MODULE__, %{}, name: __MODULE__)
@@ -34,25 +35,42 @@ defmodule DistributedClusterCommunication.ClusterServer do
 
   @impl true
   def handle_call({:connect_peer, node_name}, _from, state) do
-    result = Node.connect(node_name)
-    peer = %NodePeer{name: node_name, status: if(result == true, do: :connected, else: :disconnected), last_seen_at: DateTime.utc_now()}
-    updated_state = %{state | peers: upsert_peer(state.peers, peer)}
+    with :ok <- Validator.validate_node_name(node_name),
+         true <- Node.connect(node_name) do
+      peer = %NodePeer{name: node_name, status: :connected, last_seen_at: DateTime.utc_now()}
+      updated_state = %{state | peers: upsert_peer(state.peers, peer)}
 
-    {:reply, {:ok, peer}, updated_state}
+      {:reply, {:ok, peer}, updated_state}
+    else
+      false ->
+        {:reply, {:error, :connection_failed}, state}
+
+      :ignored ->
+        {:reply, {:error, :connection_ignored}, state}
+
+      {:error, reason} ->
+        {:reply, {:error, reason}, state}
+    end
   end
 
   def handle_call({:broadcast, topic, payload}, _from, state) do
-    message = %ClusterMessage{
-      topic: topic,
-      payload: payload,
-      origin_node: Node.self(),
-      inserted_at: DateTime.utc_now()
-    }
+    with :ok <- Validator.validate_topic(topic),
+         :ok <- Validator.validate_payload(payload) do
+      message = %ClusterMessage{
+        topic: topic,
+        payload: payload,
+        origin_node: Node.self(),
+        inserted_at: DateTime.utc_now()
+      }
 
-    Enum.each(Node.list(), &deliver_to_node(&1, message))
-    updated_state = %{state | inbox: state.inbox ++ [message]}
+      Enum.each(Node.list(), &deliver_to_node(&1, message))
+      updated_state = %{state | inbox: state.inbox ++ [message]}
 
-    {:reply, {:ok, message}, updated_state}
+      {:reply, {:ok, message}, updated_state}
+    else
+      {:error, reason} ->
+        {:reply, {:error, reason}, state}
+    end
   end
 
   def handle_call({:receive_remote, message}, _from, state) do
