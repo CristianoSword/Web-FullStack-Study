@@ -32,10 +32,13 @@ defmodule ConcurrentWebScraper do
       "Status: #{result.status}",
       "Duration: #{result.duration_ms}ms",
       "Title: #{result.metadata.title || "n/a"}",
-      "Headings: #{Enum.join(result.metadata.headings, " | ")}",
+      "Headings: #{join_or_none(result.metadata.headings)}",
       "Links: #{result.metadata.links_count}",
       "Error: #{result.error || "none"}"
     ]
     |> Enum.join("\n")
   end
+
+  defp join_or_none([]), do: "none"
+  defp join_or_none(items), do: Enum.join(items, " | ")
 end

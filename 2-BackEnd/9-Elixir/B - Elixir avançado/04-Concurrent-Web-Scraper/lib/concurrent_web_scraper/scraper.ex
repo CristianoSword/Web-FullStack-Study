@@ -1,5 +1,5 @@
 defmodule ConcurrentWebScraper.Scraper do
-  alias ConcurrentWebScraper.{HtmlParser, ScrapeResult, ScrapeTarget}
+  alias ConcurrentWebScraper.{HtmlParser, ScrapeResult, ScrapeTarget, Validator}
 
   def run(targets) when is_list(targets) do
     max_concurrency = Application.get_env(:concurrent_web_scraper, :max_concurrency, 4)
@@ -10,32 +10,42 @@ defmodule ConcurrentWebScraper.Scraper do
   end
 
   defp fetch_target(%ScrapeTarget{} = target) do
-    started_at = System.monotonic_time(:millisecond)
-    request = Finch.build(:get, target.url)
+    case Validator.validate_target(target) do
+      :ok ->
+        started_at = System.monotonic_time(:millisecond)
+        request = Finch.build(:get, target.url)
 
-    case Finch.request(request, ConcurrentWebScraper.Finch, receive_timeout: target.timeout_ms) do
-      {:ok, %Finch.Response{status: status, body: body}} when status in 200..299 ->
-        %ScrapeResult{
-          url: target.url,
-          status: :ok,
-          duration_ms: System.monotonic_time(:millisecond) - started_at,
-          metadata: HtmlParser.extract_metadata(body)
-        }
+        case Finch.request(request, ConcurrentWebScraper.Finch, receive_timeout: target.timeout_ms) do
+          {:ok, %Finch.Response{status: status, body: body}} when status in 200..299 ->
+            %ScrapeResult{
+              url: target.url,
+              status: :ok,
+              duration_ms: System.monotonic_time(:millisecond) - started_at,
+              metadata: HtmlParser.extract_metadata(body)
+            }
 
-      {:ok, %Finch.Response{status: status}} ->
-        %ScrapeResult{
-          url: target.url,
-          status: :http_error,
-          duration_ms: System.monotonic_time(:millisecond) - started_at,
-          error: "unexpected_status:#{status}"
-        }
+          {:ok, %Finch.Response{status: status}} ->
+            %ScrapeResult{
+              url: target.url,
+              status: :http_error,
+              duration_ms: System.monotonic_time(:millisecond) - started_at,
+              error: "unexpected_status:#{status}"
+            }
+
+          {:error, reason} ->
+            %ScrapeResult{
+              url: target.url,
+              status: :request_error,
+              duration_ms: System.monotonic_time(:millisecond) - started_at,
+              error: inspect(reason)
+            }
+        end
 
       {:error, reason} ->
         %ScrapeResult{
-          url: target.url,
-          status: :request_error,
-          duration_ms: System.monotonic_time(:millisecond) - started_at,
-          error: inspect(reason)
+          url: target.url || "invalid-target",
+          status: :validation_error,
+          error: Atom.to_string(reason)
         }
     end
   end
