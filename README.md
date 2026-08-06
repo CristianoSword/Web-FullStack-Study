@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-50.8%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-52.8%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  50.8% (254/500)
+  52.8% (264/500)
 </p>
 
 <p align="center">
@@ -31,10 +31,10 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 | Categoria | Projetos Concluidos | Projetos Pendentes | Total Planejado | Progresso |
 | :--- | :---: | :---: | :---: | :---: |
 | **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| **[BackEnd](2-BackEnd/)** | 72 | 108 | 180 | **40.0%** |
+| **[BackEnd](2-BackEnd/)** | 82 | 98 | 180 | **45.6%** |
 | **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **254** | **246** | **500** | **50.8%** |
+| **Geral** | **264** | **236** | **500** | **52.8%** |
 
 ### BackEnd Auditado
 
@@ -47,6 +47,7 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 - **C#:** 10/10 concluidos
 - **BlockChain:** 10/10 concluidos
 - **SQL:** 10/10 concluidos
+- **Elixir:** 10/10 concluidos
 
 Projetos que ainda estavam com stack simulada, placeholder ou implementacao superficial da tecnologia principal foram rebaixados no `task-list-backend.md` para o painel refletir o estado real do codigo.
 
@@ -67,7 +68,7 @@ All technologies studied and those still planned in the repository:
 | **[Angular](1-FrontEnd/6-Angular/)** | OK | **[C#](2-BackEnd/6-CSharp/)** | OK | **[Kubernetes](3-Devops/6-Kubernetes/)** | TODO |  |  |
 | **[Bootstrap](1-FrontEnd/7-Bootstrap/)** | OK | **[BlockChain](2-BackEnd/7-BlockChain/)** | OK | **[Vercel](3-Devops/7-Vercel/)** | TODO |  |  |
 | **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | OK | **[SQL](2-BackEnd/8-SQL/)** | OK |  |  |  |  |
-| **[TypeScript](1-FrontEnd/9-TypeScript/)** | OK | **[Elixir](2-BackEnd/9-Elixir/)** | TODO |  |  |  |  |
+| **[TypeScript](1-FrontEnd/9-TypeScript/)** | OK | **[Elixir](2-BackEnd/9-Elixir/)** | OK |  |  |  |  |
 | **[Tailwind](1-FrontEnd/10-Tailwind/)** | OK | **[WebAssembly](2-BackEnd/10-WebAssembly/)** | TODO |  |  |  |  |
 | **[Next.js](1-FrontEnd/11-Nextjs/)** | OK | **[Erlang](2-BackEnd/11-Erlang/)** | TODO |  |  |  |  |
 | **[Zustand](1-FrontEnd/12-Zustand/)** | OK | **[Python (FastAPI)](2-BackEnd/12-Python-FastAPI/)** | TODO |  |  |  |  |
