@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C to Wasm Metrics</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #f5f0e8;
+        color: #1d1d1d;
+        margin: 0;
+        padding: 2rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        background: white;
+        border: 1px solid #d7c7b6;
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: 0 12px 30px rgba(57, 41, 24, 0.08);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>C to Wasm Metrics Demo</h1>
+    <p>The page loads a WebAssembly module compiled from C and runs metric helpers over sample datasets.</p>
+    <section id="results" class="grid"></section>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
