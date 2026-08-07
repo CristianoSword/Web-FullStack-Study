@@ -1,5 +1,6 @@
 import createMetricsModule from "../dist/math_metrics.js";
 import { metricJobs } from "./metric_jobs.js";
+import { validateMetricJob } from "./validator.js";
 
 function writeIntArray(module, values) {
   const pointer = module._malloc(values.length * Int32Array.BYTES_PER_ELEMENT);
@@ -8,6 +9,12 @@ function writeIntArray(module, values) {
 }
 
 function readMetrics(module, job) {
+  const validationError = validateMetricJob(job);
+
+  if (validationError) {
+    return { total: 0, average: 0, clamped: 0, error: validationError };
+  }
+
   const valuesPointer = writeIntArray(module, Int32Array.from(job.values));
   const weightsPointer = writeIntArray(module, Int32Array.from(job.weights));
 
@@ -18,18 +25,19 @@ function readMetrics(module, job) {
   module._free(valuesPointer);
   module._free(weightsPointer);
 
-  return { total, average, clamped };
+  return { total, average, clamped, error: null };
 }
 
 function renderResults(container, results) {
   container.innerHTML = results
     .map(
-      ({ label, total, average, clamped }) => `
+      ({ label, total, average, clamped, error }) => `
         <article class="card">
           <h2>${label}</h2>
           <p><strong>Total:</strong> ${total}</p>
           <p><strong>Weighted average:</strong> ${average.toFixed(2)}</p>
           <p><strong>Clamped score:</strong> ${clamped}</p>
+          <p><strong>Error:</strong> ${error ?? "none"}</p>
         </article>
       `
     )
