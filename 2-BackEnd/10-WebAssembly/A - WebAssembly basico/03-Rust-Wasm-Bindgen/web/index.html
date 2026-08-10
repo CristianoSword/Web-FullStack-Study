@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rust Wasm Bindgen Demo</title>
+    <style>
+      body {
+        font-family: Georgia, serif;
+        margin: 0;
+        padding: 2rem;
+        background: linear-gradient(135deg, #f2efe6, #dfe8f4);
+        color: #1f2430;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 18px;
+        padding: 1rem;
+        box-shadow: 0 14px 32px rgba(31, 36, 48, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rust Wasm Bindgen Demo</h1>
+    <p>The browser loads a Rust-generated Wasm module and renders score analysis for each sample batch.</p>
+    <section id="results" class="grid"></section>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
