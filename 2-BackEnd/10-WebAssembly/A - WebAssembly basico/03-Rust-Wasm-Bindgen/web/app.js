@@ -1,5 +1,6 @@
 import init, { analyze_scores, scale_value } from "../pkg/rust_wasm_bindgen.js";
 import { sampleInputs } from "./sample_inputs.js";
+import { validateInputs } from "./validator.js";
 
 function renderResults(results) {
   const host = document.querySelector("#results");
@@ -20,9 +21,14 @@ function renderResults(results) {
 }
 
 async function bootstrap() {
-  await init();
-  const results = analyze_scores(sampleInputs);
-  renderResults(results);
+  try {
+    validateInputs(sampleInputs);
+    await init();
+    const results = analyze_scores(sampleInputs);
+    renderResults(results);
+  } catch (error) {
+    document.querySelector("#results").innerHTML = `<p><strong>Bootstrap error:</strong> ${error.message}</p>`;
+  }
 }
 
 bootstrap();
