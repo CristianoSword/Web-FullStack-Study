@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wasm Arithmetic Helper</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family: "Trebuchet MS", sans-serif;
+        background: linear-gradient(145deg, #eff5ea, #fff8e7);
+        color: #223322;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .card {
+        background: white;
+        border-radius: 18px;
+        padding: 1rem;
+        border: 1px solid #dbe4cf;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wasm Arithmetic Helper</h1>
+    <p>The browser delegates vector and matrix arithmetic to a WebAssembly module compiled from C.</p>
+    <section id="results" class="grid"></section>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
