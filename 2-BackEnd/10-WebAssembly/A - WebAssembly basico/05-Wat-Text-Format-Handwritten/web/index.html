@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Handwritten WAT Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family: Consolas, monospace;
+        background: #f2f4f8;
+        color: #1b2430;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 1rem;
+        border-left: 6px solid #3666d6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Handwritten WAT Demo</h1>
+    <p>This page loads a `.wasm` binary generated from a handwritten `.wat` file and executes its exported math functions.</p>
+    <section id="results" class="grid"></section>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
