@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Filter Wasm</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(135deg, #1f2937, #2d3748);
+        color: #f8fafc;
+      }
+
+      .panel {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 1rem 0;
+      }
+
+      button,
+      input {
+        border-radius: 12px;
+        border: none;
+        padding: 0.8rem 1rem;
+      }
+
+      button {
+        background: #38bdf8;
+        color: #082f49;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      canvas {
+        max-width: 100%;
+        border-radius: 20px;
+        background: #0f172a;
+        box-shadow: 0 20px 50px rgba(15, 23, 42, 0.45);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <h1>High Performance Image Filter Wasm</h1>
+      <p>Upload an image, then apply a Rust/Wasm filter pipeline directly on the RGBA pixel buffer.</p>
+      <div class="toolbar">
+        <input id="image-input" type="file" accept="image/*" />
+        <div id="buttons" class="toolbar"></div>
+      </div>
+      <p id="status">Load an image to begin.</p>
+      <canvas id="canvas" width="640" height="360"></canvas>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
