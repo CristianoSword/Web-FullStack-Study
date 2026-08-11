@@ -1,5 +1,6 @@
 import { watJobs } from "./jobs.js";
 import { exportedFunctions } from "./module_exports.js";
+import { validateJob } from "./validator.js";
 
 async function loadModule() {
   const response = await fetch("../dist/handwritten_math.wasm");
@@ -10,6 +11,19 @@ async function loadModule() {
 
 function runJobs(exportsObject) {
   return watJobs.map((job) => {
+    const validationError = validateJob(job);
+
+    if (validationError) {
+      return {
+        label: job.label,
+        exportName: job.exportName,
+        description: exportedFunctions[job.exportName]?.description ?? "n/a",
+        args: job.args,
+        result: "error",
+        error: validationError
+      };
+    }
+
     const fn = exportsObject[job.exportName];
     const result = fn(...job.args);
 
@@ -18,7 +32,8 @@ function runJobs(exportsObject) {
       exportName: job.exportName,
       description: exportedFunctions[job.exportName].description,
       args: job.args,
-      result
+      result,
+      error: null
     };
   });
 }
@@ -33,12 +48,17 @@ function render(results) {
           <p><strong>Description:</strong> ${job.description}</p>
           <p><strong>Args:</strong> ${job.args.join(", ")}</p>
           <p><strong>Result:</strong> ${job.result}</p>
+          <p><strong>Error:</strong> ${job.error ?? "none"}</p>
         </article>
       `
     )
     .join("");
 }
 
-loadModule().then((exportsObject) => {
-  render(runJobs(exportsObject));
-});
+loadModule()
+  .then((exportsObject) => {
+    render(runJobs(exportsObject));
+  })
+  .catch((error) => {
+    document.querySelector("#results").innerHTML = `<p><strong>Module load error:</strong> ${error.message}</p>`;
+  });
