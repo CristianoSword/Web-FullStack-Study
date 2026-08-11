@@ -5,6 +5,10 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub fn apply_filter(mut pixels: Vec<u8>, preset_key: &str) -> Result<Vec<u8>, JsValue> {
+    if pixels.is_empty() || pixels.len() % 4 != 0 {
+        return Err(JsValue::from_str("pixel buffer must contain RGBA values"));
+    }
+
     let preset = FilterPreset::from_key(preset_key)
         .ok_or_else(|| JsValue::from_str("unknown filter preset"))?;
 

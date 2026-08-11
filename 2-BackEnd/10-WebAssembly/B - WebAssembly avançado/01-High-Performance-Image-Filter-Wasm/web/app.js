@@ -1,5 +1,6 @@
 import init, { apply_filter } from "../pkg/image_filter_wasm.js";
 import { presets } from "./presets.js";
+import { validateImageFile, validatePreset } from "./validator.js";
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -18,6 +19,12 @@ function updateStatus(message) {
 }
 
 async function loadImage(file) {
+  const validationError = validateImageFile(file);
+
+  if (validationError) {
+    throw new Error(validationError);
+  }
+
   const image = new Image();
   image.src = URL.createObjectURL(file);
   await image.decode();
@@ -29,6 +36,12 @@ async function loadImage(file) {
 }
 
 function applyPreset(presetKey) {
+  const presetError = validatePreset(presetKey, presets);
+
+  if (presetError) {
+    throw new Error(presetError);
+  }
+
   const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
   const nextPixels = apply_filter(Array.from(imageData.data), presetKey);
   imageData.data.set(nextPixels);
@@ -44,7 +57,11 @@ fileInput.addEventListener("change", async (event) => {
   const [file] = event.target.files;
 
   if (file) {
-    await loadImage(file);
+    try {
+      await loadImage(file);
+    } catch (error) {
+      updateStatus(error.message);
+    }
   }
 });
 
@@ -52,6 +69,10 @@ buttonsHost.addEventListener("click", (event) => {
   const key = event.target.dataset.key;
 
   if (key && canvas.width > 0 && canvas.height > 0) {
-    applyPreset(key);
+    try {
+      applyPreset(key);
+    } catch (error) {
+      updateStatus(error.message);
+    }
   }
 });
