@@ -1,5 +1,6 @@
 import createArithmeticModule from "../dist/arithmetic_helper.js";
 import { arithmeticJobs } from "./jobs.js";
+import { validateArithmeticJob } from "./validator.js";
 
 function writeFloatArray(module, values) {
   const pointer = module._malloc(values.length * Float64Array.BYTES_PER_ELEMENT);
@@ -12,6 +13,12 @@ function flattenMatrix(matrix) {
 }
 
 function runJob(module, job) {
+  const validationError = validateArithmeticJob(job);
+
+  if (validationError) {
+    return { dotProduct: 0, trace: 0, normalized: 0, error: validationError };
+  }
+
   const leftPointer = writeFloatArray(module, Float64Array.from(job.left));
   const rightPointer = writeFloatArray(module, Float64Array.from(job.right));
   const matrixPointer = writeFloatArray(module, Float64Array.from(flattenMatrix(job.matrix)));
@@ -24,18 +31,19 @@ function runJob(module, job) {
   module._free(rightPointer);
   module._free(matrixPointer);
 
-  return { dotProduct, trace, normalized };
+  return { dotProduct, trace, normalized, error: null };
 }
 
 function render(container, results) {
   container.innerHTML = results
     .map(
-      ({ label, dotProduct, trace, normalized }) => `
+      ({ label, dotProduct, trace, normalized, error }) => `
         <article class="card">
           <h2>${label}</h2>
           <p><strong>Dot product:</strong> ${dotProduct.toFixed(2)}</p>
           <p><strong>Matrix trace:</strong> ${trace.toFixed(2)}</p>
           <p><strong>Normalized score:</strong> ${normalized.toFixed(2)}%</p>
+          <p><strong>Error:</strong> ${error ?? "none"}</p>
         </article>
       `
     )
