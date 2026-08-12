@@ -1,5 +1,6 @@
 import init, { simulate_step } from "../pkg/physics_engine_2d_wasm.js";
 import { sampleWorld } from "./sample_world.js";
+import { validateWorld } from "./validator.js";
 
 const canvas = document.querySelector("#canvas");
 const context = canvas.getContext("2d");
@@ -53,4 +54,5 @@ resetButton.addEventListener("click", () => {
 });
 
 await init();
+validateWorld(sampleWorld);
 drawBodies();

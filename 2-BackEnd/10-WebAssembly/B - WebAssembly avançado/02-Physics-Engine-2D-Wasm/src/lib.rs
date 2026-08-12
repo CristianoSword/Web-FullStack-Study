@@ -10,6 +10,9 @@ pub fn simulate_step(config: JsValue, bodies: JsValue) -> Result<JsValue, JsValu
     let mut bodies: Vec<Body> =
         serde_wasm_bindgen::from_value(bodies).map_err(|error| JsValue::from_str(&error.to_string()))?;
 
+    validate_config(&config)?;
+    validate_bodies(&bodies)?;
+
     for body in bodies.iter_mut() {
         body.vy += config.gravity * config.dt;
         body.vx *= config.damping;
@@ -83,4 +86,26 @@ fn resolve_collisions(bodies: &mut [Body]) {
 fn split_two_mut(bodies: &mut [Body], left_index: usize, right_index: usize) -> (&mut Body, &mut Body) {
     let (left_slice, right_slice) = bodies.split_at_mut(right_index);
     (&mut left_slice[left_index], &mut right_slice[0])
+}
+
+fn validate_config(config: &WorldConfig) -> Result<(), JsValue> {
+    if config.width <= 0.0 || config.height <= 0.0 || config.dt <= 0.0 {
+        return Err(JsValue::from_str("invalid world dimensions or timestep"));
+    }
+
+    Ok(())
+}
+
+fn validate_bodies(bodies: &[Body]) -> Result<(), JsValue> {
+    if bodies.is_empty() {
+        return Err(JsValue::from_str("at least one body is required"));
+    }
+
+    for body in bodies {
+        if body.radius <= 0.0 || body.mass <= 0.0 {
+            return Err(JsValue::from_str("body radius and mass must be positive"));
+        }
+    }
+
+    Ok(())
 }
