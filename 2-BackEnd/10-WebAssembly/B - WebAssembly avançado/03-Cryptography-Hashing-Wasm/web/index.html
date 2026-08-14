@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptography Hashing Wasm</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(160deg, #0b1220, #172554);
+        color: #e0f2fe;
+      }
+
+      .panel {
+        max-width: 920px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .card {
+        background: rgba(15, 23, 42, 0.92);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 18px;
+        padding: 1rem;
+      }
+
+      textarea,
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.85rem;
+        border-radius: 12px;
+        border: 1px solid #334155;
+        background: #020617;
+        color: #e2e8f0;
+        margin-top: 0.5rem;
+      }
+
+      .toolbar {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
+
+      button {
+        border: none;
+        border-radius: 12px;
+        padding: 0.8rem 1rem;
+        background: #38bdf8;
+        color: #082f49;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <h1>Cryptography Hashing Wasm</h1>
+      <p>Rust/Wasm handles AES-128-CTR encryption and SHA-256 hashing while the browser provides the interactive shell.</p>
+
+      <section class="card">
+        <h2>AES-128-CTR</h2>
+        <label>Plaintext <textarea id="plaintext" rows="4"></textarea></label>
+        <label>Key (16-byte hex) <input id="key" type="text" /></label>
+        <label>Nonce (16-byte hex) <input id="nonce" type="text" /></label>
+        <label>Ciphertext (hex) <textarea id="ciphertext" rows="4"></textarea></label>
+        <div class="toolbar">
+          <button id="encrypt">Encrypt</button>
+          <button id="decrypt">Decrypt</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>SHA-256</h2>
+        <label>Message <textarea id="hash-message" rows="3"></textarea></label>
+        <label>Digest <textarea id="hash-result" rows="3" readonly></textarea></label>
+        <div class="toolbar">
+          <button id="hash">Generate Hash</button>
+        </div>
+      </section>
+
+      <p id="status">Ready for cryptographic operations.</p>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
