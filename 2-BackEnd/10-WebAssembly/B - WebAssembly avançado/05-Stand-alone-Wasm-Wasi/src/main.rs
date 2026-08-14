@@ -22,6 +22,7 @@ fn run() -> Result<(), String> {
     let input_path = &args[1];
     let payload = fs::read_to_string(input_path).map_err(|error| error.to_string())?;
     let plan: WorkPlan = serde_json::from_str(&payload).map_err(|error| error.to_string())?;
+    validate_plan(&plan)?;
     let summary = summarize(plan);
     let output = serde_json::to_string_pretty(&summary).map_err(|error| error.to_string())?;
 
@@ -59,4 +60,26 @@ fn summarize(plan: WorkPlan) -> WorkSummary {
         completion_rate,
         estimated_hours_remaining: remaining_hours,
     }
+}
+
+fn validate_plan(plan: &WorkPlan) -> Result<(), String> {
+    if plan.title.trim().is_empty() || plan.team.trim().is_empty() {
+        return Err("plan title and team cannot be empty".to_string());
+    }
+
+    if plan.items.is_empty() {
+        return Err("plan must contain at least one work item".to_string());
+    }
+
+    for item in &plan.items {
+        if item.name.trim().is_empty() {
+            return Err("work item name cannot be empty".to_string());
+        }
+
+        if item.estimate_hours < 0.0 {
+            return Err("work item estimate cannot be negative".to_string());
+        }
+    }
+
+    Ok(())
 }
