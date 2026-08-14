@@ -8,6 +8,7 @@ use wasm_bindgen::prelude::*;
 pub fn generate_tone(config: JsValue) -> Result<Vec<f32>, JsValue> {
     let config: SynthConfig =
         serde_wasm_bindgen::from_value(config).map_err(|error| JsValue::from_str(&error.to_string()))?;
+    validate_config(&config)?;
 
     let envelope = Envelope {
         attack: 0.08,
@@ -49,4 +50,16 @@ fn adsr(time: f32, duration: f32, envelope: &Envelope) -> f32 {
     let release_start = (duration - envelope.release).max(0.0);
     let release_progress = (time - release_start) / envelope.release.max(0.0001);
     envelope.sustain * (1.0 - release_progress).max(0.0)
+}
+
+fn validate_config(config: &SynthConfig) -> Result<(), JsValue> {
+    if config.frequency <= 0.0 || config.duration <= 0.0 || config.sample_rate == 0 {
+        return Err(JsValue::from_str("frequency, duration and sample rate must be positive"));
+    }
+
+    if config.gain <= 0.0 || config.gain > 1.0 {
+        return Err(JsValue::from_str("gain must stay between 0 and 1"));
+    }
+
+    Ok(())
 }

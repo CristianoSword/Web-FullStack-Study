@@ -1,5 +1,6 @@
 import init, { generate_tone } from "../pkg/audio_synthesizer_wasm.js";
 import { presets } from "./presets.js";
+import { validateSynthConfig } from "./validator.js";
 
 const presetSelect = document.querySelector("#preset");
 const frequencyField = document.querySelector("#frequency");
@@ -34,6 +35,8 @@ async function playCurrentConfig() {
     sampleRate: audioContext.sampleRate
   };
 
+  validateSynthConfig(config);
+
   const samples = generate_tone(config);
   const buffer = audioContext.createBuffer(1, samples.length, config.sampleRate);
   buffer.copyToChannel(Float32Array.from(samples), 0);
@@ -55,5 +58,9 @@ presetSelect.addEventListener("change", () => {
 });
 
 document.querySelector("#play").addEventListener("click", () => {
-  playCurrentConfig();
+  try {
+    playCurrentConfig();
+  } catch (error) {
+    statusLabel.textContent = error.message;
+  }
 });
