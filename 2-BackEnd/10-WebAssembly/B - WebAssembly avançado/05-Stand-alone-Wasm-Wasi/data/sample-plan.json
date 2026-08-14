@@ -1,0 +1,9 @@
+{
+  "title": "Edge Runtime Migration",
+  "team": "Platform",
+  "items": [
+    { "name": "Audit current handlers", "estimate_hours": 6.5, "completed": true },
+    { "name": "Port cache adapter", "estimate_hours": 8.0, "completed": false },
+    { "name": "Update deployment scripts", "estimate_hours": 4.0, "completed": false }
+  ]
+}
