@@ -10,6 +10,8 @@ type Aes128Ctr = ctr::Ctr128BE<Aes128>;
 
 #[wasm_bindgen]
 pub fn encrypt_text(plaintext: &str, key_hex: &str, nonce_hex: &str) -> Result<String, JsValue> {
+    ensure_not_empty(plaintext, "plaintext")?;
+
     let payload = CryptoPayload {
         plaintext: plaintext.to_owned(),
         key_hex: key_hex.to_owned(),
@@ -27,6 +29,8 @@ pub fn encrypt_text(plaintext: &str, key_hex: &str, nonce_hex: &str) -> Result<S
 
 #[wasm_bindgen]
 pub fn decrypt_text(ciphertext_hex: &str, key_hex: &str, nonce_hex: &str) -> Result<String, JsValue> {
+    ensure_not_empty(ciphertext_hex, "ciphertext")?;
+
     let key = decode_16_byte_hex(key_hex)?;
     let nonce = decode_16_byte_hex(nonce_hex)?;
     let mut buffer = hex::decode(ciphertext_hex).map_err(|error| JsValue::from_str(&error.to_string()))?;
@@ -52,4 +56,12 @@ fn decode_16_byte_hex(value: &str) -> Result<[u8; 16], JsValue> {
     bytes
         .try_into()
         .map_err(|_| JsValue::from_str("expected 16-byte hex value"))
+}
+
+fn ensure_not_empty(value: &str, field_name: &str) -> Result<(), JsValue> {
+    if value.trim().is_empty() {
+        return Err(JsValue::from_str(&format!("{field_name} cannot be empty")));
+    }
+
+    Ok(())
 }
