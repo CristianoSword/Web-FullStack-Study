@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Synthesizer Wasm</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem;
+        font-family: "Segoe UI", sans-serif;
+        background: linear-gradient(145deg, #111827, #4c1d95);
+        color: #f5f3ff;
+      }
+
+      .panel {
+        max-width: 760px;
+        margin: 0 auto;
+        background: rgba(17, 24, 39, 0.88);
+        border-radius: 22px;
+        padding: 1.5rem;
+      }
+
+      label {
+        display: block;
+        margin-top: 1rem;
+      }
+
+      input,
+      select {
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.8rem;
+        border-radius: 12px;
+        border: 1px solid #6d28d9;
+        background: #0f172a;
+        color: #f8fafc;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-top: 1rem;
+        border: none;
+        border-radius: 14px;
+        padding: 0.9rem 1.2rem;
+        background: #22d3ee;
+        color: #083344;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="panel">
+      <h1>Audio Synthesizer Wasm</h1>
+      <p>Rust/Wasm generates PCM samples, and the browser uses the Web Audio API to play the synthesized tone.</p>
+
+      <label>Preset <select id="preset"></select></label>
+      <label>Frequency (Hz) <input id="frequency" type="number" min="40" max="1200" step="1" /></label>
+      <label>Duration (seconds) <input id="duration" type="number" min="0.1" max="5" step="0.1" /></label>
+      <label>Gain <input id="gain" type="number" min="0.05" max="0.8" step="0.01" /></label>
+
+      <button id="play">Play Tone</button>
+      <p id="status">Ready to synthesize audio.</p>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
