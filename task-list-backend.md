@@ -1081,15 +1081,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
 
 ### 🐤 Projetos Básicos
 
-#### [ ] 01-Eshell-Interactive-Operations
+#### [x] 01-Eshell-Interactive-Operations
 - **O que é:** Operações básicas de dados no Shell interativo Erlang.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: Inicialização do projeto, dependências e configurações.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: Implementação da lógica de negócios e manipulações.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuário ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validações e estilização.
-  6. `[ ]` `[06/06] docs`: Documentação do projeto no README.md e finalização.
+  1. `[x]` `[01/06] setup`: Inicializacao do projeto, dependencias e configuracoes.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementacao da logica de negocios e manipulacoes.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuario ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validacoes e ajustes.
+  6. `[x]` `[06/06] docs`: Documentacao do projeto no README.md e finalizacao.
 
 #### [ ] 02-Pattern-Matching-Functions
 - **O que é:** Declaração de módulos e funções utilizando pattern matching estrito.
