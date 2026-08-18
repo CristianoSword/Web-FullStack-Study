@@ -26,8 +26,10 @@ describe_user(#user_payload{role = admin, name = Name, status = active}) ->
     {priority, Name};
 describe_user(#user_payload{role = guest, name = Name, status = pending}) ->
     {onboarding, Name};
+describe_user(#user_payload{name = Name, status = Status}) when is_binary(Name), is_atom(Status) ->
+    {standard, Name, Status};
 describe_user(#user_payload{name = Name, status = Status}) ->
-    {standard, Name, Status}.
+    erlang:error({invalid_user_payload, Name, Status}).
 
 transform({coords, X, Y}) when is_integer(X), is_integer(Y) ->
     #{x => X, y => Y};
@@ -41,3 +43,7 @@ transform(Other) ->
 classify_test() ->
     ?assertEqual({success, 42}, classify({ok, 42})),
     ?assertEqual({event, <<"deploy">>}, classify(#{type => event, name => <<"deploy">>})).
+
+transform_test() ->
+    ?assertEqual(4, transform(<<"test">>)),
+    ?assertEqual(10, transform(#{type => metric, value => 5})).
