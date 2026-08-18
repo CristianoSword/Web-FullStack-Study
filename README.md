@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-54.6%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-55.0%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  54.6% (273/500)
+  55.0% (275/500)
 </p>
 
 <p align="center">
@@ -31,10 +31,10 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 | Categoria | Projetos Concluidos | Projetos Pendentes | Total Planejado | Progresso |
 | :--- | :---: | :---: | :---: | :---: |
 | **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| **[BackEnd](2-BackEnd/)** | 91 | 89 | 180 | **50.6%** |
+| **[BackEnd](2-BackEnd/)** | 93 | 87 | 180 | **51.7%** |
 | **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **273** | **227** | **500** | **54.6%** |
+| **Geral** | **275** | **225** | **500** | **55.0%** |
 
 ### BackEnd Auditado
 
@@ -49,6 +49,7 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 - **SQL:** 10/10 concluidos
 - **Elixir:** 10/10 concluidos
 - **WebAssembly:** 9/9 concluidos
+- **Erlang:** 2/10 concluidos
 
 Projetos que ainda estavam com stack simulada, placeholder ou implementacao superficial da tecnologia principal foram rebaixados no `task-list-backend.md` para o painel refletir o estado real do codigo.
 
@@ -71,7 +72,7 @@ All technologies studied and those still planned in the repository:
 | **[Less/Sass](1-FrontEnd/8-Less-Sass/)** | OK | **[SQL](2-BackEnd/8-SQL/)** | OK |  |  |  |  |
 | **[TypeScript](1-FrontEnd/9-TypeScript/)** | OK | **[Elixir](2-BackEnd/9-Elixir/)** | OK |  |  |  |  |
 | **[Tailwind](1-FrontEnd/10-Tailwind/)** | OK | **[WebAssembly](2-BackEnd/10-WebAssembly/)** | OK |  |  |  |  |
-| **[Next.js](1-FrontEnd/11-Nextjs/)** | OK | **[Erlang](2-BackEnd/11-Erlang/)** | TODO |  |  |  |  |
+| **[Next.js](1-FrontEnd/11-Nextjs/)** | OK | **[Erlang](2-BackEnd/11-Erlang/)** | IN PROGRESS |  |  |  |  |
 | **[Zustand](1-FrontEnd/12-Zustand/)** | OK | **[Python (FastAPI)](2-BackEnd/12-Python-FastAPI/)** | TODO |  |  |  |  |
 | **[Svelte](1-FrontEnd/13-Svelte/)** | OK | **[Go](2-BackEnd/13-Go/)** | TODO |  |  |  |  |
 |  |  | **[MongoDB](2-BackEnd/14-MongoDB/)** | TODO |  |  |  |  |
