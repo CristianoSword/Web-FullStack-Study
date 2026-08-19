@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-55.2%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-55.4%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  55.2% (276/500)
+  55.4% (277/500)
 </p>
 
 <p align="center">
@@ -31,10 +31,10 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 | Categoria | Projetos Concluidos | Projetos Pendentes | Total Planejado | Progresso |
 | :--- | :---: | :---: | :---: | :---: |
 | **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| **[BackEnd](2-BackEnd/)** | 94 | 86 | 180 | **52.2%** |
+| **[BackEnd](2-BackEnd/)** | 95 | 85 | 180 | **52.8%** |
 | **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **276** | **224** | **500** | **55.2%** |
+| **Geral** | **277** | **223** | **500** | **55.4%** |
 
 ### BackEnd Auditado
 
@@ -49,7 +49,7 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 - **SQL:** 10/10 concluidos
 - **Elixir:** 10/10 concluidos
 - **WebAssembly:** 9/9 concluidos
-- **Erlang:** 3/10 concluidos
+- **Erlang:** 4/10 concluidos
 
 Projetos que ainda estavam com stack simulada, placeholder ou implementacao superficial da tecnologia principal foram rebaixados no `task-list-backend.md` para o painel refletir o estado real do codigo.
 
