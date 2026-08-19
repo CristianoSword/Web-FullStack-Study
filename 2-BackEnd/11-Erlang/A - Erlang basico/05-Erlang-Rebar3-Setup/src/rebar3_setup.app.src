@@ -1,0 +1,9 @@
+{application, rebar3_setup,
+    [
+        {description, "Study project for Rebar3 and OTP structure"},
+        {vsn, "0.1.0"},
+        {registered, []},
+        {mod, {rebar3_setup_app, []}},
+        {applications, [kernel, stdlib]},
+        {env, []}
+    ]}.
