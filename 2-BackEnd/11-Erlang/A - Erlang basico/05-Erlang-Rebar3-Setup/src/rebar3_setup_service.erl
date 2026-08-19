@@ -90,5 +90,5 @@ bootstrap_report_test() ->
         ?assertEqual(rebar3_setup, Report#bootstrap_report.app_name),
         ?assertEqual(3, length(Report#bootstrap_report.targets))
     after
-        exit(Pid, shutdown)
+        gen_server:stop(Pid)
     end.
