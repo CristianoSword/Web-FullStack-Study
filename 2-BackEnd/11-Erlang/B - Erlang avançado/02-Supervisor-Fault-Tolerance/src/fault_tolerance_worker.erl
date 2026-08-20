@@ -5,7 +5,8 @@
     start_link/0,
     ping/0,
     status/0,
-    crash/0
+    crash/0,
+    reset_crash_counter/0
 ]).
 
 -export([
@@ -19,6 +20,8 @@
 
 -include("fault_tolerance.hrl").
 
+-define(CRASH_COUNTER_KEY, {?MODULE, crash_counter}).
+
 start_link() ->
     gen_server:start_link({local, ?MODULE}, ?MODULE, [], []).
 
@@ -31,8 +34,13 @@ status() ->
 crash() ->
     gen_server:call(?MODULE, crash).
 
+reset_crash_counter() ->
+    persistent_term:put(?CRASH_COUNTER_KEY, 0),
+    ok.
+
 init([]) ->
-    {ok, #worker_status{name = <<"resilient-worker">>, crash_count = 0, heartbeat = 0}}.
+    CrashCount = persistent_term:get(?CRASH_COUNTER_KEY, 0),
+    {ok, #worker_status{name = <<"resilient-worker">>, crash_count = CrashCount, heartbeat = 0}}.
 
 handle_call(ping, _From, State = #worker_status{heartbeat = Heartbeat}) ->
     NextState = State#worker_status{heartbeat = Heartbeat + 1},
@@ -40,6 +48,7 @@ handle_call(ping, _From, State = #worker_status{heartbeat = Heartbeat}) ->
 handle_call(status, _From, State) ->
     {reply, State, State};
 handle_call(crash, _From, State = #worker_status{crash_count = CrashCount}) ->
+    persistent_term:put(?CRASH_COUNTER_KEY, CrashCount + 1),
     erlang:error({simulated_crash, CrashCount + 1}),
     {reply, ok, State};
 handle_call(_Request, _From, State) ->

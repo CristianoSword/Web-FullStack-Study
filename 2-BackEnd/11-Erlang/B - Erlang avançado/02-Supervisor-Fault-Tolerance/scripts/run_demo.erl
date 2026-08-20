@@ -11,5 +11,6 @@ main() ->
     io:format("~p~n", [{before, BeforePid}]),
     io:format("~p~n", [Report]),
     io:format("~p~n", [{'after', AfterPid, fault_tolerance_control:status()}]),
+    unlink(SupPid),
     exit(SupPid, shutdown),
     init:stop().
