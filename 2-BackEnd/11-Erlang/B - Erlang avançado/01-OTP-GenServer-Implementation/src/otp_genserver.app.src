@@ -1,0 +1,9 @@
+{application, otp_genserver,
+    [
+        {description, "OTP GenServer transaction ledger"},
+        {vsn, "0.1.0"},
+        {registered, [otp_genserver_ledger]},
+        {mod, {otp_genserver_app, []}},
+        {applications, [kernel, stdlib]},
+        {env, []}
+    ]}.
