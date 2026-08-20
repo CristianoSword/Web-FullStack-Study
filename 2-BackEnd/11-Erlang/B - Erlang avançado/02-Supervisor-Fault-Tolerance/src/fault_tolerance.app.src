@@ -1,0 +1,9 @@
+{application, fault_tolerance,
+    [
+        {description, "Supervisor fault tolerance demo"},
+        {vsn, "0.1.0"},
+        {registered, [fault_tolerance_worker]},
+        {mod, {fault_tolerance_app, []}},
+        {applications, [kernel, stdlib]},
+        {env, []}
+    ]}.
