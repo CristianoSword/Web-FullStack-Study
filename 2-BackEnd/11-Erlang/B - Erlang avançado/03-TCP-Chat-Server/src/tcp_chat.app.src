@@ -1,0 +1,9 @@
+{application, tcp_chat,
+    [
+        {description, "TCP chat server"},
+        {vsn, "0.1.0"},
+        {registered, [tcp_chat_room]},
+        {mod, {tcp_chat_app, []}},
+        {applications, [kernel, stdlib]},
+        {env, []}
+    ]}.
