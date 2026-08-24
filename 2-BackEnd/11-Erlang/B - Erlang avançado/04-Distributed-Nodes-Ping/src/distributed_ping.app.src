@@ -1,0 +1,9 @@
+{application, distributed_ping,
+    [
+        {description, "Distributed Erlang nodes ping demo"},
+        {vsn, "0.1.0"},
+        {registered, [distributed_ping_service]},
+        {mod, {distributed_ping_app, []}},
+        {applications, [kernel, stdlib]},
+        {env, []}
+    ]}.
