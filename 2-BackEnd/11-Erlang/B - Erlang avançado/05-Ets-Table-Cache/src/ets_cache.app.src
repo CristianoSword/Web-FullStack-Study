@@ -1,0 +1,9 @@
+{application, ets_cache,
+    [
+        {description, "ETS cache with ttl and metrics"},
+        {vsn, "0.1.0"},
+        {registered, [ets_cache_service]},
+        {mod, {ets_cache_app, []}},
+        {applications, [kernel, stdlib]},
+        {env, []}
+    ]}.
