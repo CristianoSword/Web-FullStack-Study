@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.api.routes import router
 from app.core.settings import AppSettings
 
 
@@ -12,6 +13,7 @@ def create_app(settings: AppSettings | None = None) -> FastAPI:
         redoc_url="/redoc",
     )
     app.state.settings = resolved_settings
+    app.include_router(router)
     return app
 
 
