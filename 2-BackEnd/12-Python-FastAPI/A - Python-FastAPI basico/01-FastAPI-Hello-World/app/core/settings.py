@@ -1,6 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseSettings, Field
 
 
-class AppSettings(BaseModel):
-    app_name: str = "FastAPI Hello World"
-    app_version: str = "0.1.0"
+class AppSettings(BaseSettings):
+    app_name: str = Field("FastAPI Hello World", env="FASTAPI_APP_NAME")
+    app_version: str = Field("0.1.0", env="FASTAPI_APP_VERSION")
+    environment: str = Field("development", env="FASTAPI_ENV")
+
+    class Config:
+        env_prefix = ""
