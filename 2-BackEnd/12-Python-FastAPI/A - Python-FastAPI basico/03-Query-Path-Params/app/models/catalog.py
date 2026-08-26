@@ -1,7 +1,7 @@
 from decimal import Decimal
 from typing import List, Optional
 
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, root_validator, validator
 
 
 class CatalogItem(BaseModel):
@@ -28,6 +28,14 @@ class SearchQuery(BaseModel):
         if not cleaned:
             raise ValueError("query text cannot be blank")
         return cleaned
+
+    @root_validator
+    def validate_price_range(cls, values: dict) -> dict:
+        min_price = values.get("min_price")
+        max_price = values.get("max_price")
+        if min_price is not None and max_price is not None and min_price > max_price:
+            raise ValueError("min_price cannot be greater than max_price")
+        return values
 
 
 class CatalogPath(BaseModel):
