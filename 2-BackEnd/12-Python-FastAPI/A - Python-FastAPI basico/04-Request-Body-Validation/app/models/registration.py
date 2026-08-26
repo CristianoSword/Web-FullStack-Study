@@ -42,6 +42,8 @@ class RegistrationRequest(BaseModel):
         cleaned = value.strip()
         if not cleaned:
             raise ValueError("field cannot be blank")
+        if value is not None and any(char.isdigit() for char in cleaned):
+            raise ValueError("text fields cannot contain digits")
         return cleaned
 
     @validator("password")
