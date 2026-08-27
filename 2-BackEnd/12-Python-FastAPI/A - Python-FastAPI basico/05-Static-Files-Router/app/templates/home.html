@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ stylesheet_path }}">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">FastAPI Static Files Router</p>
+    <h1>{{ title }}</h1>
+    <p class="subtitle">{{ subtitle }}</p>
+    <nav class="nav">
+      {% for item in nav_items %}
+      <a href="{{ item.href }}">{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  <main class="content">
+    {% for section in body_sections %}
+    <section class="card">
+      <p>{{ section }}</p>
+    </section>
+    {% endfor %}
+  </main>
+</body>
+</html>

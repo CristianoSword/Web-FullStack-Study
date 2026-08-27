@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ stylesheet_path }}">
+</head>
+<body>
+  <main class="content narrow">
+    <a class="back-link" href="/">Back to home</a>
+    <h1>{{ title }}</h1>
+    <p class="subtitle">{{ subtitle }}</p>
+    <ul class="feature-list">
+      {% for section in body_sections %}
+      <li>{{ section }}</li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+</html>
