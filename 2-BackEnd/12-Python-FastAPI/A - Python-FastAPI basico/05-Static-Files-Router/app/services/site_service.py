@@ -1,3 +1,6 @@
+from pathlib import Path
+
+from app.core.exceptions import AssetValidationError
 from app.models.site import AssetManifest, NavItem, StaticPage
 
 
@@ -35,3 +38,14 @@ class SiteService:
                 "This example keeps the structure simple while still separating content, assets and routing.",
             ],
         )
+
+    def validate_assets(self, base_dir: Path) -> None:
+        manifest = self.get_asset_manifest()
+        required_paths = [
+            base_dir / "static" / Path(manifest.stylesheet_path).name,
+            base_dir / "templates" / manifest.home_template,
+            base_dir / "templates" / manifest.about_template,
+        ]
+        for path in required_paths:
+            if not path.exists():
+                raise AssetValidationError(path.name)
