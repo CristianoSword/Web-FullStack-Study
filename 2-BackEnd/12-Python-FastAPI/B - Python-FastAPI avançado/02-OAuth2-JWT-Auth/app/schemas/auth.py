@@ -22,6 +22,10 @@ class UserCreate(BaseModel):
     def normalize_username(cls, value: str) -> str:
         return value.lower().replace(" ", "_")
 
+    @validator("email")
+    def normalize_email(cls, value: EmailStr) -> str:
+        return str(value).lower()
+
 
 class UserRead(BaseModel):
     id: int

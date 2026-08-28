@@ -1,3 +1,5 @@
+from typing import Optional
+
 from sqlalchemy.orm import Session
 
 from app.core.exceptions import (
@@ -46,5 +48,5 @@ class AuthService:
             ),
         )
 
-    def get_user_by_username(self, username: str) -> User | None:
+    def get_user_by_username(self, username: str) -> Optional[User]:
         return self.user_repository.get_by_username(username.lower())

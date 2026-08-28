@@ -11,7 +11,10 @@ def hash_password(password: str) -> str:
 
 
 def verify_password(password: str, password_hash: str) -> bool:
-    algorithm, encoded_salt, encoded_hash = password_hash.split("$", 2)
+    try:
+        algorithm, encoded_salt, encoded_hash = password_hash.split("$", 2)
+    except ValueError:
+        return False
     if algorithm != "pbkdf2_sha256":
         return False
     salt = base64.b64decode(encoded_salt.encode())
