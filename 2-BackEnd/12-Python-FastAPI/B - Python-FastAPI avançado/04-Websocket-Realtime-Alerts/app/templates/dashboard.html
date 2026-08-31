@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realtime Alerts Dashboard</title>
+    <style>
+      :root {
+        --bg: #07111f;
+        --panel: #10233a;
+        --accent: #50e3c2;
+        --warning: #ffb020;
+        --critical: #ff5d73;
+        --text: #e8f0ff;
+        --muted: #9cb2c9;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top, #163456, var(--bg) 60%);
+        color: var(--text);
+      }
+      .layout {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+      .hero {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1.4fr 1fr;
+        margin-bottom: 24px;
+      }
+      .card {
+        background: rgba(16, 35, 58, 0.88);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+      }
+      h1, h2 { margin: 0 0 12px; }
+      p { color: var(--muted); }
+      form {
+        display: grid;
+        gap: 10px;
+      }
+      input, select, textarea, button {
+        width: 100%;
+        border-radius: 12px;
+        border: none;
+        padding: 12px 14px;
+        font: inherit;
+      }
+      textarea { min-height: 90px; resize: vertical; }
+      input, select, textarea { background: #f6fbff; color: #0d2034; }
+      button {
+        background: linear-gradient(135deg, var(--accent), #79b8ff);
+        color: #042035;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .feed {
+        display: grid;
+        gap: 12px;
+      }
+      .alert {
+        border-left: 4px solid var(--accent);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 14px;
+        border-radius: 14px;
+      }
+      .alert.warning { border-left-color: var(--warning); }
+      .alert.critical { border-left-color: var(--critical); }
+      .meta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      @media (max-width: 820px) {
+        .hero { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="hero">
+        <section class="card">
+          <h1>Realtime Alerts Dashboard</h1>
+          <p>Conecte em um canal, acompanhe entradas e publique alertas instantaneos para todos os clientes online.</p>
+          <form id="connection-form">
+            <input id="channel" value="operations" placeholder="Channel" />
+            <input id="username" value="operator-01" placeholder="Username" />
+            <button type="submit">Connect WebSocket</button>
+          </form>
+        </section>
+        <section class="card">
+          <h2>Publish Alert</h2>
+          <form id="alert-form">
+            <input id="source" value="monitoring-bot" placeholder="Source" />
+            <input id="title" value="CPU usage spike" placeholder="Title" />
+            <textarea id="message" placeholder="Message">Cluster node cpu reached 87% in the last 5 minutes.</textarea>
+            <select id="severity">
+              <option value="info">info</option>
+              <option value="warning">warning</option>
+              <option value="critical">critical</option>
+            </select>
+            <button type="submit">Send Alert</button>
+          </form>
+        </section>
+      </div>
+      <section class="card">
+        <h2>Event Feed</h2>
+        <div id="feed" class="feed"></div>
+      </section>
+    </div>
+    <script>
+      let socket = null;
+      const feed = document.getElementById("feed");
+
+      function appendCard(title, body, severity = "info", meta = []) {
+        const item = document.createElement("article");
+        item.className = `alert ${severity}`;
+        item.innerHTML = `<strong>${title}</strong><p>${body}</p><div class="meta">${meta.map((entry) => `<span>${entry}</span>`).join("")}</div>`;
+        feed.prepend(item);
+      }
+
+      document.getElementById("connection-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const channel = document.getElementById("channel").value.trim();
+        const username = document.getElementById("username").value.trim();
+        if (socket) socket.close();
+        socket = new WebSocket(`ws://${location.host}/ws/${channel}?username=${encodeURIComponent(username)}`);
+        socket.onopen = () => appendCard("Connected", `Joined ${channel} as ${username}`, "info");
+        socket.onmessage = (message) => {
+          const eventData = JSON.parse(message.data);
+          const payload = eventData.payload || {};
+          if (eventData.event === "alert") {
+            appendCard(payload.title, payload.message, payload.severity, [payload.source, payload.channel || eventData.channel]);
+            return;
+          }
+          appendCard(eventData.event, JSON.stringify(payload), "info", [eventData.channel]);
+        };
+        socket.onclose = () => appendCard("Disconnected", `Socket closed for ${channel}`, "warning");
+      });
+
+      document.getElementById("alert-form").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const payload = {
+          channel: document.getElementById("channel").value.trim(),
+          source: document.getElementById("source").value.trim(),
+          title: document.getElementById("title").value.trim(),
+          message: document.getElementById("message").value.trim(),
+          severity: document.getElementById("severity").value,
+          metadata: { ui: "dashboard" }
+        };
+        const response = await fetch("/alerts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        const data = await response.json();
+        appendCard("Alert Published", data.alert.title, data.alert.severity, [data.alert.channel, data.alert.source]);
+      });
+    </script>
+  </body>
+</html>
