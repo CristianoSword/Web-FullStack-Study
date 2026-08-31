@@ -1,9 +1,10 @@
 from collections import defaultdict, deque
 from datetime import datetime
-from typing import Deque, Dict, List
+from typing import Deque, Dict, List, Optional
 from uuid import uuid4
 
 from fastapi import WebSocket
+from fastapi.encoders import jsonable_encoder
 from starlette.websockets import WebSocketDisconnect
 
 from app.core.exceptions import ChannelNotFoundError
@@ -37,8 +38,15 @@ class AlertHub:
         )
         self._connections[channel][client.client_id] = websocket
         self._clients[channel][client.client_id] = client
-        await self._broadcast_system_event(channel, "client-joined", client)
         return client
+
+    async def notify_client_joined(self, channel: str, client: ConnectedClient) -> None:
+        await self._broadcast_system_event(
+            channel,
+            "client-joined",
+            client,
+            exclude_client_id=client.client_id,
+        )
 
     async def disconnect(self, channel: str, client_id: str) -> None:
         client = self._clients.get(channel, {}).pop(client_id, None)
@@ -122,6 +130,7 @@ class AlertHub:
         channel: str,
         event_name: str,
         client: ConnectedClient,
+        exclude_client_id: Optional[str] = None,
     ) -> None:
         event = WebSocketEvent(
             event=event_name,
@@ -132,13 +141,20 @@ class AlertHub:
                 "connected_at": client.connected_at.isoformat(),
             },
         )
-        await self._broadcast(channel, event)
+        await self._broadcast(channel, event, exclude_client_id=exclude_client_id)
 
-    async def _broadcast(self, channel: str, event: WebSocketEvent) -> None:
+    async def _broadcast(
+        self,
+        channel: str,
+        event: WebSocketEvent,
+        exclude_client_id: Optional[str] = None,
+    ) -> None:
         disconnected_clients: List[str] = []
         for client_id, websocket in self._connections.get(channel, {}).items():
+            if exclude_client_id is not None and client_id == exclude_client_id:
+                continue
             try:
-                await websocket.send_json(event.dict())
+                await websocket.send_json(jsonable_encoder(event.dict()))
             except RuntimeError:
                 disconnected_clients.append(client_id)
 

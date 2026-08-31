@@ -1,6 +1,7 @@
 from pathlib import Path
 from typing import List
 
+from fastapi.encoders import jsonable_encoder
 from fastapi import APIRouter, Depends, Query, Request, WebSocket
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -54,5 +55,10 @@ async def websocket_alerts(
     alert_hub: AlertHub = websocket.app.state.alert_hub
     client = await alert_hub.connect(websocket, channel.strip().lower(), username.strip())
     snapshot = alert_hub.get_channel_snapshot(client.channel)
-    await websocket.send_json({"event": "snapshot", "channel": client.channel, "payload": snapshot.dict()})
+    await websocket.send_json(
+        jsonable_encoder(
+            {"event": "snapshot", "channel": client.channel, "payload": snapshot.dict()}
+        )
+    )
+    await alert_hub.notify_client_joined(client.channel, client)
     await alert_hub.receive_loop(websocket, client.channel, client)
