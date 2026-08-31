@@ -1,6 +1,6 @@
 from typing import List
 
-from fastapi import APIRouter, Depends, status
+from fastapi import APIRouter, Depends, Query, status
 
 from app.api.dependencies import get_job_service
 from app.schemas.jobs import AnalyticsJobCreate, JobListItem, JobQueueResponse, JobRead
@@ -31,7 +31,7 @@ def queue_analytics_job(
 
 @router.get("/jobs", response_model=List[JobListItem])
 def list_jobs(
-    limit: int = 25,
+    limit: int = Query(default=25, ge=1, le=100),
     job_service: JobService = Depends(get_job_service),
 ) -> List[JobListItem]:
     jobs = job_service.list_jobs(limit=limit)

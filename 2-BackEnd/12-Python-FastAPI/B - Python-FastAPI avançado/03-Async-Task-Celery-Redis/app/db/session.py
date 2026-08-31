@@ -8,6 +8,8 @@ from app.core.settings import AppSettings
 
 _engine = None
 _session_factory = None
+_engine_url = None
+_session_factory_url = None
 
 
 def _build_engine(database_url: str):
@@ -23,22 +25,24 @@ def _build_engine(database_url: str):
 
 
 def get_engine(database_url: Optional[str] = None):
-    global _engine
-    if _engine is None or database_url is not None:
-        resolved_url = database_url or AppSettings().database_url
+    global _engine, _engine_url
+    resolved_url = database_url or AppSettings().database_url
+    if _engine is None or database_url is not None or _engine_url != resolved_url:
         engine = _build_engine(resolved_url)
         if database_url is None:
             _engine = engine
+            _engine_url = resolved_url
             return _engine
         return engine
     return _engine
 
 
 def get_session_factory(database_url: Optional[str] = None):
-    global _session_factory
-    if _session_factory is None or database_url is not None:
+    global _session_factory, _session_factory_url
+    resolved_url = database_url or AppSettings().database_url
+    if _session_factory is None or database_url is not None or _session_factory_url != resolved_url:
         factory = sessionmaker(
-            bind=get_engine(database_url),
+            bind=get_engine(resolved_url),
             autocommit=False,
             autoflush=False,
             future=True,
@@ -46,6 +50,7 @@ def get_session_factory(database_url: Optional[str] = None):
         )
         if database_url is None:
             _session_factory = factory
+            _session_factory_url = resolved_url
             return _session_factory
         return factory
     return _session_factory

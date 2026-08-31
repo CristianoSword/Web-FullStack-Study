@@ -3,6 +3,7 @@ from typing import Optional
 from fastapi import FastAPI
 
 from app.api.routes import router
+from app.core.errors import register_exception_handlers
 from app.core.settings import AppSettings
 from app.db.base import Base
 from app.db.session import get_engine
@@ -18,6 +19,7 @@ def create_app(settings: Optional[AppSettings] = None) -> FastAPI:
         version=resolved_settings.app_version,
     )
     app.state.settings = resolved_settings
+    register_exception_handlers(app)
     app.include_router(router)
     return app
 
