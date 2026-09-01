@@ -4,6 +4,7 @@ import httpx
 from fastapi import FastAPI
 from httpx import ASGITransport
 
+from app.core.exceptions import DownstreamServiceError
 from app.core.settings import AppSettings
 
 
@@ -26,6 +27,16 @@ class GatewayClient:
             base_url=f"http://{service_name}.internal",
             timeout=self.settings.gateway_timeout_seconds,
         ) as client:
-            response = await client.request(method, path, json=json)
-            response.raise_for_status()
+            try:
+                response = await client.request(method, path, json=json)
+                response.raise_for_status()
+            except httpx.HTTPStatusError as exc:
+                detail = exc.response.json().get("detail", "downstream http error")
+                raise DownstreamServiceError(
+                    service_name,
+                    str(detail),
+                    status_code=exc.response.status_code,
+                ) from exc
+            except httpx.HTTPError as exc:
+                raise DownstreamServiceError(service_name, str(exc)) from exc
             return response.json()

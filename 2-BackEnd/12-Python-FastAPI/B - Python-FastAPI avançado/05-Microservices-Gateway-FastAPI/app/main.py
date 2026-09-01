@@ -4,6 +4,7 @@ from fastapi import FastAPI
 
 from app.api.routes import router
 from app.clients.gateway_client import GatewayClient
+from app.core.errors import register_exception_handlers
 from app.core.settings import AppSettings
 from app.microservices.billing import create_billing_app
 from app.microservices.catalog import create_catalog_app
@@ -18,6 +19,7 @@ def create_app(settings: Optional[AppSettings] = None) -> FastAPI:
         version=resolved_settings.app_version,
     )
     app.state.settings = resolved_settings
+    register_exception_handlers(app)
     app.state.microservices = {
         "catalog": create_catalog_app(),
         "billing": create_billing_app(),
