@@ -1,0 +1,6 @@
+add 10 5
+mul 3 9
+avg 4 8 12
+history
+stats
+exit
