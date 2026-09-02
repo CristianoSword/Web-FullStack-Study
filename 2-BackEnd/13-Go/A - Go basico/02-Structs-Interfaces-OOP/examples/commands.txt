@@ -1,0 +1,7 @@
+list-books
+list-members
+borrow bk-100 mb-001
+borrow bk-101 mb-002
+return loan-001
+list-loans
+search clean code
