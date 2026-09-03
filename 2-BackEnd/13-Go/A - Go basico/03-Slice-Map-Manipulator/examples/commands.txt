@@ -1,0 +1,6 @@
+add sku-100 keyboard 15
+add sku-200 mouse 20
+find sku-100
+list
+sort stock
+group category
