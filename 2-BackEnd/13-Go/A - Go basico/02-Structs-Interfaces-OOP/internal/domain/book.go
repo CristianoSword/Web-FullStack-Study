@@ -3,19 +3,19 @@ package domain
 type Genre string
 
 const (
-	GenreEngineering Genre = "engineering"
+	GenreEngineering  Genre = "engineering"
 	GenreProductivity Genre = "productivity"
 	GenreArchitecture Genre = "architecture"
 	GenreFiction      Genre = "fiction"
 )
 
 type Book struct {
-	ID          string
-	ISBN        string
-	Title       string
-	Author      string
-	Genre       Genre
-	TotalCopies int
+	ID           string
+	ISBN         string
+	Title        string
+	Author       string
+	Genre        Genre
+	TotalCopies  int
 	LoanedCopies int
 }
 
