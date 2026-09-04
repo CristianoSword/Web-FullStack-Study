@@ -142,6 +142,10 @@ func (s *InventoryService) SortItems(mode domain.SortMode) ([]domain.InventoryIt
 }
 
 func (s *InventoryService) GroupItems(mode domain.GroupMode) ([]domain.InventoryGroup, error) {
+	if mode != domain.GroupByCategory && mode != domain.GroupByStockBand {
+		return nil, fmt.Errorf("unsupported group mode: %s", mode)
+	}
+
 	groupedMap := map[string][]domain.InventoryItem{}
 	order := make([]string, 0)
 	for _, item := range s.items {
