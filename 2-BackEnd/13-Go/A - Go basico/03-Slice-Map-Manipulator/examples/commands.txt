@@ -1,6 +1,9 @@
-add sku-100 keyboard 15
-add sku-200 mouse 20
-find sku-100
+summary
 list
+find sku-100
 sort stock
-group category
+group stock-band
+add sku-300 headset audio 20 40990 voice,wireless
+search voice
+restock sku-200 3
+remove sku-100
