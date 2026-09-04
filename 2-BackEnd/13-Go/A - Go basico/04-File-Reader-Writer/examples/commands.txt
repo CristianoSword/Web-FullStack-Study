@@ -1,0 +1,4 @@
+inspect inventory.txt
+search notes.txt reader
+compare inventory.txt notes.txt
+exit
