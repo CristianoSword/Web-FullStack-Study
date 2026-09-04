@@ -1,0 +1,2 @@
+Go makes concurrent file processing approachable.
+This sample file is used for reader and search tests.
