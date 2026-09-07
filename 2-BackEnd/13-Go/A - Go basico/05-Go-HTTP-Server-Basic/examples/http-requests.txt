@@ -1,0 +1,4 @@
+GET /health
+GET /books
+POST /books
+GET /books/book-001
