@@ -1,0 +1,1 @@
+go run ./cmd/scraper -targets ./config/targets.txt -concurrency 4 -timeout 5s -retries 1
