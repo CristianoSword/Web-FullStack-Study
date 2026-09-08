@@ -104,6 +104,14 @@ func (s *TaskService) Delete(id uint) error {
 	return nil
 }
 
+func (s *TaskService) Close() error {
+	sqlDB, err := s.db.DB()
+	if err != nil {
+		return fmt.Errorf("get sql db: %w", err)
+	}
+	return sqlDB.Close()
+}
+
 func normalizeCreateRequest(request domain.CreateTaskRequest) (domain.CreateTaskRequest, error) {
 	request.Title = strings.TrimSpace(request.Title)
 	request.Description = strings.TrimSpace(request.Description)
