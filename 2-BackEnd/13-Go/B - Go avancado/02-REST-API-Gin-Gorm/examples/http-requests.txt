@@ -1,0 +1,6 @@
+GET /health
+GET /tasks?status=todo
+POST /tasks
+GET /tasks/1
+PATCH /tasks/1
+DELETE /tasks/1
