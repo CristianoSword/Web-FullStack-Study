@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package auth.v1;
+
+option go_package = "github.com/CristianoSword/web-fullstack-study/2-backend/13-go/04-grpc-microservice-go/internal/pb;pb";
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  string access_token = 1;
+  string user_id = 2;
+  string username = 3;
+  string role = 4;
+  int64 expires_at_unix = 5;
+}
+
+message ValidateTokenRequest {
+  string access_token = 1;
+}
+
+message ValidateTokenResponse {
+  bool valid = 1;
+  string user_id = 2;
+  string username = 3;
+  string role = 4;
+  int64 expires_at_unix = 5;
+}
+
+service AuthService {
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+}
