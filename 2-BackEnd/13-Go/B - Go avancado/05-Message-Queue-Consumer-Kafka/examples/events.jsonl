@@ -1,0 +1,2 @@
+{"id":"evt-001","topic":"orders.created","payload":"{\"order_id\":\"ord-100\",\"amount\":120.50}"}
+{"id":"evt-002","topic":"billing.authorized","payload":"{\"order_id\":\"ord-100\",\"status\":\"ok\"}"}
