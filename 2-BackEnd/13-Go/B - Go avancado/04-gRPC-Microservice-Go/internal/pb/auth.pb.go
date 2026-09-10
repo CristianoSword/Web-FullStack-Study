@@ -426,10 +426,15 @@ var file_api_proto_auth_proto_goTypes = []any{
 	(*ValidateTokenResponse)(nil),
 }
 var file_api_proto_auth_proto_depIdxs = []int32{
-	0,
-	1,
-	2,
-	3,
+	0, // 0: auth.v1.AuthService.Login:input_type -> auth.v1.LoginRequest
+	2, // 1: auth.v1.AuthService.ValidateToken:input_type -> auth.v1.ValidateTokenRequest
+	1, // 2: auth.v1.AuthService.Login:output_type -> auth.v1.LoginResponse
+	3, // 3: auth.v1.AuthService.ValidateToken:output_type -> auth.v1.ValidateTokenResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_api_proto_auth_proto_init() }
