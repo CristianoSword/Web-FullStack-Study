@@ -1,0 +1,10 @@
+{
+  "customerId": "CUST-1001",
+  "name": "Ana Costa",
+  "email": "ana.costa@example.com",
+  "status": "active",
+  "phones": ["+55-11-99999-0001"],
+  "createdAt": {
+    "$date": "2026-03-01T10:00:00Z"
+  }
+}

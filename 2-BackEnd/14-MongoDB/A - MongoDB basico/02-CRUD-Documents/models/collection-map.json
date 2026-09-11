@@ -1,0 +1,10 @@
+{
+  "database": "customer_crm",
+  "collection": "customers",
+  "primaryIdentifier": "customerId",
+  "compassTabs": [
+    "Documents",
+    "Schema",
+    "Indexes"
+  ]
+}

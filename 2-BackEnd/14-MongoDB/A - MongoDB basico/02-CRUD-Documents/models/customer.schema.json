@@ -1,0 +1,30 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["customerId", "name", "email", "status", "createdAt"],
+    "properties": {
+      "customerId": {
+        "bsonType": "string"
+      },
+      "name": {
+        "bsonType": "string",
+        "minLength": 3
+      },
+      "email": {
+        "bsonType": "string"
+      },
+      "status": {
+        "enum": ["lead", "active", "inactive"]
+      },
+      "phones": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "string"
+        }
+      },
+      "createdAt": {
+        "bsonType": "date"
+      }
+    }
+  }
+}
