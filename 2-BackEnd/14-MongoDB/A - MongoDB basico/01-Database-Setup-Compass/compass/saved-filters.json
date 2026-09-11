@@ -1,0 +1,21 @@
+{
+  "favorites": [
+    {
+      "collection": "products",
+      "name": "Peripherals In Stock",
+      "filter": {
+        "category": "peripherals",
+        "stock": {
+          "$gt": 0
+        }
+      }
+    },
+    {
+      "collection": "warehouses",
+      "name": "Active Warehouses",
+      "filter": {
+        "active": true
+      }
+    }
+  ]
+}
