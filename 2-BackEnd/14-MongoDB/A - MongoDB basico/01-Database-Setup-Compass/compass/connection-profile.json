@@ -1,0 +1,11 @@
+{
+  "name": "MongoDB Compass Lab",
+  "hostname": "localhost",
+  "port": 27017,
+  "authentication": "username_password",
+  "username": "study_admin",
+  "password": "study_pass",
+  "authenticationDatabase": "admin",
+  "defaultDatabase": "study_inventory",
+  "favoriteCollections": ["products", "warehouses"]
+}

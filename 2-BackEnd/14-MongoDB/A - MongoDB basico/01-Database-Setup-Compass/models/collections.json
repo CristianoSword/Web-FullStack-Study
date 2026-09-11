@@ -1,0 +1,15 @@
+{
+  "database": "study_inventory",
+  "collections": [
+    {
+      "name": "products",
+      "validator": "../schemas/products.validator.json",
+      "description": "Catalogo principal de produtos exibido no MongoDB Compass."
+    },
+    {
+      "name": "warehouses",
+      "validator": "../schemas/warehouses.validator.json",
+      "description": "Armazens monitorados pela operacao."
+    }
+  ]
+}

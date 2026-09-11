@@ -1,0 +1,24 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["code", "city", "capacity", "active"],
+    "properties": {
+      "code": {
+        "bsonType": "string"
+      },
+      "city": {
+        "bsonType": "string"
+      },
+      "capacity": {
+        "bsonType": ["int", "long"],
+        "minimum": 0
+      },
+      "active": {
+        "bsonType": "bool"
+      },
+      "createdAt": {
+        "bsonType": "date"
+      }
+    }
+  }
+}
