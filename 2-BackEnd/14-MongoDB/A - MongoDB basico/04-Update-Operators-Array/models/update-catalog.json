@@ -1,0 +1,11 @@
+{
+  "database": "project_tracker",
+  "collection": "projects",
+  "operatorsCovered": [
+    "$set",
+    "$push",
+    "$pull",
+    "$addToSet",
+    "$each"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "projectId": "PRJ-1001",
+  "name": "Realtime Dashboard",
+  "status": "active",
+  "labels": ["mongodb", "backend"],
+  "members": [
+    { "name": "Ana", "role": "tech-lead" },
+    { "name": "Bruno", "role": "backend" }
+  ],
+  "tasks": [
+    {
+      "taskId": "TASK-1",
+      "title": "Design schema",
+      "done": true,
+      "checkpoints": ["draft", "review", "approved"]
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-05-01T09:00:00Z"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["projectId", "name", "status", "labels", "members", "tasks", "createdAt"],
+    "properties": {
+      "projectId": {
+        "bsonType": "string"
+      },
+      "name": {
+        "bsonType": "string"
+      },
+      "status": {
+        "enum": ["planning", "active", "paused", "done"]
+      },
+      "labels": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "string"
+        }
+      },
+      "members": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["name", "role"],
+          "properties": {
+            "name": { "bsonType": "string" },
+            "role": { "bsonType": "string" }
+          }
+        }
+      },
+      "tasks": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["taskId", "title", "done"],
+          "properties": {
+            "taskId": { "bsonType": "string" },
+            "title": { "bsonType": "string" },
+            "done": { "bsonType": "bool" },
+            "checkpoints": {
+              "bsonType": "array",
+              "items": { "bsonType": "string" }
+            }
+          }
+        }
+      },
+      "createdAt": {
+        "bsonType": "date"
+      }
+    }
+  }
+}
