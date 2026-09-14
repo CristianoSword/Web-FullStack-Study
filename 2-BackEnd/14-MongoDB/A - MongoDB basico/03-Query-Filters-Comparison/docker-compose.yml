@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: mongodb-query-filters
+    restart: unless-stopped
+    ports:
+      - "27019:27017"
+    volumes:
+      - mongo_query_filters_data:/data/db
+      - ./seed:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  mongo_query_filters_data:
