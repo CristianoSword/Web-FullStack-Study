@@ -1,0 +1,33 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["orderId", "region", "status", "amount", "priority", "channel", "createdAt"],
+    "properties": {
+      "orderId": {
+        "bsonType": "string"
+      },
+      "region": {
+        "enum": ["sudeste", "sul", "nordeste", "centro-oeste", "norte"]
+      },
+      "status": {
+        "enum": ["pending", "approved", "cancelled", "fulfilled"]
+      },
+      "amount": {
+        "bsonType": ["double", "int", "long", "decimal"],
+        "minimum": 0
+      },
+      "priority": {
+        "enum": ["low", "medium", "high"]
+      },
+      "channel": {
+        "enum": ["marketplace", "website", "inside-sales"]
+      },
+      "customerSegment": {
+        "enum": ["startup", "smb", "enterprise"]
+      },
+      "createdAt": {
+        "bsonType": "date"
+      }
+    }
+  }
+}

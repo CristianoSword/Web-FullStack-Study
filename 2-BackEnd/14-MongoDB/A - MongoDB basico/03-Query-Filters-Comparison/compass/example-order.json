@@ -1,0 +1,12 @@
+{
+  "orderId": "ORD-1005",
+  "region": "sudeste",
+  "status": "approved",
+  "amount": 1840.75,
+  "priority": "high",
+  "channel": "website",
+  "customerSegment": "smb",
+  "createdAt": {
+    "$date": "2026-04-05T13:20:00Z"
+  }
+}

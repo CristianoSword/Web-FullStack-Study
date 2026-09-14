@@ -1,0 +1,13 @@
+{
+  "database": "sales_analytics",
+  "collection": "orders",
+  "operatorsCovered": [
+    "$and",
+    "$or",
+    "$gt",
+    "$gte",
+    "$lt",
+    "$lte",
+    "$in"
+  ]
+}
