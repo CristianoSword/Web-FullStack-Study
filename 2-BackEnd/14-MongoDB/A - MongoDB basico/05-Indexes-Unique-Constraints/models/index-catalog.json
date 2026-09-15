@@ -1,0 +1,21 @@
+{
+  "database": "inventory_catalog",
+  "collection": "suppliers",
+  "indexesPlanned": [
+    {
+      "name": "supplier_code_unique",
+      "keys": { "supplierCode": 1 },
+      "unique": true
+    },
+    {
+      "name": "supplier_email_unique",
+      "keys": { "email": 1 },
+      "unique": true
+    },
+    {
+      "name": "country_city_category_lookup",
+      "keys": { "country": 1, "city": 1, "category": 1 },
+      "unique": false
+    }
+  ]
+}

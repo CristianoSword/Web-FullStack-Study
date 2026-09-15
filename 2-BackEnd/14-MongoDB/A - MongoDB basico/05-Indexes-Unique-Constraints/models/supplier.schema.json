@@ -1,0 +1,32 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["supplierCode", "name", "email", "country", "city", "category", "active", "createdAt"],
+    "properties": {
+      "supplierCode": {
+        "bsonType": "string"
+      },
+      "name": {
+        "bsonType": "string"
+      },
+      "email": {
+        "bsonType": "string"
+      },
+      "country": {
+        "bsonType": "string"
+      },
+      "city": {
+        "bsonType": "string"
+      },
+      "category": {
+        "bsonType": "string"
+      },
+      "active": {
+        "bsonType": "bool"
+      },
+      "createdAt": {
+        "bsonType": "date"
+      }
+    }
+  }
+}

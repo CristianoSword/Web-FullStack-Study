@@ -1,0 +1,12 @@
+{
+  "supplierCode": "SUP-1001",
+  "name": "Northwind Parts",
+  "email": "ops@northwindparts.example.com",
+  "country": "Brazil",
+  "city": "Sao Paulo",
+  "category": "peripherals",
+  "active": true,
+  "createdAt": {
+    "$date": "2026-05-15T09:00:00Z"
+  }
+}
