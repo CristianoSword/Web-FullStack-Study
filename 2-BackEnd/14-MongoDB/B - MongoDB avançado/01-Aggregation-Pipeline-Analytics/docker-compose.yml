@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: mongodb-aggregation-analytics
+    restart: unless-stopped
+    ports:
+      - "27022:27017"
+    volumes:
+      - mongo_aggregation_analytics_data:/data/db
+      - ./seed:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  mongo_aggregation_analytics_data:
