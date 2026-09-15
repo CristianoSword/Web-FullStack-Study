@@ -1,0 +1,18 @@
+{
+  "database": "analytics_lab",
+  "collection": "sales",
+  "pipelines": [
+    {
+      "name": "revenue-by-region",
+      "stages": ["$match", "$group", "$project", "$sort"]
+    },
+    {
+      "name": "channel-category-breakdown",
+      "stages": ["$match", "$unwind", "$group", "$project", "$sort"]
+    },
+    {
+      "name": "seller-scoreboard",
+      "stages": ["$match", "$group", "$project", "$sort", "$limit"]
+    }
+  ]
+}

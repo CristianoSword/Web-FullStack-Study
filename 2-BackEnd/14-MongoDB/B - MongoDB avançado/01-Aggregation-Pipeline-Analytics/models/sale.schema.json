@@ -1,0 +1,32 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["saleId", "region", "channel", "seller", "status", "revenue", "items", "createdAt"],
+    "properties": {
+      "saleId": { "bsonType": "string" },
+      "region": { "bsonType": "string" },
+      "channel": { "bsonType": "string" },
+      "seller": { "bsonType": "string" },
+      "status": { "enum": ["closed", "pending", "cancelled"] },
+      "revenue": { "bsonType": ["double", "int", "long", "decimal"], "minimum": 0 },
+      "items": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["sku", "category", "quantity", "unitPrice"],
+          "properties": {
+            "sku": { "bsonType": "string" },
+            "category": { "bsonType": "string" },
+            "quantity": { "bsonType": ["int", "long"], "minimum": 1 },
+            "unitPrice": { "bsonType": ["double", "int", "long", "decimal"], "minimum": 0 }
+          }
+        }
+      },
+      "tags": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" }
+      },
+      "createdAt": { "bsonType": "date" }
+    }
+  }
+}

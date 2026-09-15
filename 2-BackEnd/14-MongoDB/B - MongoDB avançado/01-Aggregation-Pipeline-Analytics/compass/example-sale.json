@@ -1,0 +1,14 @@
+{
+  "saleId": "SALE-1001",
+  "region": "sudeste",
+  "channel": "website",
+  "seller": "Ana",
+  "status": "closed",
+  "revenue": 2450.5,
+  "items": [
+    { "sku": "SKU-1001", "category": "peripherals", "quantity": 2, "unitPrice": 499.9 },
+    { "sku": "SKU-3001", "category": "network", "quantity": 1, "unitPrice": 1450.7 }
+  ],
+  "tags": ["campaign-q2", "priority"],
+  "createdAt": { "$date": "2026-06-01T10:00:00Z" }
+}
