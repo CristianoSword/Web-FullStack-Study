@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-61.4%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-61.6%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  ❤❤❤❤❤❤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 61.4% (307/500) 📚📚📚📚📚📚
+  ❤❤❤❤❤❤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 61.6% (308/500) 📚📚📚📚📚📚
 </p>
 
 <p align="center">
@@ -31,10 +31,10 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 | Categoria | Projetos Concluidos | Projetos Pendentes | Total Planejado | Progresso |
 | :--- | :---: | :---: | :---: | :---: |
 | 🎨 **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| ⚙️ **[BackEnd](2-BackEnd/)** | 125 | 55 | 180 | **69.4%** |
+| ⚙️ **[BackEnd](2-BackEnd/)** | 126 | 54 | 180 | **70.0%** |
 | 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **307** | **193** | **500** | **61.4%** |
+| **Geral** | **308** | **192** | **500** | **61.6%** |
 
 ### ⚙️ BackEnd Auditado
 
@@ -52,7 +52,7 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 - **Erlang:** 10/10 concluidos
 - **Python (FastAPI):** 10/10 concluidos
 - **Go:** 10/10 concluidos
-- **MongoDB:** 4/10 concluidos
+- **MongoDB:** 5/10 concluidos
 - **GraphQL:** 0/10 concluidos
 - **Kafka:** 0/10 concluidos
 - **RabbitMQ:** 0/10 concluidos
