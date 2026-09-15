@@ -1,0 +1,32 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["venueId", "name", "description", "category", "city", "location", "tags", "active", "createdAt"],
+    "properties": {
+      "venueId": { "bsonType": "string" },
+      "name": { "bsonType": "string" },
+      "description": { "bsonType": "string" },
+      "category": { "bsonType": "string" },
+      "city": { "bsonType": "string" },
+      "location": {
+        "bsonType": "object",
+        "required": ["type", "coordinates"],
+        "properties": {
+          "type": { "enum": ["Point"] },
+          "coordinates": {
+            "bsonType": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "bsonType": ["double", "int", "long", "decimal"] }
+          }
+        }
+      },
+      "tags": {
+        "bsonType": "array",
+        "items": { "bsonType": "string" }
+      },
+      "active": { "bsonType": "bool" },
+      "createdAt": { "bsonType": "date" }
+    }
+  }
+}

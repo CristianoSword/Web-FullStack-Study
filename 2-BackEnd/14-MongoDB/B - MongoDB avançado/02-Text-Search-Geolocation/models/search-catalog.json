@@ -1,0 +1,16 @@
+{
+  "database": "places_directory",
+  "collection": "venues",
+  "indexesPlanned": [
+    {
+      "name": "venue_text_search",
+      "type": "text",
+      "fields": ["name", "description", "tags"]
+    },
+    {
+      "name": "venue_location_2dsphere",
+      "type": "2dsphere",
+      "fields": ["location"]
+    }
+  ]
+}
