@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: mongodb-indexes-constraints
+    restart: unless-stopped
+    ports:
+      - "27021:27017"
+    volumes:
+      - mongo_indexes_constraints_data:/data/db
+      - ./seed:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  mongo_indexes_constraints_data:
