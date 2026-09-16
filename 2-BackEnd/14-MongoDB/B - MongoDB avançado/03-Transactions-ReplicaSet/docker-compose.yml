@@ -1,0 +1,32 @@
+services:
+  mongo1:
+    image: mongo:8.0
+    container_name: mongodb-rs1
+    command: ["mongod", "--replSet", "rsStudy", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "27024:27017"
+    volumes:
+      - mongo_rs1_data:/data/db
+
+  mongo2:
+    image: mongo:8.0
+    container_name: mongodb-rs2
+    command: ["mongod", "--replSet", "rsStudy", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "27025:27017"
+    volumes:
+      - mongo_rs2_data:/data/db
+
+  mongo3:
+    image: mongo:8.0
+    container_name: mongodb-rs3
+    command: ["mongod", "--replSet", "rsStudy", "--bind_ip_all", "--port", "27017"]
+    ports:
+      - "27026:27017"
+    volumes:
+      - mongo_rs3_data:/data/db
+
+volumes:
+  mongo_rs1_data:
+  mongo_rs2_data:
+  mongo_rs3_data:
