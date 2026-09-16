@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: mongodb-lookup-relationships
+    restart: unless-stopped
+    ports:
+      - "27027:27017"
+    volumes:
+      - mongo_lookup_relationships_data:/data/db
+      - ./seed:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  mongo_lookup_relationships_data:
