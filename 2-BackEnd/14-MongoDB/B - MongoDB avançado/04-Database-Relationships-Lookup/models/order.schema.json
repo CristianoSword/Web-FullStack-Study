@@ -1,0 +1,23 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["orderId", "customerId", "items", "status", "orderedAt"],
+    "properties": {
+      "orderId": { "bsonType": "string" },
+      "customerId": { "bsonType": "string" },
+      "items": {
+        "bsonType": "array",
+        "items": {
+          "bsonType": "object",
+          "required": ["productId", "quantity"],
+          "properties": {
+            "productId": { "bsonType": "string" },
+            "quantity": { "bsonType": ["int", "long", "double", "decimal"] }
+          }
+        }
+      },
+      "status": { "enum": ["paid", "shipped", "processing"] },
+      "orderedAt": { "bsonType": "date" }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["customerId", "name", "email", "tier", "city"],
+    "properties": {
+      "customerId": { "bsonType": "string" },
+      "name": { "bsonType": "string" },
+      "email": { "bsonType": "string" },
+      "tier": { "enum": ["silver", "gold", "platinum"] },
+      "city": { "bsonType": "string" }
+    }
+  }
+}

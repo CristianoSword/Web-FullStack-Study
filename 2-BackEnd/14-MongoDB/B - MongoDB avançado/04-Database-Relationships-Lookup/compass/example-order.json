@@ -1,0 +1,10 @@
+{
+  "orderId": "ORD-1001",
+  "customerId": "CUS-1001",
+  "items": [
+    { "productId": "PRD-2001", "quantity": 1 },
+    { "productId": "PRD-2002", "quantity": 2 }
+  ],
+  "status": "paid",
+  "orderedAt": { "$date": "2026-06-21T13:00:00Z" }
+}

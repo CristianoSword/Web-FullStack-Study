@@ -1,0 +1,16 @@
+{
+  "database": "commerce_graph",
+  "collections": ["customers", "products", "orders"],
+  "lookups": [
+    {
+      "name": "orders-with-customers",
+      "file": "queries/orders-with-customer.mongodb.js",
+      "joins": ["orders.customerId -> customers.customerId"]
+    },
+    {
+      "name": "orders-with-products",
+      "file": "queries/orders-with-products.mongodb.js",
+      "joins": ["orders.items.productId -> products.productId"]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["productId", "name", "category", "price"],
+    "properties": {
+      "productId": { "bsonType": "string" },
+      "name": { "bsonType": "string" },
+      "category": { "bsonType": "string" },
+      "price": { "bsonType": ["double", "int", "long", "decimal"] }
+    }
+  }
+}
