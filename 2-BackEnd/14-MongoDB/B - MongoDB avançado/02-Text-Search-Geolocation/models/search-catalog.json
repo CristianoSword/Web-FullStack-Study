@@ -1,16 +1,32 @@
 {
   "database": "places_directory",
   "collection": "venues",
-  "indexesPlanned": [
+  "textIndexes": [
     {
       "name": "venue_text_search",
-      "type": "text",
-      "fields": ["name", "description", "tags"]
-    },
+      "fields": ["name", "description", "tags"],
+      "language": "english"
+    }
+  ],
+  "geoIndexes": [
     {
       "name": "venue_location_2dsphere",
-      "type": "2dsphere",
-      "fields": ["location"]
+      "field": "location",
+      "type": "2dsphere"
+    }
+  ],
+  "queries": [
+    {
+      "file": "queries/text-search.mongodb.js",
+      "purpose": "search by relevance using $text and textScore"
+    },
+    {
+      "file": "queries/geolocation.mongodb.js",
+      "purpose": "find nearby venues around Sao Paulo using $near"
+    },
+    {
+      "file": "queries/verification.mongodb.js",
+      "purpose": "verify seeded documents and active indexes"
     }
   ]
 }
