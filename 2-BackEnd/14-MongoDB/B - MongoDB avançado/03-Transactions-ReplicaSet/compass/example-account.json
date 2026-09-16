@@ -1,0 +1,8 @@
+{
+  "accountId": "ACC-1001",
+  "owner": "Ana Souza",
+  "currency": "BRL",
+  "balance": 1500,
+  "status": "active",
+  "updatedAt": { "$date": "2026-06-20T10:00:00Z" }
+}

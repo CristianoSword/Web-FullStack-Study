@@ -1,0 +1,15 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["transferId", "fromAccountId", "toAccountId", "amount", "status", "createdAt"],
+    "properties": {
+      "transferId": { "bsonType": "string" },
+      "fromAccountId": { "bsonType": "string" },
+      "toAccountId": { "bsonType": "string" },
+      "amount": { "bsonType": ["double", "int", "long", "decimal"] },
+      "status": { "enum": ["committed", "rolled_back"] },
+      "createdAt": { "bsonType": "date" },
+      "reason": { "bsonType": "string" }
+    }
+  }
+}

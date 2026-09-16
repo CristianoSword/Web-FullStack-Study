@@ -1,0 +1,14 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["accountId", "owner", "currency", "balance", "status", "updatedAt"],
+    "properties": {
+      "accountId": { "bsonType": "string" },
+      "owner": { "bsonType": "string" },
+      "currency": { "enum": ["BRL"] },
+      "balance": { "bsonType": ["double", "int", "long", "decimal"] },
+      "status": { "enum": ["active", "blocked"] },
+      "updatedAt": { "bsonType": "date" }
+    }
+  }
+}

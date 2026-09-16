@@ -1,0 +1,16 @@
+{
+  "database": "bank_ops",
+  "collections": ["accounts", "transfers", "audit_logs"],
+  "transactionFlows": [
+    {
+      "name": "commit-transfer",
+      "file": "transactions/commit-transfer.mongodb.js",
+      "guarantee": "debit, credit and transfer log in one transaction"
+    },
+    {
+      "name": "rollback-transfer",
+      "file": "transactions/rollback-transfer.mongodb.js",
+      "guarantee": "abort on insufficient funds and persist rollback audit"
+    }
+  ]
+}
