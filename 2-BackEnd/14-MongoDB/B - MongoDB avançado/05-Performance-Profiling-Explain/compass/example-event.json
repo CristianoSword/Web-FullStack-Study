@@ -1,0 +1,14 @@
+{
+  "eventId": "EVT-000001",
+  "tenantId": "tenant-blue",
+  "eventType": "checkout",
+  "region": "sa-east-1",
+  "status": "success",
+  "createdAt": { "$date": "2026-06-24T10:00:00Z" },
+  "durationMs": 182,
+  "payloadSizeKb": 48,
+  "metadata": {
+    "service": "billing",
+    "route": "/api/checkout"
+  }
+}

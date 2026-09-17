@@ -1,0 +1,25 @@
+{
+  "database": "perf_lab",
+  "collection": "events",
+  "scenarios": [
+    {
+      "name": "filtered-scan-without-index",
+      "file": "queries/explain-without-index.mongodb.js",
+      "goal": "show COLLSCAN for a selective query"
+    },
+    {
+      "name": "filtered-query-with-compound-index",
+      "file": "queries/explain-with-index.mongodb.js",
+      "goal": "show IXSCAN after compound index optimization"
+    },
+    {
+      "name": "sort-covered-by-index",
+      "file": "queries/explain-sorted-range.mongodb.js",
+      "goal": "inspect range + sort using aligned index"
+    }
+  ],
+  "plannedIndexes": [
+    { "name": "tenant_status_created_idx", "fields": ["tenantId", "status", "createdAt"] },
+    { "name": "region_type_duration_idx", "fields": ["region", "eventType", "durationMs"] }
+  ]
+}

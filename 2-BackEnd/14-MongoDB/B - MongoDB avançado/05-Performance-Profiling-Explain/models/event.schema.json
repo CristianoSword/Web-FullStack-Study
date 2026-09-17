@@ -1,0 +1,17 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": ["eventId", "tenantId", "eventType", "region", "status", "createdAt", "durationMs", "payloadSizeKb"],
+    "properties": {
+      "eventId": { "bsonType": "string" },
+      "tenantId": { "bsonType": "string" },
+      "eventType": { "bsonType": "string" },
+      "region": { "bsonType": "string" },
+      "status": { "enum": ["success", "warning", "failed"] },
+      "createdAt": { "bsonType": "date" },
+      "durationMs": { "bsonType": ["double", "int", "long", "decimal"] },
+      "payloadSizeKb": { "bsonType": ["double", "int", "long", "decimal"] },
+      "metadata": { "bsonType": "object" }
+    }
+  }
+}
