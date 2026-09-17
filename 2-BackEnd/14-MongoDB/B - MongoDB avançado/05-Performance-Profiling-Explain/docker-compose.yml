@@ -1,0 +1,13 @@
+services:
+  mongodb:
+    image: mongo:8.0
+    container_name: mongodb-performance-profiling
+    restart: unless-stopped
+    ports:
+      - "27028:27017"
+    volumes:
+      - mongo_performance_profiling_data:/data/db
+      - ./seed:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  mongo_performance_profiling_data:
