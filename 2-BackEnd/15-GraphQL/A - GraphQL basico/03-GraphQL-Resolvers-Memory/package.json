@@ -1,0 +1,14 @@
+{
+  "name": "graphql-resolvers-memory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "validate": "node scripts/smoke-memory.mjs"
+  },
+  "dependencies": {
+    "graphql": "^16.11.0",
+    "graphql-yoga": "^5.16.0"
+  }
+}
