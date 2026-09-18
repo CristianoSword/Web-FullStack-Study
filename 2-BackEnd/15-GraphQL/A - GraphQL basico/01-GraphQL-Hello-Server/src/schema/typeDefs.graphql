@@ -1,0 +1,9 @@
+type Greeting {
+  message: String!
+  timestamp: String!
+  source: String!
+}
+
+type Query {
+  hello(name: String = "World"): Greeting!
+}
