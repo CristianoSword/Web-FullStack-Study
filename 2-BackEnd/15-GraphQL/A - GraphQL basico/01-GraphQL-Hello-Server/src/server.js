@@ -1,5 +1,5 @@
 import { createServer } from "node:http";
-import { createYoga } from "graphql-yoga";
+import { createSchema, createYoga } from "graphql-yoga";
 
 import { serverConfig } from "./config/server-config.js";
 import { queryResolvers } from "./resolvers/queryResolvers.js";
@@ -9,12 +9,12 @@ const typeDefs = await loadTypeDefs();
 
 const yoga = createYoga({
   graphqlEndpoint: serverConfig.graphqlEndpoint,
-  schema: {
+  schema: createSchema({
     typeDefs,
     resolvers: {
       Query: queryResolvers
     }
-  },
+  }),
   landingPage: false
 });
 
