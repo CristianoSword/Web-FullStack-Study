@@ -19,6 +19,18 @@ const yoga = createYoga({
 });
 
 const server = createServer(yoga);
+const requestListener = server.listeners("request")[0];
+
+server.removeAllListeners("request");
+server.on("request", (req, res) => {
+  if (req.url === "/health") {
+    res.writeHead(200, { "content-type": "application/json" });
+    res.end(JSON.stringify({ status: "ok", app: serverConfig.appName }));
+    return;
+  }
+
+  requestListener(req, res);
+});
 
 server.listen(serverConfig.port, () => {
   console.log(
