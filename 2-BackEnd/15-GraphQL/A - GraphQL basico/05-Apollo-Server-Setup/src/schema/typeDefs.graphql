@@ -1,0 +1,12 @@
+type ServiceStatus {
+  id: ID!
+  name: String!
+  owner: String!
+  status: String!
+  uptimePercent: Float!
+}
+
+type Query {
+  services: [ServiceStatus!]!
+  service(id: ID!): ServiceStatus
+}
