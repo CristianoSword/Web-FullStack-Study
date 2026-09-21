@@ -1,0 +1,12 @@
+query UserDetail {
+  user(id: "USR-102") {
+    id
+    name
+    role
+    posts {
+      id
+      title
+      published
+    }
+  }
+}

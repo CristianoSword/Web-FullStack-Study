@@ -1,0 +1,11 @@
+query FilteredPosts {
+  posts(authorId: "USR-102", published: true) {
+    id
+    title
+    published
+    author {
+      id
+      name
+    }
+  }
+}
