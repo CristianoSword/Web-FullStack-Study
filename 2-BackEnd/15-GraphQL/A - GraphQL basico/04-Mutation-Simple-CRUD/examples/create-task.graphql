@@ -1,0 +1,13 @@
+mutation CreateTask {
+  createTask(
+    input: {
+      title: "Publish GraphQL CRUD lab"
+      description: "Finalize documentation and validation."
+    }
+  ) {
+    id
+    title
+    description
+    status
+  }
+}

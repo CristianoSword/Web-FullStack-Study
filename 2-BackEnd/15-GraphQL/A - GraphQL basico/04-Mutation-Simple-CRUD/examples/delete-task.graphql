@@ -1,0 +1,3 @@
+mutation DeleteTask {
+  deleteTask(id: "TSK-002")
+}

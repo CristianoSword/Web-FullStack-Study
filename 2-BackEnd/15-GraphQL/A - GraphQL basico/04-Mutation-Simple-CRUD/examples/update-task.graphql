@@ -1,0 +1,14 @@
+mutation UpdateTask {
+  updateTask(
+    id: "TSK-001"
+    input: {
+      status: "done"
+      description: "Mutation and input types finalized."
+    }
+  ) {
+    id
+    title
+    description
+    status
+  }
+}
