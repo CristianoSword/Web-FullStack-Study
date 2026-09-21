@@ -1,0 +1,9 @@
+query ServicesQuery {
+  services {
+    id
+    name
+    owner
+    status
+    uptimePercent
+  }
+}

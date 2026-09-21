@@ -1,0 +1,9 @@
+query ServiceDetail {
+  service(id: "SVC-002") {
+    id
+    name
+    owner
+    status
+    uptimePercent
+  }
+}
