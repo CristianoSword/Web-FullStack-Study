@@ -1,0 +1,17 @@
+{
+  "name": "graphql-dataloader-database-optimizer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "validate": "node scripts/smoke-optimizer.mjs"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.12.2",
+    "dataloader": "^2.2.3",
+    "express": "^4.21.2",
+    "graphql": "^16.11.0",
+    "sql.js": "^1.13.0"
+  }
+}
