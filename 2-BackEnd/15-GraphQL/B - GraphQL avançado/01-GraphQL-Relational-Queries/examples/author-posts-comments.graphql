@@ -1,0 +1,16 @@
+query AuthorPostsComments {
+  author(id: "AUT-001") {
+    id
+    name
+    team
+    posts {
+      id
+      title
+      comments {
+        id
+        authorName
+        body
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query PostsByTeam {
+  postsByTeam(team: "platform") {
+    id
+    title
+    author {
+      id
+      name
+    }
+    comments {
+      id
+      authorName
+    }
+  }
+}
