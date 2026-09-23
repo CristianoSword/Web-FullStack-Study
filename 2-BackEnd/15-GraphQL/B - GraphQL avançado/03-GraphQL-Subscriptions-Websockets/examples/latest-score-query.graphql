@@ -1,0 +1,10 @@
+query LatestScore {
+  latestScore {
+    matchId
+    homeTeam
+    awayTeam
+    homeScore
+    awayScore
+    minute
+  }
+}

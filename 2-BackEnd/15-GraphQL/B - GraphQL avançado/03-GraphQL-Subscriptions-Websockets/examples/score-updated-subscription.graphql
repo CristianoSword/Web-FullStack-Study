@@ -1,0 +1,10 @@
+subscription ScoreUpdated {
+  scoreUpdated(matchId: "MTC-1001") {
+    matchId
+    homeTeam
+    awayTeam
+    homeScore
+    awayScore
+    minute
+  }
+}
