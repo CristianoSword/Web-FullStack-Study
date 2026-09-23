@@ -1,7 +1,7 @@
 import { createServer } from "node:http";
 
 import { WebSocketServer } from "ws";
-import { useServer } from "graphql-ws/use/ws";
+import { useServer } from "graphql-ws/lib/use/ws";
 import { createSchema, createYoga } from "graphql-yoga";
 
 import { serverConfig } from "./config/server-config.js";
