@@ -1,0 +1,20 @@
+query PostsWithStats {
+  posts(limit: 4) {
+    id
+    title
+    author {
+      id
+      name
+      team
+    }
+    metric {
+      postId
+      views
+      likes
+    }
+  }
+  sqlStats {
+    executedQueries
+    recentStatements
+  }
+}

@@ -1,0 +1,15 @@
+query AuthorsAndPosts {
+  authors {
+    id
+    name
+    team
+  }
+  posts(limit: 2) {
+    id
+    title
+    author {
+      id
+      name
+    }
+  }
+}
