@@ -1,0 +1,17 @@
+{
+  "name": "graphql-subscriptions-websockets",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "validate": "node scripts/smoke-subscriptions.mjs"
+  },
+  "dependencies": {
+    "graphql": "^16.11.0",
+    "graphql-subscriptions": "^3.0.0",
+    "graphql-ws": "^5.16.2",
+    "graphql-yoga": "^5.16.0",
+    "ws": "^8.18.3"
+  }
+}
