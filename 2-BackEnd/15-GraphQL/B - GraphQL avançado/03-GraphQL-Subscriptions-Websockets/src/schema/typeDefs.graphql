@@ -1,0 +1,29 @@
+type LiveScore {
+  matchId: ID!
+  homeTeam: String!
+  awayTeam: String!
+  homeScore: Int!
+  awayScore: Int!
+  minute: Int!
+}
+
+input PublishScoreInput {
+  matchId: ID!
+  homeTeam: String!
+  awayTeam: String!
+  homeScore: Int!
+  awayScore: Int!
+  minute: Int!
+}
+
+type Query {
+  latestScore: LiveScore!
+}
+
+type Mutation {
+  publishScore(input: PublishScoreInput!): LiveScore!
+}
+
+type Subscription {
+  scoreUpdated(matchId: ID!): LiveScore!
+}
