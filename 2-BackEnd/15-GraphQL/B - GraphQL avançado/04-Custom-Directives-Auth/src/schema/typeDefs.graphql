@@ -1,0 +1,27 @@
+directive @auth(role: String, scopes: [String!]) on FIELD_DEFINITION
+
+type Viewer {
+  id: ID!
+  name: String!
+  role: String!
+  scopes: [String!]!
+}
+
+type AdminReport {
+  id: ID!
+  title: String!
+  severity: String!
+}
+
+type BillingSummary {
+  accountId: ID!
+  month: String!
+  totalRevenue: Float!
+}
+
+type Query {
+  publicFeed: [String!]!
+  me: Viewer! @auth
+  adminReports: [AdminReport!]! @auth(role: "admin")
+  billingSummary: BillingSummary! @auth(scopes: ["billing:read"])
+}
