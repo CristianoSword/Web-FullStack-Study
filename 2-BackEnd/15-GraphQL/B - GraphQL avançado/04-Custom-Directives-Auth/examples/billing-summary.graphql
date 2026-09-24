@@ -1,0 +1,7 @@
+query BillingSummary {
+  billingSummary {
+    accountId
+    month
+    totalRevenue
+  }
+}
