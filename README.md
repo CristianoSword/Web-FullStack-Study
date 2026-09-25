@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-64.4%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-64.6%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  ❤❤❤❤❤❤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 64.4% (322/500) 📚📚📚📚📚📚
+  ❤❤❤❤❤❤🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 64.6% (323/500) 📚📚📚📚📚📚
 </p>
 
 <p align="center">
@@ -31,10 +31,10 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 | Categoria | Projetos Concluidos | Projetos Pendentes | Total Planejado | Progresso |
 | :--- | :---: | :---: | :---: | :---: |
 | 🎨 **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| ⚙️ **[BackEnd](2-BackEnd/)** | 140 | 40 | 180 | **77.8%** |
+| ⚙️ **[BackEnd](2-BackEnd/)** | 141 | 39 | 180 | **78.3%** |
 | 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **322** | **178** | **500** | **64.4%** |
+| **Geral** | **323** | **177** | **500** | **64.6%** |
 
 ### ⚙️ BackEnd Auditado
 
@@ -53,7 +53,7 @@ Progresso real medido por projetos concluidos versus planejados no roadmap do re
 - **Python (FastAPI):** 10/10 concluidos
 - **Go:** 10/10 concluidos
 - **MongoDB:** 10/10 concluidos
-- **GraphQL:** 9/10 concluidos
+- **GraphQL:** 10/10 concluidos
 - **Kafka:** 0/10 concluidos
 - **RabbitMQ:** 0/10 concluidos
 
@@ -84,7 +84,7 @@ All technologies studied and those still planned in the repository:
 | **[Zustand](1-FrontEnd/12-Zustand/)** | ✅ | **[Python (FastAPI)](2-BackEnd/12-Python-FastAPI/)** | ✅ |  |  |  |  |
 | **[Svelte](1-FrontEnd/13-Svelte/)** | ✅ | **[Go](2-BackEnd/13-Go/)** | ✅ |  |  |  |  |
 |  |  | **[MongoDB](2-BackEnd/14-MongoDB/)** | ✅ |  |  |  |  |
-|  |  | **[GraphQL](2-BackEnd/15-GraphQL/)** | 🚧 |  |  |  |  |
+|  |  | **[GraphQL](2-BackEnd/15-GraphQL/)** | ✅ |  |  |  |  |
 |  |  | **[Kafka](2-BackEnd/16-Kafka/)** | ⏳ |  |  |  |  |
 |  |  | **[RabbitMQ](2-BackEnd/17-RabbitMQ/)** | ⏳ |  |  |  |  |
 
