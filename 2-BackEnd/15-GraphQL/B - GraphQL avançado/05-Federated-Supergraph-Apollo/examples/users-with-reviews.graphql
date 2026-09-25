@@ -1,0 +1,12 @@
+query UsersWithReviews {
+  users {
+    id
+    name
+    team
+    reviews {
+      id
+      rating
+      body
+    }
+  }
+}

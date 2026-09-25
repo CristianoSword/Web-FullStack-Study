@@ -1,0 +1,20 @@
+query ProductsWithSellerAndReviews {
+  products {
+    id
+    title
+    seller {
+      id
+      name
+      team
+    }
+    reviews {
+      id
+      rating
+      body
+      author {
+        id
+        name
+      }
+    }
+  }
+}
