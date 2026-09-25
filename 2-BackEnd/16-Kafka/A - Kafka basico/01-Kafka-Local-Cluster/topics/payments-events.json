@@ -1,0 +1,10 @@
+{
+  "name": "payments.events.v1",
+  "partitions": 2,
+  "replicationFactor": 2,
+  "configs": {
+    "cleanup.policy": "delete",
+    "retention.ms": "259200000"
+  },
+  "description": "Eventos transacionais do dominio de pagamentos."
+}

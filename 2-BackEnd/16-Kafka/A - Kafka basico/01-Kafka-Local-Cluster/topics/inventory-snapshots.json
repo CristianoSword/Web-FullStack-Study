@@ -1,0 +1,10 @@
+{
+  "name": "inventory.snapshots.v1",
+  "partitions": 2,
+  "replicationFactor": 2,
+  "configs": {
+    "cleanup.policy": "compact",
+    "min.cleanable.dirty.ratio": "0.1"
+  },
+  "description": "Topico compactado para ultimo estado do estoque."
+}

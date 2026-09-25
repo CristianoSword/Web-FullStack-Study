@@ -1,0 +1,22 @@
+{
+  "mode": "kraft",
+  "brokers": [
+    {
+      "name": "kafka-1",
+      "container": "kafka-local-1",
+      "externalPort": 19092,
+      "roles": ["controller", "broker"]
+    },
+    {
+      "name": "kafka-2",
+      "container": "kafka-local-2",
+      "externalPort": 29092,
+      "roles": ["controller", "broker"]
+    }
+  ],
+  "topics": [
+    "orders.events.v1",
+    "payments.events.v1",
+    "inventory.snapshots.v1"
+  ]
+}

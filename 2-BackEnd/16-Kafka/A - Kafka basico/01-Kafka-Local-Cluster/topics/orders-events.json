@@ -1,0 +1,10 @@
+{
+  "name": "orders.events.v1",
+  "partitions": 3,
+  "replicationFactor": 2,
+  "configs": {
+    "cleanup.policy": "delete",
+    "retention.ms": "604800000"
+  },
+  "description": "Fluxo principal de eventos de pedidos da plataforma."
+}
