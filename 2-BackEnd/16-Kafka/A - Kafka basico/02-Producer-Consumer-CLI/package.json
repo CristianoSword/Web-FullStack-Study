@@ -1,0 +1,14 @@
+{
+  "name": "kafka-producer-consumer-cli",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "produce": "node src/cli/producer.mjs",
+    "consume": "node src/cli/consumer.mjs",
+    "validate": "node scripts/validate-cli.mjs"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
