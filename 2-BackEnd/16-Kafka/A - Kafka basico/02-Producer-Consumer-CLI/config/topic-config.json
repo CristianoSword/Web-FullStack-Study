@@ -1,0 +1,7 @@
+{
+  "broker": "localhost:39092",
+  "topic": "cli.events.v1",
+  "consumerGroup": "cli-events-consumers",
+  "partitions": 2,
+  "replicationFactor": 1
+}

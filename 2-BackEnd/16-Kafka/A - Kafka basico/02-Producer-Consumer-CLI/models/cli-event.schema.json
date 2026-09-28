@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["eventId", "eventType", "source", "payload", "createdAt"],
+  "properties": {
+    "eventId": { "type": "string" },
+    "eventType": { "type": "string" },
+    "source": { "type": "string" },
+    "payload": { "type": "object" },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

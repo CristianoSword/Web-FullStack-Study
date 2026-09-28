@@ -1,0 +1,11 @@
+{
+  "eventId": "evt-1001",
+  "eventType": "order.created",
+  "source": "cli-demo",
+  "payload": {
+    "orderId": "ORD-8801",
+    "customerId": "CUS-5001",
+    "total": 199.9
+  },
+  "createdAt": "2026-06-29T18:00:00Z"
+}
