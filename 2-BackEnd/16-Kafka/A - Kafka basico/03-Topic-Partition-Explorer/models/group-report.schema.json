@@ -1,10 +1,23 @@
 {
   "type": "object",
-  "required": ["groupId", "state"],
+  "required": ["groupId", "state", "members", "offsets"],
   "properties": {
     "groupId": { "type": "string" },
     "state": { "type": "string" },
-    "members": { "type": "integer" },
+    "protocol": { "type": ["string", "null"] },
+    "protocolType": { "type": ["string", "null"] },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["memberId", "clientId", "clientHost"],
+        "properties": {
+          "memberId": { "type": "string" },
+          "clientId": { "type": "string" },
+          "clientHost": { "type": "string" }
+        }
+      }
+    },
     "offsets": {
       "type": "array",
       "items": {
@@ -13,7 +26,11 @@
         "properties": {
           "topic": { "type": "string" },
           "partition": { "type": "integer" },
-          "offset": { "type": "string" }
+          "offset": { "type": "string" },
+          "metadata": { "type": ["string", "null"] },
+          "highOffset": { "type": ["string", "null"] },
+          "lowOffset": { "type": ["string", "null"] },
+          "lag": { "type": ["integer", "null"] }
         }
       }
     }

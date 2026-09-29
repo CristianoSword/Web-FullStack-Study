@@ -1,20 +1,28 @@
 {
   "type": "object",
-  "required": ["topic", "partitions"],
+  "required": ["topic", "partitionCount", "partitions"],
   "properties": {
     "topic": { "type": "string" },
+    "partitionCount": { "type": "integer" },
     "partitions": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["partitionId", "leader", "replicas"],
+        "required": ["partitionId", "leader", "replicas", "isr"],
         "properties": {
           "partitionId": { "type": "integer" },
           "leader": { "type": "integer" },
           "replicas": {
             "type": "array",
             "items": { "type": "integer" }
-          }
+          },
+          "isr": {
+            "type": "array",
+            "items": { "type": "integer" }
+          },
+          "highOffset": { "type": ["string", "null"] },
+          "lowOffset": { "type": ["string", "null"] },
+          "committedOffset": { "type": ["string", "null"] }
         }
       }
     }
