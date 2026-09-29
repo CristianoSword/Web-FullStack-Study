@@ -1,0 +1,13 @@
+{
+  "name": "kafka-topic-partition-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "explore": "node src/cli/explorer.mjs",
+    "validate": "node scripts/validate-explorer.mjs"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
