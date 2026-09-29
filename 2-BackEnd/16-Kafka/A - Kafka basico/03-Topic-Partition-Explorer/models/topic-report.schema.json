@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "required": ["topic", "partitions"],
+  "properties": {
+    "topic": { "type": "string" },
+    "partitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["partitionId", "leader", "replicas"],
+        "properties": {
+          "partitionId": { "type": "integer" },
+          "leader": { "type": "integer" },
+          "replicas": {
+            "type": "array",
+            "items": { "type": "integer" }
+          }
+        }
+      }
+    }
+  }
+}

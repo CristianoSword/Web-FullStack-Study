@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": ["groupId", "state"],
+  "properties": {
+    "groupId": { "type": "string" },
+    "state": { "type": "string" },
+    "members": { "type": "integer" },
+    "offsets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic", "partition", "offset"],
+        "properties": {
+          "topic": { "type": "string" },
+          "partition": { "type": "integer" },
+          "offset": { "type": "string" }
+        }
+      }
+    }
+  }
+}
