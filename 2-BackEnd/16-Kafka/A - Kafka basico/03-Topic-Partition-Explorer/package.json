@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "explore": "node src/cli/explorer.mjs",
+    "seed": "node scripts/seed-group-state.mjs",
     "validate": "node scripts/validate-explorer.mjs"
   },
   "dependencies": {
