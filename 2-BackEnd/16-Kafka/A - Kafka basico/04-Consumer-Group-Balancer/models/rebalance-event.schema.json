@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": ["eventId", "workerId", "eventType", "topic", "partitions", "timestamp"],
+  "properties": {
+    "eventId": { "type": "string" },
+    "workerId": { "type": "string" },
+    "eventType": {
+      "type": "string",
+      "enum": ["JOINED", "ASSIGNED", "REBALANCING", "REVOKED", "STOPPED"]
+    },
+    "topic": { "type": "string" },
+    "partitions": {
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "timestamp": { "type": "string" }
+  }
+}

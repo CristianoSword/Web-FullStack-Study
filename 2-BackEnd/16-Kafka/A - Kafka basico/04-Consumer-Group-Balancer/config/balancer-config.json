@@ -1,0 +1,21 @@
+{
+  "brokers": ["localhost:51092", "localhost:52092"],
+  "topic": "rebalance.workloads.v1",
+  "consumerGroup": "balancer-workers",
+  "partitions": 4,
+  "replicationFactor": 1,
+  "workers": [
+    {
+      "workerId": "worker-a",
+      "displayName": "Inventory Worker"
+    },
+    {
+      "workerId": "worker-b",
+      "displayName": "Billing Worker"
+    },
+    {
+      "workerId": "worker-c",
+      "displayName": "Shipping Worker"
+    }
+  ]
+}

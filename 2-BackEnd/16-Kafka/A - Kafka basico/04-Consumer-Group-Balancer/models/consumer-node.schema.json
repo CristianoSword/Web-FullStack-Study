@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "required": ["workerId", "displayName"],
+  "properties": {
+    "workerId": { "type": "string" },
+    "displayName": { "type": "string" },
+    "assignedPartitions": {
+      "type": "array",
+      "items": { "type": "integer" }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["starting", "assigned", "rebalancing", "stopped"]
+    }
+  }
+}
