@@ -1,0 +1,14 @@
+{
+  "name": "kafka-consumer-group-balancer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "run:coordinator": "node src/cli/coordinator.mjs",
+    "run:consumer": "node src/cli/consumer-worker.mjs",
+    "validate": "node scripts/validate-balancer.mjs"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
