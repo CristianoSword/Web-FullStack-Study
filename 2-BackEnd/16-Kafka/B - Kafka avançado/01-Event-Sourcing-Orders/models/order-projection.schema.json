@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "required": ["orderId", "status", "version", "history"],
+  "properties": {
+    "orderId": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["CREATED", "PAID", "CANCELLED", "SHIPPED"]
+    },
+    "version": { "type": "integer", "minimum": 1 },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["eventType", "occurredAt", "version"],
+        "properties": {
+          "eventType": { "type": "string" },
+          "occurredAt": { "type": "string" },
+          "version": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": ["eventId", "orderId", "eventType", "version", "occurredAt", "payload"],
+  "properties": {
+    "eventId": { "type": "string" },
+    "orderId": { "type": "string" },
+    "eventType": {
+      "type": "string",
+      "enum": ["OrderCreated", "OrderPaid", "OrderCancelled", "OrderShipped"]
+    },
+    "version": { "type": "integer", "minimum": 1 },
+    "occurredAt": { "type": "string" },
+    "payload": { "type": "object", "additionalProperties": true }
+  }
+}
