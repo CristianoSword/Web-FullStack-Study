@@ -27,6 +27,33 @@ const consumer = kafka.consumer({
   groupId: config.consumerGroup,
   partitionAssigners: [PartitionAssigners.roundRobin]
 });
+let shuttingDown = false;
+
+async function shutdown(reason) {
+  if (shuttingDown) {
+    return;
+  }
+
+  shuttingDown = true;
+
+  console.log(
+    JSON.stringify(
+      buildRebalanceEvent({
+        workerId,
+        eventType: "STOPPED",
+        topic: config.topic,
+        partitions: []
+      }),
+      null,
+      2
+    )
+  );
+  console.log(`Stopping ${worker.displayName} due to ${reason}`);
+
+  await consumer.stop().catch(() => {});
+  await consumer.disconnect().catch(() => {});
+  process.exit(0);
+}
 
 consumer.on(consumer.events.REBALANCING, ({ payload }) => {
   console.log(
@@ -59,6 +86,14 @@ consumer.on(consumer.events.GROUP_JOIN, ({ payload }) => {
       2
     )
   );
+});
+
+process.once("SIGINT", async () => {
+  await shutdown("SIGINT");
+});
+
+process.once("SIGTERM", async () => {
+  await shutdown("SIGTERM");
 });
 
 await consumer.connect();
