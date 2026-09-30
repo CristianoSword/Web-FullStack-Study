@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "required": ["bridgeName", "broker", "topic", "httpPort", "publishedEvents"],
+  "properties": {
+    "bridgeName": { "type": "string" },
+    "broker": { "type": "string" },
+    "topic": { "type": "string" },
+    "httpPort": { "type": "integer" },
+    "publishedEvents": { "type": "integer" },
+    "lastPublishedAt": { "type": ["string", "null"] },
+    "recentEvents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["eventId", "eventType", "source", "partition", "publishedAt"],
+        "properties": {
+          "eventId": { "type": "string" },
+          "eventType": { "type": "string" },
+          "source": { "type": "string" },
+          "partition": { "type": "integer" },
+          "publishedAt": { "type": "string" }
+        }
+      }
+    }
+  }
+}

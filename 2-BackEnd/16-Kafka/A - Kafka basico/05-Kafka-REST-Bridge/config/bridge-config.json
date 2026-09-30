@@ -1,0 +1,8 @@
+{
+  "broker": "localhost:53092",
+  "httpPort": 4310,
+  "topic": "bridge.events.v1",
+  "replicationFactor": 1,
+  "partitions": 3,
+  "bridgeName": "kafka-rest-bridge"
+}
