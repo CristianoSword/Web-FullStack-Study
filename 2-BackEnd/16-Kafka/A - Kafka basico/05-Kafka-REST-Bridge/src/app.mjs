@@ -1,4 +1,5 @@
 import Fastify from "fastify";
+import { registerBridgeRoutes } from "./routes/bridge-routes.mjs";
 
 export function createApp({ config, bridgeService }) {
   const app = Fastify({
@@ -14,6 +15,8 @@ export function createApp({ config, bridgeService }) {
       message: error.message
     });
   });
+
+  app.register(registerBridgeRoutes);
 
   return app;
 }
