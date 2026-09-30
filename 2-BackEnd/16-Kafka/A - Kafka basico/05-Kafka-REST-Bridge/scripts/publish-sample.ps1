@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $body = @{
   eventType = "order.created"
   source = "rest-bridge-playbook"

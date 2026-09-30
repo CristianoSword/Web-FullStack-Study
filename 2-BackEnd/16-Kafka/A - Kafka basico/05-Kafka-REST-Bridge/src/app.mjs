@@ -10,7 +10,9 @@ export function createApp({ config, bridgeService }) {
   app.decorate("bridgeService", bridgeService);
 
   app.setErrorHandler((error, _request, reply) => {
-    reply.status(500).send({
+    const statusCode = error.validation ? 400 : error.statusCode ?? 500;
+
+    reply.status(statusCode).send({
       error: "BridgeError",
       message: error.message
     });

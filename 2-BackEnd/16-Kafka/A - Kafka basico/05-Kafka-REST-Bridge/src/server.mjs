@@ -31,6 +31,13 @@ process.once("SIGINT", async () => {
   process.exit(0);
 });
 
+process.once("SIGTERM", async () => {
+  await producer.disconnect().catch(() => {});
+  await admin.disconnect().catch(() => {});
+  await app.close().catch(() => {});
+  process.exit(0);
+});
+
 await app.listen({
   host: "0.0.0.0",
   port: config.httpPort

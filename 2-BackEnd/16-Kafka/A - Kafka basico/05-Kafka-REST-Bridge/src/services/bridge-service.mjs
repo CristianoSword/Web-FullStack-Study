@@ -28,7 +28,18 @@ export function createBridgeService({ config, admin, producer, eventStore }) {
 
     async publishEvent(payload) {
       const defaultPartition = 0;
+      const resolvedPartition = payload.partition ?? defaultPartition;
+
+      if (resolvedPartition < 0 || resolvedPartition >= config.partitions) {
+        const error = new Error(
+          `Partition ${resolvedPartition} is out of range for topic ${config.topic}.`
+        );
+        error.statusCode = 400;
+        throw error;
+      }
+
       const eventRecord = createEventRecord(payload, defaultPartition);
+      eventRecord.partition = resolvedPartition;
 
       await producer.send({
         topic: config.topic,
