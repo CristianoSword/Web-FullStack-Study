@@ -1,0 +1,14 @@
+{
+  "name": "kafka-rest-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "validate": "node scripts/validate-bridge.mjs"
+  },
+  "dependencies": {
+    "fastify": "^5.0.0",
+    "kafkajs": "^2.2.4"
+  }
+}
