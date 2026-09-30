@@ -6,6 +6,9 @@
   "scripts": {
     "run:coordinator": "node src/cli/coordinator.mjs",
     "run:consumer": "node src/cli/consumer-worker.mjs",
+    "run:consumer:a": "node src/cli/consumer-worker.mjs worker-a",
+    "run:consumer:b": "node src/cli/consumer-worker.mjs worker-b",
+    "run:consumer:c": "node src/cli/consumer-worker.mjs worker-c",
     "validate": "node scripts/validate-balancer.mjs"
   },
   "dependencies": {
