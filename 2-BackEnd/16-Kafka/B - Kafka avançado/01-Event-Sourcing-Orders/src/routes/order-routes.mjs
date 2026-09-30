@@ -38,6 +38,8 @@ export async function registerOrderRoutes(app) {
     service: app.ordersConfig.serviceName
   }));
 
+  app.get("/status", async () => app.eventStoreService.getStatus());
+
   app.post(
     "/orders",
     {
@@ -46,13 +48,10 @@ export async function registerOrderRoutes(app) {
       }
     },
     async (request, reply) => {
-      const event = await app.eventStoreService.appendEvent({
+      const event = await app.eventStoreService.createOrder({
         orderId: request.body.orderId,
-        eventType: "OrderCreated",
-        payload: {
-          customerId: request.body.customerId,
-          totalAmount: request.body.totalAmount
-        }
+        customerId: request.body.customerId,
+        totalAmount: request.body.totalAmount
       });
 
       reply.status(202).send({
@@ -70,12 +69,9 @@ export async function registerOrderRoutes(app) {
       }
     },
     async (request, reply) => {
-      const event = await app.eventStoreService.appendEvent({
+      const event = await app.eventStoreService.payOrder({
         orderId: request.params.orderId,
-        eventType: "OrderPaid",
-        payload: {
-          paymentId: request.body.paymentId
-        }
+        paymentId: request.body.paymentId
       });
 
       reply.status(202).send({
@@ -93,12 +89,9 @@ export async function registerOrderRoutes(app) {
       }
     },
     async (request, reply) => {
-      const event = await app.eventStoreService.appendEvent({
+      const event = await app.eventStoreService.cancelOrder({
         orderId: request.params.orderId,
-        eventType: "OrderCancelled",
-        payload: {
-          reason: request.body.reason
-        }
+        reason: request.body.reason
       });
 
       reply.status(202).send({
@@ -116,12 +109,9 @@ export async function registerOrderRoutes(app) {
       }
     },
     async (request, reply) => {
-      const event = await app.eventStoreService.appendEvent({
+      const event = await app.eventStoreService.shipOrder({
         orderId: request.params.orderId,
-        eventType: "OrderShipped",
-        payload: {
-          trackingCode: request.body.trackingCode
-        }
+        trackingCode: request.body.trackingCode
       });
 
       reply.status(202).send({

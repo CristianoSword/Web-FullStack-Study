@@ -1,5 +1,11 @@
 import { applyOrderEvent } from "../domain/order-projection.mjs";
 
+function buildStatusCodeError(message, statusCode) {
+  const error = new Error(message);
+  error.statusCode = statusCode;
+  return error;
+}
+
 function buildOrderEvent(orderId, eventType, payload, version) {
   return {
     eventId: `${orderId}-${eventType}-${Date.now()}`,
@@ -14,6 +20,22 @@ function buildOrderEvent(orderId, eventType, payload, version) {
 export function createEventStoreService({ config, admin, producer }) {
   const projections = new Map();
   const streams = new Map();
+
+  function appendToMemory(orderId, event) {
+    const currentStream = streams.get(orderId) ?? [];
+    streams.set(orderId, [...currentStream, event]);
+    projections.set(orderId, applyOrderEvent(projections.get(orderId), event));
+  }
+
+  function requireProjection(orderId) {
+    const projection = projections.get(orderId);
+
+    if (!projection) {
+      throw buildStatusCodeError(`Order ${orderId} was not created yet.`, 404);
+    }
+
+    return projection;
+  }
 
   return {
     async bootstrapTopic() {
@@ -44,16 +66,96 @@ export function createEventStoreService({ config, admin, producer }) {
         ]
       });
 
-      streams.set(orderId, [...currentStream, event]);
-      projections.set(orderId, applyOrderEvent(projections.get(orderId), event));
+      appendToMemory(orderId, event);
 
       return event;
+    },
+
+    async createOrder({ orderId, customerId, totalAmount }) {
+      if (projections.has(orderId)) {
+        throw buildStatusCodeError(`Order ${orderId} already exists.`, 409);
+      }
+
+      return this.appendEvent({
+        orderId,
+        eventType: "OrderCreated",
+        payload: {
+          customerId,
+          totalAmount
+        }
+      });
+    },
+
+    async payOrder({ orderId, paymentId }) {
+      const projection = requireProjection(orderId);
+
+      if (projection.status !== "CREATED") {
+        throw buildStatusCodeError(
+          `Order ${orderId} cannot be paid from status ${projection.status}.`,
+          409
+        );
+      }
+
+      return this.appendEvent({
+        orderId,
+        eventType: "OrderPaid",
+        payload: {
+          paymentId
+        }
+      });
+    },
+
+    async cancelOrder({ orderId, reason }) {
+      const projection = requireProjection(orderId);
+
+      if (projection.status === "CANCELLED" || projection.status === "SHIPPED") {
+        throw buildStatusCodeError(
+          `Order ${orderId} cannot be cancelled from status ${projection.status}.`,
+          409
+        );
+      }
+
+      return this.appendEvent({
+        orderId,
+        eventType: "OrderCancelled",
+        payload: {
+          reason
+        }
+      });
+    },
+
+    async shipOrder({ orderId, trackingCode }) {
+      const projection = requireProjection(orderId);
+
+      if (projection.status !== "PAID") {
+        throw buildStatusCodeError(
+          `Order ${orderId} can only be shipped after payment. Current status: ${projection.status}.`,
+          409
+        );
+      }
+
+      return this.appendEvent({
+        orderId,
+        eventType: "OrderShipped",
+        payload: {
+          trackingCode
+        }
+      });
     },
 
     replayOrder(orderId) {
       const events = streams.get(orderId) ?? [];
 
-      return events.reduce((projection, event) => applyOrderEvent(projection, event), null);
+      if (events.length === 0) {
+        return null;
+      }
+
+      const projection = events.reduce((currentProjection, event) => {
+        return applyOrderEvent(currentProjection, event);
+      }, null);
+
+      projections.set(orderId, projection);
+      return projection;
     },
 
     getProjection(orderId) {
@@ -62,6 +164,15 @@ export function createEventStoreService({ config, admin, producer }) {
 
     listEvents(orderId) {
       return streams.get(orderId) ?? [];
+    },
+
+    getStatus() {
+      return {
+        serviceName: config.serviceName,
+        topic: config.ordersTopic,
+        projectedOrders: projections.size,
+        eventStreams: streams.size
+      };
     }
   };
 }

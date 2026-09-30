@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $body = @{
   trackingCode = "TRACK-ABC-999"
 } | ConvertTo-Json

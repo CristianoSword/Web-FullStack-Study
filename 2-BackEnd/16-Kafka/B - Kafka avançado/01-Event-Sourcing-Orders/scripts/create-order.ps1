@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $body = @{
   orderId = "ORDER-2001"
   customerId = "CUSTOMER-88"
