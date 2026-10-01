@@ -1,0 +1,12 @@
+{
+  "type": "record",
+  "name": "CustomerEvent",
+  "namespace": "study.kafka.avro",
+  "fields": [
+    { "name": "eventId", "type": "string" },
+    { "name": "eventType", "type": "string" },
+    { "name": "customerId", "type": "string" },
+    { "name": "email", "type": "string" },
+    { "name": "occurredAt", "type": "string" }
+  ]
+}

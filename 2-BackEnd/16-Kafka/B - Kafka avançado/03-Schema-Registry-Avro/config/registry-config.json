@@ -1,0 +1,9 @@
+{
+  "broker": "localhost:56092",
+  "schemaRegistryUrl": "http://localhost:58081",
+  "httpPort": 4610,
+  "topic": "customer.events.avro.v1",
+  "subject": "customer.events.avro.v1-value",
+  "compatibility": "BACKWARD",
+  "serviceName": "schema-registry-avro"
+}

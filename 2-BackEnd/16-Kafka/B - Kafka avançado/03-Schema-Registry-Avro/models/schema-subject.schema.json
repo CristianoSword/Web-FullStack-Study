@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "required": ["subject", "schemaPath", "compatibility"],
+  "properties": {
+    "subject": { "type": "string" },
+    "schemaPath": { "type": "string" },
+    "compatibility": {
+      "type": "string",
+      "enum": ["BACKWARD", "FORWARD", "FULL", "NONE"]
+    }
+  }
+}
