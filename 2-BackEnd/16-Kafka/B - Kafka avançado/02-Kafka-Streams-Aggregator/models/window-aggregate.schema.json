@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "required": ["storeId", "windowStart", "windowEnd", "eventCount", "totalAmount", "averageAmount"],
+  "properties": {
+    "storeId": { "type": "string" },
+    "windowStart": { "type": "string" },
+    "windowEnd": { "type": "string" },
+    "eventCount": { "type": "integer", "minimum": 0 },
+    "totalAmount": { "type": "number" },
+    "averageAmount": { "type": "number" },
+    "lastEventId": { "type": ["string", "null"] }
+  }
+}

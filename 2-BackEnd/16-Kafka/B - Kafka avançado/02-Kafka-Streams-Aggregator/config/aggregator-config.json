@@ -1,0 +1,12 @@
+{
+  "broker": "localhost:55092",
+  "httpPort": 4510,
+  "inputTopic": "sales.events.v1",
+  "outputTopic": "sales.aggregates.v1",
+  "consumerGroup": "sales-window-aggregator",
+  "partitions": 3,
+  "replicationFactor": 1,
+  "windowSizeMs": 60000,
+  "gracePeriodMs": 5000,
+  "serviceName": "kafka-streams-aggregator"
+}
