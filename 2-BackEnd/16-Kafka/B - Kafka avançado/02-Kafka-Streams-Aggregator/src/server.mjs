@@ -25,17 +25,17 @@ await streamAggregatorService.startStreamProcessor();
 const app = createApp({ config, streamAggregatorService });
 
 process.once("SIGINT", async () => {
+  await streamAggregatorService.shutdown().catch(() => {});
   await producer.disconnect().catch(() => {});
   await admin.disconnect().catch(() => {});
-  await consumer.disconnect().catch(() => {});
   await app.close().catch(() => {});
   process.exit(0);
 });
 
 process.once("SIGTERM", async () => {
+  await streamAggregatorService.shutdown().catch(() => {});
   await producer.disconnect().catch(() => {});
   await admin.disconnect().catch(() => {});
-  await consumer.disconnect().catch(() => {});
   await app.close().catch(() => {});
   process.exit(0);
 });

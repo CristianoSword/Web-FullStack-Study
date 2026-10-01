@@ -5,10 +5,18 @@ import {
 } from "../domain/windowing.mjs";
 
 function createSalesEvent(payload) {
+  const amount = Number(payload.amount);
+
+  if (!Number.isFinite(amount) || amount <= 0) {
+    const error = new Error("Sales event amount must be a positive number.");
+    error.statusCode = 400;
+    throw error;
+  }
+
   return {
     eventId: payload.eventId ?? `sale-${Date.now()}`,
     storeId: payload.storeId,
-    amount: Number(payload.amount),
+    amount,
     occurredAt: payload.occurredAt ?? new Date().toISOString()
   };
 }
@@ -118,6 +126,10 @@ export function createStreamAggregatorService({ config, admin, producer, consume
         processedEvents: processedEvents.length,
         materializedWindows: materializedState.size
       };
+    },
+
+    async shutdown() {
+      await consumer.disconnect().catch(() => {});
     }
   };
 }

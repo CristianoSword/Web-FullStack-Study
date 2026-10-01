@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $body = @{
   storeId = "STORE-001"
   amount = 199.9
