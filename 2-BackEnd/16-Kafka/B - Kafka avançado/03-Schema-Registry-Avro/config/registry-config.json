@@ -4,6 +4,8 @@
   "httpPort": 4610,
   "topic": "customer.events.avro.v1",
   "subject": "customer.events.avro.v1-value",
+  "partitions": 3,
+  "replicationFactor": 1,
   "compatibility": "BACKWARD",
   "serviceName": "schema-registry-avro"
 }

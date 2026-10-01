@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $body = @{
   eventId = "evt-1001"
   eventType = "customer.created"

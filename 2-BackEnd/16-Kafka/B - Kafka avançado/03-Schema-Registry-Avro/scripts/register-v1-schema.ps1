@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $body = @{
   schemaPath = "schemas/customer-event-v1.avsc"
   compatibility = "BACKWARD"

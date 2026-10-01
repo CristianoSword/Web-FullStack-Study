@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $body = @{
   schemaPath = "schemas/customer-event-v2.avsc"
 } | ConvertTo-Json

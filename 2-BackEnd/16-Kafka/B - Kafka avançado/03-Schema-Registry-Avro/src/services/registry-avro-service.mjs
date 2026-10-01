@@ -14,6 +14,16 @@ export function createRegistryAvroService({
 }) {
   const publishedMessages = [];
 
+  function ensureRelativeSchemaPath(schemaPath) {
+    if (!schemaPath || schemaPath.includes("..")) {
+      const error = new Error("schemaPath must point to a project-local schema file.");
+      error.statusCode = 400;
+      throw error;
+    }
+
+    return schemaPath;
+  }
+
   return {
     async bootstrapTopic() {
       await admin.createTopics({
@@ -21,15 +31,16 @@ export function createRegistryAvroService({
         topics: [
           {
             topic: config.topic,
-            numPartitions: 3,
-            replicationFactor: 1
+            numPartitions: config.partitions,
+            replicationFactor: config.replicationFactor
           }
         ]
       });
     },
 
     async registerSchema({ subject, schemaPath, compatibility }) {
-      const schema = await loadSchemaFile(schemaPath);
+      const resolvedSchemaPath = ensureRelativeSchemaPath(schemaPath);
+      const schema = await loadSchemaFile(resolvedSchemaPath);
 
       await schemaRegistryClient.setCompatibility(subject, compatibility);
       const registration = await schemaRegistryClient.registerSchema(subject, schema);
@@ -37,18 +48,19 @@ export function createRegistryAvroService({
       return {
         subject,
         schemaId: registration.id,
-        schemaPath: resolveRelativeSchemaPath(schemaPath),
+        schemaPath: resolveRelativeSchemaPath(resolvedSchemaPath),
         compatibility
       };
     },
 
     async checkCompatibility({ subject, schemaPath }) {
-      const schema = await loadSchemaFile(schemaPath);
+      const resolvedSchemaPath = ensureRelativeSchemaPath(schemaPath);
+      const schema = await loadSchemaFile(resolvedSchemaPath);
       const compatibility = await schemaRegistryClient.testCompatibility(subject, schema);
 
       return {
         subject,
-        schemaPath: resolveRelativeSchemaPath(schemaPath),
+        schemaPath: resolveRelativeSchemaPath(resolvedSchemaPath),
         isCompatible: compatibility.is_compatible
       };
     },
