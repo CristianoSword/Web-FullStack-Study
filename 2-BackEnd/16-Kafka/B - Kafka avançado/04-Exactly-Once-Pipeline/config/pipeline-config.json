@@ -1,0 +1,10 @@
+{
+  "broker": "localhost:57092",
+  "httpPort": 4710,
+  "inputTopic": "payments.input.v1",
+  "outputTopic": "payments.processed.v1",
+  "deadLetterTopic": "payments.dlq.v1",
+  "consumerGroup": "payments-exactly-once-worker",
+  "transactionalId": "payments-tx-producer",
+  "serviceName": "exactly-once-pipeline"
+}

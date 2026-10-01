@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "required": ["messageId", "idempotencyKey", "paymentId", "status", "processedAt"],
+  "properties": {
+    "messageId": { "type": "string" },
+    "idempotencyKey": { "type": "string" },
+    "paymentId": { "type": "string" },
+    "status": { "type": "string", "enum": ["PROCESSED", "DUPLICATE"] },
+    "processedAt": { "type": "string" }
+  }
+}

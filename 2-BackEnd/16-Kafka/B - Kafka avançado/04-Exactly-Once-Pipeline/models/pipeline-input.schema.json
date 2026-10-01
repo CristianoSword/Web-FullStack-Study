@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "required": ["messageId", "idempotencyKey", "paymentId", "amount", "occurredAt"],
+  "properties": {
+    "messageId": { "type": "string" },
+    "idempotencyKey": { "type": "string" },
+    "paymentId": { "type": "string" },
+    "amount": { "type": "number" },
+    "occurredAt": { "type": "string" }
+  }
+}
