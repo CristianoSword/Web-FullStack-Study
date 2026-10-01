@@ -1,0 +1,14 @@
+{
+  "name": "kafka-streams-aggregator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "validate": "node scripts/validate-aggregator.mjs"
+  },
+  "dependencies": {
+    "fastify": "^5.0.0",
+    "kafkajs": "^2.2.4"
+  }
+}
