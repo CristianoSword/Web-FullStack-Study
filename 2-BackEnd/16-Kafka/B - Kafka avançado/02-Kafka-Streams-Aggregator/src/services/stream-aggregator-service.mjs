@@ -16,6 +16,7 @@ function createSalesEvent(payload) {
 export function createStreamAggregatorService({ config, admin, producer, consumer }) {
   const materializedState = new Map();
   const processedEvents = [];
+  let processorStarted = false;
 
   async function publishAggregate(aggregate) {
     await producer.send({
@@ -61,10 +62,15 @@ export function createStreamAggregatorService({ config, admin, producer, consume
     },
 
     async startStreamProcessor() {
+      if (processorStarted) {
+        return;
+      }
+
+      processorStarted = true;
       await consumer.connect();
       await consumer.subscribe({ topic: config.inputTopic, fromBeginning: true });
 
-      await consumer.run({
+      consumer.run({
         eachMessage: async ({ message }) => {
           const salesEvent = JSON.parse(message.value.toString());
           const aggregate = upsertAggregate(salesEvent);
@@ -86,12 +92,9 @@ export function createStreamAggregatorService({ config, admin, producer, consume
         ]
       });
 
-      const aggregate = upsertAggregate(salesEvent);
-      await publishAggregate(aggregate);
-
       return {
-        salesEvent,
-        aggregate
+        accepted: true,
+        salesEvent
       };
     },
 
