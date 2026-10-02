@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OutboxEvent",
+  "type": "object",
+  "required": ["id", "aggregateId", "aggregateType", "eventType", "topic", "payload", "status", "createdAt"],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "aggregateId": {
+      "type": "string"
+    },
+    "aggregateType": {
+      "type": "string"
+    },
+    "eventType": {
+      "type": "string"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["PENDING", "PUBLISHED", "FAILED"]
+    },
+    "retries": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "publishedAt": {
+      "type": ["string", "null"]
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  }
+}

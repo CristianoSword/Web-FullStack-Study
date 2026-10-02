@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrderRecord",
+  "type": "object",
+  "required": ["id", "customerId", "status", "totalAmount", "createdAt", "items"],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "customerId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["CREATED", "PUBLISHED"]
+    },
+    "totalAmount": {
+      "type": "number"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "sku", "quantity", "unitPrice"],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "unitPrice": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

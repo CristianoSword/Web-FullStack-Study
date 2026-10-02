@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OrdersCreatedEvent",
+  "type": "object",
+  "required": ["eventId", "eventType", "occurredAt", "order"],
+  "properties": {
+    "eventId": {
+      "type": "string"
+    },
+    "eventType": {
+      "type": "string",
+      "const": "OrderCreated"
+    },
+    "occurredAt": {
+      "type": "string"
+    },
+    "order": {
+      "type": "object",
+      "required": ["orderId", "customerId", "status", "totalAmount", "items"],
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "customerId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "totalAmount": {
+          "type": "number"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["sku", "quantity", "unitPrice"],
+            "properties": {
+              "sku": {
+                "type": "string"
+              },
+              "quantity": {
+                "type": "integer"
+              },
+              "unitPrice": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
