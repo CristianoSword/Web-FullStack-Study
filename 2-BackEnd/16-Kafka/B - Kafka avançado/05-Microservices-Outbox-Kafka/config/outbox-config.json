@@ -1,0 +1,10 @@
+{
+  "broker": "localhost:58092",
+  "httpPort": 4810,
+  "databasePath": "./data/outbox.db",
+  "topic": "orders.created.v1",
+  "consumerGroup": "orders-outbox-consumer",
+  "serviceName": "microservices-outbox-kafka",
+  "pollIntervalMs": 3000,
+  "batchSize": 20
+}
