@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-local-broker
+    hostname: rabbitmq-local
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: study
+      RABBITMQ_DEFAULT_PASS: study123
+    volumes:
+      - rabbitmq_local_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_local_data:

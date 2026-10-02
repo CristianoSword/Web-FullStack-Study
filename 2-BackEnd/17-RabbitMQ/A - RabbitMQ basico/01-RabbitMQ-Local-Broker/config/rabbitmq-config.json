@@ -1,0 +1,11 @@
+{
+  "amqpUrl": "amqp://study:study123@localhost:5672",
+  "managementUrl": "http://localhost:15672",
+  "httpPort": 4910,
+  "exchange": "app.events.topic",
+  "deadLetterExchange": "app.events.dlx",
+  "mainQueue": "app.events.queue",
+  "deadLetterQueue": "app.events.dlq",
+  "routingKey": "app.info",
+  "serviceName": "rabbitmq-local-broker"
+}
