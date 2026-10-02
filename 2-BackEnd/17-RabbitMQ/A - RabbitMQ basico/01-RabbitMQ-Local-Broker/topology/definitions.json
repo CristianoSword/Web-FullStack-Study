@@ -1,0 +1,39 @@
+{
+  "exchanges": [
+    {
+      "name": "app.events.topic",
+      "type": "topic",
+      "durable": true
+    },
+    {
+      "name": "app.events.dlx",
+      "type": "topic",
+      "durable": true
+    }
+  ],
+  "queues": [
+    {
+      "name": "app.events.queue",
+      "durable": true,
+      "arguments": {
+        "x-dead-letter-exchange": "app.events.dlx"
+      }
+    },
+    {
+      "name": "app.events.dlq",
+      "durable": true
+    }
+  ],
+  "bindings": [
+    {
+      "source": "app.events.topic",
+      "destination": "app.events.queue",
+      "routingKey": "app.info"
+    },
+    {
+      "source": "app.events.dlx",
+      "destination": "app.events.dlq",
+      "routingKey": "#"
+    }
+  ]
+}

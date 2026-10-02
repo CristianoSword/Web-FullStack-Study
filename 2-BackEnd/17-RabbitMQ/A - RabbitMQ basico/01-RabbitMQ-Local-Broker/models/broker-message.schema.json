@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BrokerMessage",
+  "type": "object",
+  "required": ["messageId", "type", "payload", "createdAt"],
+  "properties": {
+    "messageId": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  }
+}
