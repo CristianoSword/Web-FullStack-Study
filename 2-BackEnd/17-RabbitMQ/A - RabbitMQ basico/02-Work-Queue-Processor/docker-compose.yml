@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-work-queue
+    hostname: rabbitmq-work-queue
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: worker
+      RABBITMQ_DEFAULT_PASS: worker123
+    volumes:
+      - rabbitmq_work_queue_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_work_queue_data:

@@ -1,0 +1,12 @@
+{
+  "amqpUrl": "amqp://worker:worker123@localhost:5673",
+  "managementUrl": "http://localhost:15673",
+  "httpPort": 4920,
+  "queue": "jobs.work.queue",
+  "deadLetterExchange": "jobs.work.dlx",
+  "deadLetterQueue": "jobs.work.dlq",
+  "routingKey": "jobs.work",
+  "workerCount": 3,
+  "prefetch": 1,
+  "serviceName": "rabbitmq-work-queue-processor"
+}
