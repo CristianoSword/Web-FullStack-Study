@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkTask",
+  "type": "object",
+  "required": ["taskId", "jobType", "payload", "createdAt", "attempt"],
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "jobType": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "exchanges": [
+    {
+      "name": "",
+      "type": "direct",
+      "durable": true
+    },
+    {
+      "name": "jobs.work.dlx",
+      "type": "direct",
+      "durable": true
+    }
+  ],
+  "queues": [
+    {
+      "name": "jobs.work.queue",
+      "durable": true,
+      "arguments": {
+        "x-dead-letter-exchange": "jobs.work.dlx",
+        "x-dead-letter-routing-key": "jobs.work.dead"
+      }
+    },
+    {
+      "name": "jobs.work.dlq",
+      "durable": true
+    }
+  ],
+  "bindings": [
+    {
+      "source": "jobs.work.dlx",
+      "destination": "jobs.work.dlq",
+      "routingKey": "jobs.work.dead"
+    }
+  ]
+}
