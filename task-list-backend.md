@@ -1737,15 +1737,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, valida??es e estiliza??o.
   6. `[x]` `[06/06] docs`: Documenta??o do projeto no README.md e finaliza??o.
 
-#### [ ] 03-PubSub-Fanout-Exchange
+#### [x] 03-PubSub-Fanout-Exchange
 - **O que Ã©:** Sistema pub/sub usando fanout exchange para broadcast de eventos.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: InicializaÃ§Ã£o do projeto, dependÃªncias e configuraÃ§Ãµes.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: ImplementaÃ§Ã£o da lÃ³gica de negÃ³cios e manipulaÃ§Ãµes.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuÃ¡rio ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validaÃ§Ãµes e estilizaÃ§Ã£o.
-  6. `[ ]` `[06/06] docs`: DocumentaÃ§Ã£o do projeto no README.md e finalizaÃ§Ã£o.
+  1. `[x]` `[01/06] setup`: Inicializa??o do projeto, depend?ncias e configura??es.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: Implementa??o da l?gica de neg?cios e manipula??es.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usu?rio ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, valida??es e estiliza??o.
+  6. `[x]` `[06/06] docs`: Documenta??o do projeto no README.md e finaliza??o.
 
 #### [ ] 04-Routing-Direct-Exchange
 - **O que Ã©:** Roteamento por severity/type usando direct exchange e binding keys.
