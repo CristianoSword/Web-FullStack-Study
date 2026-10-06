@@ -1,0 +1,33 @@
+{
+  "exchange": {
+    "name": "logs.direct.exchange",
+    "type": "direct",
+    "durable": true
+  },
+  "queues": [
+    {
+      "name": "logs.info.queue",
+      "routingKey": "info",
+      "consumerId": "info-consumer",
+      "durable": true
+    },
+    {
+      "name": "logs.warning.queue",
+      "routingKey": "warning",
+      "consumerId": "warning-consumer",
+      "durable": true
+    },
+    {
+      "name": "logs.error.queue",
+      "routingKey": "error",
+      "consumerId": "error-consumer",
+      "durable": true
+    },
+    {
+      "name": "logs.audit.queue",
+      "routingKey": "audit",
+      "consumerId": "audit-consumer",
+      "durable": true
+    }
+  ]
+}

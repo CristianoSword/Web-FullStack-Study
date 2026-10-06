@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RoutingBinding",
+  "type": "object",
+  "required": ["queue", "routingKey", "consumerId"],
+  "properties": {
+    "queue": {
+      "type": "string"
+    },
+    "routingKey": {
+      "type": "string"
+    },
+    "consumerId": {
+      "type": "string"
+    }
+  }
+}

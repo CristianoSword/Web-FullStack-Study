@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RoutingReceipt",
+  "type": "object",
+  "required": ["consumerId", "queue", "routingKey", "receivedCount", "lastMessageAt"],
+  "properties": {
+    "consumerId": {
+      "type": "string"
+    },
+    "queue": {
+      "type": "string"
+    },
+    "routingKey": {
+      "type": "string"
+    },
+    "receivedCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "lastMessageAt": {
+      "type": ["string", "null"]
+    }
+  }
+}
