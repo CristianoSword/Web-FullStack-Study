@@ -1,0 +1,7 @@
+{
+  "amqpUrl": "amqp://routing:routing123@localhost:5675",
+  "managementUrl": "http://localhost:15675",
+  "httpPort": 4940,
+  "exchange": "logs.direct.exchange",
+  "serviceName": "rabbitmq-routing-direct-exchange"
+}

@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-routing-direct
+    hostname: rabbitmq-routing-direct
+    ports:
+      - "5675:5672"
+      - "15675:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: routing
+      RABBITMQ_DEFAULT_PASS: routing123
+    volumes:
+      - rabbitmq_routing_direct_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_routing_direct_data:
