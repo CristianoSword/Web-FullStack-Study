@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SubscriberMessage",
+  "type": "object",
+  "required": ["subscriberId", "queue", "eventId", "receivedAt", "payload"],
+  "properties": {
+    "subscriberId": {
+      "type": "string"
+    },
+    "queue": {
+      "type": "string"
+    },
+    "eventId": {
+      "type": "string"
+    },
+    "receivedAt": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

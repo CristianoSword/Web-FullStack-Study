@@ -1,0 +1,24 @@
+{
+  "exchange": {
+    "name": "events.broadcast.fanout",
+    "type": "fanout",
+    "durable": true
+  },
+  "queues": [
+    {
+      "name": "events.broadcast.audit",
+      "subscriberId": "audit-stream",
+      "durable": true
+    },
+    {
+      "name": "events.broadcast.notifications",
+      "subscriberId": "notification-stream",
+      "durable": true
+    },
+    {
+      "name": "events.broadcast.analytics",
+      "subscriberId": "analytics-stream",
+      "durable": true
+    }
+  ]
+}

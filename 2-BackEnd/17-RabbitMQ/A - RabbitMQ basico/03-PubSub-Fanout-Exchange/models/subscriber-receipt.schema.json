@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SubscriberReceipt",
+  "type": "object",
+  "required": ["subscriberId", "queue", "receivedCount", "lastEventAt"],
+  "properties": {
+    "subscriberId": {
+      "type": "string"
+    },
+    "queue": {
+      "type": "string"
+    },
+    "receivedCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "lastEventAt": {
+      "type": ["string", "null"]
+    }
+  }
+}
