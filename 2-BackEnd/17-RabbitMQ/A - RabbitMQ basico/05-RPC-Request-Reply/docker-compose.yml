@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-rpc-request-reply
+    hostname: rabbitmq-rpc
+    ports:
+      - "5676:5672"
+      - "15676:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: rpc
+      RABBITMQ_DEFAULT_PASS: rpc123
+    volumes:
+      - rabbitmq_rpc_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_rpc_data:

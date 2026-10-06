@@ -1,0 +1,9 @@
+{
+  "amqpUrl": "amqp://rpc:rpc123@localhost:5676",
+  "managementUrl": "http://localhost:15676",
+  "httpPort": 4950,
+  "requestQueue": "rpc.calc.requests",
+  "replyQueue": "rpc.calc.replies",
+  "serviceName": "rabbitmq-rpc-request-reply",
+  "timeoutMs": 2500
+}
