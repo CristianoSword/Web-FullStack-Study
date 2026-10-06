@@ -1,0 +1,12 @@
+{
+  "amqpUrl": "amqp://pubsub:pubsub123@localhost:5674",
+  "managementUrl": "http://localhost:15674",
+  "httpPort": 4930,
+  "exchange": "events.broadcast.fanout",
+  "subscriberQueues": [
+    "events.broadcast.audit",
+    "events.broadcast.notifications",
+    "events.broadcast.analytics"
+  ],
+  "serviceName": "rabbitmq-pubsub-fanout-exchange"
+}

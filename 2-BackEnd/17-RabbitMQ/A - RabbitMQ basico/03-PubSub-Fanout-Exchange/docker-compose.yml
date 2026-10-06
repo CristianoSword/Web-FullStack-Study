@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-pubsub-fanout
+    hostname: rabbitmq-pubsub-fanout
+    ports:
+      - "5674:5672"
+      - "15674:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: pubsub
+      RABBITMQ_DEFAULT_PASS: pubsub123
+    volumes:
+      - rabbitmq_pubsub_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_pubsub_data:
