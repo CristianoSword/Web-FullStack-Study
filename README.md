@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-68.2%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-68.4%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  ❤️❤️❤️❤️❤️❤️🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 68.2% (341/500) 📚📚📚📚📚📚
+  ❤️❤️❤️❤️❤️❤️🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 68.4% (342/500) 📚📚📚📚📚📚
 </p>
 
 <p align="center">
@@ -31,10 +31,10 @@ Progresso real medido por projetos concluídos versus planejados no roadmap do r
 | Categoria | Projetos Concluídos | Projetos Pendentes | Total Planejado | Progresso |
 | :--- | :---: | :---: | :---: | :---: |
 | 🎨 **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| ⚙️ **[BackEnd](2-BackEnd/)** | 159 | 21 | 180 | **88.3%** |
+| ⚙️ **[BackEnd](2-BackEnd/)** | 160 | 20 | 180 | **88.9%** |
 | 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **341** | **159** | **500** | **68.2%** |
+| **Geral** | **342** | **158** | **500** | **68.4%** |
 
 ### ⚙️ BackEnd Auditado
 
@@ -55,7 +55,7 @@ Progresso real medido por projetos concluídos versus planejados no roadmap do r
 - **MongoDB:** 10/10 concluídos
 - **GraphQL:** 10/10 concluídos
 - **Kafka:** 10/10 concluídos
-- **RabbitMQ:** 3/10 concluídos
+- **RabbitMQ:** 4/10 concluídos
 
 Projetos que ainda estavam com stack simulada, placeholder ou implementação superficial da tecnologia principal foram rebaixados no `task-list-backend.md` para o painel refletir o estado real do código.
 
