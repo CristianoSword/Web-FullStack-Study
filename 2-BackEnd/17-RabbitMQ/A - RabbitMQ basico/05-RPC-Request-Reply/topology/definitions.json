@@ -1,0 +1,12 @@
+{
+  "queues": [
+    {
+      "name": "rpc.calc.requests",
+      "durable": true
+    },
+    {
+      "name": "rpc.calc.replies",
+      "durable": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RpcRequest",
+  "type": "object",
+  "required": ["requestId", "operation", "operands", "createdAt"],
+  "properties": {
+    "requestId": {
+      "type": "string"
+    },
+    "operation": {
+      "type": "string",
+      "enum": ["sum", "multiply"]
+    },
+    "operands": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "number"
+      }
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RpcCall",
+  "type": "object",
+  "required": ["callId", "requestId", "correlationId", "status", "timeoutMs"],
+  "properties": {
+    "callId": {
+      "type": "string"
+    },
+    "requestId": {
+      "type": "string"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "completed", "timed_out"]
+    },
+    "timeoutMs": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

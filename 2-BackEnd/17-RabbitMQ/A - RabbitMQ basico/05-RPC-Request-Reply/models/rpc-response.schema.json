@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RpcResponse",
+  "type": "object",
+  "required": ["requestId", "correlationId", "result", "processedAt"],
+  "properties": {
+    "requestId": {
+      "type": "string"
+    },
+    "correlationId": {
+      "type": "string"
+    },
+    "result": {
+      "type": "number"
+    },
+    "processedAt": {
+      "type": "string"
+    }
+  }
+}
