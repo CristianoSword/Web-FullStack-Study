@@ -1,0 +1,17 @@
+{
+  "amqpUrl": "amqp://retry:retry123@localhost:5677",
+  "managementUrl": "http://localhost:15677",
+  "httpPort": 4960,
+  "mainExchange": "jobs.retry.main",
+  "retryExchange": "jobs.retry.delay",
+  "errorExchange": "jobs.retry.error",
+  "mainQueue": "jobs.retry.main.queue",
+  "retryQueue": "jobs.retry.delay.queue",
+  "errorQueue": "jobs.retry.error.queue",
+  "mainRoutingKey": "jobs.process",
+  "retryRoutingKey": "jobs.retry",
+  "errorRoutingKey": "jobs.error",
+  "retryDelayMs": 5000,
+  "maxAttempts": 3,
+  "serviceName": "rabbitmq-delayed-retry-dlx"
+}

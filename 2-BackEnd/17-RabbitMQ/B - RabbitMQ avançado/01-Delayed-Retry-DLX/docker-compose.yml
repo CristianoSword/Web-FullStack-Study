@@ -1,0 +1,16 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-delayed-retry-dlx
+    hostname: rabbitmq-delayed-retry
+    ports:
+      - "5677:5672"
+      - "15677:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: retry
+      RABBITMQ_DEFAULT_PASS: retry123
+    volumes:
+      - rabbitmq_delayed_retry_data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq_delayed_retry_data:

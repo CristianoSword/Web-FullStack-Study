@@ -1,0 +1,14 @@
+{
+  "name": "rabbitmq-delayed-retry-dlx",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.mjs",
+    "validate": "node scripts/validate-delayed-retry.mjs"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "fastify": "^5.0.0"
+  }
+}
