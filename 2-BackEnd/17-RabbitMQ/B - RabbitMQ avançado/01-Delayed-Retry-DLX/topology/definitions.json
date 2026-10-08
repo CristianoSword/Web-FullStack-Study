@@ -1,0 +1,57 @@
+{
+  "exchanges": [
+    {
+      "name": "jobs.retry.main",
+      "type": "direct",
+      "durable": true
+    },
+    {
+      "name": "jobs.retry.delay",
+      "type": "direct",
+      "durable": true
+    },
+    {
+      "name": "jobs.retry.error",
+      "type": "direct",
+      "durable": true
+    }
+  ],
+  "queues": [
+    {
+      "name": "jobs.retry.main.queue",
+      "durable": true,
+      "arguments": {}
+    },
+    {
+      "name": "jobs.retry.delay.queue",
+      "durable": true,
+      "arguments": {
+        "x-message-ttl": 5000,
+        "x-dead-letter-exchange": "jobs.retry.main",
+        "x-dead-letter-routing-key": "jobs.process"
+      }
+    },
+    {
+      "name": "jobs.retry.error.queue",
+      "durable": true,
+      "arguments": {}
+    }
+  ],
+  "bindings": [
+    {
+      "exchange": "jobs.retry.main",
+      "queue": "jobs.retry.main.queue",
+      "routingKey": "jobs.process"
+    },
+    {
+      "exchange": "jobs.retry.delay",
+      "queue": "jobs.retry.delay.queue",
+      "routingKey": "jobs.retry"
+    },
+    {
+      "exchange": "jobs.retry.error",
+      "queue": "jobs.retry.error.queue",
+      "routingKey": "jobs.error"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeadLetterJob",
+  "type": "object",
+  "required": ["jobId", "attempt", "reason", "failedAt", "payload"],
+  "properties": {
+    "jobId": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "reason": {
+      "type": "string"
+    },
+    "failedAt": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    }
+  }
+}

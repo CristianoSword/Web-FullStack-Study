@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RetryAttempt",
+  "type": "object",
+  "required": ["jobId", "attempt", "status", "recordedAt"],
+  "properties": {
+    "jobId": {
+      "type": "string"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["scheduled", "processed", "retrying", "dead_lettered"]
+    },
+    "recordedAt": {
+      "type": "string"
+    }
+  }
+}

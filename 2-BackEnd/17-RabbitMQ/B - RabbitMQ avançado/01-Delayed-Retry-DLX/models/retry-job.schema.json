@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RetryJob",
+  "type": "object",
+  "required": ["jobId", "jobType", "payload", "attempt", "createdAt"],
+  "properties": {
+    "jobId": {
+      "type": "string"
+    },
+    "jobType": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  }
+}
