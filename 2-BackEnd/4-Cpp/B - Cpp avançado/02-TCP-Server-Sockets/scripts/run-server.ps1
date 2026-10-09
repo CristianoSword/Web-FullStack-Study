@@ -1,3 +1,8 @@
+param(
+  [Parameter(ValueFromRemainingArguments = $true)]
+  [string[]]$ServerArgs = @()
+)
+
 $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
@@ -7,4 +12,4 @@ if (-not (Test-Path ".\\build\\tcp_server_sockets.exe")) {
   powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
 }
 
-.\build\tcp_server_sockets.exe
+& .\build\tcp_server_sockets.exe @ServerArgs

@@ -1,10 +1,10 @@
-$ErrorActionPreference = "Stop"
-
 param(
   [string]$HostName = "127.0.0.1",
   [int]$Port = 8080,
   [string[]]$Messages = @("/nick powershell", "hello from powershell", "/who", "/quit")
 )
+
+$ErrorActionPreference = "Stop"
 
 $client = [System.Net.Sockets.TcpClient]::new()
 $client.Connect($HostName, $Port)
