@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-68.8%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-69.0%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  ❤️❤️❤️❤️❤️❤️🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 68.8% (344/500) 📚📚📚📚📚📚
+  ❤️❤️❤️❤️❤️❤️🖤🖤🖤🖤 &nbsp;&nbsp;&nbsp; 69.0% (345/500) 📚📚📚📚📚📚
 </p>
 
 <p align="center">
@@ -31,10 +31,10 @@ Progresso real medido por projetos concluídos versus planejados no roadmap do r
 | Categoria | Projetos Concluídos | Projetos Pendentes | Total Planejado | Progresso |
 | :--- | :---: | :---: | :---: | :---: |
 | 🎨 **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
-| ⚙️ **[BackEnd](2-BackEnd/)** | 162 | 18 | 180 | **90.0%** |
+| ⚙️ **[BackEnd](2-BackEnd/)** | 163 | 17 | 180 | **90.6%** |
 | 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **344** | **156** | **500** | **68.8%** |
+| **Geral** | **345** | **155** | **500** | **69.0%** |
 
 ### ⚙️ BackEnd Auditado
 
@@ -42,7 +42,7 @@ Progresso real medido por projetos concluídos versus planejados no roadmap do r
 - **Laravel:** 10/10 concluídos
 - **Node.js:** 9/9 concluídos
 - **Ruby on Rails:** 8/9 concluídos
-- **C++:** 8/9 concluídos
+- **C++:** 9/9 concluídos
 - **Java:** 7/10 concluídos
 - **C#:** 10/10 concluídos
 - **BlockChain:** 10/10 concluídos
@@ -73,7 +73,7 @@ All technologies studied and those still planned in the repository:
 | **[CSS3](1-FrontEnd/1-CSS/)** | ✅ | **[Laravel](2-BackEnd/1-Laravel/)** | ✅ | **[Heroku](3-Devops/1-Heroku/)** | ⏳ | **[Cypress](4-QA/1-Cypress/)** | ⏳ |
 | **[JavaScript](1-FrontEnd/2-Javascript/)** | ✅ | **[Node](2-BackEnd/2-Nodejs/)** | ✅ | **[AWS](3-Devops/2-AWS/)** | ⏳ | **[Selenium](4-QA/2-Selenium/)** | ✅ |
 | **[jQuery](1-FrontEnd/3-Jquery/)** | ✅ | **[Ruby on Rails](2-BackEnd/3-Ruby-on-Rails/)** | 🚧 | **[DigitalOcean](3-Devops/3-DigitalOcean/)** | ⏳ | **[JUnit](4-QA/3-JUnit/)** | ⏳ |
-| **[React](1-FrontEnd/4-React/)** | ✅ | **[C++](2-BackEnd/4-Cpp/)** | 🚧 | **[GCP](3-Devops/4-GCP/)** | ⏳ | **[Playwright](4-QA/4-Playwright/)** | ⏳ |
+| **[React](1-FrontEnd/4-React/)** | ✅ | **[C++](2-BackEnd/4-Cpp/)** | ✅ | **[GCP](3-Devops/4-GCP/)** | ⏳ | **[Playwright](4-QA/4-Playwright/)** | ⏳ |
 | **[Vue](1-FrontEnd/5-Vue/)** | ✅ | **[Java](2-BackEnd/5-Java/)** | 🚧 | **[GitHub Actions](3-Devops/5-GitHubActions/)** | ⏳ | **[Vitest](4-QA/5-Vitest/)** | ⏳ |
 | **[Angular](1-FrontEnd/6-Angular/)** | ✅ | **[C#](2-BackEnd/6-CSharp/)** | ✅ | **[Kubernetes](3-Devops/6-Kubernetes/)** | ⏳ |  |  |
 | **[Bootstrap](1-FrontEnd/7-Bootstrap/)** | ✅ | **[BlockChain](2-BackEnd/7-BlockChain/)** | ✅ | **[Vercel](3-Devops/7-Vercel/)** | ⏳ |  |  |
