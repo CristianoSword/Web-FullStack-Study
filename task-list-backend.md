@@ -335,15 +335,15 @@ Lista de projetos pendentes de estudo para a categoria **Backend**.
   5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validaÃ§Ãµes e estilizaÃ§Ã£o.
   6. `[x]` `[06/06] docs`: DocumentaÃ§Ã£o do projeto no README.md e finalizaÃ§Ã£o.
 
-#### [ ] 04-Multi-Search-ElasticSearch
+#### [x] 04-Multi-Search-ElasticSearch
 - **O que Ã©:** Sistema de busca textual complexo integrado com ElasticSearch.
 - **Tasks (6 Commits):**
-  1. `[ ]` `[01/06] setup`: InicializaÃ§Ã£o do projeto, dependÃªncias e configuraÃ§Ãµes.
-  2. `[ ]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
-  3. `[ ]` `[03/06] core-logic`: ImplementaÃ§Ã£o da lÃ³gica de negÃ³cios e manipulaÃ§Ãµes.
-  4. `[ ]` `[04/06] ui/routes`: Interface com o usuÃ¡rio ou endpoints da API REST.
-  5. `[ ]` `[05/06] validation/fixes`: Tratamento de erros, validaÃ§Ãµes e estilizaÃ§Ã£o.
-  6. `[ ]` `[06/06] docs`: DocumentaÃ§Ã£o do projeto no README.md e finalizaÃ§Ã£o.
+  1. `[x]` `[01/06] setup`: InicializaÃ§Ã£o do projeto, dependÃªncias e configuraÃ§Ãµes.
+  2. `[x]` `[02/06] types/models`: Estrutura base de dados, modelos e interfaces.
+  3. `[x]` `[03/06] core-logic`: ImplementaÃ§Ã£o da lÃ³gica de negÃ³cios e manipulaÃ§Ãµes.
+  4. `[x]` `[04/06] ui/routes`: Interface com o usuÃ¡rio ou endpoints da API REST.
+  5. `[x]` `[05/06] validation/fixes`: Tratamento de erros, validaÃ§Ãµes e estilizaÃ§Ã£o.
+  6. `[x]` `[06/06] docs`: DocumentaÃ§Ã£o do projeto no README.md e finalizaÃ§Ã£o.
 
 #### [x] 05-Rails-Engine-Plugin
 - **O que Ã©:** Desenvolvimento de uma Engine reusÃ¡vel para acoplar em projetos Rails.
