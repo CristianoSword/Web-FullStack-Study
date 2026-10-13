@@ -9,6 +9,8 @@ class IndexSynchronizer
   end
 
   def import_records!(model)
+    ensure_index!(model)
+
     payload = model.find_in_batches(batch_size: 100).flat_map do |batch|
       batch.map do |record|
         {
@@ -31,6 +33,14 @@ class IndexSynchronizer
     client = Elasticsearch::Model.client
     index = model.search_index_name
     client.indices.delete(index: index) if client.indices.exists?(index: index)
+    model.__elasticsearch__.create_index!
+  end
+
+  def ensure_index!(model)
+    client = Elasticsearch::Model.client
+    index = model.search_index_name
+    return if client.indices.exists?(index: index)
+
     model.__elasticsearch__.create_index!
   end
 end

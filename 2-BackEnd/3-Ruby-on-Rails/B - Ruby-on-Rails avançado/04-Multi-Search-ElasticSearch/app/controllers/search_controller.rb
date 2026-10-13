@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  rescue_from ArgumentError, with: :render_invalid_query
+
   def index
     query = params.fetch(:q).to_s.strip
 
@@ -12,5 +14,9 @@ class SearchController < ApplicationController
 
   def search_params
     params.permit(:scope, :category, :tag, :author_slug, :page, :per_page)
+  end
+
+  def render_invalid_query(error)
+    render json: { error: error.message }, status: :unprocessable_entity
   end
 end

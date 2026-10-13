@@ -12,6 +12,8 @@ class GlobalSearch
   end
 
   def call
+    raise ArgumentError, "query cannot be blank" if @query.blank?
+
     articles = fetch_articles
     authors = fetch_authors
     total_results = articles.length + authors.length
@@ -34,6 +36,7 @@ class GlobalSearch
     scope = scope.where(category: @filters.category) if @filters.category.present?
     scope = scope.joins(:topic_tags).where(topic_tags: { slug: @filters.tag }) if @filters.tag.present?
     scope = scope.joins(:author_profile).where(author_profiles: { slug: @filters.author_slug }) if @filters.author_slug.present?
+    scope = scope.distinct
 
     elastic_ids = elastic_article_ids
     scoped = elastic_ids.any? ? scope.where(id: elastic_ids).index_by(&:id) : fallback_article_scope(scope).index_by(&:id)
@@ -43,7 +46,7 @@ class GlobalSearch
   def fetch_authors
     return [] if @filters.article_scope?
 
-    scope = AuthorProfile.all
+    scope = AuthorProfile.order(followers_count: :desc, created_at: :desc)
     scope = scope.where(expertise_area: @filters.category) if @filters.category.present?
     scope = scope.where(slug: @filters.author_slug) if @filters.author_slug.present?
 
@@ -95,22 +98,26 @@ class GlobalSearch
   end
 
   def fallback_article_scope(scope)
-    return scope.limit(@filters.per_page) if @query.blank?
+    return paginate(scope) if @query.blank?
 
     like = "%#{@query}%"
-    scope.where(
+    paginate(scope.where(
       "article_documents.title LIKE :query OR article_documents.summary LIKE :query OR article_documents.body LIKE :query",
       query: like
-    ).limit(@filters.per_page)
+    ))
   end
 
   def fallback_author_scope(scope)
-    return scope.limit(@filters.per_page) if @query.blank?
+    return paginate(scope) if @query.blank?
 
     like = "%#{@query}%"
-    scope.where(
+    paginate(scope.where(
       "author_profiles.name LIKE :query OR author_profiles.bio LIKE :query OR author_profiles.headline LIKE :query",
       query: like
-    ).limit(@filters.per_page)
+    ))
+  end
+
+  def paginate(scope)
+    scope.offset((@filters.page - 1) * @filters.per_page).limit(@filters.per_page)
   end
 end
