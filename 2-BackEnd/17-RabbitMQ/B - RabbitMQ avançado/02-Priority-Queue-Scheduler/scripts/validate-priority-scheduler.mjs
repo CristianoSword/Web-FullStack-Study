@@ -5,7 +5,10 @@ const requiredFiles = [
   "package.json",
   "docker-compose.yml",
   "config/runtime-config.mjs",
-  "src/server.mjs"
+  "src/server.mjs",
+  "models/job-definition.mjs",
+  "models/scheduler-state.mjs",
+  "models/worker-load-policy.mjs"
 ];
 
 const missing = requiredFiles.filter((file) => !fs.existsSync(path.resolve(file)));
