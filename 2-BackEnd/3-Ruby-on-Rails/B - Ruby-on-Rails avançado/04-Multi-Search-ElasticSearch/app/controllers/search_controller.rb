@@ -1,8 +1,16 @@
 class SearchController < ApplicationController
   def index
-    query = params[:q].to_s.strip
-    return render json: { error: "query required" }, status: :unprocessable_entity if query.empty?
+    query = params.fetch(:q).to_s.strip
 
-    render json: GlobalSearch.new.call(query)
+    render json: GlobalSearch.new(
+      query: query,
+      filters: SearchFilterSet.new(search_params)
+    ).call
+  end
+
+  private
+
+  def search_params
+    params.permit(:scope, :category, :tag, :author_slug, :page, :per_page)
   end
 end
