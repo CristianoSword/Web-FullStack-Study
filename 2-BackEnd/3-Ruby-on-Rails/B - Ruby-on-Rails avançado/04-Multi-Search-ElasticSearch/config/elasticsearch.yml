@@ -1,2 +1,16 @@
+default: &default
+  host: http://localhost:9200
+  request_timeout: 5
+  index_prefix: multi-search
+
 development:
-  url: http://localhost:9200
+  <<: *default
+
+test:
+  <<: *default
+  index_prefix: multi-search-test
+
+production:
+  <<: *default
+  host: <%= ENV.fetch("ELASTICSEARCH_URL", "http://elasticsearch:9200") %>
+  request_timeout: 10

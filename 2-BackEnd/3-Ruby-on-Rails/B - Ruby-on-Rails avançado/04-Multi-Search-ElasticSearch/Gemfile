@@ -1,4 +1,11 @@
 source "https://rubygems.org"
 
+ruby ">= 3.2.0"
+
 gem "rails", "~> 7.1"
-gem "elasticsearch-model"
+gem "sqlite3", "~> 1.7"
+gem "puma", "~> 6.4"
+gem "elasticsearch", "~> 8.13"
+gem "elasticsearch-model", "~> 8.0"
+gem "elasticsearch-rails", "~> 8.0"
+gem "kaminari", "~> 1.2"
