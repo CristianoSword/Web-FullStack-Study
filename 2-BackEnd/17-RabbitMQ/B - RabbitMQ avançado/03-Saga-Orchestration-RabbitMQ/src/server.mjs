@@ -19,6 +19,13 @@ app.setErrorHandler((error, _request, reply) => {
 await registerHealthRoutes(app);
 await registerSagaRoutes(app, { orchestrator });
 
+const shutdown = async (signal) => {
+  app.log.info({ signal }, "Shutting down saga orchestration service");
+  await app.close();
+  await shutdownRabbitResources();
+  process.exit(0);
+};
+
 const start = async () => {
   await orchestrator.startEventLoop();
   await startSimulatedDomainServices();
@@ -26,11 +33,17 @@ const start = async () => {
 };
 
 process.on("SIGINT", () => {
-  shutdownRabbitResources().finally(() => process.exit(0));
+  shutdown("SIGINT").catch((error) => {
+    app.log.error(error);
+    process.exit(1);
+  });
 });
 
 process.on("SIGTERM", () => {
-  shutdownRabbitResources().finally(() => process.exit(0));
+  shutdown("SIGTERM").catch((error) => {
+    app.log.error(error);
+    process.exit(1);
+  });
 });
 
 start().catch((error) => {
