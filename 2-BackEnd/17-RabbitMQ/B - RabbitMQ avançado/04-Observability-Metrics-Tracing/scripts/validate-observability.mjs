@@ -6,7 +6,10 @@ const requiredFiles = [
   "docker-compose.yml",
   "prometheus/prometheus.yml",
   "prometheus/alert-rules.yml",
-  "src/server.mjs"
+  "src/server.mjs",
+  "models/trace-context.mjs",
+  "models/message-envelope.mjs",
+  "models/metrics-store.mjs"
 ];
 
 const missing = requiredFiles.filter((file) => !fs.existsSync(path.resolve(file)));
