@@ -5,7 +5,10 @@ const requiredFiles = [
   "package.json",
   "docker-compose.yml",
   "config/runtime-config.mjs",
-  "src/server.mjs"
+  "src/server.mjs",
+  "models/order-request.mjs",
+  "models/saga-state.mjs",
+  "models/saga-events.mjs"
 ];
 
 const missing = requiredFiles.filter((file) => !fs.existsSync(path.resolve(file)));
