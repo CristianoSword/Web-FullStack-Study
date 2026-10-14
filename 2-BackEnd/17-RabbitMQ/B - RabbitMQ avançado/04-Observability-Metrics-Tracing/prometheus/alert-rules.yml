@@ -1,0 +1,11 @@
+groups:
+  - name: rabbitmq-observability
+    rules:
+      - alert: RabbitMqConsumerLagGrowing
+        expr: queue_depth > 25
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: Queue depth above expected threshold
+          description: The demo queue depth stayed above 25 messages for 2 minutes.
