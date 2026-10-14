@@ -1,17 +1,39 @@
 import Fastify from "fastify";
 
-const app = Fastify({ logger: true });
+import { runtimeConfig } from "../config/runtime-config.mjs";
+import { shutdownRabbitResources } from "./lib/rabbitmq-connection.mjs";
+import { registerHealthRoutes } from "./routes/health-routes.mjs";
+import { registerSagaRoutes } from "./routes/saga-routes.mjs";
+import { OrderSagaOrchestrator } from "./services/order-saga-orchestrator.mjs";
+import { startSimulatedDomainServices } from "./services/simulated-domain-services.mjs";
 
-app.get("/health", async () => ({
-  status: "bootstrapping"
-}));
+const app = Fastify({ logger: true });
+const orchestrator = new OrderSagaOrchestrator();
+
+app.setErrorHandler((error, _request, reply) => {
+  reply.code(400).send({
+    error: error.message
+  });
+});
+
+await registerHealthRoutes(app);
+await registerSagaRoutes(app, { orchestrator });
 
 const start = async () => {
-  const port = Number.parseInt(process.env.PORT ?? "3073", 10);
-  await app.listen({ port, host: "0.0.0.0" });
+  await orchestrator.startEventLoop();
+  await startSimulatedDomainServices();
+  await app.listen({ port: runtimeConfig.app.port, host: "0.0.0.0" });
 };
+
+process.on("SIGINT", () => {
+  shutdownRabbitResources().finally(() => process.exit(0));
+});
+
+process.on("SIGTERM", () => {
+  shutdownRabbitResources().finally(() => process.exit(0));
+});
 
 start().catch((error) => {
   app.log.error(error);
-  process.exit(1);
+  shutdownRabbitResources().finally(() => process.exit(1));
 });
