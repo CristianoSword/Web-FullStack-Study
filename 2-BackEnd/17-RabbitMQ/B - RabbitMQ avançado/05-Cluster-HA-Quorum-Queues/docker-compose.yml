@@ -1,0 +1,45 @@
+services:
+  rabbitmq-1:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-cluster-node-1
+    hostname: rabbitmq-1
+    environment:
+      RABBITMQ_ERLANG_COOKIE: superclustersecret
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+      RABBITMQ_NODENAME: rabbit@rabbitmq-1
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./config/rabbitmq-1/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+      - ./config/rabbitmq-1/enabled_plugins:/etc/rabbitmq/enabled_plugins:ro
+      - ./config/definitions.json:/etc/rabbitmq/definitions.json:ro
+
+  rabbitmq-2:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-cluster-node-2
+    hostname: rabbitmq-2
+    environment:
+      RABBITMQ_ERLANG_COOKIE: superclustersecret
+      RABBITMQ_NODENAME: rabbit@rabbitmq-2
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    volumes:
+      - ./config/rabbitmq-2/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+      - ./config/rabbitmq-2/enabled_plugins:/etc/rabbitmq/enabled_plugins:ro
+
+  rabbitmq-3:
+    image: rabbitmq:3.13-management
+    container_name: rabbitmq-cluster-node-3
+    hostname: rabbitmq-3
+    environment:
+      RABBITMQ_ERLANG_COOKIE: superclustersecret
+      RABBITMQ_NODENAME: rabbit@rabbitmq-3
+    ports:
+      - "5674:5672"
+      - "15674:15672"
+    volumes:
+      - ./config/rabbitmq-3/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+      - ./config/rabbitmq-3/enabled_plugins:/etc/rabbitmq/enabled_plugins:ro
