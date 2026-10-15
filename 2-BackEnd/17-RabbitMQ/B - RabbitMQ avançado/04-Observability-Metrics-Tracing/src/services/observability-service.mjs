@@ -70,8 +70,8 @@ export class ObservabilityService {
       `${prefix}_consumed_total ${snapshot.counters.consumedTotal}`,
       `# TYPE ${prefix}_failed_total counter`,
       `${prefix}_failed_total ${snapshot.counters.failedTotal}`,
-      `# TYPE queue_depth gauge`,
-      `queue_depth ${snapshot.counters.queueDepth}`,
+      `# TYPE ${prefix}_queue_depth gauge`,
+      `${prefix}_queue_depth ${snapshot.counters.queueDepth}`,
       `# TYPE ${prefix}_average_latency_ms gauge`,
       `${prefix}_average_latency_ms ${snapshot.counters.averageLatencyMs}`
     ].join("\n");
