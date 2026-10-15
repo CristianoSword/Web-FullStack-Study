@@ -4,9 +4,13 @@ import path from "node:path";
 const requiredFiles = [
   "package.json",
   "docker-compose.yml",
+  "config/runtime-config.mjs",
   "config/rabbitmq-1/rabbitmq.conf",
   "config/rabbitmq-2/rabbitmq.conf",
   "config/rabbitmq-3/rabbitmq.conf",
+  "models/cluster-node.mjs",
+  "models/quorum-message.mjs",
+  "models/ha-policy.mjs",
   "src/server.mjs"
 ];
 
