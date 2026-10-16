@@ -1,0 +1,7 @@
+{
+  "name": "docker-cli-commands-lab",
+  "description": "Hands-on Docker CLI exercises for build, run, list and stop container workflows.",
+  "entryImageDockerfile": "images/lab-web/Dockerfile",
+  "defaultContainerName": "docker-cli-lab",
+  "defaultImageName": "docker-cli-lab:web"
+}
