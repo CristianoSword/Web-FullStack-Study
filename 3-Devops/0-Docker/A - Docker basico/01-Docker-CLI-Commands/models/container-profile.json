@@ -1,0 +1,17 @@
+{
+  "profileId": "web-static-demo",
+  "purpose": "Basic web container used to practice build, run, list, inspect and stop flows.",
+  "baseImage": "nginx:1.29-alpine",
+  "exposedPorts": [
+    {
+      "containerPort": 8080,
+      "hostPort": 8088,
+      "protocol": "tcp"
+    }
+  ],
+  "artifacts": [
+    "app/index.html",
+    "app/health.txt",
+    "images/lab-web/Dockerfile"
+  ]
+}

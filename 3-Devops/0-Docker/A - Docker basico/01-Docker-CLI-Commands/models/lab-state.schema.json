@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DockerCliLabState",
+  "type": "object",
+  "required": ["containerName", "imageName", "hostPort", "containerPort"],
+  "properties": {
+    "containerName": {
+      "type": "string"
+    },
+    "imageName": {
+      "type": "string"
+    },
+    "hostPort": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "containerPort": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "dockerfilePath": {
+      "type": "string"
+    },
+    "applicationContext": {
+      "type": "string"
+    }
+  }
+}

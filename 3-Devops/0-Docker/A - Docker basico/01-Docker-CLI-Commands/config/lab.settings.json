@@ -1,0 +1,8 @@
+{
+  "containerName": "docker-cli-lab",
+  "imageName": "docker-cli-lab:web",
+  "hostPort": 8088,
+  "containerPort": 8080,
+  "dockerfilePath": "images/lab-web/Dockerfile",
+  "applicationContext": "."
+}

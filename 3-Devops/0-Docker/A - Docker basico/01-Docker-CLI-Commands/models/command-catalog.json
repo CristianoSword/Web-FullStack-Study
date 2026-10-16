@@ -1,0 +1,29 @@
+{
+  "commands": [
+    {
+      "id": "build-image",
+      "dockerCommand": "docker build -t docker-cli-lab:web -f images/lab-web/Dockerfile .",
+      "goal": "Create the image used by the exercises."
+    },
+    {
+      "id": "run-container",
+      "dockerCommand": "docker run -d --name docker-cli-lab -p 8088:8080 docker-cli-lab:web",
+      "goal": "Start the demo container in detached mode with port binding."
+    },
+    {
+      "id": "list-containers",
+      "dockerCommand": "docker ps --filter name=docker-cli-lab",
+      "goal": "Inspect running containers and verify the lab container exists."
+    },
+    {
+      "id": "stop-container",
+      "dockerCommand": "docker stop docker-cli-lab",
+      "goal": "Gracefully stop the running container."
+    },
+    {
+      "id": "remove-container",
+      "dockerCommand": "docker rm docker-cli-lab",
+      "goal": "Clean up the container after the lab."
+    }
+  ]
+}
