@@ -53,15 +53,18 @@ function Get-DockerCommandPlan {
 }
 
 function Test-DockerDaemon {
-  $null = Get-Command docker -ErrorAction Stop
+  try {
+    $null = Get-Command docker -ErrorAction Stop
 
-  $process = Start-Process -FilePath "docker" -ArgumentList @("version") -NoNewWindow -Wait -PassThru -RedirectStandardOutput "$env:TEMP\docker-cli-lab-version.out" -RedirectStandardError "$env:TEMP\docker-cli-lab-version.err"
+    $stdoutPath = Join-Path $env:TEMP "docker-cli-lab-version.out"
+    $stderrPath = Join-Path $env:TEMP "docker-cli-lab-version.err"
 
-  if ($process.ExitCode -ne 0) {
+    $process = Start-Process -FilePath "docker" -ArgumentList @("version") -NoNewWindow -Wait -PassThru -RedirectStandardOutput $stdoutPath -RedirectStandardError $stderrPath
+    return $process.ExitCode -eq 0
+  }
+  catch {
     return $false
   }
-
-  return $true
 }
 
 function Format-DockerCommand {
@@ -70,9 +73,11 @@ function Format-DockerCommand {
     [string[]]$Arguments
   )
 
-  "docker " + ($Arguments | ForEach-Object {
-      if ($_ -match "\s") { '"' + $_ + '"' } else { $_ }
-    } | Join-String -Separator " ")
+  $formatted = $Arguments | ForEach-Object {
+    if ($_ -match "\s") { '"' + $_ + '"' } else { $_ }
+  }
+
+  "docker " + [string]::Join(" ", $formatted)
 }
 
 function Invoke-DockerLabAction {
