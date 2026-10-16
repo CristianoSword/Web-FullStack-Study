@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://github.com/CristianoSword/Web-FullStack-Study">
-    <img src="https://img.shields.io/badge/Study_Progress-70.6%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
+    <img src="https://img.shields.io/badge/Study_Progress-70.8%25-blueviolet?style=for-the-badge&logo=gitbook&logoColor=white" alt="Progress">
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
@@ -14,7 +14,7 @@
 </div>
 
 <p align="center">
-  ❤️❤️❤️❤️❤️❤️❤️🖤🖤🖤 &nbsp;&nbsp;&nbsp; 70.6% (353/500) 📚📚📚📚📚📚
+  ❤️❤️❤️❤️❤️❤️❤️🖤🖤🖤 &nbsp;&nbsp;&nbsp; 70.8% (354/500) 📚📚📚📚📚📚
 </p>
 
 <p align="center">
@@ -32,9 +32,9 @@ Progresso real medido por projetos concluídos versus planejados no roadmap do r
 | :--- | :---: | :---: | :---: | :---: |
 | 🎨 **[FrontEnd](1-FrontEnd/)** | 180 | 0 | 180 | **100.0%** |
 | ⚙️ **[BackEnd](2-BackEnd/)** | 171 | 9 | 180 | **95.0%** |
-| 🏗️ **[DevOps](3-Devops/)** | 0 | 80 | 80 | **0.0%** |
+| 🏗️ **[DevOps](3-Devops/)** | 1 | 79 | 80 | **1.3%** |
 | 🧪 **[QA](4-QA/)** | 2 | 58 | 60 | **3.3%** |
-| **Geral** | **353** | **147** | **500** | **70.6%** |
+| **Geral** | **354** | **146** | **500** | **70.8%** |
 
 ### ⚙️ BackEnd Auditado
 
@@ -59,6 +59,17 @@ Progresso real medido por projetos concluídos versus planejados no roadmap do r
 
 Projetos que ainda estavam com stack simulada, placeholder ou implementação superficial da tecnologia principal foram rebaixados no `task-list-backend.md` para o painel refletir o estado real do código.
 
+### 🏗️ DevOps Auditado
+
+- **Docker:** 1/10 concluídos
+- **Heroku:** 0/10 concluídos
+- **AWS:** 0/10 concluídos
+- **DigitalOcean:** 0/10 concluídos
+- **GCP:** 0/10 concluídos
+- **GitHub Actions:** 0/10 concluídos
+- **Kubernetes:** 0/10 concluídos
+- **Vercel:** 0/10 concluídos
+
 ---
 
 ## 🛠️ Technologies
@@ -69,7 +80,7 @@ All technologies studied and those still planned in the repository:
 
 | FrontEnd | Status | BackEnd | Status | DevOps | Status | QA | Status |
 | :--- | :---: | :--- | :---: | :--- | :---: | :--- | :---: |
-| **[HTML5](1-FrontEnd/0-Html/)** | ✅ | **[PHP](2-BackEnd/0-PHP/)** | ✅ | **[Docker](3-Devops/0-Docker/)** | ⏳ | **[Jest](4-QA/0-Jest/)** | ✅ |
+| **[HTML5](1-FrontEnd/0-Html/)** | ✅ | **[PHP](2-BackEnd/0-PHP/)** | ✅ | **[Docker](3-Devops/0-Docker/)** | 🚧 | **[Jest](4-QA/0-Jest/)** | ✅ |
 | **[CSS3](1-FrontEnd/1-CSS/)** | ✅ | **[Laravel](2-BackEnd/1-Laravel/)** | ✅ | **[Heroku](3-Devops/1-Heroku/)** | ⏳ | **[Cypress](4-QA/1-Cypress/)** | ⏳ |
 | **[JavaScript](1-FrontEnd/2-Javascript/)** | ✅ | **[Node](2-BackEnd/2-Nodejs/)** | ✅ | **[AWS](3-Devops/2-AWS/)** | ⏳ | **[Selenium](4-QA/2-Selenium/)** | ✅ |
 | **[jQuery](1-FrontEnd/3-Jquery/)** | ✅ | **[Ruby on Rails](2-BackEnd/3-Ruby-on-Rails/)** | ✅ | **[DigitalOcean](3-Devops/3-DigitalOcean/)** | ⏳ | **[JUnit](4-QA/3-JUnit/)** | ⏳ |
