@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const requiredFiles = [
   "package.json",
@@ -19,6 +20,24 @@ const missing = requiredFiles.filter((file) => !fs.existsSync(path.resolve(file)
 if (missing.length > 0) {
   console.error("Missing files:", missing.join(", "));
   process.exit(1);
+}
+
+const syntaxTargets = [
+  "config/runtime-config.mjs",
+  "models/cluster-node.mjs",
+  "models/quorum-message.mjs",
+  "models/ha-policy.mjs",
+  "src/server.mjs",
+  "src/lib/rabbitmq-connection.mjs",
+  "src/services/cluster-probe-service.mjs",
+  "src/services/quorum-queue-service.mjs",
+  "src/routes/health-routes.mjs",
+  "src/routes/cluster-routes.mjs",
+  "topology/cluster-topology.mjs"
+];
+
+for (const target of syntaxTargets) {
+  execFileSync(process.execPath, ["--check", target], { stdio: "pipe" });
 }
 
 console.log("Cluster scaffold looks consistent.");
