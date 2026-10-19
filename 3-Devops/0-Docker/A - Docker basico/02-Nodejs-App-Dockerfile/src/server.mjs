@@ -1,11 +1,29 @@
 import http from "node:http";
 
-const server = http.createServer((_request, response) => {
-  response.writeHead(200, { "content-type": "application/json" });
-  response.end(JSON.stringify({ status: "bootstrapping" }));
+import { runtimeConfig } from "./lib/runtime-config.mjs";
+import { handleHealth } from "./routes/health-route.mjs";
+import { handleMetadata } from "./routes/metadata-route.mjs";
+import { buildMetadataPayload } from "./services/app-metadata-service.mjs";
+
+const startedAt = new Date().toISOString();
+
+const server = http.createServer((request, response) => {
+  if (request.url === "/health") {
+    handleHealth(request, response, {
+      status: "ok",
+      service: runtimeConfig.serviceName,
+      startedAt
+    });
+    return;
+  }
+
+  if (request.url === "/metadata") {
+    handleMetadata(request, response, buildMetadataPayload());
+    return;
+  }
+
+  response.writeHead(404, { "content-type": "application/json" });
+  response.end(JSON.stringify({ error: "route not found" }));
 });
 
-const port = Number.parseInt(process.env.PORT ?? "3000", 10);
-const host = process.env.HOST ?? "0.0.0.0";
-
-server.listen(port, host);
+server.listen(runtimeConfig.port, runtimeConfig.host);
