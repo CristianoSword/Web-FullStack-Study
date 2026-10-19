@@ -1,0 +1,18 @@
+{
+  "service": "nodejs-dockerfile-lab",
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/health"
+    },
+    {
+      "method": "GET",
+      "path": "/metadata"
+    }
+  ],
+  "environment": [
+    "PORT",
+    "HOST",
+    "APP_NAME"
+  ]
+}

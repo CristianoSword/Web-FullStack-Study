@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NodeDockerRuntime",
+  "type": "object",
+  "required": ["imageName", "containerName", "hostPort", "containerPort"],
+  "properties": {
+    "imageName": {
+      "type": "string"
+    },
+    "containerName": {
+      "type": "string"
+    },
+    "hostPort": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "containerPort": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "dockerfilePath": {
+      "type": "string"
+    },
+    "buildContext": {
+      "type": "string"
+    }
+  }
+}

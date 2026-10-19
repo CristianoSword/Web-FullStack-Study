@@ -1,0 +1,8 @@
+{
+  "imageName": "nodejs-dockerfile-lab:local",
+  "containerName": "nodejs-dockerfile-lab",
+  "hostPort": 3005,
+  "containerPort": 3000,
+  "dockerfilePath": "Dockerfile",
+  "buildContext": "."
+}

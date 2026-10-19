@@ -1,0 +1,12 @@
+{
+  "baseImage": "node:22-alpine",
+  "packageManager": "npm",
+  "installStrategy": "npm ci --omit=dev",
+  "copyOrder": [
+    "package.json",
+    "package-lock.json",
+    "src/",
+    "config/"
+  ],
+  "targetUseCase": "Package a small Node HTTP service with cache-friendly Docker layers."
+}
