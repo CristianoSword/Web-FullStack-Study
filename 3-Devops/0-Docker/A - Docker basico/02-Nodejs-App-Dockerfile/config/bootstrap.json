@@ -1,0 +1,5 @@
+{
+  "serviceName": "nodejs-dockerfile-lab",
+  "defaultPort": 3000,
+  "runtime": "node:22-alpine"
+}
