@@ -1,0 +1,13 @@
+{
+  "name": "05-rds-database-setup-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
+}
