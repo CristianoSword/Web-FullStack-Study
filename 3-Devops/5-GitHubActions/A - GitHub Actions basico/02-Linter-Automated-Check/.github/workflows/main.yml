@@ -1,0 +1,6 @@
+name: 02-Linter-Automated-Check Workflow
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
