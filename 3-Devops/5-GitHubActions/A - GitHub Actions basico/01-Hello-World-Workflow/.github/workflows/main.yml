@@ -1,0 +1,6 @@
+name: 01-Hello-World-Workflow Workflow
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
