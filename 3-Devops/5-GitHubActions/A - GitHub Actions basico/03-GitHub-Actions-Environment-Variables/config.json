@@ -1,0 +1,5 @@
+{
+  "projectName": "03-GitHub-Actions-Environment-Variables",
+  "version": "1.0.0",
+  "environment": "development"
+}
