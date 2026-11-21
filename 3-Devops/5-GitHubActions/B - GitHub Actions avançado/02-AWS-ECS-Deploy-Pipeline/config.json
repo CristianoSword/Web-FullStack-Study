@@ -1,0 +1,5 @@
+{
+  "projectName": "02-AWS-ECS-Deploy-Pipeline",
+  "version": "1.0.0",
+  "environment": "development"
+}
