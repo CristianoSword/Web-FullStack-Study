@@ -1,0 +1,6 @@
+name: 04-Release-Tag-Automation Workflow
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
