@@ -1,0 +1,6 @@
+name: 05-Slack-Webhook-Alerts Workflow
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main ]
