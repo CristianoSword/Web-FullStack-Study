@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 05-configmaps-env-vars
+  labels:
+    app: 05-configmaps-env-vars
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 05-configmaps-env-vars
+  template:
+    metadata:
+      labels:
+        app: 05-configmaps-env-vars
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
