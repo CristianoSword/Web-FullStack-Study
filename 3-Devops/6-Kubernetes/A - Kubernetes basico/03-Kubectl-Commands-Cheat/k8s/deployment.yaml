@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 03-kubectl-commands-cheat
+  labels:
+    app: 03-kubectl-commands-cheat
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 03-kubectl-commands-cheat
+  template:
+    metadata:
+      labels:
+        app: 03-kubectl-commands-cheat
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
