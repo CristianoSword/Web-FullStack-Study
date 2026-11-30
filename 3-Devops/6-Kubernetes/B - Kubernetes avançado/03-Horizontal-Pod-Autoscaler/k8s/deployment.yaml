@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 03-horizontal-pod-autoscaler
+  labels:
+    app: 03-horizontal-pod-autoscaler
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 03-horizontal-pod-autoscaler
+  template:
+    metadata:
+      labels:
+        app: 03-horizontal-pod-autoscaler
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
