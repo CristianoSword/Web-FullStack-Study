@@ -1,0 +1,5 @@
+{
+  "projectName": "03-Horizontal-Pod-Autoscaler",
+  "version": "1.0.0",
+  "environment": "development"
+}
