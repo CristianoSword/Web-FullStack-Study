@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 05-kubernetes-secrets-inject
+  labels:
+    app: 05-kubernetes-secrets-inject
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: 05-kubernetes-secrets-inject
+  template:
+    metadata:
+      labels:
+        app: 05-kubernetes-secrets-inject
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
